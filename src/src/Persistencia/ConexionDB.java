@@ -37,16 +37,16 @@ public class ConexionDB {
 	 */
 	private String usuario="root";
 
-	public ConexionDB(){
+	public ConexionDB(String usuario, String contrasenia){
+		this.usuario = usuario;
+		this.contrasenia = contrasenia;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conexion = (Connection) DriverManager.getConnection(URL, usuario,contrasenia);
 
 			if (conexion != null) {
 				hayConexion = true;
-
 				System.out.println("Conexión a base de datos  OK\n");
-
 			}
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -56,6 +56,7 @@ public class ConexionDB {
 			System.out.println(e);
 		}
 	}
+
 
 	public static Connection getConexion() {
 		return conexion;
