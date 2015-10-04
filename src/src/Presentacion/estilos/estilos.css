@@ -1,0 +1,217 @@
+/*
+	Autor
+*/
+*{
+	border:0;
+	margin:0;
+	padding:0;
+}
+/*
+	Color del fondo de la paginas, esta es en blanco
+*/
+body{
+	background: #fefff6;
+}
+/*
+	Contendor de la pagina en donde se define
+	1. La sombra de los bordes
+	2. el tamaño
+*/
+#contenedor{
+	box-shadow: 5px 5px 30px #bcbcbc;
+	height:1050px;
+	width:1000px;
+	margin-right:auto;
+	margin-left:auto;
+}
+/*
+	Contiene las etiquetas que van a tener los mismos valores y el color
+*/
+header, #logo,#servicios,#imagenes,#texto,#informacion{
+	background: #fefff6;
+	width:1000px;
+	height:80px;
+}
+/*
+	El tamaño y color que tendra el bloque de los logos
+*/
+#logo{
+	background: #cccc9f;
+	height:170px;
+}
+/*
+	El tamaño color y tipo de letra que tiene el bloque de servicios
+*/
+#servicios{
+	font-family: 'Courgette', cursive;
+	background: #fefff6;
+	height:80px;
+}
+/*
+	El tamaño y color que tendra el bloque de las imagenes
+*/
+#imagenes{
+	background: #e1c9e3;
+	height:300px;
+}
+/*
+	El tamaño y color que tendra el bloque de el texto (¿Quienes somos?)
+*/
+#texto{
+
+	background: #fefff6;
+	height:250px;
+}
+/*
+	El tamaño y color que tendra la divicion de "quienes somos" y "informacion"
+*/
+#divi{
+	background: #fdca2e;
+	width:1000px;
+	height:10px;
+	padding-top: 15px;
+}
+/*
+	El tipo de letra, el tamaño de la letra y que sea centrada del bloque texto
+	que contiene la etiqueta h1
+*/
+#texto h1{
+	font-family: 'Handlee', cursive;
+	font-size: 60px;
+	text-align: center;
+}
+/*
+	El tipo de letra, el tamaño de la letra y que sea centrada del bloque texto
+	que contiene la etiqueta h4
+*/
+#texto h4	{
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	text-align: center;
+}
+/*
+	El tamaño y color que tendra el bloque de informacion (Menu, Registrar y Informacion)
+*/
+#informacion{
+	background: #000000;
+	height:200px;
+}
+/*
+	El color de la letra, tipo de letra, tamaño y que sea centrada del bloque informacion
+	con etiquetas h4
+*/
+#informacion h4{
+	 color: #fefff6;
+	 font-family: 'Handlee', cursive ;
+	 font-size: 30px;
+	 text-align: center;
+}
+/*
+	El color de la letra, tamaño y que sea centrada del bloque informacion
+	con etiquetas h5
+*/
+#informacion h5{
+	color: #fefff6;
+	font-size: 15px;
+	text-align: center;
+}
+/*
+	El color y tamaño del bloque footer que es el Pie de Pagina
+*/
+footer{
+	background: #000000;
+	width:1000px;
+	height:50px;
+	padding-top: 15px;
+}
+/*
+	El color, tamaño, tipo de letra y que sea centrado en el bloque footer
+	con la etiqueta p
+*/
+footer p{
+	color: #fefff6;
+	font-family: arial;
+	font-size: 12px;
+	text-align: center;
+}
+/*
+	El color, tamaño, posicion y margen del bloque inicio1 que se encuentra
+	dentro del bloque header (Primer encabezado)
+*/
+header #inicio1{
+	background: #fefff6;
+	width:120px;
+	height:80px;
+	float: right;
+	display : inline-block;
+	margin: 0px 5px;
+}
+/*
+	El color, tamaño, posicion y margen del bloque inicio2 que se encuentra
+	dentro del bloque header (Primer encabezado)
+*/
+header #inicio2{
+	background: #fefff6;
+	width:120px;
+	height:80px;
+	float: right;
+	display : inline-block;
+	margin: 0px 5px;
+}
+/*
+	El color, tamaño, posicion y margen del bloque inicio3 que se encuentra
+	dentro del bloque header (Primer encabezado)
+*/
+header #inicio3{
+	background: #fefff6;
+	width:120px;
+	height:80px;
+	float: right;
+	display : inline-block;
+	margin: 0px 5px;
+}
+/*
+	El color, tamaño, posicion y margen del bloque inicio4 que se encuentra
+	dentro del bloque header (Primer encabezado)
+*/
+header #inicio4{
+	background: #fefff6;
+	width:120px;
+	height:80px;
+	float: right;
+	display : inline-block;
+	margin: 0px 5px;
+}
+/*
+	El color, tamaño, posicion vertical y margen del bloque inf1 que se encuentra
+	dentro del bloque informacion (Menu, Registrar y Informacion)
+*/
+#informacion #inf1{
+	background: #000000;
+	width:200px;
+	height:200px;
+	display : inline-block;
+	vertical-align: middle;
+}
+/*
+	El color, tamaño, posicion vertical y margen del bloque inf2 que se encuentra
+	dentro del bloque informacion (Menu, Registrar y Informacion)
+*/
+#informacion #inf2{
+	background: #000000;
+	width:455px;
+	height:200px;
+	display : inline-block;
+	vertical-align: middle;
+}
+/*
+	El color, tamaño, posicion vertical y margen del bloque inf3 que se encuentra
+	dentro del bloque informacion (Menu, Registrar y Informacion)
+*/
+#informacion #inf3 {
+	background: #000000;
+	width: 270px;
+	height: 200px;
+	display: inline-block;
+	vertical-align: middle;
+}
