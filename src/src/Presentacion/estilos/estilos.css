@@ -215,3 +215,50 @@ header #inicio4{
 	display: inline-block;
 	vertical-align: middle;
 }
+/*Estilos de la ventana emergente de login*/
+nav.acceder article{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	float: right;
+}
+
+#acceder #login{
+	display: inline-block;
+	font-size: 16px;
+	padding: 1px 10px;
+	text-decoration: none;
+	color: black;
+	font-weight: 100;
+	border: 1px solid #fefff6;
+}
+
+nav.acceder #login-content{
+	position: absolute;
+	top:56px;
+	right: 0;
+	z-index: 999;
+	background-color: #fefff6;
+	border: 1px solid #000000;
+	padding:  15px;
+	width: 180px;
+	height: 80px;
+	border-radius: 10px 10px 10px 10px;
+	display: none;
+}
+
+#submit{
+	position: absolute;
+	left: 55px;
+	width: 80px;
+}
+
+#usuario,#password{
+
+	font: 14px Arial;
+	width: 150px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+}
+/*Fin de los estilos de la ventana emergente de login*/

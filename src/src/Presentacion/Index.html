@@ -22,6 +22,22 @@
     <link href="estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="estilos/css/estilos.css" rel="stylesheet">
 
+    <script src="angular.min.js"></script>
+
+    <!-- Script necesario para hacer que la ventana de login aparezca-->
+    <script src="jquery.js"></script>
+
+    <script>
+        $(function(){
+            $('#login').click(function(){
+                $(this).next('#login-content').slideToggle();
+                $(this).ToggleClass('active');
+
+
+            });
+        });
+    </script>
+
 </head>
 
 <body> <!-- Lo que tiene la pagina -->
@@ -35,11 +51,25 @@
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton ingresar -->
-        <article id="inicio1">
-            <button type="button" class="btn btn-default"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
-            </button>
-        </article>
+        <nav class="acceder">
+            <article id="inicio1">
+
+                <button type="button" id="login" class="btn btn-default"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
+                </button>
+                <div id="login-content">
+                    <form>
+
+                        <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
+                        <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
+
+                        <button type="button" id="submit" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+                            Ingresar </button>
+                    </form>
+
+                </div>
+            </article>
+        </nav>
         <!-- Boton Contactenos -->
         <article id="inicio2">
             <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
