@@ -12,8 +12,7 @@ public class ActaDao {
 
 	/**
 	 * Metodo que permite almacenar informacion de un acta en la base de datos sin
-	 * tener la descripcion
-	 * 
+	 * tener la descripcio
 	 * @param rutaActa
 	 * @param nombreActa
 	 */
