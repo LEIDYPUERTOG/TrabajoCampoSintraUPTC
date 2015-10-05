@@ -110,7 +110,7 @@ public class PersonaDao {
 			if(resultSet.next()){
 
 				listaPersonas.add(new Persona(resultSet.getInt(1), resultSet.getString(3), conversionDocumento(resultSet.getString(2)),
-						conversionUsuario(resultSet.getString(4))));
+						conversionUsuario(resultSet.getString(4)), resultSet.getString(5)));
 			}else{
 				return listaPersonas;
 			}
@@ -209,5 +209,9 @@ public class PersonaDao {
 			usuario = "NA";
 		}
 		return usuario;
+	}
+
+	public boolean darPermisosUsuarios(Persona persona){
+		return true;
 	}
 }

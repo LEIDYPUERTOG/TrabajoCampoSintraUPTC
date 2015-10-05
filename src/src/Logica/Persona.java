@@ -40,15 +40,20 @@ public class Persona {
 	 * Atributo para especificar si es un usuario afiliado o no afiliado
 	 */
 	private TipoUsuario tipoUsuario;
+	/**
+	 * Atributo para acceder a la contrasenia de la persona
+	 */
+	private String contrasenia;
 
 
 	public Persona(int cedula, String nombre, TipoDocumento tipoDocumento,
-				   TipoUsuario tipoUsuario) {
+				   TipoUsuario tipoUsuario, String contrasenia) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.tipoDocumento = tipoDocumento;
 		this.tipoUsuario = tipoUsuario;
+		this.contrasenia = contrasenia;
 	}
 
 	public Persona(){
@@ -98,5 +103,11 @@ public class Persona {
 		this.tipoUsuario = tipoUsuario;
 	}
 
+	public String getContrasenia() {
+		return contrasenia;
+	}
 
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
 }
