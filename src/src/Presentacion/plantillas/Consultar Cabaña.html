@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registrarse</title>
+    <title>Consultar</title>
 
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="../estilos/estilos.css">
@@ -44,28 +44,11 @@
 <section id="contenedorRegistro">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
-        <!-- Boton ingresar -->
-        <nav class="acceder">
-            <article id="inicio1">
-
-                <button type="button" id="login" class="btn btn-default"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
-                </button>
-                <div id="login-content">
-                    <form>
-
-                        <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
-                        <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
-
-                        <button type="button" id="submit" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
-                            Ingresar </button>
-                        <button type="button" id="submitRegistrar" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;" disabled> <!-- Tamaño -->
-                            Registrarse </button>
-                    </form>
-
-                </div>
-            </article>
-        </nav>
+        <!-- Boton usuario -->
+        <article id="inicio1">
+            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
+            Bienvenido</button>
+        </article>
         <!-- Boton Contactenos -->
         <article id="inicio2">
             <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
@@ -92,45 +75,27 @@
     </section>
 
 
-    <!-- Seccion de datos de registro -->
-    <section id="registro">
+    <!-- Seccion de panel de administración -->
 
-        <label id="lblInfo">¿No está registrado aún?</label>
+    <section id="panelAdministracion">
+        <article id="lblTitulo">
+            <label>Panel de administración</label>
+        </article>
 
+        <article id="cabania">
+            <img src="../imagenes/cabania.png" id="imag1" title="Cabaña">
+        </article>
 
-        <li>
-            <label id="lblNombres">Nombre:</label>
-            <input id="nombres" type="text" name="nombres" required>
-        </li>
+        <article id="eventos">
+            <img src="../imagenes/evento.png" id="imag2" title="Eventos">
+        </article>
 
-        <li>
-            <label id="lblDocumento">Documento:</label>
-            <input id="documento" type="text" name="documento" required>
+        <article id="reserva">
+            <img src="../imagenes/reservas.png" id="imag3" title="Reservas">
+        </article>
 
-        </li>
-
-        <li>
-            <label id="lblContrasenia">Contraseña:</label>
-            <input id="contrasenia" type="password" name="contrasenia" required>
-
-        </li>
-
-        <li>
-            <label id="lblContrasenia2">Repita la Contraseña:</label>
-            <input id="contrasenia2" type="password" name="contrasenia2" required>
-
-        </li>
-
-        <label id="lblPreg">Es usted: </label>
-        <label id = "rbtn" class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="Afiliado" value="option1"> Afiliado
-        </label>
-        <label id = "rbtn2" class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="NoAfiliado" value="option2"> No Afiliado
-        </label>
-
-        <button id= "btnRegistro" type="button" class="btn btn-warning">Registrarse</button>
     </section>
+
 
     <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
     <section id="informacion">

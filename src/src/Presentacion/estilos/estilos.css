@@ -375,3 +375,45 @@ nav.acceder #login-content{
 
 /*Fin de los estilos del registro de una persona*/
 
+/*Inicio de los estilos de la página consultar/modificar y suspender una cabaña */
+
+#panelAdministracion{
+	background: #FDCA2E;
+	height:400px;
+	width: 200px;
+	list-style: none;
+	opacity: 0.9;
+}
+
+#panelAdministracion #lblTitulo{
+	position: absolute;
+	top: 280px;
+	left: 190px;
+}
+
+#imag1{
+
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	top: 320px;
+	left: 230px;
+}
+
+#imag2{
+
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	top: 430px;
+	left: 230px;
+}
+
+#imag3{
+
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	top: 540px;
+	left: 230px;
+}
