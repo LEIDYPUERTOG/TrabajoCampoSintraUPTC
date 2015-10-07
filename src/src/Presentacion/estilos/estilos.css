@@ -215,6 +215,7 @@ header #inicio4{
 	display: inline-block;
 	vertical-align: middle;
 }
+
 /*Estilos de la ventana emergente de login*/
 nav.acceder article{
 	margin: 0;
@@ -242,23 +243,135 @@ nav.acceder #login-content{
 	background-color: #fefff6;
 	border: 1px solid #000000;
 	padding:  15px;
-	width: 180px;
-	height: 80px;
+	width: 205px;
+	height: 110px;
 	border-radius: 10px 10px 10px 10px;
 	display: none;
 }
 
 #submit{
 	position: absolute;
-	left: 55px;
-	width: 80px;
+	top:35px;
+	left: 13px;
+	width: 90px;
 }
+#submitRegistrar{
+	position: absolute;
+	top:35px;
+	left: 110px;
+	width: 90px;
+}
+
 
 #usuario,#password{
 
 	font: 14px Arial;
-	width: 150px;
+	width: 180px;
 	border: 1px solid #bcbcbc;
 	border-radius: 5px 5px 5px 5px;
 }
 /*Fin de los estilos de la ventana emergente de login*/
+
+/* Inicio de los estilos del contenedor de registro de una persona*/
+#contenedorRegistro{
+	box-shadow: 5px 5px 30px #bcbcbc;
+	height:750px;
+	width:1000px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#registro{
+	background: white;
+	height:400px;
+	list-style: none;
+}
+
+#registro #lblNombres{
+	position: absolute;
+	top: 400px;
+	left: 450px;
+}
+
+#registro #lblDocumento{
+	position: absolute;
+	top: 435px;
+	left: 450px;
+}
+
+#registro #lblContrasenia{
+	position: absolute;
+	top: 470px;
+	left: 450px;
+}
+
+#registro #lblContrasenia2{
+	position: absolute;
+	top: 505px;
+	left: 450px;
+}
+
+#registro #lblPreg{
+	position: absolute;
+	top: 540px;
+	left: 450px;
+}
+
+#registro #rbtn{
+	position: absolute;
+	top: 540px;
+	left: 600px;
+}
+
+#registro #rbtn2{
+	position: absolute;
+	top: 540px;
+	left: 670px;
+}
+
+#registro #btnRegistro{
+	position: absolute;
+	top: 585px;
+	left: 670px;
+}
+
+#registro #nombres,#documento, #contrasenia,#contrasenia2{
+	font: 14px Arial;
+	width: 320px;
+	height: 20px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#registro #nombres{
+	position: absolute;
+	top: 400px;
+	left: 600px;
+}
+
+#registro #documento{
+	position: absolute;
+	top: 435px;
+	left: 600px;
+}
+
+#registro #contrasenia{
+	position: absolute;
+	top: 470px;
+	left: 600px;
+}
+
+#registro #contrasenia2{
+	position: absolute;
+	top: 505px;
+	left: 600px;
+}
+
+#registro #lblInfo{
+	position: absolute;
+	top: 350px;
+	left: 620px;
+}
+
+/*Fin de los estilos del registro de una persona*/
+
