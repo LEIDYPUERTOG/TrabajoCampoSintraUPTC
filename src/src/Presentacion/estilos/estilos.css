@@ -19,7 +19,7 @@ body{
 */
 #contenedor{
 	box-shadow: 5px 5px 30px #bcbcbc;
-	height:1050px;
+	height:1210px;
 	width:1000px;
 	margin-right:auto;
 	margin-left:auto;
@@ -416,4 +416,106 @@ nav.acceder #login-content{
 	position: absolute;
 	top: 540px;
 	left: 230px;
+}
+/*
+*****************************Pagina Catalogo***************************************************
+*/
+/*
+	Segundo contendor de la pagina Catalogo en donde se define
+	1. La sombra de los bordes
+	2. el tamaño
+*/
+#contenedor2{
+	box-shadow: 5px 5px 30px #bcbcbc;
+	height:1510px;
+	width:1000px;
+	margin-right:auto;
+	margin-left:auto;
+}
+/*
+	El tamaño y color que tendra el bloque del catalogo
+*/
+
+#catalogo{
+	background: #fefff6;
+	height:900px;
+	width:950px;
+	margin-right:auto;
+	margin-left:auto;
+}
+/*
+	El tamaño de la letra del titulo principal
+*/
+#catalogo h4	{
+	font-family: 'Handlee', cursive;
+	font-size: 60px;
+	text-align: center;
+}
+/*
+	Tamaño  y Color del bloque de cabaña1
+*/
+#catalogo #cab1 {
+	background: #fefff6;
+	width: 270px;
+	height: 430px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de cabaña2
+*/
+#catalogo #cab2 {
+	background: #fefff6;
+	width: 350px;
+	height: 430px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de cabaña3
+*/
+#catalogo #cab3 {
+	background: #fefff6;
+	width: 300px;
+	height: 430px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de cabaña4
+*/
+#catalogo #cab4 {
+	background: #fefff6;
+	width: 350px;
+	height: 350px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de cabaña5
+*/
+#catalogo #cab5 {
+	background: #fefff6;
+	width: 310px;
+	height: 350px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de cabaña6
+*/
+#catalogo #cab6 {
+	background: #fefff6;
+	width: 270px;
+	height: 350px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño y tio de letra del la descripcion de la cabaña
+*/
+#catalogo h5{
+	font-family: 'Montserrat', sans-serif;
+	color: #000000;
+	font-size: 17px;
 }
