@@ -770,17 +770,174 @@ nav.acceder #login-content{
 /*
 Estilos para la tabla y scroll
 */
-tr {
+#acompa tr {
 	width: 100%;
 	display: inline-table;
 }
 
-table{
+#acompa table{
 	height:300px;
 }
-tbody{
+#acompa tbody{
 	overflow-y: scroll;
 	height: 100px;
 	width: 100%;
+	position: absolute;
+}
+/*
+*****************************Pagina Reservas Anuales ***************************************************
+*/
+/*
+	Contenedor de todos los elementos de la pagina
+*/
+#contenedorReservaA{
+	box-shadow: 5px 5px 30px #bcbcbc;
+	height:1160px;
+	width:1000px;
+	background: #fefff6;
+	margin-right:auto;
+	margin-left:auto;
+}
+/*
+	Contiene la navegacion la pocicion y tamaño
+*/
+#navegacion{
+	background: #fefff6;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 800px;
+	height: 50px;
+	margin: -60px 0 0 -300px;
+}
+/*
+	Contiene las pestañas pocicion y tamaño
+*/
+#pestanas{
+	background: #fefff6;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 800px;
+	height: 50px;
+	margin: -8px 0 0 -300px;
+}
+/*
+	Contiene las tabla, años y paginacion de la pagina
+*/
+#contenidoReservaA{
+	background: #fefff6;
+	left: 50%;
+	top: 50%;
+	width: 800px;
+	height: 500px;
+	margin: -300px 0 0 200px;
+}
+/*
+	Tipo y tamaño de la letra del tag a
+*/
+#pestanas a{
+	color: #0c0c0c;
+	font-family: 'Handlee', cursive ;
+	font-size: 20px;
+	text-align: center;
+}
+/*
+	Tipo y tamaño de la letra h4
+*/
+#contenidoReservaA h4{
+	font-family: 'Handlee', cursive;
+	font-size: 37px;
+	text-align: center;
+}
+/*
+	Tamaño y posicion del bloque link1
+*/
+#contenedorReservaA #link1{
+	background: #fefff6;
+	width: 50px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño y posicion del bloque link2
+*/
+#contenedorReservaA #link2{
+	background: #fefff6;
+	width: 50px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño y posicion del bloque link3
+*/
+#contenedorReservaA #link3{
+	background: #fefff6;
+	width: 50px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño y posicion del bloque link4
+*/
+#contenedorReservaA #link4{
+	background: #fefff6;
+	width: 50px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño y posicion del bloque link5
+*/
+#contenedorReservaA #link5{
+	background: #fefff6;
+	width: 50px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Contenido de la tabla pocicion y tamaño
+*/
+#contenidoReservaA #lista{
+	background: #fefff6;
+	left: 50%;
+	top: 50%;
+	width: 630px;
+	height: 290px;
+	margin: 20px 0 0 100px;
+}
+/*
+	Contenido de la paginacion
+*/
+#pag{
+	background: #fefff6;
+	left: 50%;
+	top: 50%;
+	height:40px;
+	width:300px;
+	margin-right:auto;
+	margin-left:auto;
+	margin: 20px 0 0 450px;
+}
+/*
+	Estilos para centrar la pagiana y el scroll
+*/
+#lista tr {
+	width: 100%;
+	display: inline-table;
+}
+
+#lista table{
+	height:300px;
+}
+#lista tbody{
+	overflow-y: scroll;
+	height: 200px;
+	width: 45%;
 	position: absolute;
 }
