@@ -529,7 +529,8 @@ nav.acceder #login-content{
 	background: #fefff6;
 	position: absolute;
 	left: 50%;
-	top: 50%;
+	/*top: 50%;*/
+	top: 500px;
 	width: 600px;
 	height: 400px;
 	margin: -60px 0 0 -200px;
@@ -940,6 +941,7 @@ Estilos para la tabla y scroll
 */
 #lista tr {
 	width: 100%;
+
 	display: inline-table;
 }
 
@@ -948,8 +950,9 @@ Estilos para la tabla y scroll
 }
 #lista tbody{
 	overflow-y: scroll;
-	height: 200px;
-	width: 45%;
+	height: 230px;
+	/*width: 45%;*/
+	width: 650px;
 	position: absolute;
 }
 
@@ -962,4 +965,28 @@ Estilos para la tabla y scroll
 	opacity: 0.9;
 	display : inline-block;
 	vertical-align: middle;
+}
+
+/*Estilos de la ventana consultar editar y suspender cabaña*/
+#lista #imagEditar, #imagSuspender{
+	height: 25px;
+	width: 25px;
+}
+
+#pestanas2{
+	background: #fefff6;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 800px;
+	height: 50px;
+	margin: -8px 0 0 -300px;
+}
+
+#pestanas2 a{
+
+	color: #bfbfbf;
+	font-family: 'Handlee', cursive ;
+	font-size: 15px;
+	text-align: center;
 }

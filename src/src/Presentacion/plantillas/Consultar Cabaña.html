@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Consultar</title>
+    <title>Consultar Cabañas</title>
 
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="../estilos/estilos.css">
@@ -27,13 +27,13 @@
 <script src="../estilos/js/bootstrap.min.js"></script>
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
-<section id="contenedorRegistro">
+<section id="contenedorReservaA">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton usuario -->
         <article id="inicio1">
             <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
-            Bienvenido</button>
+                Bienvenido</button>
         </article>
         <!-- Boton Contactenos -->
         <article id="inicio2">
@@ -59,26 +59,11 @@
     <section id="logo">
         <h1> <img src="../imagenes/cabecera.png" alt="logos.png"></h1> <!-- Importar la imagen -->
     </section>
-    <!-- Tercera cabecera con las pestañas que se van a utilizar -->
-    <section id="pestañas">
-
-    </section>
-    <!-- Cuarta cabecera con la ruta de navegacion -->
-    <section id="naveg">
-        <article class="container-fluid">
-            <div>
-                <ol class="breadcrumb">
-                    <li><a href="#">Cabañas</a></li>
-                    <li class="active">Crear</li>
-                </ol>
-            </div>
-        </article>
-    </section>
 
 
     <!-- Seccion de panel de administración -->
 
-    <section id="panelAdministracion">
+    <section id="panelAdministracion2">
         <article id="lblTitulo">
             <label>Panel de administración</label>
         </article>
@@ -95,6 +80,126 @@
             <img src="../imagenes/reservas.png" id="imag3" title="Reservas">
         </article>
 
+    </section>
+    <!-- Seccion de navegacion-->
+    <section id="navegacion">
+        <article class="nave">
+            <div>
+                <ol class="breadcrumb">
+                    <li><a href="#">Cabañas</a></li>
+                    <li class="active">Consultar</li>
+                </ol>
+            </div>
+        </article>
+    </section>
+    <!-- Seccion de Pestañas-->
+    <section id="pestanas2">
+        <article>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <ul class="nav nav-tabs">
+                    <li><a href="CrearCabaña.html">Crear Cabaña</a></li>
+                    <li><a href="Consultar%20Cabaña.html">Consultar Cabaña</a></li>
+                    <li><a href="Consultar%20Cabaña.html">Editar Cabaña</a></li>
+                    <li><a href="Consultar%20Cabaña.html">Suspender Cabaña</a></li>
+                </ul>
+            </nav>
+        </article>
+    </section>
+    <!-- Seccion de contenido (tabla, link y paginacion)-->
+    <section id="contenidoReservaA">
+        <h4>Consulta de Cabañas</h4>
+
+
+        <article id="lista">
+            <table class="table">
+                <thead>
+                <!-- titulos de la tabla -->
+                <tr>
+                    <th>Cabaña</th>
+                    <th>Valor Noche</th>
+                    <th>Capacidad</th>
+                    <th>Editar</th>
+                    <th>Suspender</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Primer componente -->
+                <tr>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td><img src="../imagenes/editar.png" id="imagEditar" title="Editar"></td>
+                    <td><img src="../imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                </tr>
+                <!-- Segundo componente -->
+                <tr>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td><img src="../imagenes/editar.png" id="imagEditar" title="Editar"></td>
+                    <td><img src="../imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                </tr>
+                <!-- Tercero componente -->
+                <tr>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td><img src="../imagenes/editar.png" id="imagEditar" title="Editar"></td>
+                    <td><img src="../imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                </tr>
+                <!-- Cuarto componente -->
+                <tr>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td><img src="../imagenes/editar.png" id="imagEditar" title="Editar"></td>
+                    <td><img src="../imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                </tr>
+                <!-- Quinto componente -->
+                <tr>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td><img src="../imagenes/editar.png" id="imagEditar" title="Editar"></td>
+                    <td><img src="../imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                </tr>
+
+                <!-- Sexto componente -->
+                <tr>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td>texto</td>
+                    <td><img src="../imagenes/editar.png" id="imagEditar" title="Editar"></td>
+                    <td><img src="../imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                </tr>
+
+                </tbody>
+            </table> <!-- Fin de la tabla -->
+        </article> <!-- Fin del article -->
+
+        <!-- Paginacion -->
+        <article id="pag">
+            <nav>
+                <ul class="pagination">
+                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                    </li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </article>
+    </section>
+
+    <!-- Divicion para el color de la informacion adicional de la pagina -->
+    <section id="divi">
     </section>
 
     <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
