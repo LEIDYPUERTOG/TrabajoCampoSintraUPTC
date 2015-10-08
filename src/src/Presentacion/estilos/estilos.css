@@ -825,10 +825,21 @@ Estilos para la tabla y scroll
 /*
 	Contiene las tabla, años y paginacion de la pagina
 */
+
+#panelAdministracion2{
+	background: #FDCA2E;
+	height:650px;
+	width: 200px;
+	list-style: none;
+	opacity: 0.9;
+	display : inline-block;
+	vertical-align: middle;
+}
+
 #contenidoReservaA{
 	background: #fefff6;
-	left: 50%;
-	top: 50%;
+	position: absolute;
+	top: 700px;
 	width: 800px;
 	height: 500px;
 	margin: -300px 0 0 200px;
@@ -940,4 +951,15 @@ Estilos para la tabla y scroll
 	height: 200px;
 	width: 45%;
 	position: absolute;
+}
+
+
+#panelAdministracionListado{
+	background: #FDCA2E;
+	height:00px;
+	width: 200px;
+	list-style: none;
+	opacity: 0.9;
+	display : inline-block;
+	vertical-align: middle;
 }
