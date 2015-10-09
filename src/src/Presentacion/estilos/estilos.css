@@ -1052,6 +1052,7 @@ Estilos para la tabla y scroll
 
 #contenido2 #search6{
 	background: #fefff6;
+	border: #080808;
 	width: 400px;
 	height: 35px;
 	display: inline-block;
