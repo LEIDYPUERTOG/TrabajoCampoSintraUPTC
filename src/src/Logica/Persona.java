@@ -46,6 +46,14 @@ public class Persona {
 	private String contrasenia;
 
 
+	/**
+	 * Constructor de la clase con la contraseña
+	 * @param cedula
+	 * @param nombre
+	 * @param tipoDocumento
+	 * @param tipoUsuario
+	 * @param contrasenia
+	 */
 	public Persona(int cedula, String nombre, TipoDocumento tipoDocumento,
 				   TipoUsuario tipoUsuario, String contrasenia) {
 		super();
@@ -54,6 +62,23 @@ public class Persona {
 		this.tipoDocumento = tipoDocumento;
 		this.tipoUsuario = tipoUsuario;
 		this.contrasenia = contrasenia;
+	}
+
+	/**
+	 * Constructor de la clase sin contraseña
+	 * @param cedula
+	 * @param nombre
+	 * @param tipoDocumento
+	 * @param tipoUsuario
+	 */
+	public Persona(int cedula, String nombre, TipoDocumento tipoDocumento,
+				   TipoUsuario tipoUsuario) {
+		super();
+		this.cedula = cedula;
+		this.nombre = nombre;
+		this.tipoDocumento = tipoDocumento;
+		this.tipoUsuario = tipoUsuario;
+
 	}
 
 	public Persona(){

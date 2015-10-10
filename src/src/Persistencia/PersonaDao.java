@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class PersonaDao {
 
 	private ConexionDB conexionDB;
+	private Connection conn;
 
 
 	/**
@@ -27,23 +28,23 @@ public class PersonaDao {
 	 * 
 	 * @param documento
 	 */
-	public boolean actualizarPersona(int documento){
+	public boolean actualizarPersona(int documento, String contrasenia){
 		boolean actualizacion = false;
 		Persona persona = this.consultarPersona(documento);
 		if(persona != null){
 			try {
-				Connection conn = ConexionDB.getConexion();
-				//String queryUpdate = "UPDATE persona SET Nombre = ?, Contrasena = ? "
-				//		+ "WHERE Cedula = ?";
+				conn = conexionDB.getConexion();
+				String queryUpdate = "UPDATE persona SET  contrasenia = ? "
+						+ "WHERE documento_persona = ?";
 
-				//PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
-				//ppStm.setString(1, cliente.getNombre());
-				//ppStm.setString(2, cliente.getContrasena());
-				//ppStm.setInt(3, cliente.getCedula());
+				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
 
-				//ppStm.executeUpdate();
+				ppStm.setString(1, contrasenia);
+				ppStm.setInt(2, documento);
 
-				conn.close();
+				ppStm.executeUpdate();
+
+				//conn.close();
 				actualizacion = true;
 
 			} catch (SQLException e) {
@@ -64,7 +65,7 @@ public class PersonaDao {
 	public Persona consultarPersona(int documento){
 		Persona persona = null;
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 			String querySearch = "SELECT * FROM persona WHERE documento_persona = ?";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
@@ -82,10 +83,11 @@ public class PersonaDao {
 				persona.setTipoDocumento(tipoDocumento);
 				persona.setNombre(resultSet.getString(3));
 				persona.setTipoUsuario(tipoUsuario);
+				persona.setContrasenia(resultSet.getString(5));
 			}else{
 				return persona;
 			}
-			conn.close();
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -101,7 +103,7 @@ public class PersonaDao {
 	public ArrayList<Persona> consultarPersonas(){
 		ArrayList<Persona> listaPersonas = new ArrayList<>();
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 			String querySearch = "SELECT * FROM persona";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
@@ -114,7 +116,7 @@ public class PersonaDao {
 			}else{
 				return listaPersonas;
 			}
-			conn.close();
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -131,21 +133,22 @@ public class PersonaDao {
 	 */
 	public boolean crearPersona(Persona persona){
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 			String documento = conversionDeEnumDocumentoAIniciales(persona.getTipoDocumento());
 
 			String tipoUsuario = conversionEnumUsuarioAIniciales(persona.getTipoUsuario());
 
-			String queryInsertar = "INSERT INTO persona VALUES(?,?,?,?)";
+			String queryInsertar = "INSERT INTO persona VALUES(?,?,?,?,?)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
 			ppStm.setInt(1, persona.getCedula());
 			ppStm.setString(2, documento);
 			ppStm.setString(3, persona.getNombre());
 			ppStm.setString(4, tipoUsuario);
+			ppStm.setString(5, persona.getContrasenia());
 
 			ppStm.executeUpdate();
-			conn.close();
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -211,7 +214,11 @@ public class PersonaDao {
 		return usuario;
 	}
 
-	public boolean darPermisosUsuarios(Persona persona){
-		return true;
+	public ConexionDB getConexionDB() {
+		return conexionDB;
+	}
+
+	public void setConexionDB(ConexionDB conexionDB) {
+		this.conexionDB = conexionDB;
 	}
 }

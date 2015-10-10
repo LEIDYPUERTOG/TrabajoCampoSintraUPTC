@@ -57,6 +57,16 @@ public class ConexionDB {
 		}
 	}
 
+	public void cerrarSesion (){
+		try {
+			conexion.close();
+			System.out.println("CONEXION CERRADA SATISFACTORIAMENTE");
+		}catch (Exception e){
+			System.out.println("LA CONEXION NO SE PUDO CERRAR");
+		}
+
+	}
+
 
 	public static Connection getConexion() {
 		return conexion;

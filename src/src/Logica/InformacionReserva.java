@@ -45,6 +45,13 @@ public class InformacionReserva {
         this.reserva = reserva;
     }
 
+    public InformacionReserva(Date fechaInicioReserva, Date fechaFinReserva, Date fechaRealSalida, Reserva reserva) {
+        this.fechaInicioReserva = fechaInicioReserva;
+        this.fechaFinReserva = fechaFinReserva;
+        this.fechaRealSalida = fechaRealSalida;
+        this.reserva = reserva;
+    }
+
     public Date getFechaInicioReserva() {
         return fechaInicioReserva;
     }

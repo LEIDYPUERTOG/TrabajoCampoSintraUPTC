@@ -1,6 +1,7 @@
 package Logica;
 
-import java.util.Date;
+import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  * Clase que contiene información propia de una
@@ -46,19 +47,22 @@ public class Reserva {
 	 */
 	private double valorReserva;
 	private TipoServicio tipoServicio;
+	private int idReserva;
 
 
-	public Reserva(Cabania cabania, int cantidadPersonas, EstadoReserva estadoReserva,
-				   Date fechaSolicitud, Persona persona, String reciboPago, double valorReserva) {
+
+	public Reserva(Cabania cabania, int cantidadPersonas,
+				   Date fechaSolicitud, Persona persona, String reciboPago) {
 
 		this.cabania = cabania;
 		this.cantidadPersonas = cantidadPersonas;
-		this.estadoReserva = estadoReserva;
+
 		this.fechaSolicitud = fechaSolicitud;
 		this.persona = persona;
 		this.reciboPago = reciboPago;
-		this.valorReserva = valorReserva;
+
 		this.tipoServicio = TipoServicio.CABANIA;
+
 	}
 
 	public Reserva(Camping camping, int cantidadPersonas, EstadoReserva estadoReserva,
@@ -72,7 +76,9 @@ public class Reserva {
 		this.reciboPago = reciboPago;
 		this.valorReserva = valorReserva;
 		this.tipoServicio = TipoServicio.CAMPING;
+
 	}
+
 
 	public Reserva(int cantidadPersonas, EstadoReserva estadoReserva, Date fechaSolicitud, Persona persona, double valorReserva) {
 		this.cantidadPersonas = cantidadPersonas;
@@ -80,15 +86,21 @@ public class Reserva {
 		this.fechaSolicitud = fechaSolicitud;
 		this.persona = persona;
 		this.valorReserva = valorReserva;
+
 	}
 
-	public Reserva(int cantidadPersonas, EstadoReserva estadoReserva, Date fechaSolicitud, double valorReserva) {
+	public Reserva(int cantidadPersonas, EstadoReserva estadoReserva, Date fechaSolicitud, double valorReserva, TipoServicio tipoServicio) {
 		this.cantidadPersonas = cantidadPersonas;
 		this.estadoReserva = estadoReserva;
 		this.fechaSolicitud = fechaSolicitud;
 		this.valorReserva = valorReserva;
+		this.tipoServicio = tipoServicio;
+
 	}
 
+	public Reserva() {
+
+	}
 
 	public double calcularValorReserva(int cantidadPersonas, double valorReserva){
 		return (double) valorReserva*cantidadPersonas;
@@ -150,6 +162,38 @@ public class Reserva {
 
 	public void setValorReserva(double valorReserva) {
 		this.valorReserva = valorReserva;
+	}
+
+	public Cabania getCabania() {
+		return cabania;
+	}
+
+	public void setCabania(Cabania cabania) {
+		this.cabania = cabania;
+	}
+
+	public Camping getCamping() {
+		return camping;
+	}
+
+	public void setCamping(Camping camping) {
+		this.camping = camping;
+	}
+
+	public TipoServicio getTipoServicio() {
+		return tipoServicio;
+	}
+
+	public void setTipoServicio(TipoServicio tipoServicio) {
+		this.tipoServicio = tipoServicio;
+	}
+
+	public int getIdReserva() {
+		return idReserva;
+	}
+
+	public void setIdReserva(int idReserva) {
+		this.idReserva = idReserva;
 	}
 
 }

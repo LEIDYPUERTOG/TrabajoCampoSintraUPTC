@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class InventarioCabaniaDao {
 
 	private ConexionDB conexionDB;
+	private Connection conn;
 
 
 	/**
@@ -31,22 +32,35 @@ public class InventarioCabaniaDao {
 	 * @param cantidadElementos
 	 * @param idCabania
 	 */
-	public boolean actualizarInventarioMasElementos(int cantidadElementos, 
-			int idCabania){
-		return false;
-	}
+//	public boolean actualizarInventario(int cantidadElementos,
+//			int idCabania){
 
-	/**
-	 * Metodo que permite quitar elementos de una cabania y actualizarlo 
-	 * en la base de datos
-	 * 
-	 * @param cantidadElementosMenos
-	 * @param idCabania
-	 */
-	public boolean actualizarInventarioMenosElementos(
-			int cantidadElementosMenos, int idCabania){
-		return false;
-	}
+		/*boolean actualizacion = false;
+		Persona persona = this.consultarPersona(documento);
+		if(persona != null){
+			try {
+				conn = conexionDB.getConexion();
+				String queryUpdate = "UPDATE persona SET  contrasenia = ? "
+						+ "WHERE documento_persona = ?";
+
+				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+
+				ppStm.setString(1, contrasenia);
+				ppStm.setInt(2, documento);
+
+				ppStm.executeUpdate();
+
+				//conn.close();
+				actualizacion = true;
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				actualizacion = false;
+			}
+		}
+		return actualizacion;*/
+	//}
 
 	/**
 	 * Metodo que permite agregar un nuevo elemento al inventario,
@@ -66,7 +80,7 @@ public class InventarioCabaniaDao {
 
 		if(elemento != null && cabania != null){
 			try {
-				Connection conn = ConexionDB.getConexion();
+				conn = conexionDB.getConexion();
 
 				String queryInsertar = "INSERT INTO inventario_cabania VALUES(?,?,?)";
 
@@ -77,7 +91,7 @@ public class InventarioCabaniaDao {
 
 				ppStm.executeUpdate();
 
-				conn.close();
+				//conn.close();
 
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -98,7 +112,7 @@ public class InventarioCabaniaDao {
 		ArrayList<InventarioCabania> listaInventario = null;
 
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 			String querySearch = "SELECT id_elemento,sum(cantidad) FROM inventario_cabania";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
@@ -113,7 +127,7 @@ public class InventarioCabaniaDao {
 			}else{
 				return listaInventario;
 			}
-			conn.close();
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -134,7 +148,7 @@ public class InventarioCabaniaDao {
 		ArrayList<InventarioCabania> listaInventario = null;
 
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 			String querySearch = "SELECT * FROM inventario_cabania WHERE id_cabania=?";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
@@ -151,7 +165,7 @@ public class InventarioCabaniaDao {
 			}else{
 				return listaInventario;
 			}
-			conn.close();
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -163,4 +177,11 @@ public class InventarioCabaniaDao {
 
 	}
 
+	public ConexionDB getConexionDB() {
+		return conexionDB;
+	}
+
+	public void setConexionDB(ConexionDB conexionDB) {
+		this.conexionDB = conexionDB;
+	}
 }

@@ -19,12 +19,12 @@ import java.util.ArrayList;
 public class CabaniaDao {
 
 	private ConexionDB conexionDB;
-
+	private Connection conn;
 
 	/**
 	 * Metodo que permite actualizar la informacion de una
 	 * cabania
-	 * 
+	 *
 	 * @param idCabania
 	 */
 	public boolean actualizarCabania(int idCabania){
@@ -34,24 +34,24 @@ public class CabaniaDao {
 	/**
 	 * Metodo que permite crear una cabania nueva especificando
 	 * la ruta en donde esta almacenada la foto
-	 * 
+	 *
 	 * @param cabania
 	 */
 	public boolean crearCabania(Cabania cabania) {
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 
 			String queryInsertar = "INSERT INTO cabania VALUES(?,?,?,?)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
 			ppStm.setInt(1, cabania.getId_servicio());
-			ppStm.setString(2, cabania.getFoto_zona());
-			ppStm.setInt(3, cabania.getCapacidadMaxima());
-			ppStm.setDouble(4, cabania.getValor_servicio_dia());
+			ppStm.setInt(2, cabania.getCapacidadMaxima());
+			ppStm.setDouble(3, cabania.getValor_servicio_dia());
+			ppStm.setString(4, cabania.getFoto_zona());
 
 			ppStm.executeUpdate();
 
-			conn.close();
+			//		conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -65,14 +65,14 @@ public class CabaniaDao {
 	/**
 	 * Metodo que permite crear una cabania sin especificar la
 	 * ruta en donde esta almacenda la foto de la cabania
-	 * 
+	 *
 	 * @param cabania
 	 */
 	public boolean crearCabaniaSinFoto(Cabania cabania){
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 
-			String queryInsertar = "INSERT INTO cabania VALUES(?,null,?,?)";
+			String queryInsertar = "INSERT INTO cabania VALUES(?,?,?,null)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
 			ppStm.setInt(1, cabania.getId_servicio());
@@ -80,7 +80,7 @@ public class CabaniaDao {
 			ppStm.setDouble(3, cabania.getValor_servicio_dia());
 			ppStm.executeUpdate();
 
-			conn.close();
+			//		conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -97,20 +97,21 @@ public class CabaniaDao {
 	public ArrayList<Cabania> obtenerCabanias(){
 		ArrayList<Cabania> listaCabanias = null;
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = ConexionDB.getConexion();
 			String querySearch = "SELECT * FROM cabania";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 
 			ResultSet resultSet = ppStm.executeQuery();
-
+			listaCabanias = new ArrayList<>();
 			if(resultSet.next()){
-				listaCabanias = new ArrayList<>();
-				listaCabanias.add(new Cabania(resultSet.getInt(3), resultSet.getString(2), resultSet.getInt(1), resultSet.getDouble(4)));
+				listaCabanias.add(new Cabania(resultSet.getInt(2), resultSet.getString(4),
+						resultSet.getInt(1), resultSet.getDouble(3)));
 			}else{
 				return listaCabanias;
 			}
-			conn.close();
+
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -122,14 +123,14 @@ public class CabaniaDao {
 
 	/**
 	 * Metodo que permite obtener la informacion de una cabania
-	 * 
+	 *
 	 * @param idCabania
 	 */
 	public Cabania obtenerInfoCabania(int idCabania){
 		Cabania cabania = null;
 		try {
-			Connection conn = ConexionDB.getConexion();
-			String querySearch = "SELECT * FROM cabania WHERE id_servicio = ?";
+			conn = conexionDB.getConexion();
+			String querySearch = "SELECT * FROM cabania WHERE id_servicio_cabania = ?";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 			ppStm.setInt(1,idCabania);
@@ -139,16 +140,16 @@ public class CabaniaDao {
 				cabania = new Cabania();
 				cabania.setId_servicio(resultSet.getInt(1));
 				try{
-					cabania.setFoto_zona(resultSet.getString(2));
+					cabania.setFoto_zona(resultSet.getString(4));
 				}catch (SQLException e){
 					cabania.setFoto_zona("Sin foto");
 				}
-				cabania.setCapacidadMaxima(resultSet.getInt(3));
-				cabania.setValor_servicio_dia(resultSet.getDouble(4));
+				cabania.setCapacidadMaxima(resultSet.getInt(2));
+				cabania.setValor_servicio_dia(resultSet.getDouble(3));
 			}else{
 				return cabania;
 			}
-			conn.close();
+//			conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -156,6 +157,14 @@ public class CabaniaDao {
 
 		}
 		return cabania;
+	}
+
+	public ConexionDB getConexionDB() {
+		return conexionDB;
+	}
+
+	public void setConexionDB(ConexionDB conexionDB) {
+		this.conexionDB = conexionDB;
 	}
 
 }

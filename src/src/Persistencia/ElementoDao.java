@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class ElementoDao {
 
 	private ConexionDB conexionDB;
+	private Connection conn;
 
 
 	/**
@@ -39,7 +40,7 @@ public class ElementoDao {
 	 */
 	public boolean crearElemento(Elemento elemento) {
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 
 			String queryInsertar = "INSERT INTO elemento VALUES(null,?)";
 
@@ -48,7 +49,7 @@ public class ElementoDao {
 
 			ppStm.executeUpdate();
 
-			conn.close();
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -67,7 +68,7 @@ public class ElementoDao {
 	public ArrayList<Elemento> obtenerListaElementos(){
 		ArrayList<Elemento> listaElementos = null;
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 
 			String queryBuscar = "SELECT * FROM elemento";
 
@@ -80,7 +81,7 @@ public class ElementoDao {
 				listaElementos.add(new Elemento(resultSet.getString(2)));
 			}
 
-			conn.close();
+			//conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -93,7 +94,7 @@ public class ElementoDao {
 	public Elemento obtenerElemento(String nombre){
 		Elemento elemento = null;
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 
 			String queryBuscar = "SELECT * FROM elemento WHERE nombre_elemento = ?";
 
@@ -107,7 +108,7 @@ public class ElementoDao {
 				elemento.setNombreElemento(resultSet.getString(2));
 			}
 
-			conn.close();
+			//conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -120,7 +121,7 @@ public class ElementoDao {
 	public Elemento obtenerElementoPorId(int idElemento){
 		Elemento elemento = null;
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 
 			String queryBuscar = "SELECT * FROM elemento WHERE id_elemento = ?";
 
@@ -134,7 +135,7 @@ public class ElementoDao {
 				elemento.setNombreElemento(resultSet.getString(2));
 			}
 
-			conn.close();
+			//conn.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -142,5 +143,13 @@ public class ElementoDao {
 
 		}
 		return elemento;
+	}
+
+	public ConexionDB getConexionDB() {
+		return conexionDB;
+	}
+
+	public void setConexionDB(ConexionDB conexionDB) {
+		this.conexionDB = conexionDB;
 	}
 }

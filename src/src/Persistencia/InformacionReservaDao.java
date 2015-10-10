@@ -2,11 +2,9 @@ package Persistencia;
 
 import Logica.InformacionReserva;
 import Logica.Persona;
+import Logica.Reserva;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -15,14 +13,41 @@ import java.util.ArrayList;
 public class InformacionReservaDao {
 
     private ConexionDB conexionDB;
+    private Connection conn;
 
     /**
      * Metodo que permite actualizar la informacion de una reserva
-     * @param informacionReservaDao
+     * @param idReserva
      * @return
      */
-    public boolean actualizarInformacionReserva(InformacionReservaDao informacionReservaDao){
-        return false;
+    public boolean actualizarInformacionReserva(int idReserva,Date fechaInicio, Date fechaFin, Date fechaRealSalida){
+        boolean actualizacion = false;
+        InformacionReserva informacionReserva = this.obtenerInfo(idReserva);
+        if(informacionReserva != null){
+            try {
+                conn = conexionDB.getConexion();
+                String queryUpdate = "UPDATE informacion_reserva SET  fecha_inicio_reserva = ?,  fecha_fin_reserva = ?,"
+                        + " fecha_real_salida = ? WHERE id_reserva = ?";
+
+                PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+
+                ppStm.setDate(1,fechaInicio);
+                ppStm.setDate(2,fechaFin);
+                ppStm.setDate(3,fechaRealSalida);
+                ppStm.setInt(4, idReserva);
+
+                ppStm.executeUpdate();
+
+                //conn.close();
+                actualizacion = true;
+
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                actualizacion = false;
+            }
+        }
+        return actualizacion;
     }
 
     /**
@@ -32,19 +57,19 @@ public class InformacionReservaDao {
      */
     public  boolean crearInformacionReserva(InformacionReserva informacionReserva){
         try {
-            Connection conn = ConexionDB.getConexion();
+            conn = conexionDB.getConexion();
 
             String queryInsertar = "INSERT INTO informacion_reserva VALUES(?,?,?,?,?)";
 
             PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
-            //ppStm.setInt(1, informacionReserva.getReserva().getServicio().getId_servicio());
-            ppStm.setInt(2,informacionReserva.getInvitado().getCedula());
+            ppStm.setInt(1, informacionReserva.getReserva().getIdReserva());
+            ppStm.setInt(2, informacionReserva.getInvitado().getCedula());
             ppStm.setDate(3, informacionReserva.getFechaInicioReserva());
             ppStm.setDate(4,informacionReserva.getFechaFinReserva());
-            ppStm.setDate(5,informacionReserva.getFechaRealSalida());
+            ppStm.setDate(5, informacionReserva.getFechaRealSalida());
             ppStm.executeUpdate();
 
-            conn.close();
+            //conn.close();
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -65,12 +90,13 @@ public class InformacionReservaDao {
     public ArrayList<InformacionReserva> obtenerInformacion(int documentoPersona){
         ArrayList<InformacionReserva> listaInfoReserva = null;
         try {
-            Connection conn = ConexionDB.getConexion();
+            conn = conexionDB.getConexion();
             String querySearch = "SELECT * FROM informacion_reserva WHERE documento_persona =?";
 
             PreparedStatement ppStm = conn.prepareStatement(querySearch);
             ppStm.setInt(1,documentoPersona);
             ResultSet resultSet = ppStm.executeQuery();
+
 
             if(resultSet.next()){
                 PersonaDao personaDao = new PersonaDao();
@@ -79,12 +105,12 @@ public class InformacionReservaDao {
 
                 listaInfoReserva = new ArrayList<>();
 
-              //  listaInfoReserva.add(new InformacionReserva
-                //        (resultSet.getDate(3),resultSet.getDate(4),resultSet.getDate(5),persona));//----------------FALTA LA RESERVA
+               /* listaInfoReserva.add(new InformacionReserva
+                        (resultSet.getDate(3),resultSet.getDate(4),resultSet.getDate(5),persona));//----------------FALTA LA RESERVA*/
             }else{
                 return listaInfoReserva;
             }
-            conn.close();
+            //conn.close();
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -92,5 +118,50 @@ public class InformacionReservaDao {
 
         }
         return listaInfoReserva;
+    }
+
+    /**
+     * Obtener la informacion de una reserva
+     * @param idReserva
+     * @return
+     */
+
+    public InformacionReserva obtenerInfo(int idReserva){
+        InformacionReserva informacionReserva = null;
+        try {
+            conn = conexionDB.getConexion();
+            String querySearch = "SELECT * FROM informacion_reserva WHERE id_reserva =?";
+
+            PreparedStatement ppStm = conn.prepareStatement(querySearch);
+            ppStm.setInt(1,idReserva);
+            ResultSet resultSet = ppStm.executeQuery();
+
+            if(resultSet.next()){
+
+                ReservaDao reservaDao = new ReservaDao();
+                Reserva reserva = reservaDao.consultarReservaIdReserva(resultSet.getInt(1));
+                if(reserva != null){
+                    informacionReserva = new InformacionReserva(resultSet.getDate(3),resultSet.getDate(4),resultSet.getDate(4),reserva);
+                }
+
+            }else{
+                return informacionReserva;
+            }
+            //conn.close();
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+
+        }
+        return informacionReserva;
+    }
+
+    public ConexionDB getConexionDB() {
+        return conexionDB;
+    }
+
+    public void setConexionDB(ConexionDB conexionDB) {
+        this.conexionDB = conexionDB;
     }
 }

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class CampingDao {
 
     private ConexionDB conexionDB;
+    private Connection conn;
 
     /**
      * Metodo que permite actualizar la informacion
@@ -26,23 +27,52 @@ public class CampingDao {
     }
 
     /**
-     * Metodo que permite crear un camping
+     * Metodo que permite crear un camping con foto
      * @param camping
      * @return
      */
     public boolean crearCamping(Camping camping){
         try {
-            Connection conn = ConexionDB.getConexion();
+            conn = conexionDB.getConexion();
 
             String queryInsertar = "INSERT INTO camping VALUES(null,?,?,?)";
 
             PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
-            ppStm.setString(1, camping.getFoto_zona());
-            ppStm.setInt(2, camping.getCantidadPersonas());
-            ppStm.setDouble(3, camping.getValor_servicio_dia());
+            ppStm.setInt(1, camping.getCantidadPersonas());
+            ppStm.setDouble(2, camping.getValor_servicio_dia());
+            ppStm.setString(3, camping.getFoto_zona());
+
             ppStm.executeUpdate();
 
-            conn.close();
+            //conn.close();
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return false;
+
+        }
+        return true;
+    }
+
+    /**
+     * Metodo que permite crear camping sin foto
+     * @param camping
+     * @return
+     */
+    public boolean crearCampingSinFoto(Camping camping){
+        try {
+            conn = conexionDB.getConexion();
+
+            String queryInsertar = "INSERT INTO camping VALUES(null,?,?,null)";
+
+            PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
+            ppStm.setInt(1, camping.getCantidadPersonas());
+            ppStm.setDouble(2, camping.getValor_servicio_dia());
+
+            ppStm.executeUpdate();
+
+//            conn.close();
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -62,21 +92,20 @@ public class CampingDao {
     public ArrayList<Camping> obtenerListaCamping(){
         ArrayList<Camping> listasCampingGeneral = null;
         try {
-            Connection conn = ConexionDB.getConexion();
+            conn = conexionDB.getConexion();
             String querySearch = "SELECT * FROM camping";
 
             PreparedStatement ppStm = conn.prepareStatement(querySearch);
 
             ResultSet resultSet = ppStm.executeQuery();
-
+            listasCampingGeneral = new ArrayList<>();
             if(resultSet.next()){
-                listasCampingGeneral = new ArrayList<>();
-                listasCampingGeneral.add(new Camping(resultSet.getString(4),resultSet.getInt(1),
-                        resultSet.getInt(2)));
+
+                listasCampingGeneral.add(new Camping(resultSet.getString(4),resultSet.getInt(2),resultSet.getDouble(3)));
             }else{
                 return listasCampingGeneral;
             }
-            conn.close();
+  //          conn.close();
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -84,5 +113,13 @@ public class CampingDao {
 
         }
         return listasCampingGeneral;
+    }
+
+    public ConexionDB getConexionDB() {
+        return conexionDB;
+    }
+
+    public void setConexionDB(ConexionDB conexionDB) {
+        this.conexionDB = conexionDB;
     }
 }

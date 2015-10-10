@@ -12,11 +12,17 @@ public class Camping extends  Servicio{
      */
     private int cantidadPersonas;
 
-    public Camping(String fotoZona, int idCamping, int cantidadPersonas) {
+    public Camping(String fotoZona,  int cantidadPersonas,double valorCamping) {
         this.setFoto_zona(fotoZona);
+        //this.setId_servicio(idCamping);
+        this.cantidadPersonas = cantidadPersonas;
+        this.setValor_servicio_dia(valorCamping);
+    }
+
+    public Camping(int idCamping, int cantidadPersonas,double valorCamping) {
         this.setId_servicio(idCamping);
         this.cantidadPersonas = cantidadPersonas;
-
+        this.setValor_servicio_dia(valorCamping);
     }
 
     public int getCantidadPersonas() {

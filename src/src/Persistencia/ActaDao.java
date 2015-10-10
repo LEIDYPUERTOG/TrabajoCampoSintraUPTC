@@ -1,5 +1,7 @@
 package Persistencia;
 
+import Logica.Acta;
+
 /**
  * Clase que permite adminsitrar las actas de la base de datos
  * @author LEIDY
@@ -10,27 +12,19 @@ public class ActaDao {
 
 	private ConexionDB conexion;
 
-	/**
-	 * Metodo que permite almacenar informacion de un acta en la base de datos sin
-	 * tener la descripcio
-	 * @param rutaActa
-	 * @param nombreActa
-	 */
-	public boolean almacenarActa(String rutaActa, String nombreActa){
-		return false;
+	public ActaDao() {
+		conexion = new ConexionDB("root","");
 	}
 
 	/**
-	 * Metodo que permite almacenar informacion de un acta en la base de datos
-	 * teniendo la descripcio
-	 * 
-	 * @param descripcionActa
-	 * @param rutaActa
-	 * @param nombreActa
+	 *
+	 * Metodo que permite almacenar informacion de un acta en la base de datos sin
+	 * tener la descripcio
+	 * @param acta
+	 *
 	 */
-	public boolean almacenarActa(String descripcionActa, 
-			String rutaActa, String nombreActa){
-		return false;
+	public boolean almacenarActa(Acta acta){
+
 	}
 
 }
