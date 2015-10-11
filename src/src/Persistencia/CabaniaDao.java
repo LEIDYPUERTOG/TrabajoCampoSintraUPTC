@@ -104,11 +104,9 @@ public class CabaniaDao {
 
 			ResultSet resultSet = ppStm.executeQuery();
 			listaCabanias = new ArrayList<>();
-			if(resultSet.next()){
+			while(resultSet.next()){
 				listaCabanias.add(new Cabania(resultSet.getInt(2), resultSet.getString(4),
 						resultSet.getInt(1), resultSet.getDouble(3)));
-			}else{
-				return listaCabanias;
 			}
 
 			//conn.close();

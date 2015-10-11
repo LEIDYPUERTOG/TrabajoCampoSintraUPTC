@@ -78,7 +78,7 @@ public class ReservaDao {
 
 			ResultSet resultSet = ppStm.executeQuery();
 
-			if (resultSet.next()) {
+			while(resultSet.next()) {
 				listaReservaPorAfiliado = new ArrayList<>();
 				listaReservaPorAfiliado.add(new Reserva(resultSet.getInt(6), conversionStringEstado(resultSet.getString(5).toString()),
 						resultSet.getDate(9),resultSet.getDouble(7),tipoServicio(resultSet.getString(10))));
@@ -115,7 +115,7 @@ public class ReservaDao {
 
 			ResultSet resultSet = ppStm.executeQuery();
 
-			if (resultSet.next()) {
+			while(resultSet.next()) {
 				listaReservas = new ArrayList<>();
 
 				//Permite realizar la consulta de la persona que realizo una reserva
@@ -153,7 +153,7 @@ public class ReservaDao {
 
 			ResultSet resultSet = ppStm.executeQuery();
 
-			if (resultSet.next()) {
+			while (resultSet.next()) {
 				listaReservas = new ArrayList<>();
 				//Permite realizar la consulta de la persona que realizo una reserva
 

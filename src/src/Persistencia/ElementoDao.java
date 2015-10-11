@@ -76,7 +76,7 @@ public class ElementoDao {
 
 			ResultSet resultSet = ppStm.executeQuery();
 
-			if(resultSet.next()) {
+			while(resultSet.next()) {
 				listaElementos = new ArrayList<>();
 				listaElementos.add(new Elemento(resultSet.getString(2)));
 			}

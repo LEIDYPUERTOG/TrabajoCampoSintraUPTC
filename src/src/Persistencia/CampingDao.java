@@ -99,11 +99,9 @@ public class CampingDao {
 
             ResultSet resultSet = ppStm.executeQuery();
             listasCampingGeneral = new ArrayList<>();
-            if(resultSet.next()){
+            while(resultSet.next()){
 
                 listasCampingGeneral.add(new Camping(resultSet.getString(4),resultSet.getInt(2),resultSet.getDouble(3)));
-            }else{
-                return listasCampingGeneral;
             }
   //          conn.close();
 

@@ -119,15 +119,12 @@ public class InventarioCabaniaDao {
 
 			ResultSet resultSet = ppStm.executeQuery();
 			ElementoDao elementoDao = new ElementoDao();
-			if(resultSet.next()){
+			while(resultSet.next()){
 				Elemento elemento = elementoDao.obtenerElementoPorId(resultSet.getInt(1));
 
 				listaInventario = new ArrayList<>();
 				listaInventario.add(new InventarioCabania(resultSet.getInt(2),elemento));
-			}else{
-				return listaInventario;
 			}
-			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -156,14 +153,12 @@ public class InventarioCabaniaDao {
 			ResultSet resultSet = ppStm.executeQuery();
 			ElementoDao elementoDao = new ElementoDao();
 			CabaniaDao cabaniaDao = new CabaniaDao();
-			if(resultSet.next()){
+			while(resultSet.next()){
 				Elemento elemento = elementoDao.obtenerElementoPorId(resultSet.getInt(2));
 				Cabania cabania = cabaniaDao.obtenerInfoCabania(idCabania);
 
 				listaInventario = new ArrayList<>();
 				listaInventario.add(new InventarioCabania(resultSet.getInt(2),cabania,elemento));
-			}else{
-				return listaInventario;
 			}
 			//conn.close();
 

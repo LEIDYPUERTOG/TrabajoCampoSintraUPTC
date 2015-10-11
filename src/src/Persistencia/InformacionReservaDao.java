@@ -98,7 +98,7 @@ public class InformacionReservaDao {
             ResultSet resultSet = ppStm.executeQuery();
 
 
-            if(resultSet.next()){
+            while(resultSet.next()){
                 PersonaDao personaDao = new PersonaDao();
                 Persona persona = personaDao.consultarPersona(documentoPersona);
 
@@ -107,8 +107,6 @@ public class InformacionReservaDao {
 
                /* listaInfoReserva.add(new InformacionReserva
                         (resultSet.getDate(3),resultSet.getDate(4),resultSet.getDate(5),persona));//----------------FALTA LA RESERVA*/
-            }else{
-                return listaInfoReserva;
             }
             //conn.close();
 

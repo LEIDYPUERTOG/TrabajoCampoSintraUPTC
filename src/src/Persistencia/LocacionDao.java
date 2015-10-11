@@ -71,13 +71,11 @@ public class LocacionDao {
 			ResultSet resultSet = ppStm.executeQuery();
 			ElementoDao elementoDao = new ElementoDao();
 			CabaniaDao cabaniaDao = new CabaniaDao();
-			if(resultSet.next()){
+			while(resultSet.next()){
 				locaciones = new ArrayList<>();
 				locaciones.add(new Locacion(resultSet.getString(2),
 						resultSet.getInt(1),resultSet.getString(3)));
 
-			}else{
-				return locaciones;
 			}
 			conn.close();
 

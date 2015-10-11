@@ -101,7 +101,7 @@ public class PersonaDao {
 	 * Metodo que permite consultar el listado de todos los afiliados 
 	 */
 	public ArrayList<Persona> consultarPersonas(){
-		ArrayList<Persona> listaPersonas = new ArrayList<>();
+		ArrayList<Persona> listaPersonas = new ArrayList<Persona>();
 		try {
 			conn = conexionDB.getConexion();
 			String querySearch = "SELECT * FROM persona";
@@ -109,14 +109,12 @@ public class PersonaDao {
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 
 			ResultSet resultSet = ppStm.executeQuery();
-			if(resultSet.next()){
+			while(resultSet.next()) {
 
 				listaPersonas.add(new Persona(resultSet.getInt(1), resultSet.getString(3), conversionDocumento(resultSet.getString(2)),
 						conversionUsuario(resultSet.getString(4)), resultSet.getString(5)));
-			}else{
-				return listaPersonas;
 			}
-			//conn.close();
+
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
