@@ -122,4 +122,32 @@ public class LocacionDao {
 		return locacion;
 	}
 
+
+	public Locacion obtenertLocacionPorId(int idLocacion){
+		Locacion locacion = null;
+
+		try {
+			Connection conn = ConexionDB.getConexion();
+			String querySearch = "SELECT * FROM locaciones WHERE id_locacion=?";
+
+			PreparedStatement ppStm = conn.prepareStatement(querySearch);
+			ppStm.setInt(1,idLocacion);
+			ResultSet resultSet = ppStm.executeQuery();
+
+			if(resultSet.next()){
+				locacion = new Locacion(resultSet.getString(2),
+						resultSet.getInt(1),resultSet.getString(3));
+
+			}else{
+				return locacion;
+			}
+			conn.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
+		return locacion;
+	}
 }

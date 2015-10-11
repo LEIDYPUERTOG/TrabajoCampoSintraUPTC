@@ -1,6 +1,6 @@
 package Logica;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Clase que permite tener la informacion de un evento
@@ -33,22 +33,32 @@ public class Evento {
 	/**
 	 * Atributo que contiene la persona que crea un evento
 	 */
-	private Persona Persona;
+	private Persona persona;
 	
 	/**
 	 * Atributo que permite acceder al id del evento
 	 */
 	private int idEvento;
 
-	/**
-	 * Constructor de la clase en donde ingresa la persona que va 
-	 * a crear el evento y la locacion donde se hace
-	 * 
-	 * @param locacion
-	 * @param persona
-	 */
-	public Evento(Locacion locacion, Persona persona){
 
+	public Evento(String descripcionEvento, Date fechaFinEvento, Date fechaIncioEvento,
+				  Locacion locacion, String nombreEvento, Logica.Persona persona) {
+		this.descripcionEvento = descripcionEvento;
+		this.fechaFinEvento = fechaFinEvento;
+		this.fechaIncioEvento = fechaIncioEvento;
+		this.locacion = locacion;
+		this.nombreEvento = nombreEvento;
+		this.persona = persona;
+	}
+
+	public Evento(int idEvento, Persona persona, String nombreEvento, Locacion locacion,
+				  Date fechaIncioEvento, Date fechaFinEvento) {
+		this.idEvento = idEvento;
+		this.persona = persona;
+		this.nombreEvento = nombreEvento;
+		this.locacion = locacion;
+		this.fechaIncioEvento = fechaIncioEvento;
+		this.fechaFinEvento = fechaFinEvento;
 	}
 
 	public String getDescripcionEvento() {
@@ -92,11 +102,11 @@ public class Evento {
 	}
 
 	public Persona getPersona() {
-		return Persona;
+		return persona;
 	}
 
 	public void setPersona(Persona persona) {
-		Persona = persona;
+		persona = persona;
 	}
 	
 }
