@@ -141,10 +141,12 @@ footer p{
 header #inicio1{
 	background: #fefff6;
 	width:120px;
-	height:80px;
+	height:25px;
 	float: right;
-	display : inline-block;
+	position: relative;
+	top: 25%;
 	margin: 0px 5px;
+
 }
 /*
 	El color, tamaño, posicion y margen del bloque inicio2 que se encuentra
@@ -655,8 +657,8 @@ nav.acceder #login-content{
 #contenidoReservaC{
 	background: #fefff6;
 	position: absolute;
-	left: 50%;
-	top: 50%;
+	left: 45%;
+	top: 60%;
 	width: 600px;
 	height: 400px;
 	margin: -60px 0 0 -200px;
@@ -920,7 +922,7 @@ Estilos para la tabla y scroll
 	left: 50%;
 	top: 50%;
 	width: 630px;
-	height: 290px;
+	height: 310px;
 	margin: 20px 0 0 100px;
 }
 /*
@@ -950,10 +952,11 @@ Estilos para la tabla y scroll
 }
 #lista tbody{
 	overflow-y: scroll;
-	height: 230px;
+	height: 250px;
 	/*width: 45%;*/
 	width: 650px;
 	position: absolute;
+
 }
 
 
@@ -971,6 +974,7 @@ Estilos para la tabla y scroll
 #lista #imagEditar, #imagSuspender{
 	height: 25px;
 	width: 25px;
+
 }
 
 #pestanas2{
@@ -1225,4 +1229,338 @@ Estilos para la tabla y scroll
 	margin-right:auto;
 	margin-left:auto;
 	margin: 20px 0 0 450px;
+}
+
+/*Estilos de crear reserva cabaña*/
+
+#btnCrearReserva{
+	position: absolute;
+	top: 400px;
+	left: 250px;
+}
+
+/*Estilo de pagina de usuario Inicial*/
+
+#submitContrasenia{
+
+	width: 143px;
+	position: absolute;
+	top: -20px;
+	left: 3px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#submitCerrar{
+	width: 143px;
+	position: absolute;
+	top: 13px;
+	left: 3px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#login{
+	width: 120px;
+}
+
+nav.acceder #login-content2{
+	position: absolute;
+	top:56px;
+	right: 0;
+	z-index: 999;
+	background-color: #fefff6;
+	border: 1px solid #000000;
+	padding:  15px;
+	width: 150px;
+	height: 70px;
+	border-radius: 10px 10px 10px 10px;
+	display: none;
+}
+
+#contenidoUsuario{
+	position: absolute;
+	left: 35%;
+	top: 30%;
+	width: 600px;
+	height: 400px;
+	margin: -60px 0 0 -200px;
+}
+
+#infoUsuario{
+	position: absolute;
+	top: 130%;
+}
+
+#contenedorUsuario{
+	box-shadow: 5px 5px 30px #bcbcbc;
+	height:1133px;
+	width:1000px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#contenedorUsuario #contenidoReservaC{
+	position: absolute;
+	top: 420px;
+	left: 600px;
+}
+
+
+/*Consultar reserva*/
+
+#contenidoReservaA #lista4{
+	background: #fefff6;
+	left: 70%;
+	top: 60%;
+	width: 700px;
+	height: 290px;
+	margin: 20px 0 0 100px;
+}
+
+
+#lista4 tr {
+	width: 70%;
+	display: inline-table;
+}
+
+
+#lista4 table{
+	height:500px;
+	position: absolute;
+	top: 150px;
+	left: 100px;
+}
+
+
+#lista4 tbody{
+
+	height: 230px;
+	/*width: 100%;*/
+	width: 900px;
+	position: absolute;
+	left: 0px;
+
+}
+
+/*Estilos de la ventana emergente que aparece si se desea realizar una reserva sin loguear*/
+.inline{
+	color: white;
+
+}
+
+#ventanaEmergente{
+	display: none;
+}
+#login-content2{
+	background-color: white;
+	height: 170px;
+	width: 300px;
+	border-top: 10px solid #FDCA2E;
+	border-right: 3px solid #080808;
+	border-left: 3px solid #080808;
+	border-bottom: 3px solid #080808;
+}
+
+#submitEntrarVentana{
+	position: absolute;
+	top: 90px;
+	left: 40px;
+	height: 33px;
+}
+
+#submitRegistrarVentana{
+	position: absolute;
+	top: 90px;
+	left: 150px;
+	height: 33px;
+}
+
+#usuarioVentana{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 30px;
+	left: 40px;
+}
+
+#passwordVentana{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 70px;
+	left: 40px;
+}
+
+/*Estilos de la ventana emergente de modificar una cabaña*/
+
+#valorNocheVentana{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 30px;
+	left: 40px;
+}
+
+#cantidadVentana{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 70px;
+	left: 40px;
+}
+
+#submitAceptarVentana{
+	position: absolute;
+	top: 90px;
+	left: 40px;
+	height: 33px;
+	text-align: center;
+}
+
+#submitCancelarVentana{
+	 position: absolute;
+	 top: 90px;
+	 left: 150px;
+	 height: 33px;
+	 text-align: center;
+ }
+
+/*Estilos de la ventana emergente cuando se da editar evento*/
+
+
+#login-content3{
+	background-color: white;
+	height: 270px;
+	width: 300px;
+	border-top: 10px solid #FDCA2E;
+	border-right: 3px solid #080808;
+	border-left: 3px solid #080808;
+	border-bottom: 3px solid #080808;
+}
+
+#nombreVentana{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 30px;
+	left: 40px;
+}
+
+#fechaInicioVentana{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 70px;
+	left: 40px;
+}
+
+#fechaFinVentana{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 110px;
+	left: 40px;
+}
+
+#lugar{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 150px;
+	left: 40px;
+}
+
+#submitAceptarEvento{
+	position: absolute;
+	top: 190px;
+	left: 40px;
+	height: 33px;
+	text-align: center;
+}
+
+#submitCancelarEvento{
+	position: absolute;
+	top: 190px;
+	left: 150px;
+	height: 33px;
+	text-align: center;
+}
+
+/*Estilos de la ventana emergente para editar una reserva*/
+#login-content4{
+	background-color: white;
+	height: 180px;
+	width: 350px;
+	border-top: 10px solid #FDCA2E;
+	border-right: 3px solid #080808;
+	border-left: 3px solid #080808;
+	border-bottom: 3px solid #080808;
+}
+
+
+#lblFecha1{
+	position: absolute;
+	top: 30px;
+	left: 10px;
+}
+
+#lblFecha2{
+	position: absolute;
+	top: 70px;
+	left: 10px;
+}
+
+#fecha1Ventana{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 30px;
+	left: 100px;
+}
+
+#fecha2Ventana{
+	font: 14px Arial;
+	width: 230px;
+	height: 25px;
+	border: 1px solid #bcbcbc;
+	border-radius: 5px 5px 5px 5px;
+	position: absolute;
+	top: 70px;
+	left: 100px;
+}
+
+/* Estilos de la ventana eventos*/
+
+#ev1, #ev2, #ev3, #ev4, #ev5, #ev6 {
+	background: #fefff6;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	vertical-align: middle;
 }

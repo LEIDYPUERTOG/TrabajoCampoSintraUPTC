@@ -27,22 +27,27 @@
     <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
 
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="../jquery.colorbox.js"></script>
+
     <script>
         $(function(){
             $('#login').click(function(){
                 $(this).next('#login-content').slideToggle();
                 $(this).ToggleClass('active');
 
-
             });
         });
     </script>
+
+
+    <script src="../estilos/funciones/funcion.js"></script>
 
 </head>
 
 <body> <!-- Lo que tiene la pagina -->
 <!-- Js vinculados -->
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <script src="../estilos/js/responsive.js"></script>
 <script src="../estilos/js/bootstrap.min.js"></script>
 
@@ -103,11 +108,11 @@
     <section id="servicios">
         <ul class="nav nav-pills"> <!-- Para la navegacion -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;"> <!-- Tamaño de los item -->
-                <a href="#"><h3><font color=#000000>Cabañas</font></h3></a></li> <!-- Nombre y color de las palabras -->
+                <a href="Catalogo.html"><h3><font color=#000000>Cabañas</font></h3></a></li> <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <a href="#"><h3><font color=#000000>Zonas de Camping</font></h3></a></li>
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a href="#"><h3><font color=#000000>Eventos</font></h3></a></li>
+                <a href="Eventos.html"><h3><font color=#000000>Eventos</font></h3></a></li>
         </ul>
     </section>
 
@@ -123,10 +128,12 @@
                 Afiliado: $90.000</br>
                 No Afiliado: $160.000</br>
             </h5>
-            <button type="button" class="btn btn-success"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Reserva <!-- Icono y palabra -->
+            <button id='inline' type="button" class="btn btn-success"> <!-- Tamaño -->
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a> <!-- Icono y palabra -->
             </button>
         </article>
+
         <!-- Cabaña N°2, con la imagen, descripcion y el boton -->
         <article id="cab2"> <!-- Seccion Menu -->
             <img src="../imagenes/cabaña2.JPG" alt="GFoto1.JPG"><!-- Importar la imagen -->
@@ -136,7 +143,8 @@
                 No Afiliado: $160.000</br>
             </h5>
             <button type="button" class="btn btn-success"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Reserva <!-- Icono y palabra -->
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°3, con la imagen, descripcion y el boton -->
@@ -148,7 +156,8 @@
                 No Afiliado: $160.000</br>
             </h5>
             <button type="button" class="btn btn-success"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Reserva <!-- Icono y palabra -->
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°4, con la imagen, descripcion y el boton -->
@@ -160,7 +169,8 @@
                 No Afiliado: $160.000</br>
             </h5>
             <button type="button" class="btn btn-success"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Reserva <!-- Icono y palabra -->
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°5, con la imagen, descripcion y el boton -->
@@ -172,7 +182,8 @@
                 No Afiliado: $160.000</br>
             </h5>
                 <button type="button" class="btn btn-success"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Reserva <!-- Icono y palabra -->
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                    <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°6, con la imagen, descripcion y el boton -->
@@ -184,7 +195,8 @@
                 No Afiliado: $160.000</br>
             </h5>
             <button type="button" class="btn btn-success"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Reserva <!-- Icono y palabra -->
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
     </section>
@@ -219,6 +231,29 @@
         </p>
     </footer>
 
+</section>
+
+<!-- Ventana Emergente que debe aparecer si el usuario no se ha logueado y desea realizar una reserva -->
+
+<section  id="ventanaEmergente">
+
+    <div id='inline_content' >
+        <div id="login-content2">
+            <form>
+
+                <input id="usuarioVentana" type="text" name="usuario" placeholder="Usuario" required>
+                <input id="passwordVentana" type="password" name="contrasenia" placeholder="Contraseña" required>
+
+                <button type="button" id="submitEntrarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Ingresar </button>
+                <button type="button" id="submitRegistrarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                        onClick="location.href='registrarse.html'"> <!-- Tamaño -->
+                    Registrarse </button>
+
+            </form>
+
+        </div>
+    </div>
 </section>
 </body>
 </html> <!-- Fin pagina html5 -->

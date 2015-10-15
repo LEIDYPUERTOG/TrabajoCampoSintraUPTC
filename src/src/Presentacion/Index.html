@@ -26,7 +26,7 @@
 
     <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
-
+    <script src="../Presentacion/estilos/funciones/funcion1.js"></script>
     <script>
         $(function(){
             $('#login').click(function(){
@@ -75,7 +75,8 @@
         </nav>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-default"  style="margin-top:21px;"  onclick="location.href=
+            '../Presentacion/plantillas/Contactenos.html'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos <!-- Icono y palabra -->
             </button>
         </article>
@@ -87,7 +88,8 @@
         </article>
         <!-- Boton Inicio -->
         <article id="inicio4">
-            <button type="button" class="btn btn-default"  style="padding-right:55px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-default"  style="padding-right:55px;padding-left:10px;margin-top:21px;" onclick="location.href=
+            'Index.html'"> <!-- Tamaño -->
             <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
         </article>
@@ -102,11 +104,11 @@
      <section id="servicios">
          <ul class="nav nav-pills"> <!-- Para la navegacion -->
              <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;"> <!-- Tamaño de los item -->
-                 <a href="#"><h3><font color=#000000>Cabañas</font></h3></a></li> <!-- Nombre y color de las palabras -->
+                 <a href="../presentacion/plantillas/Catalogo.html"><h3><font color=#000000>Cabañas</font></h3></a></li> <!-- Nombre y color de las palabras -->
              <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                  <a href="#"><h3><font color=#000000>Zonas de Camping</font></h3></a></li>
              <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                 <a href="#"><h3><font color=#000000>Eventos</font></h3></a></li>
+                 <a href="../Presentacion/plantillas/Eventos.html"><h3><font color=#000000>Eventos</font></h3></a></li>
          </ul>
      </section>
 

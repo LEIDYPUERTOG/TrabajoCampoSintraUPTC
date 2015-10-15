@@ -16,7 +16,7 @@
     <link href="../estilos/css/estilos.css" rel="stylesheet">
 
     <script src="../angular.min.js"></script>
-
+    <script src="jquery.js"></script>
 
 </head>
 <body>
@@ -32,8 +32,18 @@
     <header>
         <!-- Boton usuario -->
         <article id="inicio1">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
-                Bienvenido</button>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Bienvenido
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Cambiar contraseña</a></li>
+                    <li><a href="#">Cerrar Sesión</a></li>
+
+                </ul>
+            </div>
+
         </article>
         <!-- Boton Contactenos -->
         <article id="inicio2">
@@ -99,8 +109,6 @@
                 <ul class="nav nav-tabs">
                     <li><a href="CrearEvento.html">Crear Evento</a></li>
                     <li><a href="ConsultarEvento.html">Consultar Evento</a></li>
-                    <li><a href="ConsultarEvento.html">Editar Evento</a></li>
-                    <li><a href="ConsultarEvento.html">Suspender Evento</a></li>
                 </ul>
             </nav>
         </article>

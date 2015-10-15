@@ -16,7 +16,7 @@
     <link href="../estilos/css/estilos.css" rel="stylesheet">
 
     <script src="../angular.min.js"></script>
-
+    <script src="jquery.js"></script>
 
 </head>
 <body>
@@ -32,8 +32,18 @@
     <header>
         <!-- Boton usuario -->
         <article id="inicio1">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
-                Bienvenido</button>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Bienvenido
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Cambiar contraseña</a></li>
+                    <li><a href="#">Cerrar Sesión</a></li>
+
+                </ul>
+            </div>
+
         </article>
         <!-- Boton Contactenos -->
         <article id="inicio2">
@@ -85,21 +95,21 @@
         <article class="nave">
             <div>
                 <ol class="breadcrumb">
-                    <li><a href="#">Cabañas</a></li>
-                    <li class="active">Crear</li>
+                    <li><a href="#">Reservas</a></li>
+                    <li class="active">Listar reservas anualmente</li>
                 </ol>
             </div>
         </article>
     </section>
     <!-- Seccion de Pestañas-->
-    <section id="pestanas">
+    <section id="pestanas2">
         <article>
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
-                    <li><a href="#">Crear Reserva</a></li>
-                    <li><a href="EditarReserva.html">Editar Reserva</a></li>
+                    <li><a href="CrearReservaCabaña.html">Crear Reserva</a></li>
+                    <li><a href="EditarReservaAdmin.html">Editar Reserva</a></li>
                     <li><a href="AprobarReserva.html">Aprobar Reserva</a></li>
-                    <li><a href="#">Consultar Reserva</a></li>
+                    <li><a href="ConsultarReserva.html#">Consultar Reserva</a></li>
                     <li><a href="ReservasAnuales.html">Listar reserva anualmente</a></li>
                 </ul>
             </nav>
