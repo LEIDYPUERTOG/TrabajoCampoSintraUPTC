@@ -11,6 +11,7 @@ function ventana(){
     });
     $(this).next('#login-content2').slideToggle();
     $(this).ToggleClass('active');
+
 };
 
 

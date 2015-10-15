@@ -422,6 +422,15 @@ nav.acceder #login-content{
 	top: 540px;
 	left: 230px;
 }
+
+#imag4{
+
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	top: 650px;
+	left: 230px;
+}
 /*
 *****************************Pagina Catalogo***************************************************
 */
@@ -837,6 +846,7 @@ Estilos para la tabla y scroll
 	opacity: 0.9;
 	display : inline-block;
 	vertical-align: middle;
+
 }
 
 #contenidoReservaA{
@@ -1349,6 +1359,7 @@ nav.acceder #login-content2{
 
 #ventanaEmergente{
 	display: none;
+
 }
 #login-content2{
 	background-color: white;
@@ -1563,4 +1574,124 @@ nav.acceder #login-content2{
 	height: 100px;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+/*Estilos de la ventana Crear Usuario*/
+
+#et1{
+	width: 600px;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+}
+
+#et2{
+	width: 600px;
+	position: absolute;
+	left: 100px;
+	top: 200px;
+}
+
+#et3{
+	width: 600px;
+	position: absolute;
+	left: 100px;
+	top: 300px;
+}
+
+#btnCrearUsuario{
+
+	position: absolute;
+	left: 350px;
+	top: 300px;
+}
+
+
+#contenidoReservaR{
+	background: #fefff6;
+	position: absolute;
+	left: 50%;
+	top: 70%;
+	width: 600px;
+	height: 400px;
+	margin: -60px 0 0 -200px;
+}
+/*
+	Bloque que contiene el tamaño y posicion de fechaI
+*/
+#contenidoReservaR #fechaI{
+	background: #fefff6;
+	width: 180px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Bloque que contiene el tamaño y posicion de search1
+*/
+#contenidoReservaR #search1{
+	background: #fefff6;
+	width: 400px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Bloque que contiene el tamaño y posicion de fechaF
+*/
+#contenidoReservaR #fechaF{
+	background: #fefff6;
+	width: 180px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Bloque que contiene el tamaño y posicion de search2
+*/
+#contenidoReservaR #search2{
+	background: #fefff6;
+	width: 400px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Bloque que contiene el tamaño y posicion de cantidadP
+*/
+#contenidoReservaR #cantidadP {
+	background: #fefff6;
+	width: 180px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Bloque que contiene el tamaño y posicion de search3
+*/
+#contenidoReservaR #search3{
+	background: #fefff6;
+	width: 400px;
+	height: 35px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*
+	Tamaño y tipo de letra h4
+*/
+#contenidoReservaR h4{
+	font-family: 'Handlee', cursive;
+	font-size: 37px;
+	text-align: center;
+}
+
+#contenidoReservaR h5{
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+	text-align: center;
+}
+
+#informacionEncontrada{
+	position: relative;
+	top: 5%;
 }
