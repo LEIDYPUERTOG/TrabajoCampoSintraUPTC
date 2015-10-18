@@ -1,443 +1,493 @@
 /*
 	Autor
 */
-*{
-	border:0;
-	margin:0;
-	padding:0;
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
+
 /*
 	Color del fondo de la paginas, esta es en blanco
 */
-body{
-	background: #fefff6;
+body {
+    background: #fefff6;
 }
+
 /*
 	Contendor de la pagina en donde se define
 	1. La sombra de los bordes
 	2. el tamaño
 */
-#contenedor{
-	box-shadow: 5px 5px 30px #bcbcbc;
-	height:1210px;
-	width:1000px;
-	margin-right:auto;
-	margin-left:auto;
+#contenedor {
+    box-shadow: 5px 5px 30px #bcbcbc;
+    height: 1210px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
 }
+
 /*
 	Contiene las etiquetas que van a tener los mismos valores y el color
 */
-header, #logo,#servicios,#imagenes,#texto,#informacion{
-	background: #fefff6;
-	width:1000px;
-	height:80px;
+header, #logo, #servicios, #imagenes, #texto, #informacion {
+    background: #fefff6;
+    width: 1000px;
+    height: 80px;
 }
+
 /*
 	El tamaño y color que tendra el bloque de los logos
 */
-#logo{
-	background: #27ae60;
-	height:170px;
+#logo {
+    background: #fefff6;
+    height: 170px;
 }
+
 /*
 	El tamaño color y tipo de letra que tiene el bloque de servicios
 */
-#servicios{
-	font-family: 'Courgette', cursive;
-	background: #fefff6;
-	height:80px;
+#servicios {
+    font-family: 'Courgette', cursive;
+    background: #fefff6;
+    height: 80px;
 }
+
 /*
 	El tamaño y color que tendra el bloque de las imagenes
 */
-#imagenes{
-	background: #e1c9e3;
-	height:300px;
+#imagenes {
+    background: #dfdfdf;
+    height: 300px;
 }
+
 /*
 	El tamaño y color que tendra el bloque de el texto (¿Quienes somos?)
 */
-#texto{
+#texto {
 
-	background: #fefff6;
-	height:250px;
+    background: #fefff6;
+    height: 350px;
 }
 /*
-button:hover {
-	background: rgba(0,0,0,0);
-	color: #2ecc71;
-	box-shadow: inset 0 0 0 3px #2ecc71;
-}
+	El tamaño y color que tendra el bloque de la imagen
 */
+#texto #info {
+    background: #fefff6;
+    width: 570px;
+    height: 250px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*
+	El tamaño y color que tendra el bloque el texto
+*/
+#texto #textoIm {
+    background: #fefff6;
+    width: 400px;
+    height: 350px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /*
 	El tamaño y color que tendra la divicion de "quienes somos" y "informacion"
 */
-#divi{
-	background: #fdca2e;
-	width:1000px;
-	height:10px;
-	padding-top: 15px;
+#divi {
+    width: 1000px;
+    height: 10px;
+    padding-top: 15px;
+    background: #03c03c;
 }
+
 /*
 	El tipo de letra, el tamaño de la letra y que sea centrada del bloque texto
 	que contiene la etiqueta h1
 */
-#texto h1{
-	font-family: 'Handlee', cursive;
-	font-size: 60px;
-	text-align: center;
+#texto h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    color: #34495E;
+    text-align: center;
 }
+
 /*
 	El tipo de letra, el tamaño de la letra y que sea centrada del bloque texto
 	que contiene la etiqueta h4
 */
-#texto h4	{
-	font-family: 'Lato', sans-serif;
-	font-size: 20px;
-	text-align: center;
+#texto #desc {
+    background: #fefff6;
+    width: 500px;
+    height: 200px;
+    padding-top: 40px;
+    margin: -35px 0 0 30px;
 }
+#texto p {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    text-align: justify;
+    color:#7F8C8D;
+}
+
 /*
 	El tamaño y color que tendra el bloque de informacion (Menu, Registrar y Informacion)
 */
-#informacion{
-	background: #000000;
-	height:200px;
+#informacion {
+    height: 140px;
+    background: #62422b;
 }
+
 /*
 	El color de la letra, tipo de letra, tamaño y que sea centrada del bloque informacion
 	con etiquetas h4
 */
-#informacion h4{
-	 color: #fefff6;
-	 font-family: 'Handlee', cursive ;
-	 font-size: 30px;
-	 text-align: center;
+#informacion h4 {
+    color: #fefff6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-align: center;
 }
+
 /*
 	El color de la letra, tamaño y que sea centrada del bloque informacion
 	con etiquetas h5
 */
-#informacion h5{
-	color: #fefff6;
-	font-size: 15px;
-	text-align: center;
+#informacion h5 {
+    color: #fefff6;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
+
 /*
 	El color y tamaño del bloque footer que es el Pie de Pagina
 */
-footer{
-	background: #000000;
-	width:1000px;
-	height:50px;
-	padding-top: 15px;
+footer {
+    width: 1000px;
+    height: 50px;
+    padding-top: 15px;
+    background: #62422b;
 }
+
 /*
 	El color, tamaño, tipo de letra y que sea centrado en el bloque footer
 	con la etiqueta p
 */
-footer p{
-	color: #fefff6;
-	font-family: arial;
-	font-size: 12px;
-	text-align: center;
+footer p {
+    color: #fefff6;
+    font-family: arial;
+    font-size: 12px;
+    text-align: center;
 }
+
 /*
 	El color, tamaño, posicion y margen del bloque inicio1 que se encuentra
 	dentro del bloque header (Primer encabezado)
 */
-header #inicio1{
-	background: #fefff6;
-	width:120px;
-	height:25px;
-	float: right;
-	position: relative;
-	top: 25%;
-	margin: 0px 5px;
+header #inicio1 {
+    background: #fefff6;
+    width: 120px;
+    height: 25px;
+    float: right;
+    position: relative;
+    top: 25%;
+    margin: 0px 5px;
 
 }
+
 /*
 	El color, tamaño, posicion y margen del bloque inicio2 que se encuentra
 	dentro del bloque header (Primer encabezado)
 */
-header #inicio2{
-	background: #fefff6;
-	width:120px;
-	height:80px;
-	float: right;
-	display : inline-block;
-	margin: 0px 5px;
+header #inicio2 {
+    background: #fefff6;
+    width: 120px;
+    height: 80px;
+    float: right;
+    display: inline-block;
+    margin: 0px 5px;
 }
+
 /*
 	El color, tamaño, posicion y margen del bloque inicio3 que se encuentra
 	dentro del bloque header (Primer encabezado)
 */
-header #inicio3{
-	background: #fefff6;
-	width:120px;
-	height:80px;
-	float: right;
-	display : inline-block;
-	margin: 0px 5px;
+header #inicio3 {
+    background: #fefff6;
+    width: 120px;
+    height: 80px;
+    float: right;
+    display: inline-block;
+    margin: 0px 5px;
 }
+
 /*
 	El color, tamaño, posicion y margen del bloque inicio4 que se encuentra
 	dentro del bloque header (Primer encabezado)
 */
-header #inicio4{
-	background: #fefff6;
-	width:120px;
-	height:80px;
-	float: right;
-	display : inline-block;
-	margin: 0px 5px;
+header #inicio4 {
+    background: #fefff6;
+    width: 120px;
+    height: 80px;
+    float: right;
+    display: inline-block;
+    margin: 0px 5px;
 }
+
 /*
 	El color, tamaño, posicion vertical y margen del bloque inf1 que se encuentra
 	dentro del bloque informacion (Menu, Registrar y Informacion)
 */
-#informacion #inf1{
-	background: #000000;
-	width:200px;
-	height:200px;
-	display : inline-block;
-	vertical-align: middle;
+#informacion #inf1 {
+    width: 200px;
+    height: 145px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 140px;
+    background: #62422b;
 }
+
 /*
 	El color, tamaño, posicion vertical y margen del bloque inf2 que se encuentra
 	dentro del bloque informacion (Menu, Registrar y Informacion)
 */
-#informacion #inf2{
-	background: #000000;
-	width:455px;
-	height:200px;
-	display : inline-block;
-	vertical-align: middle;
+#informacion #inf2 {
+    width: 455px;
+    height: 140px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 140px;
+    background: #62422b;
 }
+
 /*
 	El color, tamaño, posicion vertical y margen del bloque inf3 que se encuentra
 	dentro del bloque informacion (Menu, Registrar y Informacion)
 */
 #informacion #inf3 {
-	background: #000000;
-	width: 270px;
-	height: 200px;
-	display: inline-block;
-	vertical-align: middle;
+    width: 270px;
+    height: 140px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 140px;
+    background: #62422b;
 }
 
 /*Estilos de la ventana emergente de login*/
-nav.acceder article{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	position: relative;
-	float: right;
+nav.acceder article {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    float: right;
 }
 
-#acceder #login{
-	display: inline-block;
-	font-size: 16px;
-	padding: 1px 10px;
-	text-decoration: none;
-	color: black;
-	font-weight: 100;
-	border: 1px solid #fefff6;
+#acceder #login {
+    display: inline-block;
+    font-size: 16px;
+    padding: 1px 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+    border: 1px solid #fefff6;
 }
 
-nav.acceder #login-content{
-	position: absolute;
-	top:56px;
-	right: 0;
-	z-index: 999;
-	background-color: #fefff6;
-	border: 1px solid #000000;
-	padding:  15px;
-	width: 205px;
-	height: 110px;
-	border-radius: 10px 10px 10px 10px;
-	display: none;
+nav.acceder #login-content {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    z-index: 999;
+    background-color: #fefff6;
+    border: 1px solid #000000;
+    padding: 15px;
+    width: 205px;
+    height: 110px;
+    border-radius: 10px 10px 10px 10px;
+    display: none;
 }
 
-#submit{
-	position: absolute;
-	top:35px;
-	left: 13px;
-	width: 90px;
-}
-#submitRegistrar{
-	position: absolute;
-	top:35px;
-	left: 110px;
-	width: 90px;
+#submit {
+    position: absolute;
+    top: 35px;
+    left: 13px;
+    width: 90px;
 }
 
-
-#usuario,#password{
-
-	font: 14px Arial;
-	width: 180px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
+#submitRegistrar {
+    position: absolute;
+    top: 35px;
+    left: 110px;
+    width: 90px;
 }
+
+#usuario, #password {
+
+    font: 14px Arial;
+    width: 180px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+}
+
 /*Fin de los estilos de la ventana emergente de login*/
 
 /* Inicio de los estilos del contenedor de registro de una persona*/
-#contenedorRegistro{
-	box-shadow: 5px 5px 30px #bcbcbc;
-	height:1000px;
-	width:1000px;
-	background: #fefff6;
-	margin-right:auto;
-	margin-left:auto;
+#contenedorRegistro {
+    box-shadow: 5px 5px 30px #bcbcbc;
+    height: 1000px;
+    width: 1000px;
+    background: #fefff6;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-#registro{
-	background: white;
-	height:400px;
-	list-style: none;
+#registro {
+    background: white;
+    height: 400px;
+    list-style: none;
 }
 
-#registro #lblNombres{
-	position: absolute;
-	top: 400px;
-	left: 450px;
+#registro #lblNombres {
+    position: absolute;
+    top: 400px;
+    left: 450px;
 }
 
-#registro #lblDocumento{
-	position: absolute;
-	top: 435px;
-	left: 450px;
+#registro #lblDocumento {
+    position: absolute;
+    top: 435px;
+    left: 450px;
 }
 
-#registro #lblContrasenia{
-	position: absolute;
-	top: 470px;
-	left: 450px;
+#registro #lblContrasenia {
+    position: absolute;
+    top: 470px;
+    left: 450px;
 }
 
-#registro #lblContrasenia2{
-	position: absolute;
-	top: 505px;
-	left: 450px;
+#registro #lblContrasenia2 {
+    position: absolute;
+    top: 505px;
+    left: 450px;
 }
 
-#registro #lblPreg{
-	position: absolute;
-	top: 540px;
-	left: 450px;
+#registro #lblPreg {
+    position: absolute;
+    top: 540px;
+    left: 450px;
 }
 
-#registro #rbtn{
-	position: absolute;
-	top: 540px;
-	left: 600px;
+#registro #rbtn {
+    position: absolute;
+    top: 540px;
+    left: 600px;
 }
 
-#registro #rbtn2{
-	position: absolute;
-	top: 540px;
-	left: 670px;
+#registro #rbtn2 {
+    position: absolute;
+    top: 540px;
+    left: 670px;
 }
 
-#registro #btnRegistro{
-	position: absolute;
-	top: 585px;
-	left: 670px;
+#registro #btnRegistro {
+    position: absolute;
+    top: 585px;
+    left: 670px;
 }
 
-#registro #nombres,#documento, #contrasenia,#contrasenia2{
-	font: 14px Arial;
-	width: 320px;
-	height: 20px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
+#registro #nombres, #documento, #contrasenia, #contrasenia2 {
+    font: 14px Arial;
+    width: 320px;
+    height: 20px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
 }
 
-#registro #nombres{
-	position: absolute;
-	top: 400px;
-	left: 600px;
+#registro #nombres {
+    position: absolute;
+    top: 400px;
+    left: 600px;
 }
 
-#registro #documento{
-	position: absolute;
-	top: 435px;
-	left: 600px;
+#registro #documento {
+    position: absolute;
+    top: 435px;
+    left: 600px;
 }
 
-#registro #contrasenia{
-	position: absolute;
-	top: 470px;
-	left: 600px;
+#registro #contrasenia {
+    position: absolute;
+    top: 470px;
+    left: 600px;
 }
 
-#registro #contrasenia2{
-	position: absolute;
-	top: 505px;
-	left: 600px;
+#registro #contrasenia2 {
+    position: absolute;
+    top: 505px;
+    left: 600px;
 }
 
-#registro #lblInfo{
-	position: absolute;
-	top: 350px;
-	left: 620px;
+#registro #lblInfo {
+    position: absolute;
+    top: 350px;
+    left: 620px;
 }
 
 /*Fin de los estilos del registro de una persona*/
 
 /*Inicio de los estilos de la página consultar/modificar y suspender una cabaña */
 
-#panelAdministracion{
-	background: #FDCA2E;
-	height:500px;
-	width: 200px;
-	list-style: none;
-	opacity: 0.9;
-	display : inline-block;
-	vertical-align: middle;
+#panelAdministracion {
+    background: #FDCA2E;
+    height: 500px;
+    width: 200px;
+    list-style: none;
+    opacity: 0.9;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#panelAdministracion #lblTitulo{
-	position: absolute;
-	top: 280px;
-	left: 190px;
+#panelAdministracion #lblTitulo {
+    position: absolute;
+    top: 280px;
+    left: 190px;
 }
 
-#imag1{
+#imag1 {
 
-	height: 80px;
-	width: 80px;
-	position: absolute;
-	top: 320px;
-	left: 230px;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 320px;
+    left: 230px;
 }
 
-#imag2{
+#imag2 {
 
-	height: 80px;
-	width: 80px;
-	position: absolute;
-	top: 430px;
-	left: 230px;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 430px;
+    left: 230px;
 }
 
-#imag3{
+#imag3 {
 
-	height: 80px;
-	width: 80px;
-	position: absolute;
-	top: 540px;
-	left: 230px;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 540px;
+    left: 230px;
 }
 
-#imag4{
+#imag4 {
 
-	height: 80px;
-	width: 80px;
-	position: absolute;
-	top: 650px;
-	left: 230px;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 650px;
+    left: 230px;
 }
+
 /*
 *****************************Pagina Catalogo***************************************************
 */
@@ -446,223 +496,245 @@ nav.acceder #login-content{
 	1. La sombra de los bordes
 	2. el tamaño
 */
-#contenedor2{
-	box-shadow: 5px 5px 30px #bcbcbc;
-	height:1510px;
-	width:1000px;
-	margin-right:auto;
-	margin-left:auto;
+#contenedor2 {
+    box-shadow: 5px 5px 30px #bcbcbc;
+    height: 1510px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
 }
+
 /*
 	El tamaño y color que tendra el bloque del catalogo
 */
 
-#catalogo{
-	background: #fefff6;
-	height:900px;
-	width:950px;
-	margin-right:auto;
-	margin-left:auto;
+#catalogo {
+    background: #fefff6;
+    height: 900px;
+    width: 950px;
+    margin-right: auto;
+    margin-left: auto;
 }
+
 /*
 	El tamaño de la letra del titulo principal
 */
-#catalogo h4	{
-	font-family: 'Handlee', cursive;
-	font-size: 60px;
-	text-align: center;
+#catalogo h4 {
+    font-family: 'Handlee', cursive;
+    font-size: 60px;
+    text-align: center;
 }
+
 /*
 	Tamaño  y Color del bloque de cabaña1
 */
 #catalogo #cab1 {
-	background: #fefff6;
-	width: 270px;
-	height: 430px;
-	display: inline-block;
-	vertical-align: middle;
+    background: #fefff6;
+    width: 270px;
+    height: 430px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de cabaña2
 */
 #catalogo #cab2 {
-	background: #fefff6;
-	width: 350px;
-	height: 430px;
-	display: inline-block;
-	vertical-align: middle;
+    background: #fefff6;
+    width: 350px;
+    height: 430px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de cabaña3
 */
 #catalogo #cab3 {
-	background: #fefff6;
-	width: 300px;
-	height: 430px;
-	display: inline-block;
-	vertical-align: middle;
+    background: #fefff6;
+    width: 300px;
+    height: 430px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de cabaña4
 */
 #catalogo #cab4 {
-	background: #fefff6;
-	width: 350px;
-	height: 350px;
-	display: inline-block;
-	vertical-align: middle;
+    background: #fefff6;
+    width: 350px;
+    height: 350px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de cabaña5
 */
 #catalogo #cab5 {
-	background: #fefff6;
-	width: 310px;
-	height: 350px;
-	display: inline-block;
-	vertical-align: middle;
+    background: #fefff6;
+    width: 310px;
+    height: 350px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de cabaña6
 */
 #catalogo #cab6 {
-	background: #fefff6;
-	width: 270px;
-	height: 350px;
-	display: inline-block;
-	vertical-align: middle;
+    background: #fefff6;
+    width: 270px;
+    height: 350px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño y tio de letra del la descripcion de la cabaña
 */
-#catalogo h5{
-	font-family: 'Montserrat', sans-serif;
-	color: #000000;
-	font-size: 17px;
+#catalogo h5 {
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    font-size: 17px;
 }
+
 /*
 *****************************Pagina Crear Cabaña ***************************************************
 */
-#contenido{
-	background: #fefff6;
-	position: absolute;
-	left: 50%;
-	/*top: 50%;*/
-	top: 500px;
-	width: 600px;
-	height: 400px;
-	margin: -60px 0 0 -200px;
+#contenido {
+    background: #fefff6;
+    position: absolute;
+    left: 50%;
+    /*top: 50%;*/
+    top: 500px;
+    width: 600px;
+    height: 400px;
+    margin: -60px 0 0 -200px;
 
 }
+
 /*
 	Tamaño  y Color del bloque identificador
 */
-#contenido #identificador{
-	background: #fefff6;
-	width: 130px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido #identificador {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque search1
 */
-#contenido #search1{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido #search1 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color de capacidad
 */
-#contenido #capacidad{
-	background: #fefff6;
-	width: 130px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido #capacidad {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color de search2
 */
-#contenido #search2{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido #search2 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color de valor
 */
-#contenido #valor{
-	 background: #fefff6;
-	 width: 130px;
-	 height: 35px;
-	 display: inline-block;
-	 vertical-align: middle;
- }
+#contenido #valor {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /*
 	Tamaño  y Color de search3
 */
-#contenido #search3{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido #search3 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color de ruta
 */
-#contenido #ruta{
-	 background: #fefff6;
-	 width: 130px;
-	 height: 35px;
-	 display: inline-block;
-	 vertical-align: middle;
- }
+#contenido #ruta {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /*
 	Tamaño  y Color de search4
 */
-#contenido #search4{
-	background: #fefff6;
-	width: 460px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido #search4 {
+    background: #fefff6;
+    width: 460px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tama y color del boton
 	tambien sirve para centrar el boton en el article
 */
-#btnAgregar{
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	background: #fefff6;
-	height:200px;
-	width:200px;
-	margin: -0px 0 0 -100px;
+#btnAgregar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #fefff6;
+    height: 200px;
+    width: 200px;
+    margin: -0px 0 0 -100px;
 }
+
 /*
 	Tipo de letra, tamaño de h4
 */
-#contenido h4{
-	font-family: 'Handlee', cursive;
-	font-size: 37px;
-	text-align: center;
+#contenido h4 {
+    font-family: 'Handlee', cursive;
+    font-size: 37px;
+    text-align: center;
 }
+
 /*
 	Tipo de letra, tamaño de h5 (todo el texto)
 */
-#contenido h5{
-	font-family: 'Lato', sans-serif;
-	font-size: 15px;
-	text-align: center;
+#contenido h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
+
 /*
 *****************************Pagina Crear Reserva Cabaña ***************************************************
 */
@@ -670,1035 +742,1080 @@ nav.acceder #login-content{
 	Bloque que contiene los otros componentes
 	con posicion centrada en la pagina
 */
-#contenidoReservaC{
-	background: #fefff6;
-	position: absolute;
-	left: 45%;
-	top: 60%;
-	width: 600px;
-	height: 400px;
-	margin: -60px 0 0 -200px;
+#contenidoReservaC {
+    background: #fefff6;
+    position: absolute;
+    left: 45%;
+    top: 60%;
+    width: 600px;
+    height: 400px;
+    margin: -60px 0 0 -200px;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de fechaI
 */
-#contenidoReservaC #fechaI{
-	background: #fefff6;
-	width: 180px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaC #fechaI {
+    background: #fefff6;
+    width: 180px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de search1
 */
-#contenidoReservaC #search1{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaC #search1 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de fechaF
 */
-#contenidoReservaC #fechaF{
-	background: #fefff6;
-	width: 180px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaC #fechaF {
+    background: #fefff6;
+    width: 180px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de search2
 */
-#contenidoReservaC #search2{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaC #search2 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de cantidadP
 */
 #contenidoReservaC #cantidadP {
-	background: #fefff6;
-	width: 180px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+    background: #fefff6;
+    width: 180px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de search3
 */
-#contenidoReservaC #search3{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaC #search3 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño y tipo de letra h4
 */
-#contenidoReservaC h4{
-	font-family: 'Handlee', cursive;
-	font-size: 37px;
-	text-align: center;
+#contenidoReservaC h4 {
+    font-family: 'Handlee', cursive;
+    font-size: 37px;
+    text-align: center;
 }
+
 /*
 	Tamaño y tipo de letra h5 (todo el texto)
 */
-#contenidoReservaC h5{
-	font-family: 'Lato', sans-serif;
-	font-size: 15px;
-	text-align: center;
+#contenidoReservaC h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
+
 /*
 	Bloque que contiene los otros componentes
 */
-#acompa{
-	background: #fefff6;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 500px;
-	height: 200px;
-	margin: -20px 0 0 -250px;
+#acompa {
+    background: #fefff6;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 200px;
+    margin: -20px 0 0 -250px;
 
 }
+
 /*
 	Pocicion y tamaño de los searchC
 */
 #acompa #searchC {
-	width: 120px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+    width: 120px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Pocicion y tamaño de los searchN
 */
 #acompa #searchN {
-	width: 250px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+    width: 250px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 Estilos para la tabla y scroll
 */
 #acompa tr {
-	width: 100%;
-	display: inline-table;
+    width: 100%;
+    display: inline-table;
 }
 
-#acompa table{
-	height:300px;
+#acompa table {
+    height: 300px;
 }
-#acompa tbody{
-	overflow-y: scroll;
-	height: 100px;
-	width: 100%;
-	position: absolute;
+
+#acompa tbody {
+    overflow-y: scroll;
+    height: 100px;
+    width: 100%;
+    position: absolute;
 }
+
 /*
 *****************************Pagina Reservas Anuales ***************************************************
 */
 /*
 	Contenedor de todos los elementos de la pagina
 */
-#contenedorReservaA{
-	box-shadow: 5px 5px 30px #bcbcbc;
-	height:1160px;
-	width:1000px;
-	background: #fefff6;
-	margin-right:auto;
-	margin-left:auto;
+#contenedorReservaA {
+    box-shadow: 5px 5px 30px #bcbcbc;
+    height: 1160px;
+    width: 1000px;
+    background: #fefff6;
+    margin-right: auto;
+    margin-left: auto;
 }
+
 /*
 	Contiene la navegacion la pocicion y tamaño
 */
-#navegacion{
-	background: #fefff6;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 800px;
-	height: 50px;
-	margin: -60px 0 0 -300px;
+#navegacion {
+    background: #fefff6;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 50px;
+    margin: -60px 0 0 -300px;
 }
+
 /*
 	Contiene las pestañas pocicion y tamaño
 */
-#pestanas{
-	background: #fefff6;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 800px;
-	height: 50px;
-	margin: -8px 0 0 -300px;
+#pestanas {
+    background: #fefff6;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 50px;
+    margin: -8px 0 0 -300px;
 }
+
 /*
 	Contiene las tabla, años y paginacion de la pagina
 */
 
-#panelAdministracion2{
-	background: #FDCA2E;
-	height:650px;
-	width: 200px;
-	list-style: none;
-	opacity: 0.9;
-	display : inline-block;
-	vertical-align: middle;
+#panelAdministracion2 {
+    background: #FDCA2E;
+    height: 650px;
+    width: 200px;
+    list-style: none;
+    opacity: 0.9;
+    display: inline-block;
+    vertical-align: middle;
 
 }
 
-#contenidoReservaA{
-	background: #fefff6;
-	position: absolute;
-	top: 700px;
-	width: 800px;
-	height: 500px;
-	margin: -300px 0 0 200px;
+#contenidoReservaA {
+    background: #fefff6;
+    position: absolute;
+    top: 700px;
+    width: 800px;
+    height: 500px;
+    margin: -300px 0 0 200px;
 }
+
 /*
 	Tipo y tamaño de la letra del tag a
 */
-#pestanas a{
-	color: #bfbfbf;
-	font-family: 'Handlee', cursive ;
-	font-size: 20px;
-	text-align: center;
+#pestanas a {
+    color: #bfbfbf;
+    font-family: 'Handlee', cursive;
+    font-size: 20px;
+    text-align: center;
 }
+
 /*
 	Tipo y tamaño de la letra h4
 */
-#contenidoReservaA h4{
-	font-family: 'Handlee', cursive;
-	font-size: 37px;
-	text-align: center;
+#contenidoReservaA h4 {
+    font-family: 'Handlee', cursive;
+    font-size: 37px;
+    text-align: center;
 }
+
 /*
 	Tamaño y posicion del bloque link1
 */
-#contenedorReservaA #link1{
-	background: #fefff6;
-	width: 50px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenedorReservaA #link1 {
+    background: #fefff6;
+    width: 50px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño y posicion del bloque link2
 */
-#contenedorReservaA #link2{
-	background: #fefff6;
-	width: 50px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenedorReservaA #link2 {
+    background: #fefff6;
+    width: 50px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño y posicion del bloque link3
 */
-#contenedorReservaA #link3{
-	background: #fefff6;
-	width: 50px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenedorReservaA #link3 {
+    background: #fefff6;
+    width: 50px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño y posicion del bloque link4
 */
-#contenedorReservaA #link4{
-	background: #fefff6;
-	width: 50px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenedorReservaA #link4 {
+    background: #fefff6;
+    width: 50px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño y posicion del bloque link5
 */
-#contenedorReservaA #link5{
-	background: #fefff6;
-	width: 50px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenedorReservaA #link5 {
+    background: #fefff6;
+    width: 50px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Contenido de la tabla pocicion y tamaño
 */
-#contenidoReservaA #lista{
-	background: #fefff6;
-	left: 50%;
-	top: 50%;
-	width: 630px;
-	height: 310px;
-	margin: 20px 0 0 100px;
+#contenidoReservaA #lista {
+    background: #fefff6;
+    left: 50%;
+    top: 50%;
+    width: 630px;
+    height: 310px;
+    margin: 20px 0 0 100px;
 }
+
 /*
 	Contenido de la paginacion
 */
-#pag{
-	background: #fefff6;
-	left: 50%;
-	top: 50%;
-	height:40px;
-	width:300px;
-	margin-right:auto;
-	margin-left:auto;
-	margin: 20px 0 0 450px;
+#pag {
+    background: #fefff6;
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 20px 0 0 450px;
 }
+
 /*
 	Estilos para centrar la pagiana y el scroll
 */
 #lista tr {
-	width: 100%;
+    width: 100%;
 
-	display: inline-table;
+    display: inline-table;
 }
 
-#lista table{
-	height:300px;
-}
-#lista tbody{
-	overflow-y: scroll;
-	height: 250px;
-	/*width: 45%;*/
-	width: 650px;
-	position: absolute;
-
+#lista table {
+    height: 300px;
 }
 
+#lista tbody {
+    overflow-y: scroll;
+    height: 250px;
+    /*width: 45%;*/
+    width: 650px;
+    position: absolute;
 
-#panelAdministracionListado{
-	background: #FDCA2E;
-	height:00px;
-	width: 200px;
-	list-style: none;
-	opacity: 0.9;
-	display : inline-block;
-	vertical-align: middle;
+}
+
+#panelAdministracionListado {
+    background: #FDCA2E;
+    height: 00px;
+    width: 200px;
+    list-style: none;
+    opacity: 0.9;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /*Estilos de la ventana consultar editar y suspender cabaña*/
-#lista #imagEditar, #imagSuspender{
-	height: 25px;
-	width: 25px;
+#lista #imagEditar, #imagSuspender {
+    height: 25px;
+    width: 25px;
 
 }
 
-#pestanas2{
-	background: #fefff6;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 800px;
-	height: 50px;
-	margin: -8px 0 0 -300px;
+#pestanas2 {
+    background: #fefff6;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 50px;
+    margin: -8px 0 0 -300px;
 }
 
-#pestanas2 a{
+#pestanas2 a {
 
-	color: #bfbfbf;
-	font-family: 'Handlee', cursive ;
-	font-size: 15px;
-	text-align: center;
+    color: #bfbfbf;
+    font-family: 'Handlee', cursive;
+    font-size: 15px;
+    text-align: center;
 }
 
 /*Estilos de la pagina de crear evento*/
 
-#contenido2 #nombre{
-	background: #fefff6;
-	width: 130px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido2 #nombre {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#contenido2 #FechaInicio{
-	background: #fefff6;
-	width: 130px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido2 #FechaInicio {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#contenido2 #FechaFin{
-	background: #fefff6;
-	width: 130px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido2 #FechaFin {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#contenido2 #descripcion{
-	background: #fefff6;
-	width: 130px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
-	position: absolute;
-	top: 170px;
-	left: 0px;
+#contenido2 #descripcion {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    top: 170px;
+    left: 0px;
 }
 
-#contenido2 #lugar{
-	background: #fefff6;
-	width: 130px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
-	position: absolute;
-	top: 210px;
-	left: 0px;
+#contenido2 #lugar {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    top: 210px;
+    left: 0px;
 }
 
-#contenido2 #search5{
-	background: #fefff6;
-	width: 400px;
-	height: 100px;
-	display: inline-block;
-	vertical-align: middle;
-	position: absolute;
-	top: 170px;
-	left: 135px;
+#contenido2 #search5 {
+    background: #fefff6;
+    width: 400px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    top: 170px;
+    left: 135px;
 }
 
-#contenido2 #search6{
-	background: #fefff6;
-	border: #080808;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido2 #search6 {
+    background: #fefff6;
+    border: #080808;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 
-	position: absolute;
-	top: 210px;
-	left: 135px;
+    position: absolute;
+    top: 210px;
+    left: 135px;
 }
 
-#contenido2 #btnCrear{
-	position: absolute;
-	top: 270px;
-	left: 250px;
+#contenido2 #btnCrear {
+    position: absolute;
+    top: 270px;
+    left: 250px;
 }
 
-#contenido2{
-	background: #fefff6;
-	position: absolute;
-	left: 50%;
-	/*top: 50%;*/
-	top: 470px;
-	width: 600px;
-	height: 260px;
-	margin: -60px 0 0 -200px;
+#contenido2 {
+    background: #fefff6;
+    position: absolute;
+    left: 50%;
+    /*top: 50%;*/
+    top: 470px;
+    width: 600px;
+    height: 260px;
+    margin: -60px 0 0 -200px;
 
 }
 
-#contenido2 #search1{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido2 #search1 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#contenido2 #search2{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido2 #search2 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#contenido2 #search3{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido2 #search3 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#contenido2 #search4{
-	background: #fefff6;
-	width: 460px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenido2 #search4 {
+    background: #fefff6;
+    width: 460px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#contenido2 h4{
-	font-family: 'Handlee', cursive;
-	font-size: 37px;
-	text-align: center;
+#contenido2 h4 {
+    font-family: 'Handlee', cursive;
+    font-size: 37px;
+    text-align: center;
 }
+
 /*
 	Tipo de letra, tamaño de h5 (todo el texto)
 */
-#contenido2 h5{
-	font-family: 'Lato', sans-serif;
-	font-size: 15px;
-	text-align: center;
+#contenido2 h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
 
 /*Estilos de la ventana aprobar reserva*/
-#lista #imagAprobar, #imagRechazar, #imagCancelar{
-	height: 25px;
-	width: 25px;
+#lista #imagAprobar, #imagRechazar, #imagCancelar {
+    height: 25px;
+    width: 25px;
 }
 
 /*Estilos de Editar Reserva*/
 
-#pestanas3{
-	background: #fefff6;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 800px;
-	height: 50px;
-	margin: -8px 0 0 -300px;
+#pestanas3 {
+    background: #fefff6;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 50px;
+    margin: -8px 0 0 -300px;
 }
 
-#pestanas3 a{
+#pestanas3 a {
 
-	color: #bfbfbf;
-	font-family: 'Handlee', cursive ;
-	font-size: 14px;
-	text-align: center;
+    color: #bfbfbf;
+    font-family: 'Handlee', cursive;
+    font-size: 14px;
+    text-align: center;
 }
 
 /*Estilos de Consultar Evento*/
 
-
-#contenidoReservaA #lblBusqueda{
-	background: #fefff6;
-	width: 130px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
-	position: absolute;
-	left: 160px;
-	top: 80px;
+#contenidoReservaA #lblBusqueda {
+    background: #fefff6;
+    width: 130px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: 160px;
+    top: 80px;
 }
 
-#contenidoReservaA #search8{
-	background: #fefff6;
-	width: 300px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
-	position: absolute;
-	left: 360px;
-	top: 80px;
+#contenidoReservaA #search8 {
+    background: #fefff6;
+    width: 300px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    left: 360px;
+    top: 80px;
 }
 
-#contenidoReservaA #lista3{
-	background: #fefff6;
-	left: 30%;
-	top: 60%;
-	width: 630px;
-	height: 290px;
-	margin: 20px 0 0 100px;
+#contenidoReservaA #lista3 {
+    background: #fefff6;
+    left: 30%;
+    top: 60%;
+    width: 630px;
+    height: 290px;
+    margin: 20px 0 0 100px;
 }
-
 
 #lista3 tr {
-	width: 100%;
-	display: inline-table;
+    width: 100%;
+    display: inline-table;
 }
 
-#lista3 table{
-	height:300px;
-	position: absolute;
-	top: 150px;
-	left: 0px;
+#lista3 table {
+    height: 300px;
+    position: absolute;
+    top: 150px;
+    left: 0px;
 }
 
-
-#lista3 tbody{
-	overflow-y: scroll;
-	height: 230px;
-	/*width: 45%;*/
-	width: 800px;
-	position: absolute;
-	left: 0px;
+#lista3 tbody {
+    overflow-y: scroll;
+    height: 230px;
+    /*width: 45%;*/
+    width: 800px;
+    position: absolute;
+    left: 0px;
 
 }
 
-#lista3 #imagEditar, #imagSuspender{
-	height: 25px;
-	width: 25px;
+#lista3 #imagEditar, #imagSuspender {
+    height: 25px;
+    width: 25px;
 }
 
-#pag2{
-	background: #fefff6;
-	position: absolute;
-	top: 430px;
-	height:40px;
-	width:300px;
-	margin-right:auto;
-	margin-left:auto;
-	margin: 20px 0 0 450px;
+#pag2 {
+    background: #fefff6;
+    position: absolute;
+    top: 430px;
+    height: 40px;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 20px 0 0 450px;
 }
 
 /*Estilos de crear reserva cabaña*/
 
-#btnCrearReserva{
-	position: absolute;
-	top: 400px;
-	left: 250px;
+#btnCrearReserva {
+    position: absolute;
+    top: 400px;
+    left: 250px;
 }
 
 /*Estilo de pagina de usuario Inicial*/
 
-#submitContrasenia{
+#submitContrasenia {
 
-	width: 143px;
-	position: absolute;
-	top: -20px;
-	left: 3px;
-	border-radius: 10px 10px 10px 10px;
+    width: 143px;
+    position: absolute;
+    top: -20px;
+    left: 3px;
+    border-radius: 10px 10px 10px 10px;
 }
 
-#submitCerrar{
-	width: 143px;
-	position: absolute;
-	top: 13px;
-	left: 3px;
-	border-radius: 10px 10px 10px 10px;
+#submitCerrar {
+    width: 143px;
+    position: absolute;
+    top: 13px;
+    left: 3px;
+    border-radius: 10px 10px 10px 10px;
 }
 
-#login{
-	width: 120px;
+#login {
+    width: 120px;
 }
 
-nav.acceder #login-content2{
-	position: absolute;
-	top:56px;
-	right: 0;
-	z-index: 999;
-	background-color: #fefff6;
-	border: 1px solid #000000;
-	padding:  15px;
-	width: 150px;
-	height: 70px;
-	border-radius: 10px 10px 10px 10px;
-	display: none;
+nav.acceder #login-content2 {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    z-index: 999;
+    background-color: #fefff6;
+    border: 1px solid #000000;
+    padding: 15px;
+    width: 150px;
+    height: 70px;
+    border-radius: 10px 10px 10px 10px;
+    display: none;
 }
 
-#contenidoUsuario{
-	position: absolute;
-	left: 35%;
-	top: 30%;
-	width: 600px;
-	height: 400px;
-	margin: -60px 0 0 -200px;
+#contenidoUsuario {
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    width: 600px;
+    height: 400px;
+    margin: -60px 0 0 -200px;
 }
 
-#infoUsuario{
-	position: absolute;
-	top: 130%;
+#infoUsuario {
+    position: absolute;
+    top: 130%;
 }
 
-#contenedorUsuario{
-	box-shadow: 5px 5px 30px #bcbcbc;
-	height:1133px;
-	width:1000px;
-	margin-right:auto;
-	margin-left:auto;
+#contenedorUsuario {
+    box-shadow: 5px 5px 30px #bcbcbc;
+    height: 1133px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-#contenedorUsuario #contenidoReservaC{
-	position: absolute;
-	top: 420px;
-	left: 600px;
+#contenedorUsuario #contenidoReservaC {
+    position: absolute;
+    top: 420px;
+    left: 600px;
 }
-
 
 /*Consultar reserva*/
 
-#contenidoReservaA #lista4{
-	background: #fefff6;
-	left: 70%;
-	top: 60%;
-	width: 700px;
-	height: 290px;
-	margin: 20px 0 0 100px;
+#contenidoReservaA #lista4 {
+    background: #fefff6;
+    left: 70%;
+    top: 60%;
+    width: 700px;
+    height: 290px;
+    margin: 20px 0 0 100px;
 }
-
 
 #lista4 tr {
-	width: 70%;
-	display: inline-table;
+    width: 70%;
+    display: inline-table;
 }
 
-
-#lista4 table{
-	height:500px;
-	position: absolute;
-	top: 150px;
-	left: 100px;
+#lista4 table {
+    height: 500px;
+    position: absolute;
+    top: 150px;
+    left: 100px;
 }
 
+#lista4 tbody {
 
-#lista4 tbody{
-
-	height: 230px;
-	/*width: 100%;*/
-	width: 900px;
-	position: absolute;
-	left: 0px;
+    height: 230px;
+    /*width: 100%;*/
+    width: 900px;
+    position: absolute;
+    left: 0px;
 
 }
 
 /*Estilos de la ventana emergente que aparece si se desea realizar una reserva sin loguear*/
-.inline{
-	color: white;
+.inline {
+    color: white;
 
 }
 
-#ventanaEmergente{
-	display: none;
+#ventanaEmergente {
+    display: none;
 
 }
-#login-content2{
-	background-color: white;
-	height: 170px;
-	width: 300px;
-	border-top: 10px solid #FDCA2E;
-	border-right: 3px solid #080808;
-	border-left: 3px solid #080808;
-	border-bottom: 3px solid #080808;
+
+#login-content2 {
+    background-color: white;
+    height: 170px;
+    width: 300px;
+    border-top: 10px solid #FDCA2E;
+    border-right: 3px solid #080808;
+    border-left: 3px solid #080808;
+    border-bottom: 3px solid #080808;
 }
 
-#submitEntrarVentana{
-	position: absolute;
-	top: 90px;
-	left: 40px;
-	height: 33px;
+#submitEntrarVentana {
+    position: absolute;
+    top: 90px;
+    left: 40px;
+    height: 33px;
 }
 
-#submitRegistrarVentana{
-	position: absolute;
-	top: 90px;
-	left: 150px;
-	height: 33px;
+#submitRegistrarVentana {
+    position: absolute;
+    top: 90px;
+    left: 150px;
+    height: 33px;
 }
 
-#usuarioVentana{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 30px;
-	left: 40px;
+#usuarioVentana {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 30px;
+    left: 40px;
 }
 
-#passwordVentana{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 70px;
-	left: 40px;
+#passwordVentana {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 70px;
+    left: 40px;
 }
 
 /*Estilos de la ventana emergente de modificar una cabaña*/
 
-#valorNocheVentana{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 30px;
-	left: 40px;
+#valorNocheVentana {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 30px;
+    left: 40px;
 }
 
-#cantidadVentana{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 70px;
-	left: 40px;
+#cantidadVentana {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 70px;
+    left: 40px;
 }
 
-#submitAceptarVentana{
-	position: absolute;
-	top: 90px;
-	left: 40px;
-	height: 33px;
-	text-align: center;
+#submitAceptarVentana {
+    position: absolute;
+    top: 90px;
+    left: 40px;
+    height: 33px;
+    text-align: center;
 }
 
-#submitCancelarVentana{
-	 position: absolute;
-	 top: 90px;
-	 left: 150px;
-	 height: 33px;
-	 text-align: center;
- }
+#submitCancelarVentana {
+    position: absolute;
+    top: 90px;
+    left: 150px;
+    height: 33px;
+    text-align: center;
+}
 
 /*Estilos de la ventana emergente cuando se da editar evento*/
 
-
-#login-content3{
-	background-color: white;
-	height: 270px;
-	width: 300px;
-	border-top: 10px solid #FDCA2E;
-	border-right: 3px solid #080808;
-	border-left: 3px solid #080808;
-	border-bottom: 3px solid #080808;
+#login-content3 {
+    background-color: white;
+    height: 270px;
+    width: 300px;
+    border-top: 10px solid #FDCA2E;
+    border-right: 3px solid #080808;
+    border-left: 3px solid #080808;
+    border-bottom: 3px solid #080808;
 }
 
-#nombreVentana{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 30px;
-	left: 40px;
+#nombreVentana {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 30px;
+    left: 40px;
 }
 
-#fechaInicioVentana{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 70px;
-	left: 40px;
+#fechaInicioVentana {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 70px;
+    left: 40px;
 }
 
-#fechaFinVentana{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 110px;
-	left: 40px;
+#fechaFinVentana {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 110px;
+    left: 40px;
 }
 
-#lugar{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 150px;
-	left: 40px;
+#lugar {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 150px;
+    left: 40px;
 }
 
-#submitAceptarEvento{
-	position: absolute;
-	top: 190px;
-	left: 40px;
-	height: 33px;
-	text-align: center;
+#submitAceptarEvento {
+    position: absolute;
+    top: 190px;
+    left: 40px;
+    height: 33px;
+    text-align: center;
 }
 
-#submitCancelarEvento{
-	position: absolute;
-	top: 190px;
-	left: 150px;
-	height: 33px;
-	text-align: center;
+#submitCancelarEvento {
+    position: absolute;
+    top: 190px;
+    left: 150px;
+    height: 33px;
+    text-align: center;
 }
 
 /*Estilos de la ventana emergente para editar una reserva*/
-#login-content4{
-	background-color: white;
-	height: 180px;
-	width: 350px;
-	border-top: 10px solid #FDCA2E;
-	border-right: 3px solid #080808;
-	border-left: 3px solid #080808;
-	border-bottom: 3px solid #080808;
+#login-content4 {
+    background-color: white;
+    height: 180px;
+    width: 350px;
+    border-top: 10px solid #FDCA2E;
+    border-right: 3px solid #080808;
+    border-left: 3px solid #080808;
+    border-bottom: 3px solid #080808;
 }
 
-
-#lblFecha1{
-	position: absolute;
-	top: 30px;
-	left: 10px;
+#lblFecha1 {
+    position: absolute;
+    top: 30px;
+    left: 10px;
 }
 
-#lblFecha2{
-	position: absolute;
-	top: 70px;
-	left: 10px;
+#lblFecha2 {
+    position: absolute;
+    top: 70px;
+    left: 10px;
 }
 
-#fecha1Ventana{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 30px;
-	left: 100px;
+#fecha1Ventana {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 30px;
+    left: 100px;
 }
 
-#fecha2Ventana{
-	font: 14px Arial;
-	width: 230px;
-	height: 25px;
-	border: 1px solid #bcbcbc;
-	border-radius: 5px 5px 5px 5px;
-	position: absolute;
-	top: 70px;
-	left: 100px;
+#fecha2Ventana {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 70px;
+    left: 100px;
 }
 
 /* Estilos de la ventana eventos*/
 
 #ev1, #ev2, #ev3, #ev4, #ev5, #ev6 {
-	background: #fefff6;
-	width: 100px;
-	height: 100px;
-	display: inline-block;
-	vertical-align: middle;
+    background: #fefff6;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /*Estilos de la ventana Crear Usuario*/
 
-#et1{
-	width: 600px;
-	position: absolute;
-	left: 100px;
-	top: 100px;
+#et1 {
+    width: 600px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
 }
 
-#et2{
-	width: 600px;
-	position: absolute;
-	left: 100px;
-	top: 200px;
+#et2 {
+    width: 600px;
+    position: absolute;
+    left: 100px;
+    top: 200px;
 }
 
-#et3{
-	width: 600px;
-	position: absolute;
-	left: 100px;
-	top: 300px;
+#et3 {
+    width: 600px;
+    position: absolute;
+    left: 100px;
+    top: 300px;
 }
 
-#btnCrearUsuario{
+#btnCrearUsuario {
 
-	position: absolute;
-	left: 350px;
-	top: 300px;
+    position: absolute;
+    left: 350px;
+    top: 300px;
 }
 
-
-#contenidoReservaR{
-	background: #fefff6;
-	position: absolute;
-	left: 50%;
-	top: 70%;
-	width: 600px;
-	height: 400px;
-	margin: -60px 0 0 -200px;
+#contenidoReservaR {
+    background: #fefff6;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    width: 600px;
+    height: 400px;
+    margin: -60px 0 0 -200px;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de fechaI
 */
-#contenidoReservaR #fechaI{
-	background: #fefff6;
-	width: 180px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaR #fechaI {
+    background: #fefff6;
+    width: 180px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de search1
 */
-#contenidoReservaR #search1{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaR #search1 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de fechaF
 */
-#contenidoReservaR #fechaF{
-	background: #fefff6;
-	width: 180px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaR #fechaF {
+    background: #fefff6;
+    width: 180px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de search2
 */
-#contenidoReservaR #search2{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaR #search2 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de cantidadP
 */
 #contenidoReservaR #cantidadP {
-	background: #fefff6;
-	width: 180px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+    background: #fefff6;
+    width: 180px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Bloque que contiene el tamaño y posicion de search3
 */
-#contenidoReservaR #search3{
-	background: #fefff6;
-	width: 400px;
-	height: 35px;
-	display: inline-block;
-	vertical-align: middle;
+#contenidoReservaR #search3 {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
 }
+
 /*
 	Tamaño y tipo de letra h4
 */
-#contenidoReservaR h4{
-	font-family: 'Handlee', cursive;
-	font-size: 37px;
-	text-align: center;
+#contenidoReservaR h4 {
+    font-family: 'Handlee', cursive;
+    font-size: 37px;
+    text-align: center;
 }
 
-#contenidoReservaR h5{
-	font-family: 'Lato', sans-serif;
-	font-size: 15px;
-	text-align: center;
+#contenidoReservaR h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
 
-#informacionEncontrada{
-	position: relative;
-	top: 5%;
+#informacionEncontrada {
+    position: relative;
+    top: 5%;
+}/*
+    Estilo de los botones de servicios
+*/
+.ghost {
+
+    border: none;
+    background: #fefff6;
+    color: #2ECC71;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+}
+.ghost:hover {
+    background: rgba(0,0,0,0);
+    color: #2ECC71;
+    box-shadow: inset 0 0 0 3px #2ECC71;
 }

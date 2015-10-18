@@ -5,9 +5,9 @@
 <head> <!-- Lo que es importante para tener en la pagina -->
     <meta charset="UTF-8">
     <!-- Palabras clave -->
-    <meta name="keywords" content="sindicato ">
+    <meta name="keywords" content="sindraoficiales ">
     <!-- Descripcion -->
-    <meta name="description" content="sadefrgth ">
+    <meta name="description" content="cabañas,reservas, moniquira,psicinas">
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title> Inicio </title>
@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="Presentacion/estilos/estilos.css">
     <!-- Tipo de letra de google -->
-    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 
@@ -134,6 +134,8 @@
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="4"></li>
             </ol>
 
             <!-- Wrapper for slides -->
@@ -174,22 +176,20 @@
 
     <!-- Descripcion del sindicato -->
     <section id="texto">
-        <h1>¿Quienes Somos?</h1>
-        <h4>Somos un sindicato que su objetivo es brindarle a sus usuarios accesoria laboral y entretenimiento a sus
-            familias </br>
-            Somos un sindicato que su objetivo es brindarle a sus usuarios accesoria laboral y entretenimiento a sus
-            familias </br>
-            Somos un sindicato que su objetivo es brindarle a sus usuarios accesoria laboral y entretenimiento a sus
-            familias </br>
-            Somos un sindicato que su objetivo es brindarle a sus usuarios accesoria laboral y entretenimiento a sus
-            familias </br>
-            Somos un sindicato que su objetivo es brindarle a sus usuarios accesoria laboral y entretenimiento a sus
-            familias </br>
-            Somos un sindicato que su objetivo es brindarle a sus usuarios accesoria laboral y entretenimiento a sus
-            familias </br>
-        </h4>
+        <article id="info">
+            <h2>¿Quienes Somos?</h2>
+            <article id="desc">
+                <p> Somos una asociación de empleados de la Universidad Pedagógica y Tecnológica deColombia,
+                    con el fin de brindar un espacio de tranquilidad de descanso y diversión,crearon
+                    un lugar para brindarles a sus usuarios y familias el servicio de hospedaje y piscina en
+                    municipio de Moniquita Boyacá
+                </p>
+            </article>
+        </article>
+        <article id="textoIm">
+            <img src="Presentacion/imagenes/usuarios.png" alt="usuarios.jpg"></h1> <!-- Importar la imagen -->
+        </article>
     </section>
-
     <!-- Divicion para el color de la informacion adicional de la pagina -->
     <section id="divi">
     </section>
@@ -200,21 +200,17 @@
             <h4>Menu</h4>
             <h5>
                 <button type="button" class="btn btn-link">Nosotros</button>
-            </h5>
-            <h5>
                 <button type="button" class="btn btn-link">Junta Directiva</button>
-            </h5>
-            <h5>
                 <button type="button" class="btn btn-link">Contáctenos</button>
             </h5>
         </article>
         <article id="inf2"> <!-- Seccion Registrar -->
         </article>
         <article id="inf3"> <!-- Seccion Inf Contacto -->
-            <h4>Informacion de contacto</h4>
-            <h5> Avenida Central del Norte 39 - 115 </h5>
-            <h5> Tunja - Boyaca </h5>
-            <h5> Tel. 422174 Ext. 1500</h5>
+            <h4></br>Informacion de contacto</h4>
+            <h5> Avenida Central del Norte 39 - 115 </br>
+                 Tunja - Boyaca </br>
+                 Tel. 422174 Ext. 1500</h5>
         </article>
     </section>
 
