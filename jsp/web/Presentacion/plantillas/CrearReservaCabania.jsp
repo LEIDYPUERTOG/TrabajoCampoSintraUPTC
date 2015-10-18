@@ -125,34 +125,35 @@
     <section id="contenidoReservaR">
         <h4>Reservar Cabaña</h4><!-- Titulo principal -->
 
-        <!-- Primer caja de texto -->
-        <article id="fechaI">
-            <h5>Fecha inicio de la reserva </h5>
-        </article>
-        <article id="search1">
-            <input type="date" class="form-control" placeholder="Ingrese el texto." required>
-        </article>
+        <form action="/SvtCrearReserva" method="post" name="formulario4">
+            <!-- Primer caja de texto -->
+            <article id="fechaI">
+                <h5>Fecha inicio de la reserva </h5>
+            </article>
+            <article id="search1">
+                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaInicio">
+            </article>
 
-        <!-- Segunda caja de texto -->
-        <article id="fechaF">
-            <h5>Fecha fin de la Reserva</h5>
-        </article>
-        <article id="search2">
-            <input type="date" class="form-control" placeholder="Ingrese el texto." required>
-        </article>
+            <!-- Segunda caja de texto -->
+            <article id="fechaF">
+                <h5>Fecha fin de la Reserva</h5>
+            </article>
+            <article id="search2">
+                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
+            </article>
 
-        <!-- Tercera caja de texto -->
-        <article id="cantidadP">
-            <h5>Cantidad de personas</h5>
-        </article>
-        <article id="search3">
-            <input type="text" class="form-control" placeholder="Ingrese el texto." required>
-        </article>
-        <!-- Cuadro de Acompañantes -->
-        <article id="acompa">
-            <h4>Acompañantes</h4> <!-- Titulo Principal -->
-            <!-- Tabla con la cedula y nombre-->
-            <table class="table">
+            <!-- Tercera caja de texto -->
+            <article id="cantidadP">
+                <h5>Cantidad de personas</h5>
+            </article>
+            <article id="search3">
+                <input type="text" class="form-control" placeholder="Ingrese el texto." required name="cantidad">
+            </article>
+            <!-- Cuadro de Acompañantes -->
+            <article id="acompa">
+                <h4>Acompañantes</h4> <!-- Titulo Principal -->
+                <!-- Tabla con la cedula y nombre-->
+                <table class="table">
                     <thead>
                     <!-- titulos de la tabla -->
                     <tr>
@@ -164,102 +165,101 @@
                     <!-- Primer componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula1">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre1">
                         </article></td>
                     </tr>
                     <!-- Segundo componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula2">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre2">
                         </article></td>
                     </tr>
                     <!-- Tercero componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula3">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre3">
                         </article></td>
                     </tr>
                     <!-- Cuarto componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula4">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre4">
                         </article></td>
                     </tr>
                     <!-- Quinto componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula5">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre5">
                         </article></td>
                     </tr>
                     <!-- Sexto componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula6">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre6">
                         </article></td>
                     </tr>
                     <!-- Septimo componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula7">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre7">
                         </article></td>
                     </tr>
                     <!-- Octavo componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula8">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre8">
                         </article></td>
                     </tr>
                     <!-- Noveno componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula9">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre9">
                         </article></td>
                     </tr>
                     <!-- Decimo componente -->
                     <tr>
                         <td><article id="searchC">
-                            <input type="text" class="form-control" placeholder="Cedula">
+                            <input type="text" class="form-control" placeholder="Cedula" name="cedula10">
                         </article></td>
                         <td><article id="searchN">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre10">
                         </article></td>
                     </tr>
-
                     </tbody>
-            </table> <!-- Fin de la tabla -->
-        </article> <!-- Fin del article -->
+                </table> <!-- Fin de la tabla -->
+            </article> <!-- Fin del article -->
 
-        <article id="btnCrearReserva">
-            <button type="button" class="btn btn-warning">Reservar</button>
-        </article>
-
+            <article id="btnCrearReserva">
+                <button type="button" class="btn btn-warning">Reservar</button>
+            </article>
+        </form>
     </section>
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->

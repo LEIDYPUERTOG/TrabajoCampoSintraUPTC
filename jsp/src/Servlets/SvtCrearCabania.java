@@ -1,10 +1,11 @@
 package Servlets;
 
 import Logica.Cabania;
-import Logica.Evento;
+import Logica.Persona;
+import Logica.TipoDocumento;
 import Persistencia.CabaniaDao;
 import Persistencia.ConexionDB;
-import Persistencia.EventoDao;
+import Persistencia.PersonaDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,37 +14,35 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 
 /**
- * Created by LEIDY on 17/10/2015.
- * javax.servlet.http.HttpServlet
+ * Created by LEIDY on 18/10/2015.
  */
-public class SvtCrearEvento extends HttpServlet {
+@WebServlet("/SvtCrearCabania")
+public class SvtCrearCabania extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
 
 
-        String nombre=request.getParameter("nombre");
-
-        Date fechaInicio = Date(request.getParameter("fechaInicio"));
-        Date fechaFin = Date(request.getParameter("fechaFin"));
-        String descipcion =request.getParameter("descripcion");
+        int idCabania=Integer.parseInt(request.getParameter("idCabania"));
+        int capacidad=Integer.parseInt(request.getParameter("capacidad"));
+        double valor=Double.parseDouble(request.getParameter("valor"));
+        String ruta=request.getParameter("ruta");
 
         ConexionDB conexionDB = new ConexionDB("root","");
 
-        EventoDao eventoDao = new EventoDao();
+        CabaniaDao cabaniaDao = new CabaniaDao();
 
+        System.out.println("---------------------------------------------"+idCabania);
+        System.out.println("---------------------------------------------"+capacidad);
+        System.out.println("---------------------------------------------"+valor);
+        System.out.println("---------------------------------------------"+ruta);
+        Cabania cabania = new Cabania(capacidad,ruta,idCabania, valor);
 
-        System.out.println("---------------------------------------------"+nombre);
-        System.out.println("---------------------------------------------"+fechaInicio);
-        System.out.println("---------------------------------------------"+fechaFin);
-        System.out.println("---------------------------------------------"+descipcion);
-        Evento evento = new Evento(descipcion,fechaFin,fechaInicio,"Tunja",nombre,"aaaaaa");
+        boolean agregar = cabaniaDao.crearCabania(cabania);
 
-        boolean agregar = eventoDao.agregarEvento(evento);
-
-        if(agregar ){
+        if(agregar){
             System.out.println("---------------------------------------------" + agregar);
             PrintWriter out=response.getWriter();
             out.println("Agregado");
@@ -51,8 +50,8 @@ public class SvtCrearEvento extends HttpServlet {
             PrintWriter out=response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
         }
-
     }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

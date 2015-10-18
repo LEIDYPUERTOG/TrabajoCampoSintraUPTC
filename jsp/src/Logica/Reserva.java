@@ -89,13 +89,12 @@ public class Reserva {
 
 	}
 
-	public Reserva(int cantidadPersonas, EstadoReserva estadoReserva, Date fechaSolicitud, double valorReserva, TipoServicio tipoServicio) {
+	public Reserva(int cantidadPersonas, EstadoReserva estadoReserva, Date fechaSolicitud, TipoServicio tipoServicio) {
 		this.cantidadPersonas = cantidadPersonas;
 		this.estadoReserva = estadoReserva;
 		this.fechaSolicitud = fechaSolicitud;
-		this.valorReserva = valorReserva;
+		this.valorReserva = calcularValorReserva(this.cantidadPersonas,(double)90000);
 		this.tipoServicio = tipoServicio;
-
 	}
 
 	public Reserva() {

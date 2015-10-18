@@ -57,25 +57,27 @@ public class SvtRegistro extends HttpServlet {
         String nombre=request.getParameter("nombres");
         int documento=Integer.parseInt(request.getParameter("documento"));
         String clave=request.getParameter("contrasenia");
+        String clave2=request.getParameter("contrasenia2");
+        String tipoUsuario = request.getParameter("inlineRadioOptions");
 
-        request.getRequestDispatcher("Presentacion/plantillas/Conexion.jsp").forward(request, response);
+        ConexionDB conexionDB = new ConexionDB("root","");
 
         PersonaDao personaDao = new PersonaDao();
-
-
 
         System.out.println("---------------------------------------------"+nombre);
         System.out.println("---------------------------------------------"+documento);
         System.out.println("---------------------------------------------"+clave);
-        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado,clave);
+        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, personaDao.conversionUsuario(tipoUsuario),clave);
 
-/*        boolean agregar = personaDao.crearPersona(persona);
+       boolean agregar = personaDao.crearPersona(persona);
 
-        if(agregar){
-            request.getRequestDispatcher("../web/Presentacion/plantillas/ReservarCabaniaUsuario.jsp").forward(request, response);
+        if(agregar && clave.equals(clave2)){
+            System.out.println("---------------------------------------------" + agregar);
+            PrintWriter out=response.getWriter();
+            out.println("Agregado");
         }else{
             PrintWriter out=response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
-        }*/
+        }
     }
 }

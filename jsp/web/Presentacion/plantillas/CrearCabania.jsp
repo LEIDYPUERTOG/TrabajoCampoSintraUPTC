@@ -124,53 +124,55 @@
     <section id="contenido">
         <h4>Crear Cabaña</h4><!-- Titulo principal -->
 
-        <!-- Primer caja de texto -->
-        <article id="identificador">
-            <h5>Identificador</h5>
-        </article>
-        <article id="search1">
-            <input type="text" class="form-control" placeholder="Ingrese el texto.">
-        </article>
+        <form action="/SvtCrearCabania" method="post" name="formulario2">
+            <!-- Primer caja de texto -->
+            <article id="identificador">
+                <h5>Identificador</h5>
+            </article>
+            <article id="search1">
+                <input type="text" class="form-control" placeholder="Ingrese el texto." name="idCabania">
+            </article>
 
-        <!-- Segunda caja de texto -->
-        <article id="capacidad">
-            <h5>Capacidad Maxima</h5>
-        </article>
-        <article id="search2">
-            <input type="text" class="form-control" placeholder="Ingrese el texto.">
-        </article>
+            <!-- Segunda caja de texto -->
+            <article id="capacidad">
+                <h5>Capacidad Maxima</h5>
+            </article>
+            <article id="search2">
+                <input type="text" class="form-control" placeholder="Ingrese el texto." name="capacidad">
+            </article>
 
-        <!-- Tercera caja de texto -->
-        <article id="valor">
-            <h5>Valor dia</h5>
-        </article>
-        <article id="search3">
-            <input type="text" class="form-control" placeholder="Ingrese el texto.">
-        </article>
-        <!-- Cuarta caja de texto -->
-        <article id="ruta">
-            <h5>Ruta de la foto</h5>
-        </article>
-        <article id="search4">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Ingrese la ubicacion">
+            <!-- Tercera caja de texto -->
+            <article id="valor">
+                <h5>Valor dia</h5>
+            </article>
+            <article id="search3">
+                <input type="text" class="form-control" placeholder="Ingrese el texto." name="valor">
+            </article>
+            <!-- Cuarta caja de texto -->
+            <article id="ruta">
+                <h5>Ruta de la foto</h5>
+            </article>
+            <article id="search4">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Ingrese la ubicacion" name="ruta">
       <span class="input-group-btn">
           <!-- Boton para la busqueda de la iamgen -->
         <button type="button" class="btn btn-default" aria-label="Left Align">
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </button>
       </span>
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-        </article>
-        <article id="btnAgregar">
-            <h1> <img src="/Presentacion/imagenes/cabania.png" alt="cabaña"></h1>
-            <button type="button" class="btn btn-success"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> AGREGAR <!-- Icono y palabra -->
-            </button>
-        </article>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </article>
+            <article id="btnAgregar">
+                <h1> <img src="/Presentacion/imagenes/cabania.png" alt="cabaña"></h1>
+                <button type="submit" class="btn btn-success"> <!-- Tamaño -->
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> AGREGAR <!-- Icono y palabra -->
+                </button>
+            </article>
+        </form>
     </section>
 
     <!-- Divicion para el color de la informacion adicional de la pagina -->

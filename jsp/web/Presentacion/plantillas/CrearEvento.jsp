@@ -125,53 +125,52 @@
         <h4>Crear Evento</h4><!-- Titulo principal -->
 
         <!-- Primer caja de texto -->
-        <article id="nombre">
-            <h5>Nombre</h5>
-        </article>
-        <article id="search1">
-            <input type="text" class="form-control" placeholder="Nombre Evento" required>
-        </article>
+        <form action="/SvtCrearEvento" method="post" name="formulario3">
+            <article id="nombre">
+                <h5>Nombre</h5>
+            </article>
+            <article id="search1">
+                <input type="text" class="form-control" placeholder="Nombre Evento" required name="nombre">
+            </article>
 
-        <!-- Segunda caja de texto -->
-        <article id="FechaInicio">
-            <h5>Fecha Inicio</h5>
-        </article>
-        <article id="search2">
-            <input type="date" class="form-control" required>
-        </article>
+            <!-- Segunda caja de texto -->
+            <article id="FechaInicio">
+                <h5>Fecha Inicio</h5>
+            </article>
+            <article id="search2">
+                <input type="date" class="form-control" required name="fechaInicio">
+            </article>
 
-        <!-- Tercera caja de texto -->
-        <article id="FechaFin">
-            <h5>Fecha Fin</h5>
-        </article>
-        <article id="search3">
-            <input type="date" class="form-control" placeholder="Ingrese el texto." required>
-        </article>
-        <!-- Cuarta caja de texto -->
-        <article id="descripcion">
-            <h5>Descripción</h5>
-        </article>
-        <article id="search5">
-            <input type="text" class="form-control">
-        </article>
+            <!-- Tercera caja de texto -->
+            <article id="FechaFin">
+                <h5>Fecha Fin</h5>
+            </article>
+            <article id="search3">
+                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
+            </article>
+            <!-- Cuarta caja de texto -->
+            <article id="descripcion" >
+                <h5>Descripción</h5>
+            </article>
+            <article id="search5">
+                <input type="text" class="form-control" name="descripcion">
+            </article>
 
-        <!-- Quinta caja de texto -->
-        <article id="lugar">
-            <h5>Lugar</h5>
-        </article>
-        <article id="search6">
-            <select class="form-control">
-                <option value="1">Camara de Comercio</option>
-                <option value="2">Uptc</option>
-                <option value="3">Moniquira</option></select>
-        </article>
+            <!-- Quinta caja de texto -->
+            <article id="lugar">
+                <h5>Lugar</h5>
+            </article>
+            <article id="search6">
+                <select class="form-control">
+                    <option value="1">Camara de Comercio</option>
+                    <option value="2">Uptc</option>
+                    <option value="3">Moniquira</option></select>
+            </article>
 
-
-
-        <article id="btnCrear">
-            <button type="button" class="btn btn-warning">Crear Evento</button>
-        </article>
-
+            <article id="btnCrear">
+                <button type="submit" class="btn btn-warning">Crear Evento</button>
+            </article>
+        </form>
     </section>
 
     <!-- Divicion para el color de la informacion adicional de la pagina -->

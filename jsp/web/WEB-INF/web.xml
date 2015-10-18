@@ -20,4 +20,22 @@
         <servlet-name>SvtRegistro</servlet-name>
         <url-pattern>/SvtRegistro</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtCrearCabania</servlet-name>
+        <servlet-class>Servlets.SvtCrearCabania</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtCrearCabania</servlet-name>
+        <url-pattern>/SvtCrearCabania</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtCrearReserva</servlet-name>
+        <servlet-class>Servlets.SvtCrearReserva</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtCrearReserva</servlet-name>
+        <url-pattern>/SvtCrearReserva</url-pattern>
+    </servlet-mapping>
 </web-app>

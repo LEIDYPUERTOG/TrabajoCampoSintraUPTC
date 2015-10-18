@@ -1,10 +1,9 @@
 package Servlets;
 
-import Logica.Cabania;
-import Logica.Evento;
-import Persistencia.CabaniaDao;
+import Logica.*;
 import Persistencia.ConexionDB;
-import Persistencia.EventoDao;
+import Persistencia.PersonaDao;
+import Persistencia.ReservaDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,36 +13,38 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.util.GregorianCalendar;
 
 /**
- * Created by LEIDY on 17/10/2015.
- * javax.servlet.http.HttpServlet
+ * Created by LEIDY on 18/10/2015.
  */
-public class SvtCrearEvento extends HttpServlet {
+@WebServlet("/SvtCrearReserva")
+public class SvtCrearReserva extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         response.setContentType("text/html;charset=UTF-8");
 
+        Date fechaInicio = request.getParameter("fechaInicio");
+        Date fechaFin = request.getParameter("fechaFin");
+        int cantidad = Integer.parseInt(request.getParameter("cantidad"));
 
-        String nombre=request.getParameter("nombre");
-
-        Date fechaInicio = Date(request.getParameter("fechaInicio"));
-        Date fechaFin = Date(request.getParameter("fechaFin"));
-        String descipcion =request.getParameter("descripcion");
 
         ConexionDB conexionDB = new ConexionDB("root","");
 
-        EventoDao eventoDao = new EventoDao();
+        ReservaDao reservaDao = new ReservaDao();
 
-
-        System.out.println("---------------------------------------------"+nombre);
         System.out.println("---------------------------------------------"+fechaInicio);
         System.out.println("---------------------------------------------"+fechaFin);
-        System.out.println("---------------------------------------------"+descipcion);
-        Evento evento = new Evento(descipcion,fechaFin,fechaInicio,"Tunja",nombre,"aaaaaa");
+        System.out.println("---------------------------------------------" + cantidad);
 
-        boolean agregar = eventoDao.agregarEvento(evento);
 
-        if(agregar ){
+        GregorianCalendar c = new GregorianCalendar();
+        Date fechaSolicitud = new Date(c.getTimeInMillis());
+        Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA);
+        boolean agregar = reservaDao.crearReservaCabania(reserva);
+
+
+        if(agregar){
             System.out.println("---------------------------------------------" + agregar);
             PrintWriter out=response.getWriter();
             out.println("Agregado");
@@ -51,7 +52,6 @@ public class SvtCrearEvento extends HttpServlet {
             PrintWriter out=response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
