@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="Persistencia.ConexionDB" language="java"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +35,7 @@
 
 </head>
 <body>
-
+<script src="/SvtLogin"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -99,38 +100,42 @@
         <label id="lblInfo">¿No está registrado aún?</label>
 
 
-        <li>
-            <label id="lblNombres">Nombre:</label>
-            <input id="nombres" type="text" name="nombres" required>
-        </li>
+        <form action="/SvtRegistro" method="post">
 
-        <li>
-            <label id="lblDocumento">Documento:</label>
-            <input id="documento" type="text" name="documento" required>
+            <li>
+                <label id="lblNombres">Nombre:</label>
+                <input id="nombres" type="text" name="nombres" required>
+            </li>
 
-        </li>
+            <li>
+                <label id="lblDocumento">Documento:</label>
+                <input id="documento" type="text" name="documento" required>
 
-        <li>
-            <label id="lblContrasenia">Contraseña:</label>
-            <input id="contrasenia" type="password" name="contrasenia" required>
+            </li>
 
-        </li>
+            <li>
+                <label id="lblContrasenia">Contraseña:</label>
+                <input id="contrasenia" type="password" name="contrasenia" required>
 
-        <li>
-            <label id="lblContrasenia2">Repita la Contraseña:</label>
-            <input id="contrasenia2" type="password" name="contrasenia2" required>
+            </li>
 
-        </li>
+            <li>
+                <label id="lblContrasenia2">Repita la Contraseña:</label>
+                <input id="contrasenia2" type="password" name="contrasenia2" required>
 
-        <label id="lblPreg">Es usted: </label>
-        <label id = "rbtn" class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="Afiliado" value="option1"> Afiliado
-        </label>
-        <label id = "rbtn2" class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="NoAfiliado" value="option2"> No Afiliado
-        </label>
+            </li>
 
-        <button id= "btnRegistro" type="button" class="btn btn-warning">Registrarse</button>
+            <label id="lblPreg">Es usted: </label>
+            <label id = "rbtn" class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="Afiliado" value="option1"> Afiliado
+            </label>
+            <label id = "rbtn2" class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="NoAfiliado" value="option2"> No Afiliado
+            </label>
+
+            <button id= "btnRegistro" type="submit" class="btn btn-warning" value="Registrar">Registrarseeeeee</button>
+        </form>
+
     </section>
 
     <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->

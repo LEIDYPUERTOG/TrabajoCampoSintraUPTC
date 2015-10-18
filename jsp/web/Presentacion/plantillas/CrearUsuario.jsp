@@ -130,7 +130,7 @@
             <article id="et1">
                 <div class="form-group">
                     <label for="lblCedula">Cédula</label>
-                    <input type="text" class="form-control" id="cedula" placeholder="Cedula" required>
+                    <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Cedula" required>
                 </div>
             </article>
 

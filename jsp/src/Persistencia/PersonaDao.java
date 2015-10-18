@@ -132,6 +132,7 @@ public class PersonaDao {
 	public boolean crearPersona(Persona persona){
 		try {
 			conn = conexionDB.getConexion();
+
 			String documento = conversionDeEnumDocumentoAIniciales(persona.getTipoDocumento());
 
 			String tipoUsuario = conversionEnumUsuarioAIniciales(persona.getTipoUsuario());
