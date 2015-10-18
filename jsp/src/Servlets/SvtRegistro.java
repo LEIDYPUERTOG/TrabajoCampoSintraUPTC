@@ -57,6 +57,8 @@ public class SvtRegistro extends HttpServlet {
         String nombre=request.getParameter("nombres");
         int documento=Integer.parseInt(request.getParameter("documento"));
         String clave=request.getParameter("contrasenia");
+        String clave2=request.getParameter("contrasenia2");
+        String tipoUsuario =request.getParameter("inlineRadioOptions");
 
         ConexionDB conexionDB = new ConexionDB("root","");
         PersonaDao personaDao = new PersonaDao();
@@ -65,15 +67,25 @@ public class SvtRegistro extends HttpServlet {
         System.out.println("---------------------------------------------"+nombre);
         System.out.println("---------------------------------------------"+documento);
         System.out.println("---------------------------------------------"+clave);
-        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado,clave);
+        System.out.println("---------------------------------------------"+tipoUsuario);
+        if(!nombre.equalsIgnoreCase("") && !clave.equalsIgnoreCase("")){
+            if(clave.equals(clave2)){
+                Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, personaDao.conversionUsuario(tipoUsuario),clave);
+                boolean agregar = personaDao.crearPersona(persona);
 
-        boolean agregar = personaDao.crearPersona(persona);
+                if(agregar){
+                    request.getRequestDispatcher("../web/Presentacion/plantillas/Conexion.jsp").forward(request, response);
+                    request.getRequestDispatcher("../web/Presentacion/plantillas/AprobarReserva.jsp").forward(request, response);
+                }else{
+                    PrintWriter out=response.getWriter();
+                    out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+                }
+            }else{
+                PrintWriter out=response.getWriter();
+                out.println("Las claves no concuerdan por favor verifique");
+            }
 
-        if(agregar){
-            request.getRequestDispatcher("../web/Presentacion/plantillas/ReservarCabaniaUsuario.jsp").forward(request, response);
-        }else{
-            PrintWriter out=response.getWriter();
-            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
         }
+
     }
 }
