@@ -21,15 +21,12 @@
 
     <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="../jquery.js"></script>
-    <script src = "../estilos/funciones/ValorRadioBtn.js"></script>
 
     <script>
         $(function(){
             $('#login').click(function(){
                 $(this).next('#login-content').slideToggle();
                 $(this).ToggleClass('active');
-
-
             });
         });
     </script>
@@ -101,7 +98,7 @@
         <label id="lblInfo">¿No está registrado aún?</label>
 
 
-        <form action="/SvtRegistro" method="post" name="formulario">
+        <form action="/SvtRegistro" method="post">
 
             <li>
                 <label id="lblNombres">Nombre:</label>
@@ -127,15 +124,14 @@
             </li>
 
             <label id="lblPreg">Es usted: </label>
-            <label id = "rbtn" class="radio-inline" >
-                <input type="radio" name="inlineRadioOptions" id="Afiliado" value="Af"
-                       onclick="getRadioButtonSelectedValue(document.formulario.inlineRadioOptions)"> Afiliado
+            <label id = "rbtn" class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="Afiliado" value="option1"> Afiliado
             </label>
-            <label id = "rbtn2" class="radio-inline" >
-                <input type="radio" name="inlineRadioOptions" id="NoAfiliado" value="NA"> No Afiliado
+            <label id = "rbtn2" class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="NoAfiliado" value="option2"> No Afiliado
             </label>
 
-            <button id= "btnRegistro" type="submit" class="btn btn-warning" value="Registrar">Registrarse</button>
+            <button id= "btnRegistro" type="submit" class="btn btn-warning" value="Registrar">Registrarseeeeee</button>
         </form>
 
     </section>
