@@ -5,9 +5,6 @@ import Logica.TipoDocumento;
 import Logica.TipoUsuario;
 import Persistencia.ConexionDB;
 import Persistencia.PersonaDao;
-import com.mysql.jdbc.Connection;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -54,12 +51,17 @@ public class SvtRegistro extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+
+
         String nombre=request.getParameter("nombres");
         int documento=Integer.parseInt(request.getParameter("documento"));
         String clave=request.getParameter("contrasenia");
 
-        ConexionDB conexionDB = new ConexionDB("root","");
+        request.getRequestDispatcher("Presentacion/plantillas/Conexion.jsp").forward(request, response);
+
         PersonaDao personaDao = new PersonaDao();
+
 
 
         System.out.println("---------------------------------------------"+nombre);
@@ -67,14 +69,13 @@ public class SvtRegistro extends HttpServlet {
         System.out.println("---------------------------------------------"+clave);
         Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado,clave);
 
-        boolean agregar = personaDao.crearPersona(persona);
+/*        boolean agregar = personaDao.crearPersona(persona);
 
         if(agregar){
-            PrintWriter out=response.getWriter();
-            out.println("Agregado con exito");
+            request.getRequestDispatcher("../web/Presentacion/plantillas/ReservarCabaniaUsuario.jsp").forward(request, response);
         }else{
             PrintWriter out=response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
-        }
+        }*/
     }
 }

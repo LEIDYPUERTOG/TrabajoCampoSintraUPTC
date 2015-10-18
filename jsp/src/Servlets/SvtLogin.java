@@ -28,7 +28,6 @@ public class SvtLogin extends HttpServlet {
         if(usuario != 0){
             Persona persona = personaDao.consultarPersona(usuario);
             if(persona != null){
-                request.getRequestDispatcher("../web/Presentacion/plantillas/Conexion.jsp").forward(request, response);
                 request.getRequestDispatcher("../web/Presentacion/plantillas/AprobarReserva.jsp").forward(request, response);
             }
             else{

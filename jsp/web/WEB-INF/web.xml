@@ -7,4 +7,17 @@
         <servlet-name>SvtCrearEvento</servlet-name>
         <servlet-class>Servlets.SvtCrearEvento</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtCrearEvento</servlet-name>
+        <url-pattern>/SvtCrearEvento</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtRegistro</servlet-name>
+        <servlet-class>Servlets.SvtRegistro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtRegistro</servlet-name>
+        <url-pattern>/SvtRegistro</url-pattern>
+    </servlet-mapping>
 </web-app>

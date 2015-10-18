@@ -98,7 +98,7 @@
         <label id="lblInfo">¿No está registrado aún?</label>
 
 
-        <form action="/SvtRegistro" method="post">
+        <form action="/SvtRegistro" method="post" name="formulario">
 
             <li>
                 <label id="lblNombres">Nombre:</label>
@@ -125,7 +125,8 @@
 
             <label id="lblPreg">Es usted: </label>
             <label id = "rbtn" class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="Afiliado" value="option1"> Afiliado
+                <input type="radio" name="inlineRadioOptions" id="Afiliado" value="option1"
+                       onclick="getRadioButtonSelectedValue(document.formulario.inlineRadioOptions)"> Afiliado
             </label>
             <label id = "rbtn2" class="radio-inline">
                 <input type="radio" name="inlineRadioOptions" id="NoAfiliado" value="option2"> No Afiliado

@@ -1,7 +1,24 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"
+         import="java.sql.Connection" import="java.sql.DriverManager" import="java.sql.ResultSet"
+         import="java.sql.Statement" import="java.sql.SQLException"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <%
+        Connection conexion = null;
+        Statement sql = null;
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            conexion = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/sintrauptc", "root","");
+            if (conexion != null) {
+                sql = conexion.createStatement();
+                out.println("Conexión a base de datos  OK\n");
+            }
+        }catch (Exception e){
+            out.println("Error de la conexion" + e.getMessage());
+        }
+    %>
     <meta charset="UTF-8">
     <title>Aprobar Reserva</title>
 
