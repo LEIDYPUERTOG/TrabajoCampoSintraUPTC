@@ -66,7 +66,7 @@ public class Reserva {
 	}
 
 	public Reserva(Camping camping, int cantidadPersonas, EstadoReserva estadoReserva,
-				   Date fechaSolicitud, Persona persona, String reciboPago, double valorReserva) {
+				   Date fechaSolicitud, Persona persona, String reciboPago) {
 
 		this.camping = camping;
 		this.cantidadPersonas = cantidadPersonas;
@@ -74,18 +74,18 @@ public class Reserva {
 		this.fechaSolicitud = fechaSolicitud;
 		this.persona = persona;
 		this.reciboPago = reciboPago;
-		this.valorReserva = valorReserva;
+		this.valorReserva = calcularValorReserva(this.cantidadPersonas,(double)90000);
 		this.tipoServicio = TipoServicio.CAMPING;
 
 	}
 
 
-	public Reserva(int cantidadPersonas, EstadoReserva estadoReserva, Date fechaSolicitud, Persona persona, double valorReserva) {
+	public Reserva(int cantidadPersonas, EstadoReserva estadoReserva, Date fechaSolicitud, Persona persona) {
 		this.cantidadPersonas = cantidadPersonas;
 		this.estadoReserva = estadoReserva;
 		this.fechaSolicitud = fechaSolicitud;
 		this.persona = persona;
-		this.valorReserva = valorReserva;
+		this.valorReserva = calcularValorReserva(this.cantidadPersonas,90000);
 
 	}
 

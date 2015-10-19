@@ -1,3 +1,4 @@
+<%@ page import="Logica.Persona" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Autor: Diana Gonzalez, Leidy Puerto, Edgar Meneses -->
 <!DOCTYPE html>
@@ -61,12 +62,13 @@
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
                 </button>
                 <div id="login-content">
-                    <form>
+                    <form action="/SvtLogin" method="post">
+
 
                         <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
                         <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
 
-                        <button type="button" id="submit" class="btn btn-primary"
+                        <button type="submit" id="submit" class="btn btn-primary"
                                 style="padding-right:35px;padding-left:10px;margin-top:21px;">
                             Ingresar
                         </button>

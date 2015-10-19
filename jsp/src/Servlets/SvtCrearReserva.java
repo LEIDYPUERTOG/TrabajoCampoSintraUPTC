@@ -2,6 +2,7 @@ package Servlets;
 
 import Logica.*;
 import Persistencia.ConexionDB;
+import Persistencia.InformacionReservaDao;
 import Persistencia.PersonaDao;
 import Persistencia.ReservaDao;
 
@@ -24,27 +25,46 @@ public class SvtCrearReserva extends HttpServlet {
 
         response.setContentType("text/html;charset=UTF-8");
 
-        Date fechaInicio = request.getParameter("fechaInicio");
-        Date fechaFin = request.getParameter("fechaFin");
+        String[] aux = request.getParameter("fechaInicio").toString().split("-");
+        int auxAnio = Integer.parseInt(aux[0]);
+        int auxMes = Integer.parseInt(aux[1]);
+        int auxDia = Integer.parseInt(aux[2]);
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.set(auxAnio, auxMes, auxDia);
+        Date dateInicio = new Date(calendar.getTimeInMillis());
+
+        aux = request.getParameter("fechaFin").toString().split("-");
+        auxAnio = Integer.parseInt(aux[0]);
+        auxMes = Integer.parseInt(aux[1]);
+        auxDia = Integer.parseInt(aux[2]);
+        calendar = new GregorianCalendar();
+        calendar.set(auxAnio,auxMes,auxDia);
+        Date dateFin = new Date(calendar.getTimeInMillis());
+
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
 
 
         ConexionDB conexionDB = new ConexionDB("root","");
 
         ReservaDao reservaDao = new ReservaDao();
+        InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
 
-        System.out.println("---------------------------------------------"+fechaInicio);
-        System.out.println("---------------------------------------------"+fechaFin);
         System.out.println("---------------------------------------------" + cantidad);
-
+        System.out.println("---------fecha Inicio" + dateInicio);
+        System.out.println("---------fecha fin" + dateFin);
 
         GregorianCalendar c = new GregorianCalendar();
         Date fechaSolicitud = new Date(c.getTimeInMillis());
+        System.out.println("solicitud-------------" + fechaSolicitud);
         Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA);
+        InformacionReserva informacionReserva = new InformacionReserva(dateInicio, dateFin,dateFin,reserva);
+
+
+
         boolean agregar = reservaDao.crearReservaCabania(reserva);
+        boolean agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
 
-
-        if(agregar){
+        if(agregar && agregarInfo){
             System.out.println("---------------------------------------------" + agregar);
             PrintWriter out=response.getWriter();
             out.println("Agregado");

@@ -1,6 +1,7 @@
 package Servlets;
 
 import Logica.Persona;
+import Persistencia.ConexionDB;
 import Persistencia.PersonaDao;
 
 import javax.servlet.ServletException;
@@ -21,14 +22,19 @@ public class SvtLogin extends HttpServlet {
         String contrasenia=request.getParameter("contrasenia");
 
 
+        ConexionDB conexionDB = new ConexionDB("root","");
         PersonaDao personaDao = new PersonaDao();
 
         System.out.println("---------------------------------------------"+usuario);
         System.out.println("---------------------------------------------"+contrasenia);
-        if(usuario != 0){
+        if(usuario != 0 && !contrasenia.equalsIgnoreCase("")){
             Persona persona = personaDao.consultarPersona(usuario);
-            if(persona != null){
-                request.getRequestDispatcher("../web/Presentacion/plantillas/AprobarReserva.jsp").forward(request, response);
+            if(persona != null && persona.getContrasenia().equals(contrasenia)){
+                request.setAttribute("persona1111", persona);
+                request.getRequestDispatcher("../web/Presentacion/plantillas/AprobarReserva.jsp");
+                System.out.println("--------------------------------------------- indew");
+                //request.getRequestDispatcher("../web/Presentacion/plantillas/AprobarReserva.jsp").forward(request, response);
+
             }
             else{
                 System.out.println("El usuario no existe");

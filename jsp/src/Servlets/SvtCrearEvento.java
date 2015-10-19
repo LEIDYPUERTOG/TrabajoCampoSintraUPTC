@@ -26,8 +26,10 @@ public class SvtCrearEvento extends HttpServlet {
 
         String nombre=request.getParameter("nombre");
 
+/*
         Date fechaInicio = Date(request.getParameter("fechaInicio"));
         Date fechaFin = Date(request.getParameter("fechaFin"));
+*/
         String descipcion =request.getParameter("descripcion");
 
         ConexionDB conexionDB = new ConexionDB("root","");
@@ -35,13 +37,15 @@ public class SvtCrearEvento extends HttpServlet {
         EventoDao eventoDao = new EventoDao();
 
 
+/*
         System.out.println("---------------------------------------------"+nombre);
         System.out.println("---------------------------------------------"+fechaInicio);
         System.out.println("---------------------------------------------"+fechaFin);
         System.out.println("---------------------------------------------"+descipcion);
-        Evento evento = new Evento(descipcion,fechaFin,fechaInicio,"Tunja",nombre,"aaaaaa");
+*/
+        //Evento evento = new Evento(descipcion,fechaFin,fechaInicio,"Tunja",nombre,"aaaaaa");
 
-        boolean agregar = eventoDao.agregarEvento(evento);
+/*        boolean agregar = eventoDao.agregarEvento(evento);
 
         if(agregar ){
             System.out.println("---------------------------------------------" + agregar);
@@ -50,7 +54,7 @@ public class SvtCrearEvento extends HttpServlet {
         }else{
             PrintWriter out=response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
-        }
+        }*/
 
     }
 

@@ -38,4 +38,22 @@
         <servlet-name>SvtCrearReserva</servlet-name>
         <url-pattern>/SvtCrearReserva</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtCrearUsuario</servlet-name>
+        <servlet-class>Servlets.SvtCrearUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtCrearUsuario</servlet-name>
+        <url-pattern>/SvtCrearUsuario</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtLogin</servlet-name>
+        <servlet-class>Servlets.SvtLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtLogin</servlet-name>
+        <url-pattern>/SvtLogin</url-pattern>
+    </servlet-mapping>
 </web-app>

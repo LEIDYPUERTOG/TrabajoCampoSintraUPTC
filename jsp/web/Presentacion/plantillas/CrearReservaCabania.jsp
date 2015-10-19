@@ -67,7 +67,8 @@
 
     <!-- Segunda cabecera con los logos del sindicato y la uptc -->
     <section id="logo">
-        <h1> <img src="/Presentacion/imagenes/cabecera.png" alt="logos.png"></h1> <!-- Importar la imagen -->
+        <img src="/Presentacion/imagenes/cabecera.jpg" alt="logos.png"></h1> <!-- Importar la imagen -->
+
     </section>
 
 
@@ -257,7 +258,7 @@
             </article> <!-- Fin del article -->
 
             <article id="btnCrearReserva">
-                <button type="button" class="btn btn-warning">Reservar</button>
+                <button type="submit" class="btn btn-warning">Reservar</button>
             </article>
         </form>
     </section>

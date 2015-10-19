@@ -69,15 +69,18 @@ public class SvtRegistro extends HttpServlet {
         System.out.println("---------------------------------------------"+clave);
         Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, personaDao.conversionUsuario(tipoUsuario),clave);
 
-       boolean agregar = personaDao.crearPersona(persona);
+        Persona aux = personaDao.consultarPersona(documento); //primero  busca si la persona no esta para agregarla
+        if(aux != null){
+            boolean agregar = personaDao.crearPersona(persona);
 
-        if(agregar && clave.equals(clave2)){
-            System.out.println("---------------------------------------------" + agregar);
-            PrintWriter out=response.getWriter();
-            out.println("Agregado");
-        }else{
-            PrintWriter out=response.getWriter();
-            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+            if(agregar && clave.equals(clave2)){
+                System.out.println("---------------------------------------------" + agregar);
+                PrintWriter out=response.getWriter();
+                out.println("Agregado");
+            }else{
+                PrintWriter out=response.getWriter();
+                out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+            }
         }
     }
 }

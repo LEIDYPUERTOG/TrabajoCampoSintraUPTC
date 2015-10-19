@@ -125,14 +125,14 @@
 
             <label id="lblPreg">Es usted: </label>
             <label id = "rbtn" class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="Afiliado" value="option1"
+                <input type="radio" name="inlineRadioOptions" id="Afiliado" value="Af"
                        onclick="getRadioButtonSelectedValue(document.formulario.inlineRadioOptions)"> Afiliado
             </label>
             <label id = "rbtn2" class="radio-inline">
-                <input type="radio" name="inlineRadioOptions" id="NoAfiliado" value="option2"> No Afiliado
+                <input type="radio" name="inlineRadioOptions" id="NoAfiliado" value="NA"> No Afiliado
             </label>
 
-            <button id= "btnRegistro" type="submit" class="btn btn-warning" value="Registrar">Registrarseeeeee</button>
+            <button id= "btnRegistro" type="submit" class="btn btn-warning" value="Registrar">Registrarse</button>
         </form>
 
     </section>

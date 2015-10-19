@@ -81,7 +81,7 @@ public class ReservaDao {
 			while(resultSet.next()) {
 				listaReservaPorAfiliado = new ArrayList<>();
 				listaReservaPorAfiliado.add(new Reserva(resultSet.getInt(6), conversionStringEstado(resultSet.getString(5).toString()),
-						resultSet.getDate(9),resultSet.getDouble(7),tipoServicio(resultSet.getString(10))));
+						resultSet.getDate(9),tipoServicio(resultSet.getString(10))));
 			}
 			////conn.close();
 
@@ -124,7 +124,7 @@ public class ReservaDao {
 				Persona auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
 
 				listaReservas.add(new Reserva(resultSet.getInt(5), conversionStringEstado(resultSet.getString(4)),resultSet.getDate(8),
-						auxPersona,	resultSet.getDouble(6)));
+						auxPersona));
 			}
 			////conn.close();
 
@@ -162,7 +162,7 @@ public class ReservaDao {
 				auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
 
 				listaReservas.add(new Reserva(resultSet.getInt(5), conversionStringEstado(resultSet.getString(4)),resultSet.getDate(8),
-						auxPersona,resultSet.getDouble(6)));
+						auxPersona));
 			}
 			////conn.close();
 
@@ -201,7 +201,7 @@ public class ReservaDao {
 				Persona auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
 
 				reserva = new Reserva(resultSet.getInt(6), conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
-						auxPersona,resultSet.getDouble(7));
+						auxPersona);
 				reserva.setIdReserva(resultSet.getInt(1));
 			}
 			////conn.close();
@@ -239,7 +239,7 @@ public class ReservaDao {
 				Persona auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
 
 				reserva = new Reserva(resultSet.getInt(6), conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
-						auxPersona,resultSet.getDouble(7));
+						auxPersona);
 				reserva.setIdReserva(resultSet.getInt(1));
 			}
 			////conn.close();

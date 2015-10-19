@@ -125,25 +125,25 @@
     <section id="contenidoReservaA">
         <h4>Crear Usuario Afiliado</h4>
 
-        <form>
+        <form action="/SvtCrearUsuario" method="post">
 
             <article id="et1">
                 <div class="form-group">
                     <label for="lblCedula">Cédula</label>
-                    <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Cedula" required>
+                    <input type="text" class="form-control" id="cedula" name="documento" placeholder="Cedula" required>
                 </div>
             </article>
 
             <article id="et2">
                 <div class="form-group">
                     <label for="lblNombre">Nombre y Apellidos</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre y Apellidos" required>
+                    <input type="text" class="form-control" id="nombre" name="nombres" placeholder="Nombre y Apellidos" required>
                 </div>
             </article>
 
 
             <article id="btnCrearUsuario">
-                <button type="button" class="btn btn-warning">Agregar Usuario</button>
+                <button type="submit" class="btn btn-warning">Agregar Usuario</button>
             </article>
         </form>
 
