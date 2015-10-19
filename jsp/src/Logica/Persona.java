@@ -63,6 +63,7 @@ public class Persona {
 		this.tipoDocumento = tipoDocumento;
 		this.tipoUsuario = tipoUsuario;
 		this.contrasenia = contrasenia;
+		this.rol = rol;
 	}
 
 	/**
@@ -79,7 +80,7 @@ public class Persona {
 		this.nombre = nombre;
 		this.tipoDocumento = tipoDocumento;
 		this.tipoUsuario = tipoUsuario;
-
+		this.rol = rol;
 	}
 
 	public Persona(){

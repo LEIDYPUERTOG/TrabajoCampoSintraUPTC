@@ -16,11 +16,11 @@
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
-    <script src="../angular.min.js"></script>
+    <script src="Presentacion/angular.min.js"></script>
     <script src="jquery.js"></script>
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="../jquery.colorbox.js"></script>
+    <script src="Presentacion/jquery.colorbox.js"></script>
 
     <!--Script para poder hacer que aparezca la ventana emergente-->
     <script src="/Presentacion/estilos/funciones/funcion.js"></script>
@@ -76,61 +76,23 @@
     <section id="logo">
         <img src="/Presentacion/imagenes/cabecera.jpg" alt="logos.png"> <!-- Importar la imagen -->
     </section>
+    <!-- Tercera cabecera con los servicios que prestan el sindicato -->
+    <section id="servicios">
+        <ul class="nav nav-pills"> <!-- Para la navegacion -->
+            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;"> <!-- Tamaño de los item -->
+                <a href="ReservarCabaniaUsuario.jsp"><h3><font color=#000000>Realizar Reserva
+                </font></h3></a></li> <!-- Nombre y color de las palabras -->
+            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
+                <a href="EditarReservaUsuario.jsp"><h3><font color=#000000>Editar Reserva</font></h3></a></li>
 
-
-    <!-- Seccion de panel de administración -->
-
-    <section id="panelAdministracion2">
-        <article id="lblTitulo">
-            <label>Panel de administración</label>
-        </article>
-
-        <article id="cabania">
-            <a href="CrearCabania.jsp"><img src="/Presentacion/imagenes/cabania.png" id="imag1" title="Cabaña" ></a>
-        </article>
-
-        <article id="eventos">
-            <a href="CrearEvento.jsp"><img src="/Presentacion/imagenes/evento.png" id="imag2" title="Eventos"></a>
-        </article>
-
-        <article id="reserva">
-            <a href="CrearReservaCabania.jsp"><img src="/Presentacion/imagenes/reservas.png" id="imag3" title="Reservas"></a>
-        </article>
-
-        <article id="usuario">
-            <a href="CrearUsuario.jsp"><img src="/Presentacion/imagenes/usuario.png" id="imag4" title="Usuario" ></a>
-        </article>
-
+        </ul>
     </section>
-    <!-- Seccion de navegacion-->
-    <section id="navegacion">
-        <article class="nave">
-            <div>
-                <ol class="breadcrumb">
-                    <li><a href="#">Reservas</a></li>
-                    <li class="active">Editar Reserva</li>
-                </ol>
-            </div>
-        </article>
-    </section>
-    <!-- Seccion de Pestañas-->
-    <section id="pestanas2">
-        <article>
-            <nav class="navbar navbar-inverse" role="navigation">
-                <ul class="nav nav-tabs">
-                    <li><a href="CrearReservaCabania.jsp">Crear Reserva</a></li>
-                    <li><a href="EditarReservaAdmin.jsp">Editar Reserva</a></li>
-                    <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
-                    <li><a href="ConsultarReserva.jsp#">Consultar Reserva</a></li>
-                    <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
-                </ul>
-            </nav>
-        </article>
-    </section>
+
+
 
     <!-- Seccion de contenido (tabla, link y paginacion)-->
-    <section id="contenidoReservaA">
-        <h4>Reservas</h4>
+    <section id="contenidoReservaC">
+        <h4>Editar Reserva</h4>
 
 
         <article id="lista">
@@ -233,30 +195,32 @@
             </nav>
         </article>
     </section>
-    <section id="informacion">
-        <article id="inf1"> <!-- Seccion Menu -->
-            <h4>Menu</h4>
-            <h5> <button type="button" class="btn btn-link">Nosotros</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Junta Directiva</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Contáctenos</button> </h5>
-        </article>
-        <article id="inf2"> <!-- Seccion Registrar -->
-        </article>
-        <article id="inf3"> <!-- Seccion Inf Contacto -->
-            <h4>Información de contacto</h4>
-            <h5> Avenida Central del Norte 39 - 115 </h5>
-            <h5>       Tunja - Boyaca </h5>
-            <h5>       Tel. 422174 Ext. 1500</h5>
-        </article>
-    </section>
+    <article id="infoUsuario">
+        <section id="informacion">
+            <article id="inf1"> <!-- Seccion Menu -->
+                <h4>Menu</h4>
+                <h5> <button type="button" class="btn btn-link">Nosotros</button> </h5>
+                <h5> <button type="button" class="btn btn-link">Junta Directiva</button> </h5>
+                <h5> <button type="button" class="btn btn-link">Contáctenos</button> </h5>
+            </article>
+            <article id="inf2"> <!-- Seccion Registrar -->
+            </article>
+            <article id="inf3"> <!-- Seccion Inf Contacto -->
+                <h4>Información de contacto</h4>
+                <h5> Avenida Central del Norte 39 - 115 </h5>
+                <h5>       Tunja - Boyaca </h5>
+                <h5>       Tel. 422174 Ext. 1500</h5>
+            </article>
+        </section>
 
-    <!-- El pie de pagina donde esta el copyright -->
-    <footer>
-        <p>
-            © Todos los derechos reservados. Tunja – Ciudad Universitaria – Carretera Central del Norte Tel. 422174 Ext. 1500 </br>
-            Desarrollado por Edgar Meneses, Diana Gonzalez, Leidy Puerto
-        </p>
-    </footer>
+        <!-- El pie de pagina donde esta el copyright -->
+        <footer>
+            <p>
+                © Todos los derechos reservados. Tunja – Ciudad Universitaria – Carretera Central del Norte Tel. 422174 Ext. 1500 </br>
+                Desarrollado por Edgar Meneses, Diana Gonzalez, Leidy Puerto
+            </p>
+        </footer>
+    </article>
 </section>
 <!--Sección que contiene la ventana que aparece cuando se da la opcion de editar-->
 <section id="ventanaEmergente">

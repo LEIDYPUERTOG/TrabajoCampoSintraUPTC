@@ -4,6 +4,7 @@ import Logica.Persona;
 import Persistencia.ConexionDB;
 import Persistencia.PersonaDao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,11 +27,15 @@ public class SvtLogin extends HttpServlet {
 
         System.out.println("---------------------------------------------"+usuario);
         System.out.println("---------------------------------------------"+contrasenia);
+
+        RequestDispatcher dispatcher = null;
         if(usuario != 0 && !contrasenia.equalsIgnoreCase("")){
             Persona persona = personaDao.consultarPersona(usuario);
             if(persona != null && persona.getContrasenia().equals(contrasenia)){
                 request.setAttribute("persona1111", persona);
                 System.out.println("--------------------------------------------- indew");
+                dispatcher = request.getRequestDispatcher("index.jsp");
+                dispatcher.forward(request, response);
                 //request.getRequestDispatcher("../web/Presentacion/plantillas/AprobarReserva.jsp").forward(request, response);
 
             }
@@ -42,10 +47,5 @@ public class SvtLogin extends HttpServlet {
             PrintWriter out=response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
         }
-    }
-    
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

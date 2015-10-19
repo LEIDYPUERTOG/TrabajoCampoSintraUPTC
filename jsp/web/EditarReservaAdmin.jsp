@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Consultar Evento</title>
+    <title>Editar Reserva</title>
 
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
@@ -16,11 +16,11 @@
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
-    <script src="../angular.min.js"></script>
+    <script src="Presentacion/angular.min.js"></script>
     <script src="jquery.js"></script>
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="../jquery.colorbox.js"></script>
+    <script src="Presentacion/jquery.colorbox.js"></script>
 
     <!--Script para poder hacer que aparezca la ventana emergente-->
     <script src="/Presentacion/estilos/funciones/funcion.js"></script>
@@ -107,8 +107,8 @@
         <article class="nave">
             <div>
                 <ol class="breadcrumb">
-                    <li><a href="#">Evento</a></li>
-                    <li class="active">Consultar Evento</li>
+                    <li><a href="#">Reservas</a></li>
+                    <li class="active">Editar Reserva</li>
                 </ol>
             </div>
         </article>
@@ -118,49 +118,32 @@
         <article>
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
-                    <li><a href="CrearEvento.jsp">Crear Evento</a></li>
-                    <li><a href="ConsultarEvento.jsp">Consultar Evento</a></li>
+                    <li><a href="CrearReservaCabania.jsp">Crear Reserva</a></li>
+                    <li><a href="EditarReservaAdmin.jsp">Editar Reserva</a></li>
+                    <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
+                    <li><a href="ConsultarReserva.jsp#">Consultar Reserva</a></li>
+                    <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>
             </nav>
         </article>
     </section>
+
     <!-- Seccion de contenido (tabla, link y paginacion)-->
     <section id="contenidoReservaA">
-        <h4>Consulta de Eventos</h4>
-
-        <article id="lblBusqueda">
-            <h5>Nombre Evento</h5>
-        </article>
-
-        <article id="search8">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Ingrese el nombre">
-              <span class="input-group-btn">
-                  <!-- Boton para la busqueda de la iamgen -->
-                <button type="button" class="btn btn-default" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                </button>
-              </span>
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-        </article>
+        <h4>Reservas</h4>
 
 
-
-        <article id="lista3">
+        <article id="lista">
             <table class="table">
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
-                    <th>Nombre</th>
+                    <th>Fecha de<br> Solicitud</th>
                     <th>Fecha Inicio</th>
                     <th>Fecha Fin</th>
-                    <th>Lugar</th>
-                    <th>Dirección</th>
+                    <th>Estado de <br> la reserva</th>
                     <th>Editar</th>
-                    <th>Suspender</th>
+                    <th>Cancelar</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -170,10 +153,9 @@
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                             href="#inline_content" onclick="ventana2()">
+                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
                 <!-- Segundo componente -->
                 <tr>
@@ -181,10 +163,9 @@
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                             href="#inline_content" onclick="ventana2()">
+                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
                 <!-- Tercero componente -->
                 <tr>
@@ -192,10 +173,9 @@
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                             href="#inline_content" onclick="ventana2()">
+                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
                 <!-- Cuarto componente -->
                 <tr>
@@ -203,10 +183,9 @@
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                             href="#inline_content" onclick="ventana2()">
+                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
                 <!-- Quinto componente -->
                 <tr>
@@ -214,10 +193,9 @@
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                             href="#inline_content" onclick="ventana2()">
+                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
 
                 <!-- Sexto componente -->
@@ -226,10 +204,9 @@
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                             href="#inline_content" onclick="ventana2()">
+                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
 
                 </tbody>
@@ -237,7 +214,7 @@
         </article> <!-- Fin del article -->
 
         <!-- Paginacion -->
-        <article id="pag2">
+        <article id="pag">
             <nav>
                 <ul class="pagination">
                     <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
@@ -256,12 +233,6 @@
             </nav>
         </article>
     </section>
-
-    <!-- Divicion para el color de la informacion adicional de la pagina -->
-    <section id="divi">
-    </section>
-
-    <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->
             <h4>Menu</h4>
@@ -287,26 +258,20 @@
         </p>
     </footer>
 </section>
-
 <!--Sección que contiene la ventana que aparece cuando se da la opcion de editar-->
 <section id="ventanaEmergente">
     <div id='inline_content' >
-        <div id="login-content3">
+        <div id="login-content4">
             <form>
 
-                <input id="nombreVentana" type="text" name="nombre" placeholder="Nombre">
-                <input id="fechaInicioVentana" type="date" name="fecha Inicio" placeholder="fecha Inicio" >
-                <input id="fechaFinVentana" type="date" name="Fecha Fin" placeholder="Fecha Fin">
-                <article id="lugar">
-                    <select class="form-control">
-                        <option value="1">Camara de Comercio</option>
-                        <option value="2">Uptc</option>
-                        <option value="3">Moniquira</option></select>
-                </article>
+                <label id="lblFecha1">Fecha Inicio</label>
+                <input id="fecha1Ventana" type="date" name="fecha Inicio" placeholder="fecha Inicio" >
+                <label id="lblFecha2">Fecha Fin</label>
+                <input id="fecha2Ventana" type="date" name="Fecha Fin" placeholder="Fecha Fin">
 
-                <button type="button" id="submitAceptarEvento" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                <button type="button" id="submitAceptarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
                     Aceptar </button>
-                <button type="button" id="submitCancelarEvento" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                <button type="button" id="submitCancelarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
                         onclick='parent.$.colorbox.close(); return false;'>
                     Cancelar </button>
 
@@ -315,6 +280,5 @@
         </div>
     </div>
 </section>
-
 </body>
 </html>

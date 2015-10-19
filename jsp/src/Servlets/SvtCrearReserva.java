@@ -57,14 +57,19 @@ public class SvtCrearReserva extends HttpServlet {
         GregorianCalendar c = new GregorianCalendar();
         Date fechaSolicitud = new Date(c.getTimeInMillis());
         System.out.println("solicitud-------------" + fechaSolicitud);
-        Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA);
+        Persona o = new Persona(1049636125,"leidy carolina puerto",TipoDocumento.Cedula,TipoUsuario.Afiliado,rol.Administrador);
+
+        Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,o);
         InformacionReserva informacionReserva = new InformacionReserva(dateInicio, dateFin,dateFin,reserva);
 
+        RequestDispatcher dispatcher = null;
         boolean agregar = reservaDao.crearReservaCabania(reserva);
         boolean agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
 
         if(agregar && agregarInfo){
             System.out.println("---------------------------------------------" + agregar);
+            dispatcher = request.getRequestDispatcher("index.jsp");
+            dispatcher.forward(request, response);
             PrintWriter out=response.getWriter();
             out.println("Agregado");
         }else{

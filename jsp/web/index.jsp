@@ -74,7 +74,7 @@
                         </button>
                         <button type="button" id="submitRegistrar" class="btn btn-primary"
                                 style="padding-right:35px;padding-left:10px;margin-top:21px;"
-                                onClick="location.href='/Presentacion/plantillas/registrarse.jsp'"> <!-- Tamaño -->
+                                onClick="location.href='/registrarse.jsp'"> <!-- Tamaño -->
                             Registrarse
                         </button>
                     </form>
@@ -118,7 +118,7 @@
         <ul class="nav nav-pills"> <!-- Para la navegacion -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <!-- Tamaño de los item -->
-                <a class="ghost" href="/Presentacion/plantillas/Catalogo.jsp"><h3><font color=#34495E>Cabañas</font></h3></a></li>
+                <a class="ghost" href="/Catalogo.jsp"><h3><font color=#34495E>Cabañas</font></h3></a></li>
             <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <a class="ghost" href="#"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>

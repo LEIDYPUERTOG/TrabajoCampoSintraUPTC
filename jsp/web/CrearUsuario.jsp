@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Crear cabaña</title>
+    <title>Crear Usuario</title>
 
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
@@ -16,8 +16,9 @@
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
-    <script src="../angular.min.js"></script>
+    <script src="Presentacion/angular.min.js"></script>
     <script src="jquery.js"></script>
+
 
 </head>
 <body>
@@ -28,7 +29,7 @@
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
-<section id="contenedorRegistro">
+<section id="contenedorReservaA">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton usuario -->
@@ -96,14 +97,13 @@
         </article>
 
     </section>
-
     <!-- Seccion de navegacion-->
     <section id="navegacion">
         <article class="nave">
             <div>
                 <ol class="breadcrumb">
-                    <li><a href="#">Cabañas</a></li>
-                    <li class="active">Crear Cabaña</li>
+                    <li><a href="#">Usuario</a></li>
+                    <li class="active">Crear Usuario</li>
                 </ol>
             </div>
         </article>
@@ -113,73 +113,41 @@
         <article>
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
-                    <li><a href="CrearCabania.jsp">Crear Cabaña</a></li>
-                    <li><a href="ConsultarCabania.jsp">Consultar Cabaña</a></li>
+                    <li><a href="CrearUsuario.jsp">Crear Usuario</a></li>
+                    <li><a href="ConsultarUsuario.jsp">Consultar Usuario</a></li>
+                    <li><a href="AprobarReserva.jsp">Editar Usuario</a></li>
                 </ul>
             </nav>
         </article>
     </section>
 
-    <!-- Seccion de contenido-->
-    <section id="contenido">
-        <h4>Crear Cabaña</h4><!-- Titulo principal -->
+    <!-- Seccion de contenido (tabla, link y paginacion)-->
+    <section id="contenidoReservaA">
+        <h4>Crear Usuario Afiliado</h4>
 
-        <form action="/SvtCrearCabania" method="post" name="formulario2">
-            <!-- Primer caja de texto -->
-            <article id="identificador">
-                <h5>Identificador</h5>
-            </article>
-            <article id="search1">
-                <input type="text" class="form-control" placeholder="Ingrese el texto." name="idCabania">
-            </article>
+        <form action="/SvtCrearUsuario" method="post">
 
-            <!-- Segunda caja de texto -->
-            <article id="capacidad">
-                <h5>Capacidad Maxima</h5>
-            </article>
-            <article id="search2">
-                <input type="text" class="form-control" placeholder="Ingrese el texto." name="capacidad">
+            <article id="et1">
+                <div class="form-group">
+                    <label for="lblCedula">Cédula</label>
+                    <input type="text" class="form-control" id="cedula" name="documento" placeholder="Cedula" required>
+                </div>
             </article>
 
-            <!-- Tercera caja de texto -->
-            <article id="valor">
-                <h5>Valor dia</h5>
+            <article id="et2">
+                <div class="form-group">
+                    <label for="lblNombre">Nombre y Apellidos</label>
+                    <input type="text" class="form-control" id="nombre" name="nombres" placeholder="Nombre y Apellidos" required>
+                </div>
             </article>
-            <article id="search3">
-                <input type="text" class="form-control" placeholder="Ingrese el texto." name="valor">
-            </article>
-            <!-- Cuarta caja de texto -->
-            <article id="ruta">
-                <h5>Ruta de la foto</h5>
-            </article>
-            <article id="search4">
-                <div class="col-lg-6">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Ingrese la ubicacion" name="ruta">
-      <span class="input-group-btn">
-          <!-- Boton para la busqueda de la iamgen -->
-        <button type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </button>
-      </span>
-                    </div><!-- /input-group -->
-                </div><!-- /.col-lg-6 -->
-                </div><!-- /.row -->
-            </article>
-            <article id="btnAgregar">
-                <h1> <img src="/Presentacion/imagenes/cabania.png" alt="cabaña"></h1>
-                <button type="submit" class="btn btn-success"> <!-- Tamaño -->
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> AGREGAR <!-- Icono y palabra -->
-                </button>
+
+
+            <article id="btnCrearUsuario">
+                <button type="submit" class="btn btn-warning">Agregar Usuario</button>
             </article>
         </form>
-    </section>
 
-    <!-- Divicion para el color de la informacion adicional de la pagina -->
-    <section id="divi">
     </section>
-
-    <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->
             <h4>Menu</h4>
@@ -205,5 +173,6 @@
         </p>
     </footer>
 </section>
+
 </body>
 </html>

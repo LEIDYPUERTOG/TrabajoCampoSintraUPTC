@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Consultar Cabañas</title>
+    <title>Crear cabaña</title>
 
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
@@ -16,13 +16,8 @@
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
-    <script src="../angular.min.js"></script>
+    <script src="Presentacion/angular.min.js"></script>
     <script src="jquery.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="../jquery.colorbox.js"></script>
-
-    <!--Script para poder hacer que aparezca la ventana emergente-->
-    <script src="/Presentacion/estilos/funciones/funcion.js"></script>
 
 </head>
 <body>
@@ -33,7 +28,7 @@
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
-<section id="contenedorReservaA">
+<section id="contenedorRegistro">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton usuario -->
@@ -101,13 +96,14 @@
         </article>
 
     </section>
+
     <!-- Seccion de navegacion-->
     <section id="navegacion">
         <article class="nave">
             <div>
                 <ol class="breadcrumb">
                     <li><a href="#">Cabañas</a></li>
-                    <li class="active">Consultar Cabaña</li>
+                    <li class="active">Crear Cabaña</li>
                 </ol>
             </div>
         </article>
@@ -123,103 +119,60 @@
             </nav>
         </article>
     </section>
-    <!-- Seccion de contenido (tabla, link y paginacion)-->
-    <section id="contenidoReservaA">
-        <h4>Consulta de Cabañas</h4>
 
+    <!-- Seccion de contenido-->
+    <section id="contenido">
+        <h4>Crear Cabaña</h4><!-- Titulo principal -->
 
-        <article id="lista">
-            <table class="table">
-                <thead>
-                <!-- titulos de la tabla -->
-                <tr>
-                    <th>Cabaña</th>
-                    <th>Valor Noche</th>
-                    <th>Capacidad</th>
-                    <th>Editar</th>
-                    <th>Suspender</th>
-                </tr>
-                </thead>
-                <tbody>
-                <!-- Primer componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Segundo componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Tercero componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Cuarto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Quinto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
+        <form action="/SvtCrearCabania" method="post" name="formulario2">
+            <!-- Primer caja de texto -->
+            <article id="identificador">
+                <h5>Identificador</h5>
+            </article>
+            <article id="search1">
+                <input type="text" class="form-control" placeholder="Ingrese el texto." name="idCabania">
+            </article>
 
-                <!-- Sexto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
+            <!-- Segunda caja de texto -->
+            <article id="capacidad">
+                <h5>Capacidad Maxima</h5>
+            </article>
+            <article id="search2">
+                <input type="text" class="form-control" placeholder="Ingrese el texto." name="capacidad">
+            </article>
 
-                </tbody>
-            </table> <!-- Fin de la tabla -->
-        </article> <!-- Fin del article -->
-
-        <!-- Paginacion -->
-        <article id="pag">
-            <nav>
-                <ul class="pagination">
-                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                    </li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </article>
+            <!-- Tercera caja de texto -->
+            <article id="valor">
+                <h5>Valor dia</h5>
+            </article>
+            <article id="search3">
+                <input type="text" class="form-control" placeholder="Ingrese el texto." name="valor">
+            </article>
+            <!-- Cuarta caja de texto -->
+            <article id="ruta">
+                <h5>Ruta de la foto</h5>
+            </article>
+            <article id="search4">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Ingrese la ubicacion" name="ruta">
+      <span class="input-group-btn">
+          <!-- Boton para la busqueda de la iamgen -->
+        <button type="submit" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </article>
+            <article id="btnAgregar">
+                <h1> <img src="/Presentacion/imagenes/cabania.png" alt="cabaña"></h1>
+                <button type="submit" class="btn btn-success"> <!-- Tamaño -->
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> AGREGAR <!-- Icono y palabra -->
+                </button>
+            </article>
+        </form>
     </section>
 
     <!-- Divicion para el color de la informacion adicional de la pagina -->
@@ -252,26 +205,5 @@
         </p>
     </footer>
 </section>
-<!--Sección que contiene la ventana que aparece cuando se da la opcion de editar-->
-<section id="ventanaEmergente">
-    <div id='inline_content' >
-        <div id="login-content2">
-            <form>
-
-                <input id="valorNocheVentana" type="text" name="valor" placeholder="Valor">
-                <input id="cantidadVentana" type="number" name="cantidad" placeholder="cantidad" >
-
-                <button type="button" id="submitAceptarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
-                    Aceptar </button>
-                <button type="button" id="submitCancelarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
-                        onclick='parent.$.colorbox.close(); return false;'>
-                    Cancelar </button>
-
-            </form>
-
-        </div>
-    </div>
-</section>
-
 </body>
 </html>

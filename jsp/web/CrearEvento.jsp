@@ -16,7 +16,7 @@
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
-    <script src="../angular.min.js"></script>
+    <script src="Presentacion/angular.min.js"></script>
     <script src="jquery.js"></script>
 
 </head>

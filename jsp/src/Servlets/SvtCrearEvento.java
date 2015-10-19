@@ -2,6 +2,7 @@ package Servlets;
 
 import Logica.Cabania;
 import Logica.Evento;
+import Logica.Locacion;
 import Persistencia.CabaniaDao;
 import Persistencia.ConexionDB;
 import Persistencia.EventoDao;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by LEIDY on 17/10/2015.
@@ -25,11 +27,22 @@ public class SvtCrearEvento extends HttpServlet {
 
 
         String nombre=request.getParameter("nombre");
+        String[] aux = request.getParameter("fechaInicio").toString().split("-");
+        int auxAnio = Integer.parseInt(aux[0]);
+        int auxMes = Integer.parseInt(aux[1]);
+        int auxDia = Integer.parseInt(aux[2]);
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.set(auxAnio, auxMes, auxDia);
+        Date dateInicio = new Date(calendar.getTimeInMillis());
 
-/*
-        Date fechaInicio = Date(request.getParameter("fechaInicio"));
-        Date fechaFin = Date(request.getParameter("fechaFin"));
-*/
+        aux = request.getParameter("fechaFin").toString().split("-");
+        auxAnio = Integer.parseInt(aux[0]);
+        auxMes = Integer.parseInt(aux[1]);
+        auxDia = Integer.parseInt(aux[2]);
+        calendar = new GregorianCalendar();
+        calendar.set(auxAnio,auxMes,auxDia);
+        Date dateFin = new Date(calendar.getTimeInMillis());
+
         String descipcion =request.getParameter("descripcion");
 
         ConexionDB conexionDB = new ConexionDB("root","");
@@ -43,7 +56,7 @@ public class SvtCrearEvento extends HttpServlet {
         System.out.println("---------------------------------------------"+fechaFin);
         System.out.println("---------------------------------------------"+descipcion);
 */
-        //Evento evento = new Evento(descipcion,fechaFin,fechaInicio,"Tunja",nombre,"aaaaaa");
+        //Evento evento = new Evento(descipcion,dateFin,dateInicio,new Locacion("aaaa",1,"aaaaaa"),nombre,"aaaaaa");
 
 /*        boolean agregar = eventoDao.agregarEvento(evento);
 

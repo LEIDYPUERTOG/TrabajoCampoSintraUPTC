@@ -19,10 +19,10 @@
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
-    <script src="../angular.min.js"></script>
+    <script src="Presentacion/angular.min.js"></script>
 
     <!-- Script necesario para hacer que la ventana de login aparezca-->
-    <script src="../jquery.js"></script>
+    <script src="Presentacion/jquery.js"></script>
 
     <script>
         $(function(){

@@ -6,6 +6,8 @@ import Logica.TipoUsuario;
 import Logica.rol;
 import Persistencia.ConexionDB;
 import Persistencia.PersonaDao;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,29 +26,6 @@ public class SvtRegistro extends HttpServlet {
 
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nombre=request.getParameter("nombres");
-        int documento=Integer.parseInt(request.getParameter("documento"));
-        String clave=request.getParameter("contrasenia");
-
-        ConexionDB conexionDB = new ConexionDB("root","");
-        PersonaDao personaDao = new PersonaDao();
-
-
-        System.out.println("---------------------------------------------"+nombre);
-        System.out.println("---------------------------------------------"+documento);
-        System.out.println("---------------------------------------------"+clave);
-        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado,clave,rol.Usuario);
-
-        boolean agregar = personaDao.crearPersona(persona);
-
-        if(agregar){
-            request.getRequestDispatcher("").forward(request, response);
-        }else{
-            PrintWriter out=response.getWriter();
-            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
-        }
-    }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -71,18 +50,29 @@ public class SvtRegistro extends HttpServlet {
         Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, personaDao.conversionUsuario(tipoUsuario),clave,
                 rol.Usuario);
 
+
+        System.out.println("---------------------------------------------" + persona.getRol());
         Persona aux = personaDao.consultarPersona(documento); //primero  busca si la persona no esta para agregarla
-        if(aux != null){
+
+        RequestDispatcher dispatcher = null;
+        if(aux == null){
             boolean agregar = personaDao.crearPersona(persona);
 
             if(agregar && clave.equals(clave2)){
                 System.out.println("---------------------------------------------" + agregar);
-                PrintWriter out=response.getWriter();
-                out.println("Agregado");
+                dispatcher = request.getRequestDispatcher("index.jsp");
+                dispatcher.forward(request, response);
+
+
             }else{
                 PrintWriter out=response.getWriter();
                 out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
             }
         }
+        else{
+            PrintWriter out=response.getWriter();
+            out.println("El usuario ya existe");
+        }
+
     }
 }

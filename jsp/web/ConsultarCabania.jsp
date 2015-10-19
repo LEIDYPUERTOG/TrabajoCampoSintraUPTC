@@ -1,13 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"
-         import="java.sql.Connection" import="java.sql.DriverManager" import="java.sql.ResultSet"
-         import="java.sql.Statement" import="java.sql.SQLException"%>
-<%@ page import="Logica.Persona" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
-    <title>Aprobar Reserva</title>
+    <title>Consultar Cabañas</title>
 
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
@@ -17,14 +13,16 @@
     <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 
     <!-- Estilos CSS vinculados -->
-
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
-    <script src="../angular.min.js"></script>
-    <script src="../jquery.js"></script>
+    <script src="Presentacion/angular.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="Presentacion/jquery.colorbox.js"></script>
 
-
+    <!--Script para poder hacer que aparezca la ventana emergente-->
+    <script src="/Presentacion/estilos/funciones/funcion.js"></script>
 
 </head>
 <body>
@@ -32,22 +30,17 @@
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <script src="/Presentacion/estilos/js/responsive.js"></script>
-
+<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorReservaA">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton usuario -->
-
-        <%
-            Persona persona = (Persona)request.getAttribute("persona1111");
-        %>
         <article id="inicio1">
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido <%persona.getNombre()%>
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Bienvenido
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -113,8 +106,8 @@
         <article class="nave">
             <div>
                 <ol class="breadcrumb">
-                    <li><a href="#">Reservas</a></li>
-                    <li class="active">Aprobar Reserva</li>
+                    <li><a href="#">Cabañas</a></li>
+                    <li class="active">Consultar Cabaña</li>
                 </ol>
             </div>
         </article>
@@ -124,18 +117,15 @@
         <article>
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
-                    <li><a href="CrearReservaCabania.jsp">Crear Reserva</a></li>
-                    <li><a href="EditarReservaAdmin.jsp">Editar Reserva</a></li>
-                    <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
-                    <li><a href="ConsultarReserva.jsp#">Consultar Reserva</a></li>
-                    <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
+                    <li><a href="CrearCabania.jsp">Crear Cabaña</a></li>
+                    <li><a href="ConsultarCabania.jsp">Consultar Cabaña</a></li>
                 </ul>
             </nav>
         </article>
     </section>
     <!-- Seccion de contenido (tabla, link y paginacion)-->
     <section id="contenidoReservaA">
-        <h4>Aprobar Reservas</h4>
+        <h4>Consulta de Cabañas</h4>
 
 
         <article id="lista">
@@ -143,13 +133,11 @@
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
-                    <th>Cedula</th>
-                    <th>Tipo Servicio</th>
-                    <th>Fecha y Hora de Solicitud</th>
-                    <th>Fecha Inicio</th>
-                    <th>Fecha Fin</th>
-                    <th>Aprobar</th>
-                    <th>Rechazar</th>
+                    <th>Cabaña</th>
+                    <th>Valor Noche</th>
+                    <th>Capacidad</th>
+                    <th>Editar</th>
+                    <th>Suspender</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -158,50 +146,55 @@
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()">
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
                 </tr>
                 <!-- Segundo componente -->
                 <tr>
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()">
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
                 </tr>
                 <!-- Tercero componente -->
                 <tr>
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()">
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
                 </tr>
                 <!-- Cuarto componente -->
                 <tr>
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()">
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
                 </tr>
                 <!-- Quinto componente -->
                 <tr>
                     <td>texto</td>
                     <td>texto</td>
                     <td>texto</td>
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()">
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                </tr>
+
+                <!-- Sexto componente -->
+                <tr>
                     <td>texto</td>
                     <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
+                    <td>texto</td>
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()">
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
                 </tr>
 
                 </tbody>
@@ -229,7 +222,7 @@
         </article>
     </section>
 
-    <!-- Division para el color de la informacion adicional de la pagina -->
+    <!-- Divicion para el color de la informacion adicional de la pagina -->
     <section id="divi">
     </section>
 
@@ -259,5 +252,26 @@
         </p>
     </footer>
 </section>
+<!--Sección que contiene la ventana que aparece cuando se da la opcion de editar-->
+<section id="ventanaEmergente">
+    <div id='inline_content' >
+        <div id="login-content2">
+            <form>
+
+                <input id="valorNocheVentana" type="text" name="valor" placeholder="Valor">
+                <input id="cantidadVentana" type="number" name="cantidad" placeholder="cantidad" >
+
+                <button type="button" id="submitAceptarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Aceptar </button>
+                <button type="button" id="submitCancelarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                        onclick='parent.$.colorbox.close(); return false;'>
+                    Cancelar </button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
 </body>
 </html>
