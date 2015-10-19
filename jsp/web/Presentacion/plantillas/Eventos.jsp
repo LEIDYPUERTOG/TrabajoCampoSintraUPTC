@@ -5,9 +5,9 @@
 <head> <!-- Lo que es importante para tener en la pagina -->
     <meta charset="UTF-8">
     <!-- Palabras clave -->
-    <meta name="keywords" content="sindicato ">
+    <meta name="keywords" content="sindraoficiales ">
     <!-- Descripcion -->
-    <meta name="description" content="sadefrgth ">
+    <meta name="description" content="cabañas,reservas, moniquira,psicinas">
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title> Eventos </title>
@@ -15,10 +15,9 @@
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
     <!-- Tipo de letra de google -->
-    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <!-- Estilos CSS vinculados -->
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
@@ -42,16 +41,15 @@
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton ingresar -->
-        <!-- Boton ingresar -->
         <article id="inicio1">
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Bienvenido
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Cambiar contraseña</a></li>
-                    <li><a href="#">Cerrar Sesión</a></li>
+                    <li><a> <span class="glyphicon glyphicon-lock" aria-hidden="true" href="#"></span>Cambiar contraseña</a></li>
+                    <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar Sesión</a> </li>
 
                 </ul>
             </div>
@@ -59,19 +57,19 @@
         </article>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link"  style="margin-top:21px;"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos <!-- Icono y palabra -->
             </button>
         </article>
         <!-- Boton Conozcanos -->
         <article id="inicio3">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link"  style="margin-top:21px;"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Conozcanos <!-- Icono y palabra -->
             </button>
         </article>
         <!-- Boton Inicio -->
         <article id="inicio4">
-            <button type="button" class="btn btn-default"  style="padding-right:55px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
         </article>
@@ -79,97 +77,96 @@
 
     <!-- Segunda cabecera con los logos del sindicato y la uptc -->
     <section id="logo">
-        <h1> <img src="/Presentacion/imagenes/cabecera.png" alt="logos.png"></h1> <!-- Importar la imagen -->
+        <h1> <img src="/Presentacion/imagenes/cabecera.jpg" alt="logos.png"></h1> <!-- Importar la imagen -->
     </section>
 
     <!-- Tercera cabecera con los servicios que prestan el sindicato -->
     <section id="servicios">
         <ul class="nav nav-pills"> <!-- Para la navegacion -->
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;"> <!-- Tamaño de los item -->
-                <a href="Catalogo.jsp"><h3><font color=#000000>Cabañas</font></h3></a></li> <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a href="#"><h3><font color=#000000>Zonas de Camping</font></h3></a></li>
+                <!-- Tamaño de los item -->
+                <a class="ghost" href="/Presentacion/plantillas/Catalogo.jsp"><h3><font color=#34495E>Cabañas</font></h3></a></li>
+            <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a href="Eventos.jsp"><h3><font color=#000000>Eventos</font></h3></a></li>
+                <a class="ghost" href="#"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
+            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
+                <a class="ghost" href="/Presentacion//plantillas/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
         </ul>
     </section>
 
     <!-- Catalogo de las Eventos -->
-    <section id="catalogo">
+    <section id="catalogoEv">
         <!-- Titulo principal -->
-        <h4>Eventos</h4>
+        <h2>Eventos</br></br> </h2>
         <!-- Evento N°1, con la imagen, descripcion y el boton -->
-        <article id="cab1"> <!-- Seccion Menu -->
-            <img id="ev1" src="/Presentacion/imagenes/futbol.png" alt="GFoto1.JPG"><!-- Importar la imagen -->
+        <article id="ev1"> <!-- Seccion Menu -->
+            <img src="/Presentacion/imagenes/evento1.JPG" alt="evento1.JPG"><!-- Importar la imagen -->
             <h5>Evento N°1</h5>
-            <h5>Nombre: </br>
+            <h4>Nombre: </br>
                 Fecha Inicio: </br>
                 Fecha Fin: </br>
                 Lugar: </br>
                 Dirección: </br>
-            </h5>
-            
+            </h4>
         </article>
-
-
         <!-- Evento N°2, con la imagen, descripcion y el boton -->
-        <article id="cab2"> <!-- Seccion Menu -->
-            <img id="ev2" src="/Presentacion/imagenes/futbol.png" alt="GFoto1.JPG"><!-- Importar la imagen -->
+        <article id="ev2"> <!-- Seccion Menu -->
+            <img src="/Presentacion/imagenes/evento2.JPG" alt="evento2.JPG"><!-- Importar la imagen -->
             <h5>Evento N°2</h5>
-            <h5>Nombre: </br>
+            <h4>Nombre: </br>
                 Fecha Inicio: </br>
                 Fecha Fin: </br>
                 Lugar: </br>
                 Dirección: </br>
-            </h5>
+            </h4>
             
         </article>
         <!-- Evento N°3, con la imagen, descripcion y el boton -->
-        <article id="cab3"> <!-- Seccion Menu -->
-            <img id="ev3" src="/Presentacion/imagenes/futbol.png" alt="GFoto1.JPG"><!-- Importar la imagen -->
+        <article id="ev3"> <!-- Seccion Menu -->
+            <img src="/Presentacion/imagenes/evento3.JPG" alt="eveto3.JPG"><!-- Importar la imagen -->
             <h5>Evento N°3</h5>
-            <h5>Nombre: </br>
+            <h4>Nombre: </br>
                 Fecha Inicio: </br>
                 Fecha Fin: </br>
                 Lugar: </br>
                 Dirección: </br>
-            </h5>
+            </h4>
             
         </article>
         <!-- Evento N°4, con la imagen, descripcion y el boton -->
-        <article id="cab4"> <!-- Seccion Menu -->
-            <img id="ev4" src="/Presentacion/imagenes/futbol.png" alt="GFoto1.JPG"><!-- Importar la imagen -->
+        <article id="ev4"> <!-- Seccion Menu -->
+            <img src="/Presentacion/imagenes/evento4.JPG" alt="evento4.JPG"><!-- Importar la imagen -->
             <h5>Evento N°4</h5>
-            <h5>Nombre: </br>
+            <h4>Nombre: </br>
                 Fecha Inicio: </br>
                 Fecha Fin: </br>
                 Lugar: </br>
                 Dirección: </br>
-            </h5>
+            </h4>
             
         </article>
         <!-- Evento N°5, con la imagen, descripcion y el boton -->
-        <article id="cab5"> <!-- Seccion Menu -->
-            <img id="ev5" src="/Presentacion/imagenes/futbol.png" alt="GFoto1.JPG"><!-- Importar la imagen -->
+        <article id="ev5"> <!-- Seccion Menu -->
+            <img src="/Presentacion/imagenes/evento5.JPG" alt="evento5.JPG"><!-- Importar la imagen -->
             <h5>Evento N°5</h5>
-            <h5>Nombre: </br>
+            <h4>Nombre: </br>
                 Fecha Inicio: </br>
                 Fecha Fin: </br>
                 Lugar: </br>
                 Dirección: </br>
-            </h5>
+            </h4>
             
         </article>
         <!-- Evento N°6, con la imagen, descripcion y el boton -->
-        <article id="cab6"> <!-- Seccion Menu -->
-            <img id="ev6" src="/Presentacion/imagenes/futbol.png" alt="GFoto1.JPG"><!-- Importar la imagen -->
+        <article id="ev6"> <!-- Seccion Menu -->
+            <img src="/Presentacion/imagenes/evento6.jpg" alt="evento6.JPG"><!-- Importar la imagen -->
             <h5>Evento N°6</h5>
-            <h5>Nombre: </br>
+            <h4>Nombre: </br>
                 Fecha Inicio: </br>
                 Fecha Fin: </br>
                 Lugar: </br>
                 Dirección: </br>
-            </h5>
+            </h4>
             
         </article>
     </section>

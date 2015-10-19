@@ -72,7 +72,7 @@
                         </button>
                         <button type="button" id="submitRegistrar" class="btn btn-primary"
                                 style="padding-right:35px;padding-left:10px;margin-top:21px;"
-                                onClick="location.href='/plantillas/registrarse.jsp'"> <!-- Tamaño -->
+                                onClick="location.href='/Presentacion/plantillas/registrarse.jsp'"> <!-- Tamaño -->
                             Registrarse
                         </button>
                     </form>
@@ -99,7 +99,7 @@
         <article id="inicio4">
             <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
                     onclick="location.href=
-            'Index.html'"> <!-- Tamaño -->
+            'index.jsp'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
         </article>
@@ -179,9 +179,9 @@
         <article id="info">
             <h2>¿Quienes Somos?</h2>
             <article id="desc">
-                <p> Somos una asociación de empleados de la Universidad Pedagógica y Tecnológica deColombia,
-                    con el fin de brindar un espacio de tranquilidad de descanso y diversión,crearon
-                    un lugar para brindarles a sus usuarios y familias el servicio de hospedaje y piscina en
+                <p> Somos una asociación de empleados de la Universidad Pedagógica y Tecnológica de Colombia,
+                    con el fin de brindar un espacio de tranquilidad de descanso y diversión,creamos
+                    un lugar para brindarles a sus usuarios y familias el servicio de hospedaje y recreación en el
                     municipio de Moniquita Boyacá
                 </p>
             </article>

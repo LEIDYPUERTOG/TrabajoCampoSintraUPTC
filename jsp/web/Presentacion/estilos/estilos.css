@@ -102,7 +102,7 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
 
 /*
 	El tipo de letra, el tamaño de la letra y que sea centrada del bloque texto
-	que contiene la etiqueta h1
+	que contiene la etiqueta h2
 */
 #texto h2 {
     font-family: 'Montserrat', sans-serif;
@@ -110,10 +110,8 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
     color: #34495E;
     text-align: center;
 }
-
 /*
-	El tipo de letra, el tamaño de la letra y que sea centrada del bloque texto
-	que contiene la etiqueta h4
+	bloque de (quienes somos y la imagen )
 */
 #texto #desc {
     background: #fefff6;
@@ -122,6 +120,10 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
     padding-top: 40px;
     margin: -35px 0 0 30px;
 }
+/*
+	El tipo de letra, el tamaño de la letra y que sea centrada del bloque texto
+	que contiene la etiqueta h4
+*/
 #texto p {
     font-family: 'Lato', sans-serif;
     font-size: 17px;
@@ -515,13 +517,59 @@ nav.acceder #login-content {
     margin-right: auto;
     margin-left: auto;
 }
+/*
+	El tamaño y color del titulo
+*/
+#catalogo h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    color: #34495E;
+    text-align: center;
+}
+/*
+	bloque de los precios
+*/
+#precio {
+    background:#ffffff;
+    width: 950px;
+    height: 150px;
+    padding-top: 5px;
+}
+/*
+	bloque de los precios
+*/
+#precio #valores {
+    background: #f0dbb6;
+    width: 220px;
+    height: 150px;
+    padding-top: 5px;
+    margin: -10px 0 0 -24px;
+}
+/*
+	El tipo de letra, el tamaño de la letra
+*/
+#catalogo #precio p{
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    text-align: center;
+    color: #404142
+}
+/*
+	El tipo de letra, el tamaño de la letra
+*/
+#catalogo #precio h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #404142
+}
 
 /*
 	El tamaño de la letra del titulo principal
 */
-#catalogo h4 {
-    font-family: 'Handlee', cursive;
-    font-size: 60px;
+#catalogo h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -531,7 +579,7 @@ nav.acceder #login-content {
 #catalogo #cab1 {
     background: #fefff6;
     width: 270px;
-    height: 430px;
+    height: 350px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -542,7 +590,7 @@ nav.acceder #login-content {
 #catalogo #cab2 {
     background: #fefff6;
     width: 350px;
-    height: 430px;
+    height: 350px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -553,7 +601,7 @@ nav.acceder #login-content {
 #catalogo #cab3 {
     background: #fefff6;
     width: 300px;
-    height: 430px;
+    height: 350px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -564,7 +612,7 @@ nav.acceder #login-content {
 #catalogo #cab4 {
     background: #fefff6;
     width: 350px;
-    height: 350px;
+    height: 250px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -575,7 +623,7 @@ nav.acceder #login-content {
 #catalogo #cab5 {
     background: #fefff6;
     width: 310px;
-    height: 350px;
+    height: 250px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -586,20 +634,38 @@ nav.acceder #login-content {
 #catalogo #cab6 {
     background: #fefff6;
     width: 270px;
-    height: 350px;
+    height: 250px;
     display: inline-block;
     vertical-align: middle;
 }
-
 /*
-	Tamaño y tio de letra del la descripcion de la cabaña
+	Estilo de los botones
 */
-#catalogo h5 {
-    font-family: 'Montserrat', sans-serif;
-    color: #000000;
-    font-size: 17px;
+#catalogo button {
+    border: none;
+    background: #5cb85c;
+    color: #f2f2f2;
+    padding: 8px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
 }
-
+#catalogo button:before {
+    content:'';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 42px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    transition: all 2s ease;
+}
+#catalogo button:hover:before {
+    width: 100%;
+}
 /*
 *****************************Pagina Crear Cabaña ***************************************************
 */
@@ -1111,7 +1177,7 @@ Estilos para la tabla y scroll
     text-align: center;
 }
 
-/*Estilos de la pagina de crear evento*/
+/*************************Estilos de la pagina de crear evento******************************************/
 
 #contenido2 #nombre {
     background: #fefff6;
@@ -1119,6 +1185,12 @@ Estilos para la tabla y scroll
     height: 35px;
     display: inline-block;
     vertical-align: middle;
+}
+#catalogoEv h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    color: #34495E;
+    text-align: center;
 }
 
 #contenido2 #FechaInicio {
@@ -1238,14 +1310,99 @@ Estilos para la tabla y scroll
     font-size: 37px;
     text-align: center;
 }
-
 /*
-	Tipo de letra, tamaño de h5 (todo el texto)
+    Tamaño y color del catalogoEv
 */
-#contenido2 h5 {
+#contenedor2 #catalogoEv{
+    background: #fefff6;
+    height: 900px;
+    width: 950px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#catalogoEv h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    color: #34495E;
+    text-align: center;
+}
+/*
+	Tamaño  y Color del bloque de evento1
+*/
+#contenedor2 #catalogoEv #ev1 {
+    background: #fefff6;
+    width: 270px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de evento2
+*/
+#contenedor2 #catalogoEv #ev2 {
+    background: #fefff6;
+    width: 270px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de evento3
+*/
+#contenedor2 #catalogoEv #ev3 {
+    background: #fefff6;
+    width: 270px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de evento4
+*/
+#contenedor2 #catalogoEv #ev4 {
+    background: #fefff6;
+    width: 270px;
+    height: 200px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de evento5
+*/
+#contenedor2 #catalogoEv #ev5 {
+    background: #fefff6;
+    width: 270px;
+    height: 200px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*
+	Tamaño  y Color del bloque de evento6
+*/
+#contenedor2 #catalogoEv #ev6 {
+    background: #fefff6;
+    width: 270px;
+    height: 200px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*
+	El tipo de letra, el tamaño de la letra del texto
+*/
+#contenedor2 #catalogoEv h4{
     font-family: 'Lato', sans-serif;
     font-size: 15px;
+    color: #7F8C8D;
+}
+
+/*
+	Tipo de letra, tamaño del titulo (todo el texto)
+*/
+#contenedor2 #catalogoEv h5{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     text-align: center;
+    color: #34495E;
 }
 
 /*Estilos de la ventana aprobar reserva*/

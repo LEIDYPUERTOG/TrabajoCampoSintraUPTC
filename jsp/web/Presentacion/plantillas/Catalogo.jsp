@@ -5,9 +5,9 @@
 <head> <!-- Lo que es importante para tener en la pagina -->
     <meta charset="UTF-8">
     <!-- Palabras clave -->
-    <meta name="keywords" content="sincato ">
+    <meta name="keywords" content="sindraoficiales ">
     <!-- Descripcion -->
-    <meta name="description" content="sadefrgth ">
+    <meta name="description" content="cabañas,reservas, moniquira,psicinas">
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title> Catalogo </title>
@@ -15,10 +15,9 @@
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
     <!-- Tipo de letra de google -->
-    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <!-- Estilos CSS vinculados -->
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
@@ -57,11 +56,10 @@
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton ingresar -->
-        <!-- Boton ingresar -->
         <nav class="acceder">
             <article id="inicio1">
 
-                <button type="button" id="login" class="btn btn-default"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+                <button type="button" id="login" class="btn btn-link"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
                 </button>
                 <div id="login-content">
@@ -82,19 +80,19 @@
         </nav>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link"  style="margin-top:21px;"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos <!-- Icono y palabra -->
             </button>
         </article>
         <!-- Boton Conozcanos -->
         <article id="inicio3">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link"  style="margin-top:21px;"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Conozcanos <!-- Icono y palabra -->
             </button>
         </article>
         <!-- Boton Inicio -->
         <article id="inicio4">
-            <button type="button" class="btn btn-default"  style="padding-right:55px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link"  style="padding-right:55px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
         </article>
@@ -102,100 +100,88 @@
 
     <!-- Segunda cabecera con los logos del sindicato y la uptc -->
     <section id="logo">
-        <h1> <img src="/Presentacion/imagenes/cabecera.png" alt="logos.png"></h1> <!-- Importar la imagen -->
+        <h1> <img src="/Presentacion/imagenes/cabecera.jpg" alt="logos.png"></h1> <!-- Importar la imagen -->
     </section>
 
     <!-- Tercera cabecera con los servicios que prestan el sindicato -->
     <section id="servicios">
         <ul class="nav nav-pills"> <!-- Para la navegacion -->
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;"> <!-- Tamaño de los item -->
-                <a href="Catalogo.jsp"><h3><font color=#000000>Cabañas</font></h3></a></li> <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a href="#"><h3><font color=#000000>Zonas de Camping</font></h3></a></li>
+                <!-- Tamaño de los item -->
+                <a class="ghost" href="/Presentacion/plantillas/Catalogo.jsp"><h3><font color=#34495E>Cabañas</font></h3></a></li>
+            <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a href="Eventos.jsp"><h3><font color=#000000>Eventos</font></h3></a></li>
+                <a class="ghost" href="#"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
+            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
+                <a class="ghost" href="/Presentacion//plantillas/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
         </ul>
     </section>
+
 
     <!-- Catalogo de las cabañas -->
     <section id="catalogo">
         <!-- Titulo principal -->
-        <h4>Catalogo de cabañas</h4>
+        <h2>Catalogo de cabañas</h2>
+        <article id="precio">
+            <article id="valores">
+                <h2>Valor de las Cabañas</h2>
+                <p> <strong>Valor por noche:</strong></br>
+                    <strong>Afiliado:</strong>$90.000</br>
+                    <strong>No Afiliado:</strong>$ 160.000
+                </p>
+            </article>
+        </article>
         <!-- Cabaña N°1, con la imagen, descripcion y el boton -->
         <article id="cab1"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/cabaña1.JPG" alt="GFoto1.JPG"><!-- Importar la imagen -->
+            <img src="/Presentacion/imagenes/cabana1.JPG" alt="cabana1.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°1</h5>
-            <h5>Valor por noche: </br>
-                Afiliado: $90.000</br>
-                No Afiliado: $160.000</br>
-            </h5>
-            <button id='inline' type="button" class="btn btn-success"> <!-- Tamaño -->
+            <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a> <!-- Icono y palabra -->
+                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a> <!-- Icono y palabra -->
             </button>
         </article>
 
         <!-- Cabaña N°2, con la imagen, descripcion y el boton -->
         <article id="cab2"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/cabaña2.JPG" alt="GFoto1.JPG"><!-- Importar la imagen -->
+            <img src="/Presentacion/imagenes/cabana2.JPG" alt="cabana2.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°2</h5>
-            <h5>Valor por noche: </br>
-                Afiliado: $90.000</br>
-                No Afiliado: $160.000</br>
-            </h5>
-            <button type="button" class="btn btn-success"> <!-- Tamaño -->
+            <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
                 <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°3, con la imagen, descripcion y el boton -->
         <article id="cab3"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/cabaña3.JPG" alt="GFoto1.JPG"><!-- Importar la imagen -->
+            <img src="/Presentacion/imagenes/cabana3.JPG" alt="cabana3.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°3</h5>
-            <h5>Valor por noche: </br>
-                Afiliado: $90.000</br>
-                No Afiliado: $160.000</br>
-            </h5>
-            <button type="button" class="btn btn-success"> <!-- Tamaño -->
+            <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
                 <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°4, con la imagen, descripcion y el boton -->
         <article id="cab4"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/cabaña4.JPG" alt="GFoto1.JPG"><!-- Importar la imagen -->
+            <img src="/Presentacion/imagenes/cabana4.JPG" alt="cabana4.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°4</h5>
-            <h5>Valor por noche: </br>
-                Afiliado: $90.000</br>
-                No Afiliado: $160.000</br>
-            </h5>
-            <button type="button" class="btn btn-success"> <!-- Tamaño -->
+            <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
                 <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°5, con la imagen, descripcion y el boton -->
         <article id="cab5"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/cabaña5.JPG" alt="GFoto1.JPG"><!-- Importar la imagen -->
+            <img src="/Presentacion/imagenes/cabana5.JPG" alt="cabana5.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°5</h5>
-            <h5>Valor por noche: </br>
-                Afiliado: $90.000</br>
-                No Afiliado: $160.000</br>
-            </h5>
-                <button type="button" class="btn btn-success"> <!-- Tamaño -->
+            <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
                     <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°6, con la imagen, descripcion y el boton -->
         <article id="cab6"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/cabaña6.JPG" alt="GFoto1.JPG"><!-- Importar la imagen -->
+            <img src="/Presentacion/imagenes/cabana6.JPG" alt="cabana6.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°6</h5>
-            <h5>Valor por noche: </br>
-                Afiliado: $90.000</br>
-                No Afiliado: $160.000</br>
-            </h5>
-            <button type="button" class="btn btn-success"> <!-- Tamaño -->
+            <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
                 <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
             </button>
