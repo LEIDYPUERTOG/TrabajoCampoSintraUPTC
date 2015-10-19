@@ -6,6 +6,7 @@ import Persistencia.InformacionReservaDao;
 import Persistencia.PersonaDao;
 import Persistencia.ReservaDao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -58,8 +59,6 @@ public class SvtCrearReserva extends HttpServlet {
         System.out.println("solicitud-------------" + fechaSolicitud);
         Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA);
         InformacionReserva informacionReserva = new InformacionReserva(dateInicio, dateFin,dateFin,reserva);
-
-
 
         boolean agregar = reservaDao.crearReservaCabania(reserva);
         boolean agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);

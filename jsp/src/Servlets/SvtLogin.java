@@ -21,7 +21,6 @@ public class SvtLogin extends HttpServlet {
         int usuario= Integer.parseInt(request.getParameter("usuario"));
         String contrasenia=request.getParameter("contrasenia");
 
-
         ConexionDB conexionDB = new ConexionDB("root","");
         PersonaDao personaDao = new PersonaDao();
 
@@ -31,7 +30,6 @@ public class SvtLogin extends HttpServlet {
             Persona persona = personaDao.consultarPersona(usuario);
             if(persona != null && persona.getContrasenia().equals(contrasenia)){
                 request.setAttribute("persona1111", persona);
-                request.getRequestDispatcher("../web/Presentacion/plantillas/AprobarReserva.jsp");
                 System.out.println("--------------------------------------------- indew");
                 //request.getRequestDispatcher("../web/Presentacion/plantillas/AprobarReserva.jsp").forward(request, response);
 

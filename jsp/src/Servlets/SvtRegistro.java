@@ -3,6 +3,7 @@ package Servlets;
 import Logica.Persona;
 import Logica.TipoDocumento;
 import Logica.TipoUsuario;
+import Logica.rol;
 import Persistencia.ConexionDB;
 import Persistencia.PersonaDao;
 import javax.servlet.ServletException;
@@ -35,7 +36,7 @@ public class SvtRegistro extends HttpServlet {
         System.out.println("---------------------------------------------"+nombre);
         System.out.println("---------------------------------------------"+documento);
         System.out.println("---------------------------------------------"+clave);
-        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado,clave);
+        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado,clave,rol.Usuario);
 
         boolean agregar = personaDao.crearPersona(persona);
 
@@ -67,7 +68,8 @@ public class SvtRegistro extends HttpServlet {
         System.out.println("---------------------------------------------"+nombre);
         System.out.println("---------------------------------------------"+documento);
         System.out.println("---------------------------------------------"+clave);
-        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, personaDao.conversionUsuario(tipoUsuario),clave);
+        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, personaDao.conversionUsuario(tipoUsuario),clave,
+                rol.Usuario);
 
         Persona aux = personaDao.consultarPersona(documento); //primero  busca si la persona no esta para agregarla
         if(aux != null){

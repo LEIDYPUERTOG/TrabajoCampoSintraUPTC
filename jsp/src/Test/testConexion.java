@@ -15,7 +15,7 @@ public class testConexion {
 
         ConexionDB conexionDB = new ConexionDB("","");
         PersonaDao a = new PersonaDao();
-        a.crearPersona(new Persona(7,"ddd", TipoDocumento.Cedula, TipoUsuario.Afiliado,"xxxx"));
+
         System.out.println("---------------------------------------------" + conexionDB.isHayConexion());
     }
 

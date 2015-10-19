@@ -3,6 +3,7 @@ package Persistencia;
 import Logica.Persona;
 import Logica.TipoDocumento;
 import Logica.TipoUsuario;
+import Logica.rol;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -83,7 +84,9 @@ public class PersonaDao {
 				persona.setTipoDocumento(tipoDocumento);
 				persona.setNombre(resultSet.getString(3));
 				persona.setTipoUsuario(tipoUsuario);
-				persona.setContrasenia(resultSet.getString(5));
+				persona.setRol(conversionRol(resultSet.getString(5)));
+				persona.setContrasenia(resultSet.getString(6));
+
 			}else{
 				return persona;
 			}
@@ -111,8 +114,10 @@ public class PersonaDao {
 			ResultSet resultSet = ppStm.executeQuery();
 			while(resultSet.next()) {
 
-				listaPersonas.add(new Persona(resultSet.getInt(1), resultSet.getString(3), conversionDocumento(resultSet.getString(2)),
-						conversionUsuario(resultSet.getString(4)), resultSet.getString(5)));
+				listaPersonas.add(new Persona(resultSet.getInt(1), resultSet.getString(3),
+						conversionDocumento(resultSet.getString(2)),
+						conversionUsuario(resultSet.getString(4)), resultSet.getString(6),
+						conversionRol(resultSet.getString(6))));
 			}
 
 
@@ -137,14 +142,17 @@ public class PersonaDao {
 
 			String tipoUsuario = conversionEnumUsuarioAIniciales(persona.getTipoUsuario());
 
-			String queryInsertar = "INSERT INTO persona VALUES(?,?,?,?,?)";
+			String rol = conversionDeEnumRolIniciales(persona.getRol());
+
+			String queryInsertar = "INSERT INTO persona VALUES(?,?,?,?,?,?)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
 			ppStm.setInt(1, persona.getCedula());
 			ppStm.setString(2, documento);
 			ppStm.setString(3, persona.getNombre());
 			ppStm.setString(4, tipoUsuario);
-			ppStm.setString(5, persona.getContrasenia());
+			ppStm.setString(5, rol);
+			ppStm.setString(6, persona.getContrasenia());
 
 			ppStm.executeUpdate();
 			//conn.close();
@@ -211,6 +219,40 @@ public class PersonaDao {
 			usuario = "NA";
 		}
 		return usuario;
+	}
+
+	public String conversionDeEnumRolIniciales(rol rol){
+		String rolAux = "";
+		if(rol.toString().equalsIgnoreCase("Administrador")){
+			rolAux = "Ad";
+		}
+		else{
+			if(rol.toString().equalsIgnoreCase("Funcionario")){
+				rolAux = "Fn";
+			}
+			else {
+				rolAux = "Us";
+			}
+		}
+		return rolAux;
+	}
+
+	public rol conversionRol(String rol){
+		rol tipoRol = null;
+		if(rol.equalsIgnoreCase("Ad")){
+			tipoRol = Logica.rol.Administrador;
+		}
+		else {
+			if(rol.equalsIgnoreCase("Fn")){
+				tipoRol = Logica.rol.Funcionario;
+			}
+			else{
+				if(rol.equalsIgnoreCase("Us")){
+					tipoRol = Logica.rol.Usuario;
+				}
+			}
+		}
+		return tipoRol;
 	}
 
 	public ConexionDB getConexionDB() {

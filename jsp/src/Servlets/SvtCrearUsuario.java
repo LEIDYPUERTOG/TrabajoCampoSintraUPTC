@@ -3,6 +3,7 @@ package Servlets;
 import Logica.Persona;
 import Logica.TipoDocumento;
 import Logica.TipoUsuario;
+import Logica.rol;
 import Persistencia.ConexionDB;
 import Persistencia.PersonaDao;
 
@@ -37,7 +38,7 @@ public class SvtCrearUsuario extends HttpServlet {
         System.out.println("---------------------------------------------"+documento);
 
         Persona aux = personaDao.consultarPersona(documento); //primero  busca si la persona no esta para agregarla
-        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado);
+        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado, rol.Administrador);
 
 
         boolean agregar = personaDao.crearPersona(persona);

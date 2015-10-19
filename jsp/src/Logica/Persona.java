@@ -44,6 +44,7 @@ public class Persona {
 	 * Atributo para acceder a la contrasenia de la persona
 	 */
 	private String contrasenia;
+	private rol rol;
 
 
 	/**
@@ -55,7 +56,7 @@ public class Persona {
 	 * @param contrasenia
 	 */
 	public Persona(int cedula, String nombre, TipoDocumento tipoDocumento,
-				   TipoUsuario tipoUsuario, String contrasenia) {
+				   TipoUsuario tipoUsuario, String contrasenia, rol rol) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
@@ -72,7 +73,7 @@ public class Persona {
 	 * @param tipoUsuario
 	 */
 	public Persona(int cedula, String nombre, TipoDocumento tipoDocumento,
-				   TipoUsuario tipoUsuario) {
+				   TipoUsuario tipoUsuario, rol rol) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
@@ -134,5 +135,13 @@ public class Persona {
 
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
+	}
+
+	public Logica.rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Logica.rol rol) {
+		this.rol = rol;
 	}
 }

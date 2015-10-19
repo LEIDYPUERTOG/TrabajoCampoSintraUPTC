@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%@ page import="Persistencia.ConexionDB" language="java"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +90,7 @@
 
     <!-- Segunda cabecera con los logos del sindicato y la uptc -->
     <section id="logo">
-        <h1> <img src="/Presentacion/imagenes/cabecera.png" alt="logos.png"></h1> <!-- Importar la imagen -->
+        <img src="/Presentacion/imagenes/cabecera.jpg" alt="logos.png"> <!-- Importar la imagen -->
     </section>
 
 
