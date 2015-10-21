@@ -1,3 +1,4 @@
+<%@ page import="Logica.Persona" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -20,7 +21,9 @@
 
 </head>
 <body>
-
+<%
+    Persona persona = (Persona)session.getAttribute("persona");
+%>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <script src="/Presentacion/estilos/js/responsive.js"></script>

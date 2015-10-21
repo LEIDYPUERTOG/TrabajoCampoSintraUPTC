@@ -32,12 +32,6 @@
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 
-<%
-    Persona persona = (Persona)request.getAttribute("personaBusqueda");
-%>
-
-<!--<p>Me ha llegado1 <%= persona.getNombre() %></p>              Forma de acceder a una variable de Servlet-->
-
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorRegistro">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
@@ -48,7 +42,23 @@
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+
+                    <%
+                        Persona persona = (Persona)session.getAttribute("persona");
+                        session.setAttribute("persona",persona);
+                        if(persona!=null){
+
+                    %>
                     <%= persona.getNombre() %>
+                    <%
+                    }else{
+                        Persona persona1 = (Persona)request.getAttribute("persona");
+                        session.setAttribute("persona",persona1);
+                    %>
+                    <%= persona1.getNombre() %>
+                    <%
+                        }
+                    %>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">

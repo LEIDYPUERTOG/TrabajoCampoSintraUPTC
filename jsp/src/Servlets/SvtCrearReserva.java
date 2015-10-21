@@ -47,6 +47,7 @@ public class SvtCrearReserva extends HttpServlet {
 
         ConexionDB conexionDB = new ConexionDB("root","");
 
+
         ReservaDao reservaDao = new ReservaDao();
         InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
 
@@ -57,9 +58,10 @@ public class SvtCrearReserva extends HttpServlet {
         GregorianCalendar c = new GregorianCalendar();
         Date fechaSolicitud = new Date(c.getTimeInMillis());
         System.out.println("solicitud-------------" + fechaSolicitud);
-        Persona o = new Persona(1049636125,"leidy carolina puerto",TipoDocumento.Cedula,TipoUsuario.Afiliado,rol.Administrador);
+        Persona persona = (Persona) request.getSession().getAttribute("persona");
 
-        Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,o);
+
+        Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,persona);
         InformacionReserva informacionReserva = new InformacionReserva(dateInicio, dateFin,dateFin,reserva);
 
         RequestDispatcher dispatcher = null;
@@ -68,6 +70,15 @@ public class SvtCrearReserva extends HttpServlet {
 
         if(agregar && agregarInfo){
             System.out.println("---------------------------------------------" + agregar);
+            if(persona.getRol().toString().equalsIgnoreCase("Administrador")||
+                    persona.getRol().toString().equalsIgnoreCase("Funcionar")){
+                dispatcher = request.getRequestDispatcher("CrearReservaCabania.jsp");
+                dispatcher.forward(request, response);
+            }
+            else {
+                dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
+                dispatcher.forward(request, response);
+            }
             dispatcher = request.getRequestDispatcher("index.jsp");
             dispatcher.forward(request, response);
             PrintWriter out=response.getWriter();
@@ -76,9 +87,5 @@ public class SvtCrearReserva extends HttpServlet {
             PrintWriter out=response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
         }
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

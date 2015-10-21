@@ -6,6 +6,7 @@ import Logica.Locacion;
 import Logica.Persona;
 import Persistencia.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,36 +49,31 @@ public class SvtCrearEvento extends HttpServlet {
 
         EventoDao eventoDao = new EventoDao();
         LocacionDao locacionDao = new LocacionDao();
-        //Locacion locacion = locacionDao.obtenertLocacion("Camara Comercio");
+        Locacion locacion = locacionDao.obtenertLocacion("Camara Comercio");
 
-        //Persona persona = (Persona) request.getAttribute("personaBusqueda");
+        Persona persona = (Persona) request.getSession().getAttribute("persona");
 
         System.out.println("---------------------------------------------"+nombre);
         System.out.println("---------------------------------------------"+descipcion);
+        Evento evento = null;
 
-        //Evento evento = new Evento(descipcion,dateFin,dateInicio,locacion,nombre,persona);
+        System.out.println("creado poer " + persona.getNombre());
 
-//        if(persona !=null){
-  //          System.out.println("la persna que lo creo fue "+persona.getNombre());
-    //    }
-      //  else{
-        //    System.out.println("No ingreso");
-        //}
+        RequestDispatcher dispatcher = null;
 
-        /*boolean agregar = eventoDao.agregarEvento(evento);
+        if(persona !=null){
+            evento = new Evento(descipcion,dateFin,dateInicio,locacion,nombre,persona);
+            boolean agregar = eventoDao.agregarEvento(evento);
 
-        if(agregar ){
-            System.out.println("---------------------------------------------" + agregar);
-            PrintWriter out=response.getWriter();
-            out.println("Agregado");
-        }else{
-            PrintWriter out=response.getWriter();
-            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
-        }*/
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+            if(agregar ){
+                request.setAttribute("eventoCreado", "Evento creado satisfactoriamente");
+                dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
+                dispatcher.forward(request, response);
+            }else{
+                request.setAttribute("eventoCreado", "No se pudo completar la solicitud");
+                dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
+                dispatcher.forward(request, response);
+            }
+        }
     }
 }

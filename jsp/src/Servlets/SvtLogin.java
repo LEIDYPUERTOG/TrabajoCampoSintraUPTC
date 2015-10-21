@@ -34,11 +34,10 @@ public class SvtLogin extends HttpServlet {
             Persona persona = personaDao.consultarPersona(usuario);
 
             if(persona != null && persona.getContrasenia().equals(contrasenia)) {
-
-                request.setAttribute("personaBusqueda", persona); //mandando el parametro para que sea accedido
+                request.setAttribute("persona", persona); //mandando el parametro para que sea accedido
 
                 if(persona.getRol().toString().equalsIgnoreCase("Administrador")){
-
+                    System.out.println("rol "+persona.getRol());
                     dispatcher = request.getRequestDispatcher("CrearCabania.jsp");
                     dispatcher.forward(request, response);
                 }
@@ -48,6 +47,7 @@ public class SvtLogin extends HttpServlet {
                         dispatcher.forward(request, response);
                     }
                     else{
+                        System.out.println("rol "+persona.getRol());
                         dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
                         dispatcher.forward(request, response);
                     }

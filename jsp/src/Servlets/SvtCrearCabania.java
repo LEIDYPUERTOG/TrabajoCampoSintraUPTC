@@ -44,9 +44,11 @@ public class SvtCrearCabania extends HttpServlet {
 
         RequestDispatcher dispatcher = null;
 
+        Persona persona = (Persona)request.getAttribute("personaBusqueda");
+        request.setAttribute("personaBusqueda", persona); //mandando el parametro para que sea accedido
+
         if(buscarCabania == null){
             boolean agregar = cabaniaDao.crearCabania(cabania);
-
             if(agregar){
                 request.setAttribute("cabaniaAgregada", true);
                 dispatcher = request.getRequestDispatcher("CrearCabania.jsp");

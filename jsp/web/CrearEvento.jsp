@@ -22,11 +22,7 @@
 
 </head>
 <body>
-<%
-    Persona persona = (Persona)request.getAttribute("personaBusqueda");
-%>
 
-<p>Me ha llegado1 <%= persona.getNombre() %></p>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <script src="/Presentacion/estilos/js/responsive.js"></script>
@@ -40,8 +36,25 @@
         <!-- Boton usuario -->
         <article id="inicio1">
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                    <%
+                        Persona persona = (Persona)session.getAttribute("persona");
+                        session.setAttribute("persona",persona);
+                        if(persona!=null){
+
+                    %>
+                    <%= persona.getNombre() %>
+                    <%
+                    }else{
+                        Persona persona1 = (Persona)request.getAttribute("persona");
+                        session.setAttribute("persona",persona1);
+                    %>
+                    <%= persona1.getNombre() %>
+                    <%
+                        }
+                    %>
+
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -86,7 +99,8 @@
         </article>
 
         <article id="cabania">
-            <a href="CrearCabania.jsp"><img src="/Presentacion/imagenes/cabania.png" id="imag1" title="Cabaña" ></a>
+            <a href="CrearCabania.jsp"><img src="/Presentacion/imagenes/cabania.png"
+                                            id="imag1" title="Cabaña"></a>
         </article>
 
         <article id="eventos">

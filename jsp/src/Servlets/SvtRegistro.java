@@ -47,8 +47,8 @@ public class SvtRegistro extends HttpServlet {
         System.out.println("---------------------------------------------"+nombre);
         System.out.println("---------------------------------------------"+documento);
         System.out.println("---------------------------------------------"+clave);
-        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, personaDao.conversionUsuario(tipoUsuario),clave,
-                rol.Usuario);
+        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, personaDao.conversionUsuario(tipoUsuario),
+                clave,rol.Usuario);
 
 
         System.out.println("---------------------------------------------" + persona.getRol());
@@ -57,19 +57,26 @@ public class SvtRegistro extends HttpServlet {
         RequestDispatcher dispatcher = null;
         if(aux == null){
             boolean agregar = personaDao.crearPersona(persona);
-
             if(agregar && clave.equals(clave2)){
                 System.out.println("---------------------------------------------" + agregar);
+                request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
                 dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
                 dispatcher.forward(request, response);
-
-
             }else{
-                PrintWriter out=response.getWriter();
-                out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+                request.setAttribute("personaCreada", "No se pudo completar la solicitud");
+                dispatcher = request.getRequestDispatcher("registrarse.jsp");
+                dispatcher.forward(request, response);
             }
         }
         else{
+            if(aux.getContrasenia() == null && clave.equals(clave2)){
+                boolean actualizar = personaDao.actualizarPersona(aux.getCedula(),clave);
+                if(actualizar){
+                    request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
+                    dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
+                    dispatcher.forward(request, response);
+                }
+            }
             PrintWriter out=response.getWriter();
             out.println("El usuario ya existe");
         }

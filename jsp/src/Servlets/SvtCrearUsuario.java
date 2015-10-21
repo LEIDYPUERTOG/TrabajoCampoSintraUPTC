@@ -28,6 +28,7 @@ public class SvtCrearUsuario extends HttpServlet {
 
         String nombre=request.getParameter("nombres");
         int documento=Integer.parseInt(request.getParameter("documento"));
+        String tipoUsuario = request.getParameter("inlineRadioOptions");
 
 
         ConexionDB conexionDB = new ConexionDB("root","");
@@ -38,24 +39,23 @@ public class SvtCrearUsuario extends HttpServlet {
         System.out.println("---------------------------------------------"+documento);
 
         Persona aux = personaDao.consultarPersona(documento); //primero  busca si la persona no esta para agregarla
-        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado, rol.Administrador);
+        Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado,
+                personaDao.conversionRol(tipoUsuario));
 
+        RequestDispatcher dispatcher = null;
 
         boolean agregar = personaDao.crearPersona(persona);
 
         if(agregar){
-            System.out.println("---------------------------------------------" + agregar);
-            PrintWriter out=response.getWriter();
-            out.println("Agregado");
-
+            request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
+            dispatcher = request.getRequestDispatcher("CrearUsuario.jsp");
+            dispatcher.forward(request, response);
         } else {
-            PrintWriter out = response.getWriter();
-            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+            request.setAttribute("personaCreada", "No se pudo completar la solicitud");
+            dispatcher = request.getRequestDispatcher("CrearUsuario.jsp");
+            dispatcher.forward(request, response);
 
         }
 }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }
