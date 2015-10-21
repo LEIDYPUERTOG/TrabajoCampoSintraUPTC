@@ -3,9 +3,8 @@ package Servlets;
 import Logica.Cabania;
 import Logica.Evento;
 import Logica.Locacion;
-import Persistencia.CabaniaDao;
-import Persistencia.ConexionDB;
-import Persistencia.EventoDao;
+import Logica.Persona;
+import Persistencia.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,17 +47,24 @@ public class SvtCrearEvento extends HttpServlet {
         ConexionDB conexionDB = new ConexionDB("root","");
 
         EventoDao eventoDao = new EventoDao();
+        LocacionDao locacionDao = new LocacionDao();
+        //Locacion locacion = locacionDao.obtenertLocacion("Camara Comercio");
 
+        //Persona persona = (Persona) request.getAttribute("personaBusqueda");
 
-/*
         System.out.println("---------------------------------------------"+nombre);
-        System.out.println("---------------------------------------------"+fechaInicio);
-        System.out.println("---------------------------------------------"+fechaFin);
         System.out.println("---------------------------------------------"+descipcion);
-*/
-        //Evento evento = new Evento(descipcion,dateFin,dateInicio,new Locacion("aaaa",1,"aaaaaa"),nombre,"aaaaaa");
 
-/*        boolean agregar = eventoDao.agregarEvento(evento);
+        //Evento evento = new Evento(descipcion,dateFin,dateInicio,locacion,nombre,persona);
+
+//        if(persona !=null){
+  //          System.out.println("la persna que lo creo fue "+persona.getNombre());
+    //    }
+      //  else{
+        //    System.out.println("No ingreso");
+        //}
+
+        /*boolean agregar = eventoDao.agregarEvento(evento);
 
         if(agregar ){
             System.out.println("---------------------------------------------" + agregar);

@@ -1,3 +1,4 @@
+<%@ page import="Logica.Persona" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,11 +22,16 @@
 
 </head>
 <body>
+<%
+    Persona persona = (Persona)request.getAttribute("personaBusqueda");
+%>
 
+<p>Me ha llegado1 <%= persona.getNombre() %></p>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
+
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorRegistro">

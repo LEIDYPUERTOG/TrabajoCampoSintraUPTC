@@ -40,14 +40,15 @@
     <header>
         <!-- Boton usuario -->
 
-        <%
+        <%--<%
             Persona persona = (Persona)request.getAttribute("persona1111");
         %>
+        <%persona.getNombre();%>--%>
         <article id="inicio1">
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido <%persona.getNombre()%>
+                    Bienvenido
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -127,7 +128,6 @@
                     <li><a href="CrearReservaCabania.jsp">Crear Reserva</a></li>
                     <li><a href="EditarReservaAdmin.jsp">Editar Reserva</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
-                    <li><a href="ConsultarReserva.jsp#">Consultar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>
             </nav>
@@ -137,6 +137,32 @@
     <section id="contenidoReservaA">
         <h4>Aprobar Reservas</h4>
 
+        <article id="filtros">
+
+            <article id="CedulaBusqueda">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Ingrese la cedula">
+                </div><!-- /input-group -->
+            </article>
+            <article id="Estado">
+                <select class="form-control">
+                    <option value="1">Pendiente</option>
+                    <option value="1">Aprobada</option>
+                    <option value="2">Rechazada</option>
+                    <option value="3">Cancelada</option></select>
+            </article>
+
+            <article id="fechaSolicitud1">
+                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
+            </article>
+
+            <span class="input-group-btn" id="btnBusqueda">
+                  <!-- Boton para la busqueda de la iamgen -->
+                <button type="submit" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+              </span>
+        </article>
 
         <article id="lista">
             <table class="table">
@@ -145,9 +171,9 @@
                 <tr>
                     <th>Cedula</th>
                     <th>Tipo Servicio</th>
-                    <th>Fecha y Hora de Solicitud</th>
-                    <th>Fecha Inicio</th>
-                    <th>Fecha Fin</th>
+                    <th>Fecha de Solicitud</th>
+                    <th>Cantidad días</th>
+                    <th>Cantidad <br> personas</th>
                     <th>Aprobar</th>
                     <th>Rechazar</th>
                 </tr>
@@ -209,7 +235,7 @@
         </article> <!-- Fin del article -->
 
         <!-- Paginacion -->
-        <article id="pag">
+        <article id="pag2">
             <nav>
                 <ul class="pagination">
                     <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>

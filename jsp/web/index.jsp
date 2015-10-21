@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="es"> <!-- Inicio pagina html5 -->
 <head> <!-- Lo que es importante para tener en la pagina -->
+
     <meta charset="UTF-8">
     <!-- Palabras clave -->
     <meta name="keywords" content="sindraoficiales ">
@@ -28,7 +29,7 @@
     <script src="Presentacion/angular.min.js"></script>
 
     <!-- Script necesario para hacer que la ventana de login aparezca-->
-    <script src="Presentacion/jquery.js"></script>
+    <script src="jquery.js"></script>
     <script src="Presentacion/estilos/funciones/funcion.js"></script>
     <script>
         $(function () {
@@ -49,6 +50,7 @@
 
 <script src="Presentacion/estilos/js/bootstrap.min.js"></script>
 
+
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedor">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
@@ -59,13 +61,13 @@
 
                 <button type="button" id="login" class="btn btn-link"
                         style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar<!-- Icono y palabra -->
                 </button>
                 <div id="login-content">
                     <form action="/SvtLogin" method="post">
 
 
-                        <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
+                        <input id="usuario" type="number" name="usuario" placeholder="Usuario" required>
                         <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
 
                         <button type="submit" id="submit" class="btn btn-primary"
@@ -100,8 +102,7 @@
         <!-- Boton Inicio -->
         <article id="inicio4">
             <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
-                    onclick="location.href=
-            'index.jsp'"> <!-- Tamaño -->
+                    onclick="location.href='index.jsp'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
         </article>
@@ -123,7 +124,7 @@
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <a class="ghost" href="#"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="/Presentacion//plantillas/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
+                <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
         </ul>
     </section>
 

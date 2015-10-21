@@ -60,7 +60,7 @@ public class SvtRegistro extends HttpServlet {
 
             if(agregar && clave.equals(clave2)){
                 System.out.println("---------------------------------------------" + agregar);
-                dispatcher = request.getRequestDispatcher("index.jsp");
+                dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
                 dispatcher.forward(request, response);
 
 

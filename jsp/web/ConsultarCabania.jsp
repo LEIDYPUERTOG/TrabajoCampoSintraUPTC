@@ -17,20 +17,19 @@
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
-    <script src="jquery.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="Presentacion/jquery.colorbox.js"></script>
 
-    <!--Script para poder hacer que aparezca la ventana emergente-->
-    <script src="/Presentacion/estilos/funciones/funcion.js"></script>
+    <!-- Script necesario para hacer que la ventana de login aparezca-->
+    <script src="jquery.js"></script>
+
 
 </head>
-<body>
 
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
+<body> <!-- Lo que tiene la pagina -->
+<!-- Js vinculados -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
+
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorReservaA">
@@ -202,7 +201,7 @@
         </article> <!-- Fin del article -->
 
         <!-- Paginacion -->
-        <article id="pag">
+        <article id="pag2">
             <nav>
                 <ul class="pagination">
                     <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>

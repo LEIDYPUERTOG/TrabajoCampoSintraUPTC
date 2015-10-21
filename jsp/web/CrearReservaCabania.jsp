@@ -148,13 +148,13 @@
                 <h5>Cantidad de personas</h5>
             </article>
             <article id="search3">
-                <input type="text" class="form-control" placeholder="Ingrese el texto." required name="cantidad">
+                <input type="number" class="form-control" placeholder="Ingrese el texto." required name="cantidad" min="1" max="10">
             </article>
             <!-- Cuadro de Acompañantes -->
             <article id="acompa">
                 <h4>Acompañantes</h4> <!-- Titulo Principal -->
                 <!-- Tabla con la cedula y nombre-->
-                <table class="table">
+                <table class="table" id="tabla">
                     <thead>
                     <!-- titulos de la tabla -->
                     <tr>
@@ -163,6 +163,8 @@
                     </tr>
                     </thead>
                     <tbody>
+
+
                     <!-- Primer componente -->
                     <tr>
                         <td><article id="searchC">

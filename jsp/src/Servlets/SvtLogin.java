@@ -30,12 +30,30 @@ public class SvtLogin extends HttpServlet {
 
         RequestDispatcher dispatcher = null;
         if(usuario != 0 && !contrasenia.equalsIgnoreCase("")){
+
             Persona persona = personaDao.consultarPersona(usuario);
-            if(persona != null && persona.getContrasenia().equals(contrasenia)){
-                request.setAttribute("persona1111", persona);
-                System.out.println("--------------------------------------------- indew");
-                dispatcher = request.getRequestDispatcher("index.jsp");
-                dispatcher.forward(request, response);
+
+            if(persona != null && persona.getContrasenia().equals(contrasenia)) {
+
+                request.setAttribute("personaBusqueda", persona); //mandando el parametro para que sea accedido
+
+                if(persona.getRol().toString().equalsIgnoreCase("Administrador")){
+
+                    dispatcher = request.getRequestDispatcher("CrearCabania.jsp");
+                    dispatcher.forward(request, response);
+                }
+                else{
+                    if(persona.getRol().toString().equalsIgnoreCase("Funcionario")){
+                        dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
+                        dispatcher.forward(request, response);
+                    }
+                    else{
+                        dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
+                        dispatcher.forward(request, response);
+                    }
+                }
+
+
                 //request.getRequestDispatcher("../web/Presentacion/plantillas/AprobarReserva.jsp").forward(request, response);
 
             }

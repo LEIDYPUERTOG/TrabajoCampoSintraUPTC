@@ -121,7 +121,6 @@
                     <li><a href="CrearReservaCabania.jsp">Crear Reserva</a></li>
                     <li><a href="EditarReservaAdmin.jsp">Editar Reserva</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
-                    <li><a href="ConsultarReserva.jsp#">Consultar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>
             </nav>
@@ -155,7 +154,7 @@
                     <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
+                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
                 <!-- Segundo componente -->
                 <tr>
@@ -165,7 +164,7 @@
                     <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
+                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
                 <!-- Tercero componente -->
                 <tr>
@@ -175,7 +174,7 @@
                     <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
+                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
                 <!-- Cuarto componente -->
                 <tr>
@@ -185,7 +184,7 @@
                     <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
+                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
                 <!-- Quinto componente -->
                 <tr>
@@ -195,7 +194,7 @@
                     <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
+                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
 
                 <!-- Sexto componente -->
@@ -206,7 +205,7 @@
                     <td>texto</td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/cancelar.png" id="imagCancelar" title="Cancelar"></td>
+                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
                 </tr>
 
                 </tbody>
@@ -214,7 +213,7 @@
         </article> <!-- Fin del article -->
 
         <!-- Paginacion -->
-        <article id="pag">
+        <article id="pag2">
             <nav>
                 <ul class="pagination">
                     <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>

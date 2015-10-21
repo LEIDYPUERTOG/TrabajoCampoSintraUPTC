@@ -7,6 +7,7 @@ import Persistencia.CabaniaDao;
 import Persistencia.ConexionDB;
 import Persistencia.PersonaDao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,7 @@ import java.io.PrintWriter;
  */
 @WebServlet("/SvtCrearCabania")
 public class SvtCrearCabania extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");
@@ -27,10 +29,8 @@ public class SvtCrearCabania extends HttpServlet {
 
         int idCabania=Integer.parseInt(request.getParameter("idCabania"));
         int capacidad=Integer.parseInt(request.getParameter("capacidad"));
-        double valor=Double.parseDouble(request.getParameter("valor"));
+        double valor=90000.0;
         String ruta=request.getParameter("ruta");
-
-        ConexionDB conexionDB = new ConexionDB("root","");
 
         CabaniaDao cabaniaDao = new CabaniaDao();
 
@@ -40,15 +40,22 @@ public class SvtCrearCabania extends HttpServlet {
         System.out.println("---------------------------------------------"+ruta);
         Cabania cabania = new Cabania(capacidad,ruta,idCabania, valor);
 
-        boolean agregar = cabaniaDao.crearCabania(cabania);
+        Cabania buscarCabania = cabaniaDao.obtenerInfoCabania(idCabania);
 
-        if(agregar){
-            System.out.println("---------------------------------------------" + agregar);
-            PrintWriter out=response.getWriter();
-            out.println("Agregado");
-        }else{
-            PrintWriter out=response.getWriter();
-            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+        RequestDispatcher dispatcher = null;
+
+        if(buscarCabania == null){
+            boolean agregar = cabaniaDao.crearCabania(cabania);
+
+            if(agregar){
+                request.setAttribute("cabaniaAgregada", true);
+                dispatcher = request.getRequestDispatcher("CrearCabania.jsp");
+                dispatcher.forward(request, response);
+
+            }else{
+                PrintWriter out=response.getWriter();
+                out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+            }
         }
     }
 

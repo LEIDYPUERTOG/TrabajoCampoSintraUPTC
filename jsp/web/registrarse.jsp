@@ -125,6 +125,7 @@
 
             </li>
 
+
             <label id="lblPreg">Es usted: </label>
             <label id = "rbtn" class="radio-inline">
                 <input type="radio" name="inlineRadioOptions" id="Afiliado" value="Af"

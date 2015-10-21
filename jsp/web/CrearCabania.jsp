@@ -1,3 +1,4 @@
+<%@ page import="Logica.Persona" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -5,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Crear cabaña</title>
 
+    <!-- Estilos de la pagina -->
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
     <!-- Tipo de letra de google -->
@@ -17,25 +19,36 @@
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
+
+    <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
 
 </head>
-<body>
 
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
+<body> <!-- Lo que tiene la pagina -->
+<!-- Js vinculados -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
+
+
+<%
+    Persona persona = (Persona)request.getAttribute("personaBusqueda");
+%>
+
+<!--<p>Me ha llegado1 <%= persona.getNombre() %></p>              Forma de acceder a una variable de Servlet-->
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorRegistro">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton usuario -->
+
         <article id="inicio1">
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <%= persona.getNombre() %>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -84,7 +97,9 @@
         </article>
 
         <article id="eventos">
-            <a href="CrearEvento.jsp"><img src="/Presentacion/imagenes/evento.png" id="imag2" title="Eventos"></a>
+            <a href="CrearEvento.jsp"><img src="/Presentacion/imagenes/evento.png" id="imag2" title="Eventos"
+
+            </a>
         </article>
 
         <article id="reserva">
@@ -130,7 +145,7 @@
                 <h5>Identificador</h5>
             </article>
             <article id="search1">
-                <input type="text" class="form-control" placeholder="Ingrese el texto." name="idCabania">
+                <input type="number" class="form-control" placeholder="Ingrese el texto." name="idCabania">
             </article>
 
             <!-- Segunda caja de texto -->
@@ -138,7 +153,7 @@
                 <h5>Capacidad Maxima</h5>
             </article>
             <article id="search2">
-                <input type="text" class="form-control" placeholder="Ingrese el texto." name="capacidad">
+                <input type="number" class="form-control" placeholder="Ingrese el texto." name="capacidad" min="1" max="10">
             </article>
 
             <!-- Tercera caja de texto -->
@@ -146,7 +161,7 @@
                 <h5>Valor dia</h5>
             </article>
             <article id="search3">
-                <input type="text" class="form-control" placeholder="Ingrese el texto." name="valor">
+                <input type="text" class="form-control" placeholder="90000" name="valor" disabled>
             </article>
             <!-- Cuarta caja de texto -->
             <article id="ruta">

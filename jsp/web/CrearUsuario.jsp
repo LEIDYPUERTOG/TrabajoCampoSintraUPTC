@@ -61,7 +61,9 @@
         </article>
         <!-- Boton Inicio -->
         <article id="inicio4">
-            <button type="button" class="btn btn-default"  style="padding-right:55px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-default"
+                    style="padding-right:55px;padding-left:10px;margin-top:21px;"
+                    onclick="location.href='index.jsp'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
         </article>
@@ -115,7 +117,6 @@
                 <ul class="nav nav-tabs">
                     <li><a href="CrearUsuario.jsp">Crear Usuario</a></li>
                     <li><a href="ConsultarUsuario.jsp">Consultar Usuario</a></li>
-                    <li><a href="AprobarReserva.jsp">Editar Usuario</a></li>
                 </ul>
             </nav>
         </article>
@@ -130,7 +131,7 @@
             <article id="et1">
                 <div class="form-group">
                     <label for="lblCedula">Cédula</label>
-                    <input type="text" class="form-control" id="cedula" name="documento" placeholder="Cedula" required>
+                    <input type="number" class="form-control" id="cedula" name="documento" placeholder="Cedula" required>
                 </div>
             </article>
 
@@ -142,7 +143,22 @@
             </article>
 
 
-            <article id="btnCrearUsuario">
+            <label id="lblPreg2">Tipo Usuario: </label>
+            <article id="rbtnTipoUsuario">
+                <label id = "rbtn" class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="Administrador" value="Ad"
+                           onclick="getRadioButtonSelectedValue(document.formulario.inlineRadioOptions)"> Administrador
+                </label>
+                <label id = "rbtn2" class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="Funcionario" value="Fn"> Funcionario
+                </label>
+
+                <label id = "rbtn2" class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="Usuario" value="Us"> Usuario
+                </label>
+            </article>
+
+            <article id="reg">
                 <button type="submit" class="btn btn-warning">Agregar Usuario</button>
             </article>
         </form>
