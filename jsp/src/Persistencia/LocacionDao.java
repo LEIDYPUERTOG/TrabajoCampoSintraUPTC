@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class LocacionDao {
 
 	private ConexionDB conexionDB;
+	private Connection conn;
 
 
 	/**
@@ -36,7 +37,7 @@ public class LocacionDao {
 	public boolean agregarLocacion(Locacion locacion){
 
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 			String queryInsertar = "INSERT INTO locacion VALUES(null,?,?)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
@@ -44,7 +45,7 @@ public class LocacionDao {
 			ppStm.setString(2, locacion.getDireccionLocacion());
 
 			ppStm.executeUpdate();
-			conn.close();
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -63,21 +64,21 @@ public class LocacionDao {
 		ArrayList<Locacion> locaciones = null;
 
 		try {
-			Connection conn = ConexionDB.getConexion();
-			String querySearch = "SELECT * FROM locaciones";
+			conn = conexionDB.getConexion();
+			String querySearch = "SELECT * FROM locacion";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 
 			ResultSet resultSet = ppStm.executeQuery();
 			ElementoDao elementoDao = new ElementoDao();
 			CabaniaDao cabaniaDao = new CabaniaDao();
+			locaciones = new ArrayList<>();
 			while(resultSet.next()){
-				locaciones = new ArrayList<>();
+
 				locaciones.add(new Locacion(resultSet.getString(2),
 						resultSet.getInt(1),resultSet.getString(3)));
 
 			}
-			conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -98,7 +99,7 @@ public class LocacionDao {
 		Locacion locacion = null;
 
 		try {
-			Connection conn = ConexionDB.getConexion();
+			conn = conexionDB.getConexion();
 			String querySearch = "SELECT * FROM locaciones WHERE nombre_locacion=?";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
@@ -112,7 +113,7 @@ public class LocacionDao {
 			}else{
 				return locacion;
 			}
-			conn.close();
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -127,8 +128,8 @@ public class LocacionDao {
 		Locacion locacion = null;
 
 		try {
-			Connection conn = ConexionDB.getConexion();
-			String querySearch = "SELECT * FROM locaciones WHERE id_locacion=?";
+			conn = conexionDB.getConexion();
+			String querySearch = "SELECT * FROM locacion WHERE id_locacion=?";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 			ppStm.setInt(1,idLocacion);
@@ -141,7 +142,7 @@ public class LocacionDao {
 			}else{
 				return locacion;
 			}
-			conn.close();
+			//conn.close();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -149,5 +150,21 @@ public class LocacionDao {
 
 		}
 		return locacion;
+	}
+
+	public ConexionDB getConexionDB() {
+		return conexionDB;
+	}
+
+	public void setConexionDB(ConexionDB conexionDB) {
+		this.conexionDB = conexionDB;
+	}
+
+	public Connection getConn() {
+		return conn;
+	}
+
+	public void setConn(Connection conn) {
+		this.conn = conn;
 	}
 }

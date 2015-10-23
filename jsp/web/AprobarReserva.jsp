@@ -2,6 +2,13 @@
          import="java.sql.Connection" import="java.sql.DriverManager" import="java.sql.ResultSet"
          import="java.sql.Statement" import="java.sql.SQLException"%>
 <%@ page import="Logica.Persona" %>
+<%@ page import="Persistencia.ReservaDao" %>
+<%@ page import="Logica.Reserva" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Persistencia.InformacionReservaDao" %>
+<%@ page import="Logica.InformacionReserva" %>
+<%@ page import="Logica.EstadoReserva" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +31,24 @@
     <script src="Presentacion/angular.min.js"></script>
     <script src="Presentacion/jquery.js"></script>
 
+    <script type="text/javascript">
 
+        var tomarValor = function elementoTabla() {
+            if (!document.getElementsByTagName || !document.createTextNode) return;
+            var rows = document.getElementById('tabla_uno').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            for (i = 0; i < rows.length; i++) {
+                rows[i].onclick = function() {
+                    auxiliar = this.rowIndex + 1
+
+                }
+            }
+
+            return auxiliar;
+        }
+
+    </script>
+
+    <script>var idReserva = 0</script>
 
 </head>
 <body>
@@ -48,7 +72,22 @@
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
+                    <%
+                        Persona persona = (Persona)session.getAttribute("persona");
+                        session.setAttribute("persona",persona);
+                        if(persona!=null){
+
+                    %>
+                    <%= persona.getNombre() %>
+                    <%
+                    }else{
+                        Persona persona1 = (Persona)request.getAttribute("persona");
+                        session.setAttribute("persona",persona1);
+                    %>
+                    <%= persona1.getNombre() %>
+                    <%
+                        }
+                    %>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -125,8 +164,8 @@
         <article>
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
-                    <li><a href="CrearReservaCabania.jsp">Crear Reserva</a></li>
-                    <li><a href="EditarReservaAdmin.jsp">Editar Reserva</a></li>
+                    <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
+                    <li><a href="EditarReservaAdmin.jsp">Editar Mis Reserva</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>
@@ -165,7 +204,7 @@
         </article>
 
         <article id="lista">
-            <table class="table">
+            <table class="table" id="tabla_uno" onclick=" document.getElementById('reservaId').value = tomarValor();">
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
@@ -174,61 +213,62 @@
                     <th>Fecha de Solicitud</th>
                     <th>Cantidad días</th>
                     <th>Cantidad <br> personas</th>
+                    <th>Estado Reserva</th>
                     <th>Aprobar</th>
                     <th>Rechazar</th>
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Primer componente -->
+
+                <%
+                    ReservaDao reservaDao = new ReservaDao();
+                    ArrayList<Reserva> listaMisReservas = reservaDao.consultarReservas();
+                    if(listaMisReservas !=null){
+                        InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
+
+                        for(int i = 0; i < listaMisReservas.size(); i++) {
+
+                            InformacionReserva informacionReserva = informacionReservaDao.
+                                    obtenerInfo(listaMisReservas.get(i).getIdReserva());
+
+                            System.out.println("fec1 "+ informacionReserva);
+                            long cantidadDias = informacionReserva.getFechaFinReserva().getTime()-
+                                    informacionReserva.getFechaInicioReserva().getTime();
+                            System.out.println("cedula del que hizo la reserva "+ cantidadDias);
+
+
+                %>
+
                 <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
+
+                    <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
+                    <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
+                    <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
+                    <td><%= cantidadDias/86400000%></td>
+                    <td><%= listaMisReservas.get(i).getCantidadPersonas()%></td>
+                    <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
+
+                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar">
+                        <% boolean aprobada = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
+                                EstadoReserva.Aprobada);
+                            session.setAttribute("aprobada",aprobada);
+                            System.out.println("aprobacion           "+aprobada);
+                        %>
+                    </td>
+                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar">
+                        <% boolean rechazada = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
+                                EstadoReserva.Rechazada);
+                            session.setAttribute("rechazada",rechazada);
+                        %>
+                    </td>
                 </tr>
-                <!-- Segundo componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
-                </tr>
-                <!-- Tercero componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
-                </tr>
-                <!-- Cuarto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
-                </tr>
-                <!-- Quinto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar"></td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar"></td>
-                </tr>
+                <%
+                        }
+                    }
+                    else{
+
+                    }
+                %>
 
                 </tbody>
             </table> <!-- Fin de la tabla -->

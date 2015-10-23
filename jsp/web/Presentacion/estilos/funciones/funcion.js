@@ -1,6 +1,6 @@
 function ventana(){
 
-    $(".inline").colorbox({inline:true, width:"23%", closeButton:false});
+    $(".inline").colorbox({inline:true, width:"26%", closeButton:true});
     $(".callbacks").colorbox({
         onOpen:function(){ alert('onOpen: colorbox is about to open'); },
         onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
@@ -17,7 +17,7 @@ function ventana(){
 
 function ventana2(){
 
-    $(".inline").colorbox({inline:true, width:"26%", closeButton:false});
+    $(".inline").colorbox({inline:true, width:"30%", closeButton:true});
     $(".callbacks").colorbox({
         onOpen:function(){ alert('onOpen: colorbox is about to open'); },
         onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },

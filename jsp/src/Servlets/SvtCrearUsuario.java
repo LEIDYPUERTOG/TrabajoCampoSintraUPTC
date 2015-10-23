@@ -43,6 +43,8 @@ public class SvtCrearUsuario extends HttpServlet {
                 personaDao.conversionRol(tipoUsuario));
 
         RequestDispatcher dispatcher = null;
+        Persona persona1 = (Persona) request.getSession().getAttribute("persona");
+        request.setAttribute("personaBusqueda", persona1); //mandando el parametro para que sea accedido
 
         boolean agregar = personaDao.crearPersona(persona);
 

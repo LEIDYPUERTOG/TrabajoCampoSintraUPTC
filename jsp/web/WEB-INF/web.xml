@@ -56,4 +56,31 @@
         <servlet-name>SvtLogin</servlet-name>
         <url-pattern>/SvtLogin</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtEditarReserva</servlet-name>
+        <servlet-class>Servlets.SvtEditarReserva</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtEditarReserva</servlet-name>
+        <url-pattern>/SvtEditarReserva</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtEditarCabania</servlet-name>
+        <servlet-class>Servlets.SvtEditarCabania</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtEditarCabania</servlet-name>
+        <url-pattern>/SvtEditarCabania</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtEditarEvento</servlet-name>
+        <servlet-class>Servlets.SvtEditarEvento</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtEditarEvento</servlet-name>
+        <url-pattern>/SvtEditarEvento</url-pattern>
+    </servlet-mapping>
 </web-app>

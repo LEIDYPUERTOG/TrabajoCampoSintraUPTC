@@ -1,3 +1,8 @@
+<%@ page import="Persistencia.EventoDao" %>
+<%@ page import="Logica.Evento" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Persistencia.LocacionDao" %>
+<%@ page import="Logica.Locacion" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +30,22 @@
     <!--Script para poder hacer que aparezca la ventana emergente-->
     <script src="/Presentacion/estilos/funciones/funcion.js"></script>
 
+    <script type="text/javascript">
+
+        var tomarValor = function elementoTabla() {
+            if (!document.getElementsByTagName || !document.createTextNode) return;
+            var rows = document.getElementById('tabla_uno').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            for (i = 0; i < rows.length; i++) {
+                rows[i].onclick = function() {
+                    var aux = document.getElementById("tabla_uno").rows[this.rowIndex].cells[0].innerHTML;
+                    auxiliar = aux;
+                }
+            }
+
+            return auxiliar;
+        }
+
+    </script>
 </head>
 <body>
 
@@ -128,29 +149,32 @@
     <section id="contenidoReservaA">
         <h4>Consulta de Eventos</h4>
 
-        <article id="lblBusqueda">
-            <h5>Nombre Evento</h5>
-        </article>
+        <article id="filtros">
 
-        <article id="search8">
-            <div class="col-lg-6">
+            <article id="nombreEvento">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Ingrese el nombre">
-              <span class="input-group-btn">
+                    <input type="text" class="form-control" placeholder="Nombre Evento">
+                </div><!-- /input-group -->
+            </article>
+            <article id="FechaInicio1">
+                <input type="date" class="form-control" placeholder="Fecha">
+            </article>
+
+            <article id="lugarEvento">
+                <input type="lugar" class="form-control" placeholder="Lugar" required name="lugar">
+            </article>
+
+            <span class="input-group-btn" id="btnBusqueda">
                   <!-- Boton para la busqueda de la iamgen -->
                 <button type="submit" class="btn btn-default" aria-label="Left Align">
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </span>
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
         </article>
 
 
-
         <article id="lista3">
-            <table class="table">
+            <table class="table" id="tabla_uno" onclick=" document.getElementById('nombreVentana').value = tomarValor();">
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
@@ -164,74 +188,28 @@
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Primer componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Segundo componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Tercero componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Cuarto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Quinto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
 
-                <!-- Sexto componente -->
+                <%
+                    EventoDao eventoDao = new EventoDao();
+                    ArrayList<Evento> listaEventos = eventoDao.obtenerListaEventos();
+
+                    for(int i = 0; i < listaEventos.size(); i++){
+                %>
+
                 <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
+                    <td><%= listaEventos.get(i).getNombreEvento()%></td>
+                    <td><%= listaEventos.get(i).getFechaIncioEvento()%></td>
+                    <td><%= listaEventos.get(i).getFechaFinEvento()%></td>
+                    <td><%= listaEventos.get(i).getLocacion().getNombreLocacion()%></td>
+                    <td><%= listaEventos.get(i).getLocacion().getDireccionLocacion()%></td>
+
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
+                             href="#inline_content" onclick="ventana()"></td>
                     <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
                 </tr>
-
+                <%
+                    }
+                %>
                 </tbody>
             </table> <!-- Fin de la tabla -->
         </article> <!-- Fin del article -->
@@ -292,19 +270,35 @@
 <section id="ventanaEmergente">
     <div id='inline_content' >
         <div id="login-content3">
-            <form>
+            <form action="/SvtEditarEvento" method="post" name="formularioEdicion">
+
 
                 <input id="nombreVentana" type="text" name="nombre" placeholder="Nombre">
-                <input id="fechaInicioVentana" type="date" name="fecha Inicio" placeholder="fecha Inicio" >
-                <input id="fechaFinVentana" type="date" name="Fecha Fin" placeholder="Fecha Fin">
+                <input id="fechaInicioVentana" type="date" name="fechaInicio" placeholder="fecha Inicio" >
+                <input id="fechaFinVentana" type="date" name="FechaFin" placeholder="Fecha Fin">
                 <article id="lugar">
-                    <select class="form-control">
-                        <option value="1">Camara de Comercio</option>
-                        <option value="2">Uptc</option>
-                        <option value="3">Moniquira</option></select>
+                    <select name = "lugarCb" class="form-control">
+                        <%
+                            LocacionDao locacionDao = new LocacionDao();
+                            ArrayList<Locacion> locacion = (ArrayList)locacionDao.obtenerListaLocaciones();
+                            session.setAttribute("locaciones",locacion);
+                            System.out.println(locacion.size()+ "dfghjfghasa232");
+                            if(locacion!=null){
+
+                                for(int i = 0; i < locacion.size(); i++){
+
+                        %>
+                        <option value=" <%= i %> ">
+                            <%= locacion.get(i).getNombreLocacion() %></option>
+                        <%
+                            }
+                        %>
+                        <%
+                            }%>
+                    </select>
                 </article>
 
-                <button type="button" id="submitAceptarEvento" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                <button type="submit" id="submitAceptarEvento" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
                     Aceptar </button>
                 <button type="button" id="submitCancelarEvento" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
                         onclick='parent.$.colorbox.close(); return false;'>

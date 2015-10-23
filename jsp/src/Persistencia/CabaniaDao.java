@@ -27,8 +27,35 @@ public class CabaniaDao {
 	 *
 	 * @param idCabania
 	 */
-	public boolean actualizarCabania(int idCabania){
-		return false;
+	public boolean actualizarCabania(int idCabania,double valor, int capacidad){
+
+		boolean actualizacion = false;
+		Cabania cabania = this.obtenerInfoCabania(idCabania);
+        if(cabania != null){
+            try {
+                conn = conexionDB.getConexion();
+                String queryUpdate = "UPDATE cabania SET  valor_servicio_dia = ?, capacidad_maxima = ?"
+                        + " WHERE id_servicio_cabania = ?";
+
+                PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+
+                ppStm.setDouble(1,valor);
+                ppStm.setInt(2,capacidad);
+                ppStm.setInt(3, idCabania);
+
+                ppStm.executeUpdate();
+
+                //conn.close();
+                actualizacion = true;
+
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                actualizacion = false;
+            }
+        }
+        return actualizacion;
+
 	}
 
 	/**

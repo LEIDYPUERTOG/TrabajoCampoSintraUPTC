@@ -27,11 +27,37 @@ public class EventoDao {
 	/**
 	 * Metodo que permite actualizar la informacion de un
 	 * evento
-	 * 
-	 * @param idEvento
+	 *
 	 */
-	public boolean actualizarEvento(int idEvento){
-		return false;
+	public boolean actualizarEvento(String nombre, int idLocacion, Date fechaInicio, Date fechaFin){
+
+		boolean actualizacion = false;
+		Evento evento = this.obtenerEventoNombre(nombre);
+		if(evento != null){
+			try {
+				conn = conexionDB.getConexion();
+				String queryUpdate = "UPDATE evento SET  id_locacion = ?, fecha_inicio_evento = ?, fecha_fin_evento = ?"
+						+ " WHERE nombre_evento = ?";
+
+				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+
+				ppStm.setInt(1, idLocacion);
+				ppStm.setDate(2, fechaInicio);
+				ppStm.setDate(3, fechaFin);
+				ppStm.setString(4,nombre);
+
+				ppStm.executeUpdate();
+
+				//conn.close();
+				actualizacion = true;
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				actualizacion = false;
+			}
+		}
+		return actualizacion;
 	}
 
 	/**
@@ -54,7 +80,7 @@ public class EventoDao {
 			ppStm.setString(3, evento.getNombreEvento());
 			ppStm.setDate(4, evento.getFechaIncioEvento());
 			ppStm.setDate(5, evento.getFechaFinEvento());
-			ppStm.setString(5, evento.getDescripcionEvento());
+			ppStm.setString(6, evento.getDescripcionEvento());
 
 			ppStm.executeUpdate();
 			//conn.close();
@@ -141,6 +167,37 @@ public class EventoDao {
 
 		}
 		return listaEventos;
+	}
+
+	public Evento obtenerEventoNombre(String nombreEvento){
+		Evento evento = null;
+
+		try {
+			conn = conexionDB.getConexion();
+			String querySearch = "SELECT * FROM evento WHERE nombre_evento = ?";
+
+			PreparedStatement ppStm = conn.prepareStatement(querySearch);
+			ppStm.setString(1, nombreEvento);
+
+			ResultSet resultSet = ppStm.executeQuery();
+
+			if(resultSet.next()){
+				PersonaDao personaDao = new PersonaDao();
+				Persona persona = personaDao.consultarPersona(resultSet.getInt(2));
+				LocacionDao locacionDao = new LocacionDao();
+				Locacion locacion = locacionDao.obtenertLocacionPorId(resultSet.getInt(3));
+				evento = new Evento(resultSet.getString(7),resultSet.getDate(6),
+						resultSet.getDate(5),locacion,resultSet.getString(4),persona);
+
+			}
+			//conn.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
+		return evento;
 	}
 
 	/**

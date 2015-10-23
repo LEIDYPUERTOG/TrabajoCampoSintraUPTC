@@ -909,7 +909,7 @@ nav.acceder #login-content {
     background: #fefff6;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 60%;
     width: 500px;
     height: 200px;
     margin: -20px 0 0 -250px;
@@ -1111,9 +1111,9 @@ Estilos para la tabla y scroll
 */
 #lista tr {
     width: 100%;
-
     display: inline-table;
 }
+
 
 #lista table {
     height: 300px;
@@ -1125,7 +1125,6 @@ Estilos para la tabla y scroll
     /*width: 45%;*/
     width: 650px;
     position: absolute;
-
 }
 
 #panelAdministracionListado {
@@ -1493,7 +1492,7 @@ Estilos para la tabla y scroll
 
 #btnCrearReserva {
     position: absolute;
-    top: 400px;
+    top: 430px;
     left: 250px;
 }
 
@@ -1925,6 +1924,26 @@ nav.acceder #login-content2 {
     vertical-align: middle;
 }
 
+
+#contenidoReservaR #CabaniaId {
+    background: #fefff6;
+    width: 180px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*
+	Bloque que contiene el tamaño y posicion de searchid
+*/
+#contenidoReservaR #searchId {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /*
 	Tamaño y tipo de letra h4
 */
@@ -2021,4 +2040,30 @@ nav.acceder #login-content2 {
     position: absolute;
     left: 100px;
     top: 300px;
+}
+
+
+#nombreEvento{
+    position: absolute;
+    top: 70px;
+    left: 65px;
+    width: 261px;
+    height: 34px;
+}
+
+
+#FechaInicio1{
+    position: absolute;
+    left: 285px;
+    top: 70px;
+    width: 173px;
+    height: 34px;
+}
+
+#lugarEvento{
+    position: absolute;
+    left: 480px;
+    top: 70px;
+    width: 175.73px;
+    height: 34px;
 }

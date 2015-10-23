@@ -112,10 +112,9 @@
         <article>
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
-                    <li><a href="CrearReservaCabania.jsp">Crear Reserva</a></li>
-                    <li><a href="EditarReservaAdmin.jsp">Editar Reserva</a></li>
+                    <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
+                    <li><a href="EditarReservaAdmin.jsp">Editar Mis Reserva</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
-                    <li><a href="ConsultarReserva.jsp#">Consultar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>
             </nav>

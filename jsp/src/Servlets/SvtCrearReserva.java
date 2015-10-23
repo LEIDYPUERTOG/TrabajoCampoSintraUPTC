@@ -1,10 +1,7 @@
 package Servlets;
 
 import Logica.*;
-import Persistencia.ConexionDB;
-import Persistencia.InformacionReservaDao;
-import Persistencia.PersonaDao;
-import Persistencia.ReservaDao;
+import Persistencia.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,31 +38,41 @@ public class SvtCrearReserva extends HttpServlet {
         calendar = new GregorianCalendar();
         calendar.set(auxAnio,auxMes,auxDia);
         Date dateFin = new Date(calendar.getTimeInMillis());
-
+        int idCabania = Integer.parseInt(request.getParameter("idCabania"));
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
 
 
         ConexionDB conexionDB = new ConexionDB("root","");
 
 
+
         ReservaDao reservaDao = new ReservaDao();
         InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
-
-        System.out.println("---------------------------------------------" + cantidad);
-        System.out.println("---------fecha Inicio" + dateInicio);
-        System.out.println("---------fecha fin" + dateFin);
+        CabaniaDao cabaniaDao = new CabaniaDao();
 
         GregorianCalendar c = new GregorianCalendar();
         Date fechaSolicitud = new Date(c.getTimeInMillis());
         System.out.println("solicitud-------------" + fechaSolicitud);
-        Persona persona = (Persona) request.getSession().getAttribute("persona");
 
+
+        Persona persona = (Persona) request.getSession().getAttribute("persona");
+        request.setAttribute("personaBusqueda", persona); //mandando el parametro para que sea accedido
 
         Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,persona);
+        Cabania cabania = cabaniaDao.obtenerInfoCabania(idCabania);
+
+        reserva.setCabania(cabania);
         InformacionReserva informacionReserva = new InformacionReserva(dateInicio, dateFin,dateFin,reserva);
+
+
+
+        System.out.println("reservaTipo" + reserva.getTipoServicio());
+
 
         RequestDispatcher dispatcher = null;
         boolean agregar = reservaDao.crearReservaCabania(reserva);
+
+        System.out.println("reservaId" + reserva.getIdReserva());
         boolean agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
 
         if(agregar && agregarInfo){

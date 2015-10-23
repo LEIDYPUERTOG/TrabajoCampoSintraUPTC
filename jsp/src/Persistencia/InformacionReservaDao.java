@@ -20,21 +20,20 @@ public class InformacionReservaDao {
      * @param idReserva
      * @return
      */
-    public boolean actualizarInformacionReserva(int idReserva,Date fechaInicio, Date fechaFin, Date fechaRealSalida){
+    public boolean actualizarInformacionReserva(int idReserva,Date fechaInicio, Date fechaFin){
         boolean actualizacion = false;
         InformacionReserva informacionReserva = this.obtenerInfo(idReserva);
         if(informacionReserva != null){
             try {
                 conn = conexionDB.getConexion();
-                String queryUpdate = "UPDATE informacion_reserva SET  fecha_inicio_reserva = ?,  fecha_fin_reserva = ?,"
-                        + " fecha_real_salida = ? WHERE id_reserva = ?";
+                String queryUpdate = "UPDATE informacion_reserva SET  fecha_inicio_reserva = ?, fecha_fin_reserva = ?"
+                        + " WHERE id_reserva = ?";
 
                 PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
 
                 ppStm.setDate(1,fechaInicio);
                 ppStm.setDate(2,fechaFin);
-                ppStm.setDate(3,fechaRealSalida);
-                ppStm.setInt(4, idReserva);
+                ppStm.setInt(3, idReserva);
 
                 ppStm.executeUpdate();
 
@@ -50,6 +49,8 @@ public class InformacionReservaDao {
         return actualizacion;
     }
 
+
+
     /**
      * Metodo que permite crear la informacion de una reserva
      * @param informacionReserva
@@ -63,7 +64,13 @@ public class InformacionReservaDao {
 
             PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
             ppStm.setInt(1, informacionReserva.getReserva().getIdReserva());
-            ppStm.setInt(2, informacionReserva.getInvitado().getCedula());
+            if (informacionReserva.getInvitado()!=null){
+                ppStm.setInt(2, informacionReserva.getInvitado().getCedula());
+            }
+            else{
+                ppStm.setInt(2, 1234);
+            }
+
             ppStm.setDate(3, informacionReserva.getFechaInicioReserva());
             ppStm.setDate(4,informacionReserva.getFechaFinReserva());
             ppStm.setDate(5, informacionReserva.getFechaRealSalida());
@@ -135,12 +142,13 @@ public class InformacionReservaDao {
             ResultSet resultSet = ppStm.executeQuery();
 
             if(resultSet.next()){
-
                 ReservaDao reservaDao = new ReservaDao();
-                Reserva reserva = reservaDao.consultarReservaIdReserva(resultSet.getInt(1));
-                if(reserva != null){
-                    informacionReserva = new InformacionReserva(resultSet.getDate(3),resultSet.getDate(4),resultSet.getDate(4),reserva);
-                }
+                Reserva reserva = reservaDao.consultarReservaIdReserva(idReserva);
+                reserva.setIdReserva(resultSet.getInt(1));
+                System.out.println("ssssssssssssssssssss");
+                informacionReserva = new InformacionReserva(resultSet.getDate(3),
+                        resultSet.getDate(4),resultSet.getDate(4),reserva);
+
 
             }else{
                 return informacionReserva;

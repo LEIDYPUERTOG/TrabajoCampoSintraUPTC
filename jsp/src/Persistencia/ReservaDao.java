@@ -29,23 +29,19 @@ public class ReservaDao {
 	 * Metodo que permite realizar la actualizacion del estado de una reserva
 	 * teniendo el número de documento de una persona que lo realiza
 	 *
-	 * @param documentoPersona
 	 */
-	public boolean actualizarReservaEstado(int idReserva, int documentoPersona, EstadoReserva estadoReserva){
+	public boolean actualizarReservaEstado(int idReserva, EstadoReserva estadoReserva){
 
 		boolean actualizacion = false;
 		PersonaDao personaDao = new PersonaDao();
-		Persona persona = personaDao.consultarPersona(documentoPersona);
-		if(persona != null){
+
 			try {
 				conn = conexionDB.getConexion();
-				String queryUpdate = "UPDATE reserva SET  estado_reserva = ? "
-						+ "WHERE documento_persona = ?";
+				String queryUpdate = "UPDATE reserva SET  estado_reserva = ? ";
 
 				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
 
 				ppStm.setString(1, conversionEstadoAString(estadoReserva));
-				ppStm.setInt(2, documentoPersona);
 
 				ppStm.executeUpdate();
 
@@ -57,7 +53,7 @@ public class ReservaDao {
 				e.printStackTrace();
 				actualizacion = false;
 			}
-		}
+
 		return actualizacion;
 
 	}
@@ -80,8 +76,11 @@ public class ReservaDao {
 
 			while(resultSet.next()) {
 				listaReservaPorAfiliado = new ArrayList<>();
-				listaReservaPorAfiliado.add(new Reserva(resultSet.getInt(6), conversionStringEstado(resultSet.getString(5).toString()),
-						resultSet.getDate(9),tipoServicio(resultSet.getString(10))));
+				Reserva reserva = new Reserva(resultSet.getInt(6),
+						conversionStringEstado(resultSet.getString(5).toString()),
+						resultSet.getDate(9),tipoServicio(resultSet.getString(10)));
+				reserva.setIdReserva(resultSet.getInt(1));
+				listaReservaPorAfiliado.add(reserva);
 			}
 			////conn.close();
 
@@ -110,7 +109,7 @@ public class ReservaDao {
 		ArrayList<Reserva> listaReservas = null;
 		try {
 			conn = conexionDB.getConexion();
-			String querySearch = "SELECT * FROM reserva ORDER BY (estado_reserva)";
+			String querySearch = "SELECT * FROM reserva ORDER BY (fecha_solicitud)";
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 
 			ResultSet resultSet = ppStm.executeQuery();
@@ -123,8 +122,13 @@ public class ReservaDao {
 				PersonaDao personaDao = new PersonaDao();
 				Persona auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
 
-				listaReservas.add(new Reserva(resultSet.getInt(5), conversionStringEstado(resultSet.getString(4)),resultSet.getDate(8),
-						auxPersona));
+				Reserva reserva = new Reserva(resultSet.getInt(6),
+						conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
+						auxPersona);
+				reserva.setIdReserva(resultSet.getInt(1));
+				reserva.setTipoServicio(tipoServicio(resultSet.getString(10)));
+				listaReservas.add(reserva);
+
 			}
 			////conn.close();
 
@@ -232,7 +236,6 @@ public class ReservaDao {
 			ResultSet resultSet = ppStm.executeQuery();
 
 			if (resultSet.next()) {
-				reserva = new Reserva();
 				//Permite realizar la consulta de la persona que realizo una reserva
 
 				PersonaDao personaDao = new PersonaDao();
@@ -241,6 +244,7 @@ public class ReservaDao {
 				reserva = new Reserva(resultSet.getInt(6), conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
 						auxPersona);
 				reserva.setIdReserva(resultSet.getInt(1));
+
 			}
 			////conn.close();
 
@@ -266,13 +270,13 @@ public class ReservaDao {
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
 
 			ppStm.setInt(1,reserva.getPersona().getCedula());
-			ppStm.setInt(2,reserva.getCabania().getId_servicio());
-			ppStm.setString(3,conversionEstadoAString(EstadoReserva.Pendiente)); // Porque al crear la reserva queda en estado pendiente
-			ppStm.setInt(4,reserva.getCantidadPersonas());
-			ppStm.setDouble(5,reserva.calcularValorReserva(reserva.getCantidadPersonas(),reserva.getCabania().getValor_servicio_dia()));
-			ppStm.setString(6,reserva.getReciboPago());
-			ppStm.setDate(7,reserva.getFechaSolicitud());
-			ppStm.setString(8,reserva.getTipoServicio().toString());
+			ppStm.setInt(2, reserva.getCabania().getId_servicio());
+			ppStm.setString(3, conversionEstadoAString(EstadoReserva.Pendiente)); // Porque al crear la reserva queda en estado pendiente
+			ppStm.setInt(4, reserva.getCantidadPersonas());
+			ppStm.setDouble(5, reserva.calcularValorReserva(reserva.getCantidadPersonas(), reserva.getCabania().getValor_servicio_dia()));
+			ppStm.setString(6, reserva.getReciboPago());
+			ppStm.setDate(7, reserva.getFechaSolicitud());
+			ppStm.setString(8, reserva.getTipoServicio().toString());
 
 
 			ppStm.executeUpdate();
@@ -348,12 +352,15 @@ public class ReservaDao {
 
 	public String conversionEstadoAString(EstadoReserva estadoReserva){
 		String reserva;
+		System.out.println("estado "+estadoReserva.toString());
 		if(estadoReserva.toString().equalsIgnoreCase("Aprobada")){
 			reserva = "A";
+			System.out.println("1111111111-");
 		}
 		else{
 			if(estadoReserva.toString().equalsIgnoreCase("Rechazada")){
 				reserva = "R";
+				System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxx");
 			}
 			else{
 				if(estadoReserva.toString().equalsIgnoreCase("Pendiente")) {

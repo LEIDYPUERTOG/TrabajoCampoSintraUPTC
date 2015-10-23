@@ -1,3 +1,7 @@
+<%@ page import="Logica.Persona" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Logica.Cabania" %>
+<%@ page import="Persistencia.CabaniaDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,18 +21,40 @@
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
-
-    <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
 
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="Presentacion/jquery.colorbox.js"></script>
+
+    <!--Script para poder hacer que aparezca la ventana emergente-->
+    <script src="/Presentacion/estilos/funciones/funcion.js"></script>
+
+    <script type="text/javascript">
+
+        var tomarValor = function elementoTabla() {
+            if (!document.getElementsByTagName || !document.createTextNode) return;
+            var rows = document.getElementById('tabla_uno').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            for (i = 0; i < rows.length; i++) {
+                rows[i].onclick = function() {
+                    var aux = document.getElementById("tabla_uno").rows[this.rowIndex].cells[0].innerHTML;
+                    auxiliar = aux;
+                }
+
+            }
+            return auxiliar;
+        }
+
+    </script>
 
 </head>
+<body>
 
-<body> <!-- Lo que tiene la pagina -->
-<!-- Js vinculados -->
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
+
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
+
+
 
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
@@ -39,7 +65,22 @@
         <article id="inicio1">
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
+                    <%
+                        Persona persona = (Persona)session.getAttribute("persona");
+                        session.setAttribute("persona",persona);
+                        if(persona!=null){
+
+                    %>
+                    <%= persona.getNombre() %>
+                    <%
+                    }else{
+                        Persona persona1 = (Persona)request.getAttribute("persona");
+                        session.setAttribute("persona",persona1);
+                    %>
+                    <%= persona1.getNombre() %>
+                    <%
+                        }
+                    %>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -126,9 +167,8 @@
     <section id="contenidoReservaA">
         <h4>Consulta de Cabañas</h4>
 
-
         <article id="lista">
-            <table class="table">
+            <table class="table" id="tabla_uno" onclick=" document.getElementById('cabaniaId').value = tomarValor();">
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
@@ -140,66 +180,29 @@
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Primer componente -->
+                <%
+                    CabaniaDao cabaniaDao = new CabaniaDao();
+                    ArrayList<Cabania> listaCabanias = cabaniaDao.obtenerCabanias();
+
+                    for(int i = 0; i < listaCabanias.size(); i++){
+                %>
                 <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
+                    <td><%= listaCabanias.get(i).getId_servicio()%></td>
+                    <td><%= listaCabanias.get(i).getValor_servicio_dia()%></td>
+                    <td><%= listaCabanias.get(i).getCapacidadMaxima()%></td>
+
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Segundo componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Tercero componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Cuarto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
-                <!-- Quinto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
+                             href="#inline_content" onclick="ventana()"></td>
                     <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
                 </tr>
 
-                <!-- Sexto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-                </tr>
+                <%
+                    }
+                %>
 
                 </tbody>
             </table> <!-- Fin de la tabla -->
         </article> <!-- Fin del article -->
-
         <!-- Paginacion -->
         <article id="pag2">
             <nav>
@@ -255,14 +258,22 @@
 <section id="ventanaEmergente">
     <div id='inline_content' >
         <div id="login-content2">
-            <form>
+            <form action="/SvtEditarCabania" method="post" name="formularioEdicion">
+
+
+                <label id="idCabania">Número Cabaña: </label>
+                <input id="cabaniaId" type="numeric" name="cabaniaId" >
 
                 <input id="valorNocheVentana" type="text" name="valor" placeholder="Valor">
                 <input id="cantidadVentana" type="number" name="cantidad" placeholder="cantidad" >
 
-                <button type="button" id="submitAceptarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
-                    Aceptar </button>
-                <button type="button" id="submitCancelarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                <button type="submit" id="submitAceptarVentana" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Aceptar
+
+                </button>
+                <button type="button" id="submitCancelarVentana" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"
                         onclick='parent.$.colorbox.close(); return false;'>
                     Cancelar </button>
 

@@ -87,9 +87,7 @@ public class Persona {
 
 	}
 
-	public ArrayList<Acta> getActas() {
-		return actas;
-	}
+
 	public void setActas(ArrayList<Acta> actas) {
 		this.actas = actas;
 	}

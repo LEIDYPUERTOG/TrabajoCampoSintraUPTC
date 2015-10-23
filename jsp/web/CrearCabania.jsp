@@ -193,8 +193,9 @@
             </article>
             <article id="btnAgregar">
                 <h1> <img src="/Presentacion/imagenes/cabania.png" alt="cabaña"></h1>
-                <button type="submit" class="btn btn-success"> <!-- Tamaño -->
+                <button type="submit" class="btn btn-success" > <!-- Tamaño -->
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> AGREGAR <!-- Icono y palabra -->
+
                 </button>
             </article>
         </form>
@@ -230,5 +231,6 @@
         </p>
     </footer>
 </section>
+
 </body>
 </html>

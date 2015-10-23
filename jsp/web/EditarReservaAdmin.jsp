@@ -1,3 +1,10 @@
+<%@ page import="Persistencia.ReservaDao" %>
+<%@ page import="Logica.Reserva" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Logica.Persona" %>
+<%@ page import="Logica.InformacionReserva" %>
+<%@ page import="Persistencia.InformacionReservaDao" %>
+<%@ page import="Logica.EstadoReserva" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +32,24 @@
     <!--Script para poder hacer que aparezca la ventana emergente-->
     <script src="/Presentacion/estilos/funciones/funcion.js"></script>
 
+    <script type="text/javascript">
+
+        var tomarValor = function elementoTabla() {
+            if (!document.getElementsByTagName || !document.createTextNode) return;
+            var rows = document.getElementById('tabla_uno').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            for (i = 0; i < rows.length; i++) {
+                rows[i].onclick = function() {
+                    var aux = document.getElementById("tabla_uno").rows[this.rowIndex].cells[0].innerHTML;
+                    auxiliar = aux;
+                }
+            }
+
+            return auxiliar;
+        }
+
+    </script>
+
+    <script>var idReserva = 0</script>
 </head>
 <body>
 
@@ -41,7 +66,22 @@
         <article id="inicio1">
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
+                    <%
+                        Persona persona = (Persona)session.getAttribute("persona");
+                        session.setAttribute("persona",persona);
+                        if(persona!=null){
+
+                    %>
+                    <%= persona.getNombre() %>
+                    <%
+                    }else{
+                        Persona persona1 = (Persona)request.getAttribute("persona");
+                        session.setAttribute("persona",persona1);
+                    %>
+                    <%= persona1.getNombre() %>
+                    <%
+                        }
+                    %>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -118,8 +158,8 @@
         <article>
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
-                    <li><a href="CrearReservaCabania.jsp">Crear Reserva</a></li>
-                    <li><a href="EditarReservaAdmin.jsp">Editar Reserva</a></li>
+                    <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
+                    <li><a href="EditarReservaAdmin.jsp">Editar Mis Reservas</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>
@@ -133,10 +173,13 @@
 
 
         <article id="lista">
-            <table class="table">
+
+            <table class="table" id="tabla_uno" onclick=" document.getElementById('reservaId').value = tomarValor();">
+
                 <thead>
-                <!-- titulos de la tabla -->
+                <!-- titulos de la tabla  idReserva = tomarValor()-->
                 <tr>
+                    <th>Número de<br> Reserva</th>
                     <th>Fecha de<br> Solicitud</th>
                     <th>Fecha Inicio</th>
                     <th>Fecha Fin</th>
@@ -146,72 +189,60 @@
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Primer componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
-                </tr>
-                <!-- Segundo componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
-                </tr>
-                <!-- Tercero componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
-                </tr>
-                <!-- Cuarto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
-                </tr>
-                <!-- Quinto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
-                </tr>
+                <%
+                    ReservaDao reservaDao = new ReservaDao();
+                    ArrayList<Reserva> listaMisReservas = reservaDao.consultarReservaAfiliado(persona.getCedula());
+                    if(listaMisReservas !=null){
+                        InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
+                        for(int i = 0; i < listaMisReservas.size(); i++) {
 
-                <!-- Sexto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana2()">
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagCancelar" title="Cancelar"></td>
-                </tr>
+                            InformacionReserva informacionReserva = informacionReservaDao.
+                                    obtenerInfo(listaMisReservas.get(i).getIdReserva());
+                %>
 
+                <tr>
+
+                    <td><%= listaMisReservas.get(i).getIdReserva()%> </td>
+                    <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
+                    <td><%= informacionReserva.getFechaInicioReserva()%></td>
+                    <td><%= informacionReserva.getFechaFinReserva()%></td>
+                    <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
+
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()">
+
+                    </td>
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender" onclick="cancelar()">
+
+                        <% boolean cancelar = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
+                                EstadoReserva.Cancelada);
+                            session.setAttribute("cancelada",cancelar);
+
+                        %>
+
+                        <script>
+                            function cancelar(){
+                                if(<%=session.getAttribute("cancelada")%>){
+                                    alert("Cancelada")
+                                }
+                                else{
+                                    alert("Error revisar esta saliendo mál esta alerta" )
+                                }
+                            }
+
+                        </script>
+                    </td>
+                </tr>
+                <%
+                        }
+                    }
+                    else{
+
+                    }
+                %>
                 </tbody>
             </table> <!-- Fin de la tabla -->
         </article> <!-- Fin del article -->
-
         <!-- Paginacion -->
         <article id="pag2">
             <nav>
@@ -261,16 +292,21 @@
 <section id="ventanaEmergente">
     <div id='inline_content' >
         <div id="login-content4">
-            <form>
+            <form action="/SvtEditarReserva" method="post" name="formularioEdicion">
+
+                <label id="IdReserva">Número de reserva</label>
+                <input id="reservaId" type="numeric" name="reserva" >
 
                 <label id="lblFecha1">Fecha Inicio</label>
-                <input id="fecha1Ventana" type="date" name="fecha Inicio" placeholder="fecha Inicio" >
+                <input id="fecha1Ventana" type="date" name="fechaInicioNueva" placeholder="fecha Inicio" >
                 <label id="lblFecha2">Fecha Fin</label>
-                <input id="fecha2Ventana" type="date" name="Fecha Fin" placeholder="Fecha Fin">
+                <input id="fecha2Ventana" type="date" name="FechaFinNueva" placeholder="Fecha Fin">
 
-                <button type="button" id="submitAceptarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                <button type="submit" id="submitAceptarVentana" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
                     Aceptar </button>
-                <button type="button" id="submitCancelarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                <button type="button" id="submitCancelarVentana" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"
                         onclick='parent.$.colorbox.close(); return false;'>
                     Cancelar </button>
 

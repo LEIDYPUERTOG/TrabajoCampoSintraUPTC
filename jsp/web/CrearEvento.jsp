@@ -1,4 +1,7 @@
 <%@ page import="Logica.Persona" %>
+<%@ page import="Logica.Locacion" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Persistencia.LocacionDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -181,10 +184,26 @@
                 <h5>Lugar</h5>
             </article>
             <article id="search6">
-                <select class="form-control">
-                    <option value="1">Camara de Comercio</option>
-                    <option value="2">Uptc</option>
-                    <option value="3">Moniquira</option></select>
+
+                <select name = "lugarCb" class="form-control">
+                    <%
+                        LocacionDao locacionDao = new LocacionDao();
+                        ArrayList<Locacion> locacion = (ArrayList)locacionDao.obtenerListaLocaciones();
+                        session.setAttribute("locaciones",locacion);
+                        System.out.println(locacion.size()+ "dfghjfghasa232");
+                        if(locacion!=null){
+
+                            for(int i = 0; i < locacion.size(); i++){
+
+                    %>
+                    <option value=" <%= i %> ">
+                        <%= locacion.get(i).getNombreLocacion() %></option>
+                    <%
+                        }
+                    %>
+                    <%
+                        }%>
+                </select>
             </article>
 
             <article id="btnCrear">

@@ -13,21 +13,21 @@
     <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 
     <!-- Estilos CSS vinculados -->
+
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
-    <script src="jquery.js"></script>
+    <script src="Presentacion/jquery.js"></script>
+
+
 
 </head>
 <body>
-<%
-    Persona persona = (Persona)session.getAttribute("persona");
-%>
+
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <script src="/Presentacion/estilos/js/responsive.js"></script>
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorReservaA">
@@ -37,7 +37,22 @@
         <article id="inicio1">
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
+                    <%
+                        Persona persona = (Persona)session.getAttribute("persona");
+                        session.setAttribute("persona",persona);
+                        if(persona!=null){
+
+                    %>
+                    <%= persona.getNombre() %>
+                    <%
+                    }else{
+                        Persona persona1 = (Persona)request.getAttribute("persona");
+                        session.setAttribute("persona",persona1);
+                    %>
+                    <%= persona1.getNombre() %>
+                    <%
+                        }
+                    %>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -115,10 +130,9 @@
         <article>
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
-                    <li><a href="CrearReservaCabania.jsp">Crear Reserva</a></li>
-                    <li><a href="EditarReservaAdmin.jsp">Editar Reserva</a></li>
+                    <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
+                    <li><a href="EditarReservaAdmin.jsp">Editar Mis Reserva</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
-                    <li><a href="ConsultarReserva.jsp#">Consultar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>
             </nav>
@@ -144,6 +158,14 @@
             </article>
             <article id="search2">
                 <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
+            </article>
+
+            <article id="CabaniaId">
+                <h5>Numero Cabaña</h5>
+            </article>
+            <article id="searchId">
+                <input type="number" class="form-control" placeholder="Ingrese el numero de la cabaña"
+                       required name="idCabania" min="1" max="6">
             </article>
 
             <!-- Tercera caja de texto -->
