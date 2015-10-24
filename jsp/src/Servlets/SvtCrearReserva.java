@@ -67,7 +67,7 @@ public class SvtCrearReserva extends HttpServlet {
         boolean agregarInfo = false;
 
 
-        for(int i = 1; i < cantidad; i++){
+        for(int i = 1; i < cantidad+1; i++){
             int cedula = Integer.parseInt(request.getParameter("cedula" + i));
             System.out.println("cedula   "+i+" --------- "+ cedula);
             String nombre = request.getParameter("nombre" + i);

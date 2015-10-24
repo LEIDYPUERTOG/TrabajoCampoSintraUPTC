@@ -14,10 +14,19 @@
     <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 
     <!-- Estilos CSS vinculados -->
+    <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
+    <!-- Tipo de letra de google -->
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+    <!-- Estilos CSS vinculados -->
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
+
+    <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
 
 
@@ -25,8 +34,7 @@
 <body>
 
 
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 

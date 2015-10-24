@@ -3,6 +3,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Persistencia.LocacionDao" %>
 <%@ page import="Logica.Locacion" %>
+<%@ page import="Logica.Persona" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,17 +19,20 @@
     <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
 
     <!-- Estilos CSS vinculados -->
+    <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
+    <!-- Tipo de letra de google -->
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+
+    <!-- Estilos CSS vinculados -->
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
+
+    <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
-
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="Presentacion/jquery.colorbox.js"></script>
-
-    <!--Script para poder hacer que aparezca la ventana emergente-->
-    <script src="/Presentacion/estilos/funciones/funcion.js"></script>
 
     <script type="text/javascript">
 
@@ -47,13 +51,12 @@
 
     </script>
 </head>
-<body>
 
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
+<body> <!-- Lo que tiene la pagina -->
+<!-- Js vinculados -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorReservaA">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
@@ -62,7 +65,22 @@
         <article id="inicio1">
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
+                    <%
+                        Persona persona = (Persona)session.getAttribute("persona");
+                        session.setAttribute("persona",persona);
+                        if(persona!=null){
+
+                    %>
+                    <%= persona.getNombre() %>
+                    <%
+                    }else{
+                        Persona persona1 = (Persona)request.getAttribute("persona");
+                        session.setAttribute("persona",persona1);
+                    %>
+                    <%= persona1.getNombre() %>
+                    <%
+                        }
+                    %>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">

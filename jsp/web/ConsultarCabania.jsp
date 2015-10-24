@@ -21,14 +21,9 @@
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
+
+    <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
-
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="Presentacion/jquery.colorbox.js"></script>
-
-    <!--Script para poder hacer que aparezca la ventana emergente-->
-    <script src="/Presentacion/estilos/funciones/funcion.js"></script>
-
     <script type="text/javascript">
 
         var tomarValor = function elementoTabla() {
@@ -49,10 +44,10 @@
 </head>
 <body>
 
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
+
 
 
 
