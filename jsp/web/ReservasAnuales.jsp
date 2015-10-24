@@ -39,7 +39,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Cambiar contraseña</a></li>
+                    <li><a href="CambiarContrasenia.jsp">Cambiar contraseña</a></li>
                     <li><a href="#">Cerrar Sesión</a></li>
 
                 </ul>
@@ -113,7 +113,7 @@
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
                     <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
-                    <li><a href="EditarReservaAdmin.jsp">Editar Mis Reserva</a></li>
+                    <li><a href="EditarReservaAdmin.jsp">Editar Mis Reservas</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>

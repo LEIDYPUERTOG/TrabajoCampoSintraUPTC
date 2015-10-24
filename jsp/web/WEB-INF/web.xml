@@ -83,4 +83,13 @@
         <servlet-name>SvtEditarEvento</servlet-name>
         <url-pattern>/SvtEditarEvento</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtCambiaContrasenia</servlet-name>
+        <servlet-class>Servlets.SvtCambiaContrasenia</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtCambiaContrasenia</servlet-name>
+        <url-pattern>/SvtCambiaContrasenia</url-pattern>
+    </servlet-mapping>
 </web-app>

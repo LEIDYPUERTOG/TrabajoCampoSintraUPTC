@@ -29,7 +29,13 @@
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
-    <script src="Presentacion/jquery.js"></script>
+    <script src="jquery.js"></script>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="Presentacion/jquery.colorbox.js"></script>
+
+    <!--Script para poder hacer que aparezca la ventana emergente-->
+    <script src="/Presentacion/estilos/funciones/funcion.js"></script>
 
     <script type="text/javascript">
 
@@ -91,7 +97,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Cambiar contraseña</a></li>
+                    <li><a href="CambiarContrasenia.jsp">Cambiar contraseña</a></li>
                     <li><a href="#">Cerrar Sesión</a></li>
 
                 </ul>
@@ -165,7 +171,7 @@
             <nav class="navbar navbar-inverse" role="navigation">
                 <ul class="nav nav-tabs">
                     <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
-                    <li><a href="EditarReservaAdmin.jsp">Editar Mis Reserva</a></li>
+                    <li><a href="EditarReservaAdmin.jsp">Editar Mis Reservas</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>

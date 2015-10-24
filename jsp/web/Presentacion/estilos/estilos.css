@@ -2067,3 +2067,36 @@ nav.acceder #login-content2 {
     width: 175.73px;
     height: 34px;
 }
+
+
+#etConAnt {
+    width: 600px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+
+#etConNuev {
+    width: 600px;
+    position: absolute;
+    left: 100px;
+    top: 200px;
+}
+
+/*Estilos de la ventana de cambiar contrasenia*/
+
+#submitAceptarCambio {
+    position: absolute;
+    top: 330px;
+    left: 250px;
+    height: 33px;
+    text-align: center;
+}
+
+#submitCancelarCambio {
+    position: absolute;
+    top: 330px;
+    left: 400px;
+    height: 33px;
+    text-align: center;
+}

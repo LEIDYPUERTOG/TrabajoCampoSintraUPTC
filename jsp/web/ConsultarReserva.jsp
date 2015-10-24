@@ -39,7 +39,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Cambiar contraseña</a></li>
+                    <li><a href="CambiarContrasenia.jsp">Cambiar contraseña</a></li>
                     <li><a href="#">Cerrar Sesión</a></li>
 
                 </ul>
