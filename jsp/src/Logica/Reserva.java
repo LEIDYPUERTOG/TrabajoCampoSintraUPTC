@@ -56,13 +56,10 @@ public class Reserva {
 
 		this.cabania = cabania;
 		this.cantidadPersonas = cantidadPersonas;
-
 		this.fechaSolicitud = fechaSolicitud;
 		this.persona = persona;
 		this.reciboPago = reciboPago;
-
 		this.tipoServicio = TipoServicio.CABANIA;
-
 	}
 
 	public Reserva(Camping camping, int cantidadPersonas, EstadoReserva estadoReserva,

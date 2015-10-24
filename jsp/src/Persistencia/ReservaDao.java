@@ -268,7 +268,6 @@ public class ReservaDao {
 			String queryInsertar = "INSERT INTO reserva VALUES(null,?,null,?,?,?,?,?,?,?)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
-
 			ppStm.setInt(1,reserva.getPersona().getCedula());
 			ppStm.setInt(2, reserva.getCabania().getId_servicio());
 			ppStm.setString(3, conversionEstadoAString(EstadoReserva.Pendiente)); // Porque al crear la reserva queda en estado pendiente
@@ -281,6 +280,11 @@ public class ReservaDao {
 
 			ppStm.executeUpdate();
 
+			ResultSet rs=ppStm.getGeneratedKeys(); //obtengo las ultimas llaves generadas
+			while(rs.next()){
+				int clave=rs.getInt(1);
+				reserva.setIdReserva(clave);
+			}
 			//////conn.close();
 
 		} catch (SQLException e) {
@@ -355,12 +359,10 @@ public class ReservaDao {
 		System.out.println("estado "+estadoReserva.toString());
 		if(estadoReserva.toString().equalsIgnoreCase("Aprobada")){
 			reserva = "A";
-			System.out.println("1111111111-");
 		}
 		else{
 			if(estadoReserva.toString().equalsIgnoreCase("Rechazada")){
 				reserva = "R";
-				System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxx");
 			}
 			else{
 				if(estadoReserva.toString().equalsIgnoreCase("Pendiente")) {

@@ -56,29 +56,44 @@ public class SvtCrearReserva extends HttpServlet {
 
 
         Persona persona = (Persona) request.getSession().getAttribute("persona");
+        PersonaDao personaDao = new PersonaDao();
         request.setAttribute("personaBusqueda", persona); //mandando el parametro para que sea accedido
 
         Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,persona);
         Cabania cabania = cabaniaDao.obtenerInfoCabania(idCabania);
-
         reserva.setCabania(cabania);
-        InformacionReserva informacionReserva = new InformacionReserva(dateInicio, dateFin,dateFin,reserva);
-
-
-
-        System.out.println("reservaTipo" + reserva.getTipoServicio());
-
-
-        RequestDispatcher dispatcher = null;
         boolean agregar = reservaDao.crearReservaCabania(reserva);
 
-        System.out.println("reservaId" + reserva.getIdReserva());
-        boolean agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
+        boolean agregarInfo = false;
+
+
+        for(int i = 1; i < cantidad; i++){
+            int cedula = Integer.parseInt(request.getParameter("cedula" + i));
+            System.out.println("cedula   "+i+" --------- "+ cedula);
+            String nombre = request.getParameter("nombre" + i);
+            Persona auxPersona = personaDao.consultarPersona(cedula);
+            if(auxPersona!=null){
+                InformacionReserva informacionReserva = new InformacionReserva
+                        (dateInicio, dateFin,dateFin,auxPersona,reserva);
+                agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
+            }
+            else {
+                System.out.println("cedula en else   "+i+" --------- "+ cedula);
+                auxPersona= new Persona(cedula,nombre,TipoDocumento.Cedula,TipoUsuario.NoAfiliado,rol.Usuario);
+                personaDao.crearPersona(auxPersona);
+                InformacionReserva informacionReserva = new InformacionReserva(dateInicio, dateFin,dateFin,auxPersona,reserva);
+                agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
+            }
+        }
+
+        RequestDispatcher dispatcher = null;
+
 
         if(agregar && agregarInfo){
             System.out.println("---------------------------------------------" + agregar);
             if(persona.getRol().toString().equalsIgnoreCase("Administrador")||
-                    persona.getRol().toString().equalsIgnoreCase("Funcionar")){
+                    persona.getRol().toString().equalsIgnoreCase("Funcionario")){
+
                 dispatcher = request.getRequestDispatcher("CrearReservaCabania.jsp");
                 dispatcher.forward(request, response);
             }
@@ -94,5 +109,6 @@ public class SvtCrearReserva extends HttpServlet {
             PrintWriter out=response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
         }
+
     }
 }
