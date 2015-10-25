@@ -45,7 +45,6 @@ public class SvtCrearReserva extends HttpServlet {
         ConexionDB conexionDB = new ConexionDB("root","");
 
 
-
         ReservaDao reservaDao = new ReservaDao();
         InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
         CabaniaDao cabaniaDao = new CabaniaDao();

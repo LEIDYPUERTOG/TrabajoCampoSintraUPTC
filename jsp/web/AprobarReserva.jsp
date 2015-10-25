@@ -184,22 +184,16 @@
 
         <article id="filtros">
 
-            <article id="CedulaBusqueda">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Ingrese la cedula">
-                </div><!-- /input-group -->
-            </article>
-            <article id="Estado">
-                <select class="form-control">
-                    <option value="1">Pendiente</option>
-                    <option value="1">Aprobada</option>
-                    <option value="2">Rechazada</option>
-                    <option value="3">Cancelada</option></select>
-            </article>
-
-            <article id="fechaSolicitud1">
-                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
-            </article>
+            <form action="/SvtReservasFiltros" method="post">
+                <article id="CedulaBusqueda">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Ingrese la cedula" name="cedula">
+                    </div><!-- /input-group -->
+                </article>
+        
+                <article id="fechaSolicitud1">
+                    <input type="date" class="form-control" placeholder="Ingrese el texto." name="fechaFin">
+                </article>
 
             <span class="input-group-btn" id="btnBusqueda">
                   <!-- Boton para la busqueda de la iamgen -->
@@ -207,6 +201,7 @@
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </span>
+            </form>
         </article>
 
         <article id="lista">
@@ -228,7 +223,45 @@
 
                 <%
                     ReservaDao reservaDao = new ReservaDao();
-                    ArrayList<Reserva> listaMisReservas = reservaDao.consultarReservas();
+                    ArrayList<Reserva> listaMisReservas = (ArrayList)request.getAttribute("reservas");
+                    if(listaMisReservas !=null){
+                        InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
+                        for(int i = 0; i < listaMisReservas.size(); i++) {
+
+                            InformacionReserva informacionReserva = informacionReservaDao.
+                                    obtenerInfo(listaMisReservas.get(i).getIdReserva());
+
+                            long cantidadDias = informacionReserva.getFechaFinReserva().getTime()-
+                                    informacionReserva.getFechaInicioReserva().getTime();
+                %>
+                <tr>
+
+                    <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
+                    <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
+                    <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
+                    <td><%= cantidadDias/86400000%></td>
+                    <td><%= listaMisReservas.get(i).getCantidadPersonas()%></td>
+                    <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
+
+                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar">
+                        <% boolean aprobada = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
+                                EstadoReserva.Pendiente);
+                            session.setAttribute("aprobada",aprobada);
+                            System.out.println("aprobacion           "+aprobada);
+                        %>
+                    </td>
+                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar">
+                        <% boolean rechazada = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
+                                EstadoReserva.Pendiente);
+                            session.setAttribute("rechazada",rechazada);
+                        %>
+                    </td>
+                </tr>
+                <%
+                    }
+                }
+                else{
+                    listaMisReservas = reservaDao.consultarReservas();
                     if(listaMisReservas !=null){
                         InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
 
@@ -266,10 +299,8 @@
                     </td>
                 </tr>
                 <%
+                            }
                         }
-                    }
-                    else{
-
                     }
                 %>
 

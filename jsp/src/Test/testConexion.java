@@ -16,7 +16,11 @@ public class testConexion {
 
         ConexionDB conexionDB = new ConexionDB("","");
         ReservaDao reservaDao = new ReservaDao();
-        ArrayList<Reserva> l = reservaDao.consultarReservaAfiliado(7777);
+        GregorianCalendar c = new GregorianCalendar();
+        c.set(2015,9,24);
+        Date d = new Date(c.getTimeInMillis());
+        System.out.println(d+ " fecha");
+        ArrayList<Reserva> l = reservaDao.consultarFecha(d);
         System.out.println(l.size()+ " tamanio");
         for(int i = 0; i < l.size(); i++){
 
