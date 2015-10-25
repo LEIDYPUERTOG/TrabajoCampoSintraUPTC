@@ -37,11 +37,12 @@ public class ReservaDao {
 
 			try {
 				conn = conexionDB.getConexion();
-				String queryUpdate = "UPDATE reserva SET  estado_reserva = ? ";
+				String queryUpdate = "UPDATE reserva SET  estado_reserva = ?  WHERE id_reserva = ?";
 
 				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
 
 				ppStm.setString(1, conversionEstadoAString(estadoReserva));
+				ppStm.setInt(2,idReserva);
 
 				ppStm.executeUpdate();
 

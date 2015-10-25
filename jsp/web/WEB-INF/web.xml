@@ -120,4 +120,13 @@
         <servlet-name>SvtReservasFiltros</servlet-name>
         <url-pattern>/SvtReservasFiltros</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtCancelar</servlet-name>
+        <servlet-class>Servlets.SvtCancelar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtCancelar</servlet-name>
+        <url-pattern>/SvtCancelar</url-pattern>
+    </servlet-mapping>
 </web-app>

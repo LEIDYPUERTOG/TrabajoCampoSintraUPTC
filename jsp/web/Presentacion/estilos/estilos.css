@@ -2264,3 +2264,30 @@ nav.acceder #login-content2 {
 #catalogoZC button:hover:before {
     width: 100%;
 }
+
+
+#login-contentCancelar {
+    background-color: white;
+    height: 130px;
+    width: 300px;
+    border-top: 10px solid #FDCA2E;
+    border-right: 3px solid #080808;
+    border-left: 3px solid #080808;
+    border-bottom: 3px solid #080808;
+}
+
+#submitAceptarCanc {
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    height: 33px;
+    text-align: center;
+}
+
+#submitCancelarCanc{
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    height: 33px;
+    text-align: center;
+}

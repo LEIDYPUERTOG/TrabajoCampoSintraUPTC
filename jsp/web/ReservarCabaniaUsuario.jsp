@@ -104,7 +104,7 @@
     </section>
     <!-- Contenido-->
     <section id="contenidoReservaC">
-        <h4>Reservar Cabaña</h4><!-- Titulo principal -->
+        <h4>Reservar</h4><!-- Titulo principal -->
 
         <form action="/SvtCrearReserva" method="post" name="formulario4">
             <!-- Primer caja de texto -->
@@ -123,10 +123,10 @@
                 <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
             </article>
 
-            <article id="CabaniaId">
+            <article id="cantidadP">
                 <h5>Numero Cabaña</h5>
             </article>
-            <article id="searchId">
+            <article id="search3">
                 <input type="number" class="form-control" placeholder="Ingrese el numero de la cabaña"
                        required name="idCabania" min="1" max="6">
             </article>
@@ -139,6 +139,16 @@
                 <input type="number" class="form-control" placeholder="Ingrese el texto." required name="cantidad"
                        min="1" max="10">
             </article>
+
+            <label id="lblPreg">Tipo Servicio: </label>
+            <label id = "rbtn" class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="Cabania" value="Cabania"
+                       onclick="getRadioButtonSelectedValue(document.formulario.inlineRadioOptions)"> Cabaña
+            </label>
+            <label id = "rbtn2" class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="Camping" value="Camping"> Zona de Camping
+            </label>
+
             <!-- Cuadro de Acompañantes -->
             <article id="acompa">
                 <h4>Acompañantes</h4> <!-- Titulo Principal -->
