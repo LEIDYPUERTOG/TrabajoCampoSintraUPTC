@@ -22,10 +22,6 @@ import java.io.PrintWriter;
 @WebServlet("/SvtRegistro")
 public class SvtRegistro extends HttpServlet {
 
-    public SvtRegistro(){
-
-    }
-
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -58,6 +54,7 @@ public class SvtRegistro extends HttpServlet {
         if(aux == null){
             boolean agregar = personaDao.crearPersona(persona);
             if(agregar && clave.equals(clave2)){
+                request.setAttribute("persona", persona); //mandando el parametro para que sea accedido
                 System.out.println("---------------------------------------------" + agregar);
                 request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
                 dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
@@ -73,6 +70,7 @@ public class SvtRegistro extends HttpServlet {
                 boolean actualizar = personaDao.actualizarPersona(aux.getCedula(),clave);
                 if(actualizar){
                     request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
+                    request.setAttribute("persona", persona); //mandando el parametro para que sea accedido
                     dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
                     dispatcher.forward(request, response);
                 }

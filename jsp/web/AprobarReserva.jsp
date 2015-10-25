@@ -29,8 +29,6 @@
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
-    <script src="jquery.js"></script>
-
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="Presentacion/jquery.colorbox.js"></script>
 
@@ -60,9 +58,8 @@
 <body>
 
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
 <script src="/Presentacion/estilos/js/responsive.js"></script>
-
+<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorReservaA">
@@ -237,11 +234,8 @@
                             InformacionReserva informacionReserva = informacionReservaDao.
                                     obtenerInfo(listaMisReservas.get(i).getIdReserva());
 
-                            System.out.println("fec1 "+ informacionReserva);
                             long cantidadDias = informacionReserva.getFechaFinReserva().getTime()-
                                     informacionReserva.getFechaInicioReserva().getTime();
-                            System.out.println("cedula del que hizo la reserva "+ cantidadDias);
-
 
                 %>
 
@@ -256,7 +250,7 @@
 
                     <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar">
                         <% boolean aprobada = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
-                                EstadoReserva.Aprobada);
+                                EstadoReserva.Pendiente);
                             session.setAttribute("aprobada",aprobada);
                             System.out.println("aprobacion           "+aprobada);
                         %>

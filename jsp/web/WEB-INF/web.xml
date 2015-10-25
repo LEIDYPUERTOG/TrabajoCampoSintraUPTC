@@ -102,4 +102,13 @@
         <servlet-name>SvtBuscarPersona</servlet-name>
         <url-pattern>/SvtBuscarPersona</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtConsultarReservaAnio</servlet-name>
+        <servlet-class>Servlets.SvtConsultarReservaAnio</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtConsultarReservaAnio</servlet-name>
+        <url-pattern>/SvtConsultarReservaAnio</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -51,12 +51,12 @@ public class SvtCrearCabania extends HttpServlet {
             boolean agregar = cabaniaDao.crearCabania(cabania);
             if(agregar){
                 request.setAttribute("cabaniaAgregada", true);
-                dispatcher = request.getRequestDispatcher("CrearCabania.jsp");
+                dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
                 dispatcher.forward(request, response);
 
             }else{
-                PrintWriter out=response.getWriter();
-                out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+                dispatcher = request.getRequestDispatcher("CrearCabania.jsp");
+                dispatcher.forward(request, response);
             }
         }
     }

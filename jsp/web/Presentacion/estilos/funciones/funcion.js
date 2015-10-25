@@ -7,7 +7,6 @@ function ventana(){
         onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
         onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
         onClosed:function(){ alert('onClosed: colorbox has completely closed'); },
-
     });
     $(this).next('#login-content2').slideToggle();
     $(this).ToggleClass('active');

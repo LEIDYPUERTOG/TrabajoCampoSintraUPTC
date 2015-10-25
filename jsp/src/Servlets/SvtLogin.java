@@ -58,12 +58,13 @@ public class SvtLogin extends HttpServlet {
 
             }
             else{
-                System.out.println("El usuario no existe");
+                dispatcher = request.getRequestDispatcher("index.jsp");
+                dispatcher.forward(request, response);
             }
         }
         else{
-            PrintWriter out=response.getWriter();
-            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
+            dispatcher = request.getRequestDispatcher("index.jsp");
+            dispatcher.forward(request, response);
         }
     }
 }

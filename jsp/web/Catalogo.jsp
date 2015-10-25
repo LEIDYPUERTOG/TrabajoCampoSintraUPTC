@@ -114,7 +114,7 @@
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <a class="ghost" href="#"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="/Presentacion//plantillas/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
+                <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
         </ul>
     </section>
 

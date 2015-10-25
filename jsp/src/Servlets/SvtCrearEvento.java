@@ -77,7 +77,7 @@ public class SvtCrearEvento extends HttpServlet {
 
             if(agregar ){
                 request.setAttribute("eventoCreado", "Evento creado satisfactoriamente");
-                dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
+                dispatcher = request.getRequestDispatcher("ConsultarEvento.jsp");
                 dispatcher.forward(request, response);
             }else{
                 request.setAttribute("eventoCreado", "No se pudo completar la solicitud");

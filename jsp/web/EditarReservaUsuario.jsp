@@ -39,9 +39,12 @@
 
     <script src="Presentacion/angular.min.js"></script>
 
-    <!-- Script necesario para hacer que la ventana de login aparezca-->
-    <script src="jquery.js"></script>
+    <script src="Presentacion/angular.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="Presentacion/jquery.colorbox.js"></script>
 
+    <!--Script para poder hacer que aparezca la ventana emergente-->
+    <script src="/Presentacion/estilos/funciones/funcion.js"></script>
 
     <script type="text/javascript">
 
@@ -67,7 +70,7 @@
 
 <body> <!-- Lo que tiene la pagina -->
 <!-- Js vinculados -->
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
@@ -169,6 +172,7 @@
                     ReservaDao reservaDao = new ReservaDao();
                     ArrayList<Reserva> listaMisReservas = reservaDao.consultarReservaAfiliado(persona.getCedula());
                     if(listaMisReservas !=null){
+                        System.out.println("tamaño lista "+listaMisReservas.size());
                         InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
                         for(int i = 0; i < listaMisReservas.size(); i++) {
 
@@ -186,27 +190,9 @@
 
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana()">
-
                     </td>
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender" onclick="cancelar()">
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender">
 
-                        <% boolean cancelar = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
-                                EstadoReserva.Cancelada);
-                            session.setAttribute("cancelada",cancelar);
-
-                        %>
-
-                        <script>
-                            function cancelar(){
-                                if(<%=session.getAttribute("cancelada")%>){
-                                    alert("Cancelada")
-                                }
-                                else{
-                                    alert("Error revisar esta saliendo mál esta alerta" )
-                                }
-                            }
-
-                        </script>
                     </td>
                 </tr>
                 <%

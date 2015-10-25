@@ -50,7 +50,7 @@ public class SvtCrearUsuario extends HttpServlet {
 
         if(agregar){
             request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
-            dispatcher = request.getRequestDispatcher("CrearUsuario.jsp");
+            dispatcher = request.getRequestDispatcher("ConsultarUsuario.jsp");
             dispatcher.forward(request, response);
         } else {
             request.setAttribute("personaCreada", "No se pudo completar la solicitud");

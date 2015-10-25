@@ -94,6 +94,18 @@ public class SvtCrearReserva extends HttpServlet {
             if(persona.getRol().toString().equalsIgnoreCase("Administrador")||
                     persona.getRol().toString().equalsIgnoreCase("Funcionario")){
 
+                dispatcher = request.getRequestDispatcher("EditarReservaAdmin.jsp");
+                dispatcher.forward(request, response);
+            }
+            else {
+                dispatcher = request.getRequestDispatcher("EditarReservaUsuario.jsp");
+                dispatcher.forward(request, response);
+            }
+        }else{
+
+            if(persona.getRol().toString().equalsIgnoreCase("Administrador")||
+                    persona.getRol().toString().equalsIgnoreCase("Funcionario")){
+
                 dispatcher = request.getRequestDispatcher("CrearReservaCabania.jsp");
                 dispatcher.forward(request, response);
             }
@@ -101,13 +113,6 @@ public class SvtCrearReserva extends HttpServlet {
                 dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
                 dispatcher.forward(request, response);
             }
-            dispatcher = request.getRequestDispatcher("index.jsp");
-            dispatcher.forward(request, response);
-            PrintWriter out=response.getWriter();
-            out.println("Agregado");
-        }else{
-            PrintWriter out=response.getWriter();
-            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
         }
 
     }

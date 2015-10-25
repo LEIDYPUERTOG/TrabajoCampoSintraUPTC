@@ -160,30 +160,37 @@
     <!-- Seccion de contenido (tabla, link y paginacion)-->
     <section id="contenidoReservaA">
         <h4>Listado de Reservas</h4>
-        <article id="link1">
-            <button id ="2015" type="button" class="btn btn-link" onclick="
+        <form action="/SvtConsultarReservaAnio" method="post" name="formularioBusqueda">
+            <article id="link1">
+                <button id ="2015" type="submit" class="btn btn-link" onclick="
                 document.getElementById('anio').value = anioFunc(this)" >
-                2015
-            </button>
-        </article>
-        <article id="link1">
-            <button id ="2014" type="button" class="btn btn-link" onclick="anioFunc(this)">
-                2014</button>
-        </article>
-        <article id="link1">
-            <button id="2013" type="button" class="btn btn-link" onclick="anioFunc(this)" >
-                2013</button>
-        </article>
-        <article id="link1">
-            <button id="2012" type="button" class="btn btn-link" onclick="anioFunc(this)">
-                2012</button>
-        </article>
-        <article id="link1">
-            <button id="2011" type="button" class="btn btn-link" onclick="anioFunc(this)">
-                2011</button>
-        </article>
+                    2015
+                </button>
+            </article>
+            <article id="link1">
+                <button id ="2014" type="submit" class="btn btn-link" onclick="
+            document.getElementById('anio').value = anioFunc(this)" >
+                    2014</button>
+            </article>
+            <article id="link1">
+                <button id="2013" type="submit" class="btn btn-link" onclick="
+            document.getElementById('anio').value = anioFunc(this)" >
+                    2013</button>
+            </article>
+            <article id="link1">
+                <button id="2012" type="submit" class="btn btn-link" onclick="
+            document.getElementById('anio').value = anioFunc(this)" >
+                    2012</button>
+            </article>
+            <article id="link1">
+                <button id="2011" type="submit" class="btn btn-link" onclick="
+            document.getElementById('anio').value = anioFunc(this)" >
+                    2011</button>
+            </article>
 
-        <input type="text" name="anioIn" id="anio">
+
+            <input type="hidden" name="anioIn" id="anio">
+        </form>
 
         <article id="lista">
             <table class="table">
@@ -193,29 +200,15 @@
                     <th>Cedula</th>
                     <th>Tipo de Servicio</th>
                     <th>Fecha y hora de Solicitud</th>
-                    <th>Cantidad días</th>
                     <th>Cantidad personas</th>
                     <th>Estado de reserva</th>
                 </tr>
                 </thead>
                 <tbody>
                 <%
-                    ReservaDao reservaDao = new ReservaDao();
-
-                    System.out.println("anio2     "+ request.getParameter("anioIn"));
-                    ArrayList<Reserva> listaMisReservas = reservaDao.consultarAnioFecha(2015);
-
+                    ArrayList<Reserva> listaMisReservas = (ArrayList)request.getAttribute("reservas");
                     if(listaMisReservas !=null){
-                        InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
-
-                        for(int i = 0; i < listaMisReservas.size(); i++) {
-
-                            InformacionReserva informacionReserva = informacionReservaDao.
-                                    obtenerInfo(listaMisReservas.get(i).getIdReserva());
-
-                            long cantidadDias = informacionReserva.getFechaFinReserva().getTime()-
-                                    informacionReserva.getFechaInicioReserva().getTime();
-
+                    for(int i = 0; i < listaMisReservas.size(); i++) {
                 %>
 
                 <tr>
@@ -223,16 +216,17 @@
                     <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
                     <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
                     <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
-                    <td><%= cantidadDias/86400000%></td>
                     <td><%= listaMisReservas.get(i).getCantidadPersonas()%></td>
                     <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
 
                 </tr>
                 <%
                     }
-                }
-                else{
+                    }
+                    else{
+
                 %>
+
                 <tr>
 
                     <td></td>
@@ -244,7 +238,8 @@
 
                 </tr>
                 <%
-                    }
+                        }
+
                 %>
 
                 </tbody>

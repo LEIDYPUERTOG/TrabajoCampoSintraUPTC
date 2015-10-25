@@ -16,9 +16,10 @@ public class testConexion {
 
         ConexionDB conexionDB = new ConexionDB("","");
         ReservaDao reservaDao = new ReservaDao();
-        ArrayList<Reserva> l = reservaDao.consultarAnioFecha(2013);
+        ArrayList<Reserva> l = reservaDao.consultarReservaAfiliado(7777);
+        System.out.println(l.size()+ " tamanio");
         for(int i = 0; i < l.size(); i++){
-            System.out.println(l.get(i).getPersona().getCedula());
+
         }
 
     }

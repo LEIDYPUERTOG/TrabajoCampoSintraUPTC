@@ -26,10 +26,19 @@
 
     <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
+    <script src="Presentacion/estilos/funciones/funcion.js"></script>
+    <script>
+        $(function () {
+            $('#login').click(function () {
+                $(this).next('#login-content').slideToggle();
+                $(this).ToggleClass('active');
 
+
+            });
+        });
+    </script>
 
 </head>
-
 <body> <!-- Lo que tiene la pagina -->
 <!-- Js vinculados -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -41,20 +50,34 @@
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton ingresar -->
-        <article id="inicio1">
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
-                    <span class="caret"></span>
+        <nav class="acceder">
+            <article id="inicio1">
+
+                <button type="button" id="login" class="btn btn-link"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar<!-- Icono y palabra -->
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a> <span class="glyphicon glyphicon-lock" aria-hidden="true" href="#"></span>Cambiar contraseña</a></li>
-                    <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar Sesión</a> </li>
+                <div id="login-content">
+                    <form action="/SvtLogin" method="post">
 
-                </ul>
-            </div>
 
-        </article>
+                        <input id="usuario" type="number" name="usuario" placeholder="Usuario" required>
+                        <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
+
+                        <button type="submit" id="submit" class="btn btn-primary"
+                                style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                            Ingresar
+                        </button>
+                        <button type="button" id="submitRegistrar" class="btn btn-primary"
+                                style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                                onClick="location.href='/registrarse.jsp'"> <!-- Tamaño -->
+                            Registrarse
+                        </button>
+                    </form>
+
+                </div>
+            </article>
+        </nav>
         <!-- Boton Contactenos -->
         <article id="inicio2">
             <button type="button" class="btn btn-link"  style="margin-top:21px;"> <!-- Tamaño -->
@@ -91,7 +114,7 @@
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <a class="ghost" href="#"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="/Presentacion//plantillas/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
+                <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
         </ul>
     </section>
 
