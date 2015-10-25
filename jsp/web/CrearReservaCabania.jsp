@@ -173,7 +173,8 @@
                 <h5>Cantidad de personas</h5>
             </article>
             <article id="search3">
-                <input type="number" class="form-control" placeholder="Ingrese el texto." required name="cantidad" min="1" max="10">
+                <input type="number" class="form-control" placeholder="Ingrese el texto."
+                       required name="cantidad" min="1" max="10">
             </article>
             <!-- Cuadro de Acompañantes -->
             <article id="acompa">

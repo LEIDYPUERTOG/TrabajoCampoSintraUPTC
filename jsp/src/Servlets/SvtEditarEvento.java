@@ -28,7 +28,7 @@ public class SvtEditarEvento extends HttpServlet {
 
 
         String nombre=request.getParameter("nombre");
-        String[] aux = request.getParameter("fechaInicio").toString().split("-");
+        String[] aux =null;
         int auxAnio = 0;
         int auxMes = 0;
         int auxDia = 0;
@@ -43,14 +43,18 @@ public class SvtEditarEvento extends HttpServlet {
 
 
         try {
+            aux = request.getParameter("fechaInicio").toString().split("-");
+
             auxAnio = Integer.parseInt(aux[0]);
             auxMes = Integer.parseInt(aux[1]);
             auxDia = Integer.parseInt(aux[2]);
 
             calendar.set(auxAnio, auxMes, auxDia);
+
             dateInicio = new Date(calendar.getTimeInMillis());
 
             aux = request.getParameter("fechaFin").toString().split("-");
+
             auxAnio = Integer.parseInt(aux[0]);
             auxMes = Integer.parseInt(aux[1]);
             auxDia = Integer.parseInt(aux[2]);
@@ -58,8 +62,10 @@ public class SvtEditarEvento extends HttpServlet {
             calendar.set(auxAnio,auxMes,auxDia);
             dateFin = new Date(calendar.getTimeInMillis());
         }catch (Exception e){
+
             evento = eventoDao.obtenerEventoNombre(nombre);
             dateInicio = evento.getFechaIncioEvento();
+            System.out.println("fecha "+dateInicio);
             dateFin = evento.getFechaFinEvento();
         }
 

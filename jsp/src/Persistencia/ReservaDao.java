@@ -349,7 +349,8 @@ public class ReservaDao {
 			ppStm.setInt(2, reserva.getCabania().getId_servicio());
 			ppStm.setString(3, conversionEstadoAString(EstadoReserva.Pendiente)); // Porque al crear la reserva queda en estado pendiente
 			ppStm.setInt(4, reserva.getCantidadPersonas());
-			ppStm.setDouble(5, reserva.calcularValorReserva(reserva.getCantidadPersonas(), reserva.getCabania().getValor_servicio_dia()));
+			ppStm.setDouble(5, reserva.calcularValorReserva(reserva.getCantidadPersonas(),
+					reserva.getCabania().getValor_servicio_dia()));
 			ppStm.setString(6, reserva.getReciboPago());
 			ppStm.setDate(7, reserva.getFechaSolicitud());
 			ppStm.setString(8, reserva.getTipoServicio().toString());

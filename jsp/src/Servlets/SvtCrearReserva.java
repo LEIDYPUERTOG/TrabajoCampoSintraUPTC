@@ -80,7 +80,8 @@ public class SvtCrearReserva extends HttpServlet {
                 System.out.println("cedula en else   "+i+" --------- "+ cedula);
                 auxPersona= new Persona(cedula,nombre,TipoDocumento.Cedula,TipoUsuario.NoAfiliado,rol.Usuario);
                 personaDao.crearPersona(auxPersona);
-                InformacionReserva informacionReserva = new InformacionReserva(dateInicio, dateFin,dateFin,auxPersona,reserva);
+                InformacionReserva informacionReserva = new InformacionReserva(dateInicio,
+                        dateFin,dateFin,auxPersona,reserva);
                 agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
             }
         }

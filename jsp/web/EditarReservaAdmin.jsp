@@ -223,33 +223,25 @@
                              href="#inline_content" onclick="ventana()">
 
                     </td>
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender" onclick="cancelar()">
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"
+                            onclick=confirmar()>
 
-                        <% boolean cancelar = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
-                                EstadoReserva.Cancelada);
-                            session.setAttribute("cancelada",cancelar);
+                        <script language="Javascript">
+                            function confirmar() {
+                                var decision = confirm('mensaje5');
 
-                        %>
-
-                        <%--<script>
-                            function cancelar(){
-                                if(<%=session.getAttribute("cancelada")%>){
-                                    alert("Cancelada")
-                                }
-                                else{
-                                    alert("Error revisar esta saliendo mál esta alerta" )
-                                }
+                                if (decision)
+                                    alert("hiciste en aceptar");
+                                else
+                                    alert("hiciste en cancelar"));
                             }
-
-                        </script>--%>
+                        </script>
                     </td>
                 </tr>
                 <%
                         }
                     }
-                    else{
 
-                    }
                 %>
                 </tbody>
             </table> <!-- Fin de la tabla -->
