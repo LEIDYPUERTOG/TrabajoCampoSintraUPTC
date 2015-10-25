@@ -22,7 +22,7 @@ public class SvtLogin extends HttpServlet {
         int usuario= Integer.parseInt(request.getParameter("usuario"));
         String contrasenia=request.getParameter("contrasenia");
 
-        ConexionDB conexionDB = new ConexionDB("root","");
+        ConexionDB conexionDB = new ConexionDB("root","1234");
         PersonaDao personaDao = new PersonaDao();
 
         System.out.println("---------------------------------------------"+usuario);

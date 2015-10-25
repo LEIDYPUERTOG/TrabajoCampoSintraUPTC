@@ -40,7 +40,7 @@
 
         <article id="inicio1">
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 
                     <%
@@ -62,8 +62,10 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="CambiarContrasenia.jsp">Cambiar contraseña</a></li>
-                    <li><a href="#">Cerrar Sesión</a></li>
+                    <li><a> <span class="glyphicon glyphicon-lock" aria-hidden="true" href="#"></span>Cambiar contraseña</a>
+                    </li>
+                    <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
+                        Sesión</a></li>
 
                 </ul>
             </div>
@@ -71,19 +73,15 @@
         </article>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link"  style="margin-top:21px;" onclick="location.href='#informacion'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos <!-- Icono y palabra -->
             </button>
         </article>
-        <!-- Boton Conozcanos -->
-        <article id="inicio3">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Conozcanos <!-- Icono y palabra -->
-            </button>
-        </article>
+
         <!-- Boton Inicio -->
         <article id="inicio4">
-            <button type="button" class="btn btn-default"  style="padding-right:55px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link"  style="padding-right:55px;padding-left:10px;margin-top:21px;"
+                    onclick="location.href='index.jsp'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
         </article>

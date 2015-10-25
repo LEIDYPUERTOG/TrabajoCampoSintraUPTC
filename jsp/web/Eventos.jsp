@@ -17,7 +17,7 @@
     <!-- Tipo de letra de google -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
     <!-- Estilos CSS vinculados -->
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
@@ -26,19 +26,10 @@
 
     <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
-    <script src="Presentacion/estilos/funciones/funcion.js"></script>
-    <script>
-        $(function () {
-            $('#login').click(function () {
-                $(this).next('#login-content').slideToggle();
-                $(this).ToggleClass('active');
 
-
-            });
-        });
-    </script>
 
 </head>
+
 <body> <!-- Lo que tiene la pagina -->
 <!-- Js vinculados -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -50,44 +41,29 @@
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton ingresar -->
-        <nav class="acceder">
-            <article id="inicio1">
-
-                <button type="button" id="login" class="btn btn-link"
-                        style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar<!-- Icono y palabra -->
+        <article id="inicio1">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                    Bienvenido
+                    <span class="caret"></span>
                 </button>
-                <div id="login-content">
-                    <form action="/SvtLogin" method="post">
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a> <span class="glyphicon glyphicon-lock" aria-hidden="true" href="#"></span>Cambiar contraseña</a>
+                    </li>
+                    <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
+                        Sesión</a></li>
 
+                </ul>
+            </div>
 
-                        <input id="usuario" type="number" name="usuario" placeholder="Usuario" required>
-                        <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
-
-                        <button type="submit" id="submit" class="btn btn-primary"
-                                style="padding-right:35px;padding-left:10px;margin-top:21px;">
-                            Ingresar
-                        </button>
-                        <button type="button" id="submitRegistrar" class="btn btn-primary"
-                                style="padding-right:35px;padding-left:10px;margin-top:21px;"
-                                onClick="location.href='/registrarse.jsp'"> <!-- Tamaño -->
-                            Registrarse
-                        </button>
-                    </form>
-
-                </div>
-            </article>
-        </nav>
+        </article>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-link"  style="margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos <!-- Icono y palabra -->
-            </button>
-        </article>
-        <!-- Boton Conozcanos -->
-        <article id="inicio3">
-            <button type="button" class="btn btn-link"  style="margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Conozcanos <!-- Icono y palabra -->
+            <button type="button" class="btn btn-link" style="margin-top:21px;" onclick="location.href='#informacion'">
+                <!-- Tamaño -->
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos
+                <!-- Icono y palabra -->
             </button>
         </article>
         <!-- Boton Inicio -->
@@ -112,7 +88,7 @@
                 <a class="ghost" href="/Catalogo.jsp"><h3><font color=#34495E>Cabañas</font></h3></a></li>
             <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="#"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
+                <a class="ghost" href="/zonaCamping.jsp"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
         </ul>
@@ -143,7 +119,7 @@
                 Lugar: </br>
                 Dirección: </br>
             </h4>
-            
+
         </article>
         <!-- Evento N°3, con la imagen, descripcion y el boton -->
         <article id="ev3"> <!-- Seccion Menu -->
@@ -155,7 +131,7 @@
                 Lugar: </br>
                 Dirección: </br>
             </h4>
-            
+
         </article>
         <!-- Evento N°4, con la imagen, descripcion y el boton -->
         <article id="ev4"> <!-- Seccion Menu -->
@@ -167,7 +143,7 @@
                 Lugar: </br>
                 Dirección: </br>
             </h4>
-            
+
         </article>
         <!-- Evento N°5, con la imagen, descripcion y el boton -->
         <article id="ev5"> <!-- Seccion Menu -->
@@ -179,7 +155,7 @@
                 Lugar: </br>
                 Dirección: </br>
             </h4>
-            
+
         </article>
         <!-- Evento N°6, con la imagen, descripcion y el boton -->
         <article id="ev6"> <!-- Seccion Menu -->
@@ -191,7 +167,7 @@
                 Lugar: </br>
                 Dirección: </br>
             </h4>
-            
+
         </article>
     </section>
 
@@ -203,28 +179,36 @@
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->
             <h4>Menu</h4>
-            <h5> <button type="button" class="btn btn-link">Nosotros</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Junta Directiva</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Contáctenos</button> </h5>
+            <h5>
+                <button type="button" class="btn btn-link">Nosotros</button>
+            </h5>
+            <h5>
+                <button type="button" class="btn btn-link">Junta Directiva</button>
+            </h5>
+            <h5>
+                <button type="button" class="btn btn-link">Contáctenos</button>
+            </h5>
         </article>
         <article id="inf2"> <!-- Seccion Registrar -->
         </article>
         <article id="inf3"> <!-- Seccion Inf Contacto -->
             <h4>Informacion de contacto</h4>
             <h5> Avenida Central del Norte 39 - 115 </h5>
-            <h5>       Tunja - Boyaca </h5>
-            <h5>       Tel. 422174 Ext. 1500</h5>
+            <h5> Tunja - Boyaca </h5>
+            <h5> Tel. 422174 Ext. 1500</h5>
         </article>
     </section>
 
     <!-- El pie de pagina donde esta el copyright -->
     <footer>
         <p>
-            © Todos los derechos reservados. Tunja – Ciudad Universitaria – Carretera Central del Norte Tel. 422174 Ext. 1500 </br>
+            © Todos los derechos reservados. Tunja – Ciudad Universitaria – Carretera Central del Norte Tel. 422174 Ext.
+            1500 </br>
             Desarrollado por Edgar Meneses, Diana Gonzalez, Leidy Puerto
         </p>
     </footer>
 
 </section>
 </body>
-</html> <!-- Fin pagina html5 -->
+</html>
+<!-- Fin pagina html5 -->

@@ -17,7 +17,7 @@
     <!-- Tipo de letra de google -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
     <!-- Estilos CSS vinculados -->
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
@@ -31,8 +31,8 @@
     <script src="Presentacion/jquery.colorbox.js"></script>
 
     <script>
-        $(function(){
-            $('#login').click(function(){
+        $(function () {
+            $('#login').click(function () {
                 $(this).next('#login-content').slideToggle();
                 $(this).ToggleClass('active');
 
@@ -59,7 +59,8 @@
         <nav class="acceder">
             <article id="inicio1">
 
-                <button type="button" id="login" class="btn btn-link"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+                <button type="button" id="login" class="btn btn-link"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
                 </button>
                 <div id="login-content">
@@ -68,11 +69,15 @@
                         <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
                         <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
 
-                        <button type="button" id="submit" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
-                            Ingresar </button>
-                        <button type="button" id="submitRegistrar" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                        <button type="button" id="submit" class="btn btn-primary"
+                                style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                            Ingresar
+                        </button>
+                        <button type="button" id="submitRegistrar" class="btn btn-primary"
+                                style="padding-right:35px;padding-left:10px;margin-top:21px;"
                                 onClick="location.href='registrarse.jsp'"> <!-- Tamaño -->
-                            Registrarse </button>
+                            Registrarse
+                        </button>
                     </form>
 
                 </div>
@@ -80,19 +85,14 @@
         </nav>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-link"  style="margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos <!-- Icono y palabra -->
-            </button>
-        </article>
-        <!-- Boton Conozcanos -->
-        <article id="inicio3">
-            <button type="button" class="btn btn-link"  style="margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Conozcanos <!-- Icono y palabra -->
+            <button type="button" class="btn btn-link" style="margin-top:21px;" onclick="location.href='#informacion'"> <!-- Tamaño -->
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos
+                <!-- Icono y palabra -->
             </button>
         </article>
         <!-- Boton Inicio -->
         <article id="inicio4">
-            <button type="button" class="btn btn-link"  style="padding-right:55px;padding-left:10px;margin-top:21px;"
+            <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
                     onclick="location.href='index.jsp'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
@@ -101,7 +101,7 @@
 
     <!-- Segunda cabecera con los logos del sindicato y la uptc -->
     <section id="logo">
-        <h1> <img src="/Presentacion/imagenes/cabecera.jpg" alt="logos.png"></h1> <!-- Importar la imagen -->
+        <h1><img src="/Presentacion/imagenes/cabecera.jpg" alt="logos.png"></h1> <!-- Importar la imagen -->
     </section>
 
     <!-- Tercera cabecera con los servicios que prestan el sindicato -->
@@ -112,9 +112,10 @@
                 <a class="ghost" href="/Catalogo.jsp"><h3><font color=#34495E>Cabañas</font></h3></a></li>
             <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="#"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
+                <a class="ghost" href="/zonaCamping.jsp"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
+                <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font>
+                </h3></a></li>
         </ul>
     </section>
 
@@ -126,7 +127,8 @@
         <article id="precio">
             <article id="valores">
                 <h2>Valor de las Cabañas</h2>
-                <p> <strong>Valor por noche:</strong></br>
+
+                <p><strong>Valor por noche:</strong></br>
                     <strong>Afiliado:</strong>$90.000</br>
                     <strong>No Afiliado:</strong>$ 160.000
                 </p>
@@ -138,7 +140,8 @@
             <h5>Cabaña N°1</h5>
             <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a> <!-- Icono y palabra -->
+                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a>
+                <!-- Icono y palabra -->
             </button>
         </article>
 
@@ -148,7 +151,7 @@
             <h5>Cabaña N°2</h5>
             <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
+                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°3, con la imagen, descripcion y el boton -->
@@ -157,7 +160,7 @@
             <h5>Cabaña N°3</h5>
             <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
+                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°4, con la imagen, descripcion y el boton -->
@@ -166,7 +169,7 @@
             <h5>Cabaña N°4</h5>
             <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
+                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°5, con la imagen, descripcion y el boton -->
@@ -175,7 +178,7 @@
             <h5>Cabaña N°5</h5>
             <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                    <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
+                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
         <!-- Cabaña N°6, con la imagen, descripcion y el boton -->
@@ -184,7 +187,7 @@
             <h5>Cabaña N°6</h5>
             <button> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a  class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()" >Reserva</a><!-- Icono y palabra -->
+                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
             </button>
         </article>
     </section>
@@ -197,24 +200,31 @@
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->
             <h4>Menu</h4>
-            <h5> <button type="button" class="btn btn-link">Nosotros</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Junta Directiva</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Contáctenos</button> </h5>
+            <h5>
+                <button type="button" class="btn btn-link">Nosotros</button>
+            </h5>
+            <h5>
+                <button type="button" class="btn btn-link">Junta Directiva</button>
+            </h5>
+            <h5>
+                <button type="button" class="btn btn-link">Contáctenos</button>
+            </h5>
         </article>
         <article id="inf2"> <!-- Seccion Registrar -->
         </article>
         <article id="inf3"> <!-- Seccion Inf Contacto -->
             <h4>Informacion de contacto</h4>
             <h5> Avenida Central del Norte 39 - 115 </h5>
-            <h5>       Tunja - Boyaca </h5>
-            <h5>       Tel. 422174 Ext. 1500</h5>
+            <h5> Tunja - Boyaca </h5>
+            <h5> Tel. 422174 Ext. 1500</h5>
         </article>
     </section>
 
     <!-- El pie de pagina donde esta el copyright -->
     <footer>
         <p>
-            © Todos los derechos reservados. Tunja – Ciudad Universitaria – Carretera Central del Norte Tel. 422174 Ext. 1500 </br>
+            © Todos los derechos reservados. Tunja – Ciudad Universitaria – Carretera Central del Norte Tel. 422174 Ext.
+            1500 </br>
             Desarrollado por Edgar Meneses, Diana Gonzalez, Leidy Puerto
         </p>
     </footer>
@@ -223,20 +233,24 @@
 
 <!-- Ventana Emergente que debe aparecer si el usuario no se ha logueado y desea realizar una reserva -->
 
-<section  id="ventanaEmergente">
+<section id="ventanaEmergente">
 
-    <div id='inline_content' >
+    <div id='inline_content'>
         <div id="login-content2">
             <form>
 
                 <input id="usuarioVentana" type="text" name="usuario" placeholder="Usuario" required>
                 <input id="passwordVentana" type="password" name="contrasenia" placeholder="Contraseña" required>
 
-                <button type="button" id="submitEntrarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
-                    Ingresar </button>
-                <button type="button" id="submitRegistrarVentana" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                <button type="button" id="submitEntrarVentana" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Ingresar
+                </button>
+                <button type="button" id="submitRegistrarVentana" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"
                         onClick="location.href='registrarse.jsp'"> <!-- Tamaño -->
-                    Registrarse </button>
+                    Registrarse
+                </button>
 
             </form>
 
@@ -244,4 +258,5 @@
     </div>
 </section>
 </body>
-</html> <!-- Fin pagina html5 -->
+</html>
+<!-- Fin pagina html5 -->

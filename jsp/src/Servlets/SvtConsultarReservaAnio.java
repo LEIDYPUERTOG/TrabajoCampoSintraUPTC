@@ -23,7 +23,7 @@ public class SvtConsultarReservaAnio extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int anio = Integer.parseInt(request.getParameter("anioIn"));
         System.out.println("anio              "+anio);
-        ConexionDB conexionDB = new ConexionDB("root","");
+        ConexionDB conexionDB = new ConexionDB("root","1234");
 
         ReservaDao reservaDao = new ReservaDao();
 

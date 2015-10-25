@@ -19,7 +19,7 @@
     <!-- Tipo de letra de google -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 
     <!-- Estilos CSS vinculados -->
     <link href="Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">

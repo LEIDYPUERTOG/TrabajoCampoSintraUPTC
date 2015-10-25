@@ -42,7 +42,7 @@ public class SvtCrearReserva extends HttpServlet {
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
 
 
-        ConexionDB conexionDB = new ConexionDB("root","");
+        ConexionDB conexionDB = new ConexionDB("root","1234");
 
 
 

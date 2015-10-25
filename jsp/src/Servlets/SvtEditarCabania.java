@@ -22,7 +22,7 @@ public class SvtEditarCabania extends HttpServlet {
         int cantidadPersonas = 0;
         int idCabania = 0;
 
-        ConexionDB conexionDB = new ConexionDB("root","");
+        ConexionDB conexionDB = new ConexionDB("root","1234");
 
         CabaniaDao cabaniaDao = new CabaniaDao();
 

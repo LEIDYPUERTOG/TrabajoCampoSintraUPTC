@@ -1,6 +1,9 @@
 /*
 	Autor
 */
+/*
+*************************************** Componentes del index ***************************************************
+*/
 * {
     border: 0;
     margin: 0;
@@ -48,9 +51,10 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
 	El tamaño color y tipo de letra que tiene el bloque de servicios
 */
 #servicios {
-    font-family: 'Courgette', cursive;
-    background: #fefff6;
-    height: 80px;
+    color: #bfbfbf;
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    text-align: center;
 }
 
 /*
@@ -342,7 +346,7 @@ nav.acceder #login-content {
 /* Inicio de los estilos del contenedor de registro de una persona*/
 #contenedorRegistro {
     box-shadow: 5px 5px 30px #bcbcbc;
-    height: 800px;
+    height: 1110px;
     width: 1000px;
     background: #fefff6;
     margin-right: auto;
@@ -844,13 +848,13 @@ nav.acceder #login-content {
 	con posicion centrada en la pagina
 */
 #contenidoReservaC {
-    background: #fefff6;
+    background: #ffffff;
     position: absolute;
     left: 45%;
     top: 60%;
-    width: 600px;
-    height: 400px;
-    margin: -60px 0 0 -200px;
+    width: 700px;
+    height: 600px;
+    margin: -60px 0 0 -300px;
 }
 
 /*
@@ -859,7 +863,7 @@ nav.acceder #login-content {
 #contenidoReservaC #fechaI {
     background: #fefff6;
     width: 180px;
-    height: 35px;
+    height: 50px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -881,7 +885,7 @@ nav.acceder #login-content {
 #contenidoReservaC #fechaF {
     background: #fefff6;
     width: 180px;
-    height: 35px;
+    height: 50px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -897,13 +901,35 @@ nav.acceder #login-content {
     vertical-align: middle;
 }
 
+
+/*
+	Bloque que contiene el tamaño y posicion de cantidadP
+*/
+#contenidoReservaC #CabaniaId {
+    background: #fefff6;
+    width: 180px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*
+	Bloque que contiene el tamaño y posicion de search3
+*/
+#contenidoReservaC #searchId {
+    background: #fefff6;
+    width: 400px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
 /*
 	Bloque que contiene el tamaño y posicion de cantidadP
 */
 #contenidoReservaC #cantidadP {
     background: #fefff6;
     width: 180px;
-    height: 35px;
+    height: 50px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -923,8 +949,9 @@ nav.acceder #login-content {
 	Tamaño y tipo de letra h4
 */
 #contenidoReservaC h4 {
-    font-family: 'Handlee', cursive;
-    font-size: 37px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: #34495E;
     text-align: center;
 }
 
@@ -932,8 +959,9 @@ nav.acceder #login-content {
 	Tamaño y tipo de letra h5 (todo el texto)
 */
 #contenidoReservaC h5 {
-    font-family: 'Lato', sans-serif;
-    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    color: #34495E;
     text-align: center;
 }
 
@@ -946,9 +974,9 @@ nav.acceder #login-content {
     left: 50%;
     top: 60%;
     width: 500px;
-    height: 200px;
-    margin: -20px 0 0 -250px;
-
+    height: 400px;
+    margin: -200px 0 0 -250px;
+    border: 1px solid #d0d0d0;
 }
 
 /*
@@ -985,7 +1013,7 @@ Estilos para la tabla y scroll
 
 #acompa tbody {
     overflow-y: scroll;
-    height: 100px;
+    height: 200px;
     width: 100%;
     position: absolute;
 }
@@ -1537,7 +1565,7 @@ Estilos para la tabla y scroll
 
 #btnCrearReserva {
     position: absolute;
-    top: 430px;
+    top: 600px;
     left: 250px;
 }
 
@@ -1589,12 +1617,13 @@ nav.acceder #login-content2 {
 
 #infoUsuario {
     position: absolute;
-    top: 130%;
+    top: 170%;
+
 }
 
 #contenedorUsuario {
     box-shadow: 5px 5px 30px #bcbcbc;
-    height: 1133px;
+    height: 1300px;
     width: 1000px;
     margin-right: auto;
     margin-left: auto;
@@ -1604,6 +1633,8 @@ nav.acceder #login-content2 {
     position: absolute;
     top: 420px;
     left: 600px;
+    height: 800px;
+    width: 700px;
 }
 
 /*Consultar reserva*/
