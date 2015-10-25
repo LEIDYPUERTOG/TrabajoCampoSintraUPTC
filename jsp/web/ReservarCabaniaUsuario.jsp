@@ -1,3 +1,4 @@
+<%@ page import="Logica.Persona" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Autor: Diana Gonzalez, Leidy Puerto, Edgar Meneses -->
 <!DOCTYPE html>
@@ -46,11 +47,26 @@
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
+                    <%
+                        Persona persona = (Persona)session.getAttribute("persona");
+                        session.setAttribute("persona",persona);
+                        if(persona!=null){
+
+                    %>
+                    <%= persona.getNombre() %>
+                    <%
+                    }else{
+                        Persona persona1 = (Persona)request.getAttribute("persona");
+                        session.setAttribute("persona",persona1);
+                    %>
+                    <%= persona1.getNombre() %>
+                    <%
+                        }
+                    %>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="CambiarContrasenia.jsp">Cambiar contraseña</a></li>
+                    <li><a href="CambiarContraseniaUsuario.jsp">Cambiar contraseña</a></li>
                     <li><a href="#">Cerrar Sesión</a></li>
 
                 </ul>
@@ -96,6 +112,7 @@
         </ul>
     </section>
 
+
     <section id="contenidoReservaC">
         <h4>Reservar Cabaña</h4><!-- Titulo principal -->
 
@@ -116,18 +133,26 @@
                 <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
             </article>
 
+            <article id="CabaniaId">
+                <h5>Numero Cabaña</h5>
+            </article>
+            <article id="searchId">
+                <input type="number" class="form-control" placeholder="Ingrese el numero de la cabaña"
+                       required name="idCabania" min="1" max="6">
+            </article>
+
             <!-- Tercera caja de texto -->
             <article id="cantidadP">
                 <h5>Cantidad de personas</h5>
             </article>
             <article id="search3">
-                <input type="text" class="form-control" placeholder="Ingrese el texto." required name="cantidad">
+                <input type="number" class="form-control" placeholder="Ingrese el texto." required name="cantidad" min="1" max="10">
             </article>
             <!-- Cuadro de Acompañantes -->
             <article id="acompa">
                 <h4>Acompañantes</h4> <!-- Titulo Principal -->
                 <!-- Tabla con la cedula y nombre-->
-                <table class="table">
+                <table class="table" id="tabla">
                     <thead>
                     <!-- titulos de la tabla -->
                     <tr>
@@ -136,6 +161,8 @@
                     </tr>
                     </thead>
                     <tbody>
+
+
                     <!-- Primer componente -->
                     <tr>
                         <td><article id="searchC">
