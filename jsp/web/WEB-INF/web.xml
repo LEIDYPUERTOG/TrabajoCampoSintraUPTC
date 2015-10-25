@@ -93,4 +93,13 @@
         <servlet-name>SvtCambiaContrasenia</servlet-name>
         <url-pattern>/SvtCambiaContrasenia</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtBuscarPersona</servlet-name>
+        <servlet-class>Servlets.SvtBuscarPersona</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtBuscarPersona</servlet-name>
+        <url-pattern>/SvtBuscarPersona</url-pattern>
+    </servlet-mapping>
 </web-app>

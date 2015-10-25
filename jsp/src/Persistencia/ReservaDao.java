@@ -69,6 +69,7 @@ public class ReservaDao {
 		try {
 			conn = conexionDB.getConexion();
 			String querySearch = "SELECT * FROM reserva WHERE documento_persona = ? ORDER BY (estado_reserva)";
+
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 			ppStm.setInt(1, documento);
 
@@ -96,10 +97,45 @@ public class ReservaDao {
 	 * Metodo que permite realizar la consulta de reservas realizadas teniendo la
 	 * fecha Inicial
 	 *
-	 * @param fechaInicio
+	 * @param anio
 	 */
-	public ArrayList<Reserva> consultarReservaFecha(Date fechaInicio){
-		return null;
+	public ArrayList<Reserva> consultarAnioFecha(int anio){
+		ArrayList<Reserva> listaReservas = null;
+		try {
+			conn = conexionDB.getConexion();
+			String querySearch = "SELECT * FROM reserva WHERE date_format(fecha_solicitud, '%Y')=?";
+
+			PreparedStatement ppStm = conn.prepareStatement(querySearch);
+
+			ppStm.setInt(1, anio);
+
+			ResultSet resultSet = ppStm.executeQuery();
+
+			while(resultSet.next()) {
+				listaReservas = new ArrayList<>();
+
+				//Permite realizar la consulta de la persona que realizo una reserva
+
+				PersonaDao personaDao = new PersonaDao();
+				Persona auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
+
+				Reserva reserva = new Reserva(resultSet.getInt(6),
+						conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
+						auxPersona);
+				reserva.setIdReserva(resultSet.getInt(1));
+				reserva.setTipoServicio(tipoServicio(resultSet.getString(10)));
+				listaReservas.add(reserva);
+
+			}
+			////conn.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return listaReservas;
+
+		}
+		return listaReservas;
 	}
 
 	/**

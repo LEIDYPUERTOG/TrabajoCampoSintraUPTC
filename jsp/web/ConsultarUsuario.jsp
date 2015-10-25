@@ -152,44 +152,58 @@
             <h5>Documento Usuario</h5>
         </article>
 
-        <article id="search8">
-            <div class="col-lg-6">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Ingrese el documento">
+        <form action="/SvtBuscarPersona" method="post" name="formularioBusqueda">
+            <article id="search8">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Ingrese el documento" name="documento">
               <span class="input-group-btn">
                   <!-- Boton para la busqueda de la iamgen -->
                 <button type="submit" class="btn btn-default" aria-label="Left Align">
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </span>
-                </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-        </article>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </article>
+        </form>
 
         <article id="informacionEncontrada">
             <form>
 
+                <%
+                    Persona personaSession = (Persona) request.getAttribute("persona");
+                    if(personaSession != null){
+                %>
                 <article id="et1">
                     <div class="form-group">
                         <label for="lblCedula">Cédula</label>
-                        <input type="text" class="form-control" id="cedula" disabled>
+                        <input type="text" class="form-control" id="cedula" disabled value=
+                            <%= personaSession.getCedula()%>>
                     </div>
                 </article>
 
                 <article id="et2">
                     <div class="form-group">
                         <label for="lblNombre">Nombre y Apellidos</label>
-                        <input type="text" class="form-control" id="nombre" disabled>
+                        <input type="text" class="form-control" id="nombre" disabled value=
+                            <%= personaSession.getNombre()%>>
                     </div>
                 </article>
 
                 <article id="et3">
                     <div class="form-group">
                         <label for="TipoUsuario">Tipo de Usuario</label>
-                        <input type="text" class="form-control" id="Tipo Usuario" disabled>
+                        <input type="text" class="form-control" id="Tipo Usuario" disabled value=
+                            <%= personaSession.getTipoUsuario().toString()%>>
                     </div>
                 </article>
+
+                <%
+                    }
+
+                %>
 
             </form>
         </article>

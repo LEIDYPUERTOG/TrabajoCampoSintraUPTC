@@ -1,4 +1,9 @@
 <%@ page import="Logica.Persona" %>
+<%@ page import="Persistencia.ReservaDao" %>
+<%@ page import="Logica.Reserva" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="Persistencia.InformacionReservaDao" %>
+<%@ page import="Logica.InformacionReserva" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +34,13 @@
     <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
 
+    <script>
+        var anioFunc = function tomarAnio(clicked){
+            var  el = clicked.id;
+            return el;
+            alert(el+ " el seleccionado con get12")
+        }
+    </script>
 
 </head>
 <body>
@@ -149,20 +161,29 @@
     <section id="contenidoReservaA">
         <h4>Listado de Reservas</h4>
         <article id="link1">
-            <button type="button" class="btn btn-link">2015</button>
+            <button id ="2015" type="button" class="btn btn-link" onclick="
+                document.getElementById('anio').value = anioFunc(this)" >
+                2015
+            </button>
         </article>
-        <article id="link2">
-            <button type="button" class="btn btn-link">2014</button>
+        <article id="link1">
+            <button id ="2014" type="button" class="btn btn-link" onclick="anioFunc(this)">
+                2014</button>
         </article>
-        <article id="link3">
-            <button type="button" class="btn btn-link">2013</button>
+        <article id="link1">
+            <button id="2013" type="button" class="btn btn-link" onclick="anioFunc(this)" >
+                2013</button>
         </article>
-        <article id="link4">
-            <button type="button" class="btn btn-link">2012</button>
+        <article id="link1">
+            <button id="2012" type="button" class="btn btn-link" onclick="anioFunc(this)">
+                2012</button>
         </article>
-        <article id="link5">
-            <button type="button" class="btn btn-link">2011</button>
+        <article id="link1">
+            <button id="2011" type="button" class="btn btn-link" onclick="anioFunc(this)">
+                2011</button>
         </article>
+
+        <input type="text" name="anioIn" id="anio">
 
         <article id="lista">
             <table class="table">
@@ -172,59 +193,60 @@
                     <th>Cedula</th>
                     <th>Tipo de Servicio</th>
                     <th>Fecha y hora de Solicitud</th>
+                    <th>Cantidad días</th>
+                    <th>Cantidad personas</th>
                     <th>Estado de reserva</th>
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Primer componente -->
+                <%
+                    ReservaDao reservaDao = new ReservaDao();
+
+                    System.out.println("anio2     "+ request.getParameter("anioIn"));
+                    ArrayList<Reserva> listaMisReservas = reservaDao.consultarAnioFecha(2015);
+
+                    if(listaMisReservas !=null){
+                        InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
+
+                        for(int i = 0; i < listaMisReservas.size(); i++) {
+
+                            InformacionReserva informacionReserva = informacionReservaDao.
+                                    obtenerInfo(listaMisReservas.get(i).getIdReserva());
+
+                            long cantidadDias = informacionReserva.getFechaFinReserva().getTime()-
+                                    informacionReserva.getFechaInicioReserva().getTime();
+
+                %>
+
                 <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
+
+                    <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
+                    <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
+                    <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
+                    <td><%= cantidadDias/86400000%></td>
+                    <td><%= listaMisReservas.get(i).getCantidadPersonas()%></td>
+                    <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
+
                 </tr>
-                <!-- Segundo componente -->
+                <%
+                    }
+                }
+                else{
+                %>
                 <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
+
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
                 </tr>
-                <!-- Tercero componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                </tr>
-                <!-- Cuarto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                </tr>
-                <!-- Quinto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                </tr>
-                <!-- Sexto componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                </tr>
-                <!-- Septimo componente -->
-                <tr>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                    <td>texto</td>
-                </tr>
+                <%
+                    }
+                %>
+
                 </tbody>
             </table> <!-- Fin de la tabla -->
         </article> <!-- Fin del article -->
@@ -250,7 +272,7 @@
         </article>
     </section>
 
-<!-- Divicion para el color de la informacion adicional de la pagina -->
+    <!-- Divicion para el color de la informacion adicional de la pagina -->
     <section id="divi">
     </section>
 

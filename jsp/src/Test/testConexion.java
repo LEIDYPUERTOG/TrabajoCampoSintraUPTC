@@ -16,13 +16,10 @@ public class testConexion {
 
         ConexionDB conexionDB = new ConexionDB("","");
         ReservaDao reservaDao = new ReservaDao();
-        GregorianCalendar c = new GregorianCalendar();
-        c.set(2012, 12, 12);
-        Date d = new Date(c.getTimeInMillis());
-        Cabania cabania = new Cabania(12,2,20000);
-        Persona p = new Persona(1049636125,"aaa",TipoDocumento.Cedula,TipoUsuario.Afiliado,rol.Administrador);
-        reservaDao.crearReservaCabania(new Reserva(cabania,12,d,p,""));
-
+        ArrayList<Reserva> l = reservaDao.consultarAnioFecha(2013);
+        for(int i = 0; i < l.size(); i++){
+            System.out.println(l.get(i).getPersona().getCedula());
+        }
 
     }
 

@@ -34,7 +34,6 @@
                     var aux = document.getElementById("tabla_uno").rows[this.rowIndex].cells[0].innerHTML;
                     auxiliar = aux;
                 }
-
             }
             return auxiliar;
         }
