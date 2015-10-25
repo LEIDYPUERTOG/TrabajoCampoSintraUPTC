@@ -111,4 +111,13 @@
         <servlet-name>SvtConsultarReservaAnio</servlet-name>
         <url-pattern>/SvtConsultarReservaAnio</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtReservasFiltros</servlet-name>
+        <servlet-class>Servlets.SvtReservasFiltros</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtReservasFiltros</servlet-name>
+        <url-pattern>/SvtReservasFiltros</url-pattern>
+    </servlet-mapping>
 </web-app>

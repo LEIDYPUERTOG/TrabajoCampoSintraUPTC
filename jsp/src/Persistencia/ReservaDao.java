@@ -111,9 +111,49 @@ public class ReservaDao {
 
 			ResultSet resultSet = ppStm.executeQuery();
 
+			listaReservas = new ArrayList<>();
 			while(resultSet.next()) {
-				listaReservas = new ArrayList<>();
 
+				//Permite realizar la consulta de la persona que realizo una reserva
+
+				PersonaDao personaDao = new PersonaDao();
+				Persona auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
+
+				Reserva reserva = new Reserva(resultSet.getInt(6),
+						conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
+						auxPersona);
+				reserva.setIdReserva(resultSet.getInt(1));
+				reserva.setTipoServicio(tipoServicio(resultSet.getString(10)));
+				listaReservas.add(reserva);
+
+			}
+			////conn.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return listaReservas;
+
+		}
+		return listaReservas;
+	}
+
+
+	public ArrayList<Reserva> consultarFecha(java.sql.Date fecha){
+		ArrayList<Reserva> listaReservas = null;
+		try {
+			conn = conexionDB.getConexion();
+			String querySearch = "SELECT * FROM reserva WHERE CAST(fecha_solicitud AS DATE)=?";
+
+			PreparedStatement ppStm = conn.prepareStatement(querySearch);
+
+			ppStm.setDate(1, fecha);
+
+			ResultSet resultSet = ppStm.executeQuery();
+
+			listaReservas = new ArrayList<>();
+			while(resultSet.next()) {
+				System.out.println("aaaaaaaaaaaaaaaa");
 				//Permite realizar la consulta de la persona que realizo una reserva
 
 				PersonaDao personaDao = new PersonaDao();
@@ -193,8 +233,9 @@ public class ReservaDao {
 
 			ResultSet resultSet = ppStm.executeQuery();
 
+			listaReservas = new ArrayList<>();
 			while (resultSet.next()) {
-				listaReservas = new ArrayList<>();
+
 				//Permite realizar la consulta de la persona que realizo una reserva
 
 				Persona auxPersona = new Persona();
@@ -308,7 +349,8 @@ public class ReservaDao {
 			ppStm.setInt(2, reserva.getCabania().getId_servicio());
 			ppStm.setString(3, conversionEstadoAString(EstadoReserva.Pendiente)); // Porque al crear la reserva queda en estado pendiente
 			ppStm.setInt(4, reserva.getCantidadPersonas());
-			ppStm.setDouble(5, reserva.calcularValorReserva(reserva.getCantidadPersonas(), reserva.getCabania().getValor_servicio_dia()));
+			ppStm.setDouble(5, reserva.calcularValorReserva(reserva.getCantidadPersonas(),
+					reserva.getCabania().getValor_servicio_dia()));
 			ppStm.setString(6, reserva.getReciboPago());
 			ppStm.setDate(7, reserva.getFechaSolicitud());
 			ppStm.setString(8, reserva.getTipoServicio().toString());

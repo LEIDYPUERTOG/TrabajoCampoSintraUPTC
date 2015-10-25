@@ -209,7 +209,7 @@ public class EventoDao {
 
 		try {
 			conn = conexionDB.getConexion();
-			String querySearch = "SELECT * FROM evento ORDER BY fecha_inicio_evento";
+			String querySearch = "SELECT * FROM evento ORDER BY fecha_inicio_evento ASC";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 
