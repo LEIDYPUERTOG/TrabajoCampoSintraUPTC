@@ -50,14 +50,9 @@
 </head>
 <body>
 
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
-
-
-
 
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorReservaA">
@@ -66,7 +61,8 @@
         <!-- Boton usuario -->
         <article id="inicio1">
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     <%
                         Persona persona = (Persona)session.getAttribute("persona");
                         session.setAttribute("persona",persona);

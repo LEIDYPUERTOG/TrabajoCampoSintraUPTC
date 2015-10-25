@@ -60,7 +60,7 @@
 
 <body> <!-- Lo que tiene la pagina -->
 <!-- Js vinculados -->
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 

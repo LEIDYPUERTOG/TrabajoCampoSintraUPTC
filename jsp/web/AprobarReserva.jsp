@@ -29,6 +29,10 @@
     <link href="/Presentacion/estilos/css/estilos.css" rel="stylesheet">
 
     <script src="Presentacion/angular.min.js"></script>
+
+    <!-- Script necesario para hacer que la ventana de login aparezca-->
+    <script src="jquery.js"></script>
+
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="Presentacion/jquery.colorbox.js"></script>
 
@@ -57,7 +61,6 @@
 </head>
 <body>
 
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 

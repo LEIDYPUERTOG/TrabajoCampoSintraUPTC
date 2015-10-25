@@ -107,8 +107,7 @@
         </article>
 
         <article id="eventos">
-            <a href="CrearEvento.jsp"><img src="/Presentacion/imagenes/evento.png" id="imag2" title="Eventos"
-
+            <a href="CrearEvento.jsp"><img src="/Presentacion/imagenes/evento.png" id="imag2" title="Eventos">
             </a>
         </article>
 
@@ -184,7 +183,7 @@
       <span class="input-group-btn">
           <!-- Boton para la busqueda de la iamgen -->
         <button type="submit" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
         </button>
       </span>
                     </div><!-- /input-group -->

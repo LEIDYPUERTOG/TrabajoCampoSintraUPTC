@@ -41,7 +41,6 @@
     <!--Script para poder hacer que aparezca la ventana emergente-->
     <script src="/Presentacion/estilos/funciones/funcion.js"></script>
 
-
     <script type="text/javascript">
 
         var tomarValor = function elementoTabla() {
@@ -66,9 +65,10 @@
 
 <body> <!-- Lo que tiene la pagina -->
 <!-- Js vinculados -->
-<script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
+
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
+
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorReservaA">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
