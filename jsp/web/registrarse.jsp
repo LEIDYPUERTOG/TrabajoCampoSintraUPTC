@@ -50,7 +50,7 @@
         <nav class="acceder">
             <article id="inicio1">
 
-                <button type="button" id="login" class="btn btn-default"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+                <button type="button" id="login" class="btn btn-link"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
                 </button>
                 <div id="login-content">
@@ -70,19 +70,16 @@
         </nav>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos <!-- Icono y palabra -->
-            </button>
-        </article>
-        <!-- Boton Conozcanos -->
-        <article id="inicio3">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Conozcanos <!-- Icono y palabra -->
+            <button type="button" class="btn btn-link" style="margin-top:21px;" onclick="location.href=
+            '#informacion'"> <!-- Tamaño -->
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos
+                <!-- Icono y palabra -->
             </button>
         </article>
         <!-- Boton Inicio -->
         <article id="inicio4">
-            <button type="button" class="btn btn-default"  style="padding-right:55px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
+                    onclick="location.href='index.jsp'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
         </article>
@@ -135,9 +132,12 @@
                 <input type="radio" name="inlineRadioOptions" id="NoAfiliado" value="NA"> No Afiliado
             </label>
 
-            <button id= "btnRegistro" type="submit" class="btn btn-warning" value="Registrar">Registrarse</button>
+            <button id= "btnRegistro" type="submit" class="btn btn-primary" value="Registrar">Registrarse</button>
         </form>
 
+    </section>
+    <!-- Divicion para el color de la informacion adicional de la pagina -->
+    <section id="divi">
     </section>
 
     <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->

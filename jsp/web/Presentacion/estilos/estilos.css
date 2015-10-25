@@ -69,6 +69,7 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
     background: #fefff6;
     height: 350px;
 }
+
 /*
 	El tamaño y color que tendra el bloque de la imagen
 */
@@ -79,6 +80,7 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
     display: inline-block;
     vertical-align: middle;
 }
+
 /*
 	El tamaño y color que tendra el bloque el texto
 */
@@ -110,6 +112,7 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
     color: #34495E;
     text-align: center;
 }
+
 /*
 	bloque de (quienes somos y la imagen )
 */
@@ -120,6 +123,7 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
     padding-top: 40px;
     margin: -35px 0 0 30px;
 }
+
 /*
 	El tipo de letra, el tamaño de la letra y que sea centrada del bloque texto
 	que contiene la etiqueta h4
@@ -128,7 +132,7 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
     font-family: 'Lato', sans-serif;
     font-size: 17px;
     text-align: justify;
-    color:#7F8C8D;
+    color: #7F8C8D;
 }
 
 /*
@@ -332,10 +336,13 @@ nav.acceder #login-content {
 
 /*Fin de los estilos de la ventana emergente de login*/
 
+/*
+*******************************************Pagina registrarse**********************************************************
+*/
 /* Inicio de los estilos del contenedor de registro de una persona*/
 #contenedorRegistro {
     box-shadow: 5px 5px 30px #bcbcbc;
-    height: 1000px;
+    height: 800px;
     width: 1000px;
     background: #fefff6;
     margin-right: auto;
@@ -351,31 +358,31 @@ nav.acceder #login-content {
 #registro #lblNombres {
     position: absolute;
     top: 400px;
-    left: 450px;
+    left: 380px;
 }
 
 #registro #lblDocumento {
     position: absolute;
     top: 435px;
-    left: 450px;
+    left: 380px;
 }
 
 #registro #lblContrasenia {
     position: absolute;
     top: 470px;
-    left: 450px;
+    left: 380px;
 }
 
 #registro #lblContrasenia2 {
     position: absolute;
     top: 505px;
-    left: 450px;
+    left: 380px;
 }
 
 #registro #lblPreg {
     position: absolute;
     top: 540px;
-    left: 450px;
+    left: 380px;
 }
 
 #registro #rbtn {
@@ -396,6 +403,24 @@ nav.acceder #login-content {
     left: 670px;
 }
 
+/*
+	El tamaño y color del titulo (¿No está registrado aún?)
+*/
+#lblInfo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #34495E;
+    text-align: center;
+}
+/*
+	El tipo de letra, el tamaño de la letra
+*/
+#registro li {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    text-align: center;
+    color: #404142
+}
 #registro #nombres, #documento, #contrasenia, #contrasenia2 {
     font: 14px Arial;
     width: 320px;
@@ -432,6 +457,7 @@ nav.acceder #login-content {
     position: absolute;
     top: 350px;
     left: 620px;
+    text-align: center;
 }
 
 /*Fin de los estilos del registro de una persona*/
@@ -517,24 +543,27 @@ nav.acceder #login-content {
     margin-right: auto;
     margin-left: auto;
 }
+
 /*
 	El tamaño y color del titulo
 */
-#catalogo h2{
+#catalogo h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 60px;
     color: #34495E;
     text-align: center;
 }
+
 /*
 	bloque de los precios
 */
 #precio {
-    background:#ffffff;
+    background: #ffffff;
     width: 950px;
     height: 150px;
     padding-top: 5px;
 }
+
 /*
 	bloque de los precios
 */
@@ -545,19 +574,21 @@ nav.acceder #login-content {
     padding-top: 5px;
     margin: -10px 0 0 -24px;
 }
+
 /*
 	El tipo de letra, el tamaño de la letra
 */
-#catalogo #precio p{
+#catalogo #precio p {
     font-family: 'Lato', sans-serif;
     font-size: 17px;
     text-align: center;
     color: #404142
 }
+
 /*
 	El tipo de letra, el tamaño de la letra
 */
-#catalogo #precio h2{
+#catalogo #precio h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     text-align: center;
@@ -638,6 +669,7 @@ nav.acceder #login-content {
     display: inline-block;
     vertical-align: middle;
 }
+
 /*
 	Estilo de los botones
 */
@@ -652,20 +684,23 @@ nav.acceder #login-content {
     box-sizing: border-box;
     transition: all 500ms ease;
 }
+
 #catalogo button:before {
-    content:'';
+    content: '';
     position: absolute;
     top: 0px;
     left: 0px;
     width: 0px;
     height: 42px;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     transition: all 2s ease;
 }
+
 #catalogo button:hover:before {
     width: 100%;
 }
+
 /*
 *****************************Pagina Crear Cabaña ***************************************************
 */
@@ -1106,6 +1141,7 @@ Estilos para la tabla y scroll
     height: 310px;
     margin: 20px 0 0 100px;
 }
+
 /*
 	Estilos para centrar la pagiana y el scroll
 */
@@ -1113,7 +1149,6 @@ Estilos para la tabla y scroll
     width: 100%;
     display: inline-table;
 }
-
 
 #lista table {
     height: 300px;
@@ -1171,7 +1206,8 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
 }
-#catalogoEv h2{
+
+#catalogoEv h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 60px;
     color: #34495E;
@@ -1296,22 +1332,25 @@ Estilos para la tabla y scroll
     font-size: 37px;
     text-align: center;
 }
+
 /*
     Tamaño y color del catalogoEv
 */
-#contenedor2 #catalogoEv{
+#contenedor2 #catalogoEv {
     background: #fefff6;
     height: 900px;
     width: 950px;
     margin-right: auto;
     margin-left: auto;
 }
-#catalogoEv h2{
+
+#catalogoEv h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 60px;
     color: #34495E;
     text-align: center;
 }
+
 /*
 	Tamaño  y Color del bloque de evento1
 */
@@ -1322,6 +1361,7 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de evento2
 */
@@ -1332,6 +1372,7 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de evento3
 */
@@ -1342,6 +1383,7 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de evento4
 */
@@ -1352,6 +1394,7 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de evento5
 */
@@ -1362,6 +1405,7 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
 }
+
 /*
 	Tamaño  y Color del bloque de evento6
 */
@@ -1372,10 +1416,11 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
 }
+
 /*
 	El tipo de letra, el tamaño de la letra del texto
 */
-#contenedor2 #catalogoEv h4{
+#contenedor2 #catalogoEv h4 {
     font-family: 'Lato', sans-serif;
     font-size: 15px;
     color: #7F8C8D;
@@ -1384,7 +1429,7 @@ Estilos para la tabla y scroll
 /*
 	Tipo de letra, tamaño del titulo (todo el texto)
 */
-#contenedor2 #catalogoEv h5{
+#contenedor2 #catalogoEv h5 {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     text-align: center;
@@ -1609,13 +1654,13 @@ nav.acceder #login-content2 {
     background-color: white;
     height: 170px;
     width: 300px;
-    border-top: 10px solid #FDCA2E;
+    border-top: 10px solid #27ae60;
     border-right: 3px solid #080808;
     border-left: 3px solid #080808;
     border-bottom: 3px solid #080808;
 }
 
-#submitEntrarVentana {
+#submitEntrarVentana {              /*-------------------------------------------------------------*/
     position: absolute;
     top: 90px;
     left: 40px;
@@ -1924,7 +1969,6 @@ nav.acceder #login-content2 {
     vertical-align: middle;
 }
 
-
 #contenidoReservaR #CabaniaId {
     background: #fefff6;
     width: 180px;
@@ -1962,7 +2006,9 @@ nav.acceder #login-content2 {
 #informacionEncontrada {
     position: relative;
     top: 5%;
-}/*
+}
+
+/*
     Estilo de los botones de servicios
 */
 .ghost {
@@ -1977,14 +2023,14 @@ nav.acceder #login-content2 {
     box-sizing: border-box;
     transition: all 500ms ease;
 }
+
 .ghost:hover {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     color: #2ECC71;
     box-shadow: inset 0 0 0 3px #2ECC71;
 }
 
-
-#CedulaBusqueda{
+#CedulaBusqueda {
     position: absolute;
     top: 70px;
     left: 95px;
@@ -1992,20 +2038,21 @@ nav.acceder #login-content2 {
     height: 34px;
 }
 
-#btnBusqueda{
+#btnBusqueda {
     position: absolute;
     top: 70px;
     left: 670px;
 }
 
-#Estado{
+#Estado {
     position: absolute;
     left: 320px;
     top: 70px;
     width: 123px;
     height: 34px;
 }
-#fechaSolicitud1{
+
+#fechaSolicitud1 {
     position: absolute;
     left: 470px;
     top: 70px;
@@ -2024,7 +2071,7 @@ nav.acceder #login-content2 {
     margin: 20px 0 0 450px;
 }
 
-#rbtnTipoUsuario{
+#rbtnTipoUsuario {
     position: absolute;
     top: 300px;
     left: 200px;
@@ -2036,14 +2083,13 @@ nav.acceder #login-content2 {
     top: 350px;
 }
 
-#lblPreg2{
+#lblPreg2 {
     position: absolute;
     left: 100px;
     top: 300px;
 }
 
-
-#nombreEvento{
+#nombreEvento {
     position: absolute;
     top: 70px;
     left: 65px;
@@ -2051,8 +2097,7 @@ nav.acceder #login-content2 {
     height: 34px;
 }
 
-
-#FechaInicio1{
+#FechaInicio1 {
     position: absolute;
     left: 285px;
     top: 70px;
@@ -2060,7 +2105,7 @@ nav.acceder #login-content2 {
     height: 34px;
 }
 
-#lugarEvento{
+#lugarEvento {
     position: absolute;
     left: 480px;
     top: 70px;
@@ -2068,167 +2113,123 @@ nav.acceder #login-content2 {
     height: 34px;
 }
 
+/*
+**************************************** Estilos Camping ***************************************************************
+*/
 
-#etConAnt {
-    width: 600px;
-    position: absolute;
-    left: 100px;
-    top: 100px;
+/*
+	El tamaño y color que tendra el bloque del catalogo
+*/
+
+#catalogoZC {
+    background: #fefff6;
+    height: 800px;
+    width: 950px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-#etConNuev {
-    width: 600px;
-    position: absolute;
-    left: 100px;
-    top: 200px;
-}
-
-/*Estilos de la ventana de cambiar contrasenia*/
-
-#submitAceptarCambio {
-    position: absolute;
-    top: 330px;
-    left: 250px;
-    height: 33px;
+/*
+	El tamaño y color del titulo
+*/
+#catalogoZC h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    color: #34495E;
     text-align: center;
 }
 
-#submitCancelarCambio {
-    position: absolute;
-    top: 330px;
-    left: 400px;
-    height: 33px;
+/*
+	El tamaño y color del titulo del recuadro
+*/
+#catalogoZC h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #34495E;
     text-align: center;
 }
 
-/*Estilos de la vantana crear reserva de usuario*/
-
-#CabaniaId {
-    background: #fefff6;
-    width: 180px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
+/*
+	bloque de los precios
+*/
+#precioZC {
+    background: #ffffff;
+    width: 950px;
+    height: 150px;
+    padding-top: 5px;
 }
 
 /*
-	Bloque que contiene el tamaño y posicion de searchid
+	bloque de los precios
 */
-#searchId {
-    background: #fefff6;
-    width: 400px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#contenidoReservaContra {
-    background: #fefff6;
-    position: absolute;
-    left: 50%;
-    top: 70%;
-    width: 600px;
-    height: 400px;
-    margin: -60px 0 0 -200px;
+#precioZC #valoresZC {
+    background: #f0dbb6;
+    width: 220px;
+    height: 150px;
+    padding-top: 5px;
+    margin: 40px 0 0 350px;
 }
 
 /*
-	Bloque que contiene el tamaño y posicion de fechaI
+	El tipo de letra, el tamaño de la letra
 */
-#contenidoReservaContra #fechaI {
-    background: #fefff6;
-    width: 180px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/*
-	Bloque que contiene el tamaño y posicion de search1
-*/
-#contenidoReservaContra #search1 {
-    background: #fefff6;
-    width: 400px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/*
-	Bloque que contiene el tamaño y posicion de fechaF
-*/
-#contenidoReservaContra #fechaF {
-    background: #fefff6;
-    width: 180px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/*
-	Bloque que contiene el tamaño y posicion de search2
-*/
-#contenidoReservaContra #search2 {
-    background: #fefff6;
-    width: 400px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/*
-	Bloque que contiene el tamaño y posicion de cantidadP
-*/
-#contenidoReservaContra #cantidadP {
-    background: #fefff6;
-    width: 180px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/*
-	Bloque que contiene el tamaño y posicion de search3
-*/
-#contenidoReservaContra #search3 {
-    background: #fefff6;
-    width: 400px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-
-#contenidoReservaContra #CabaniaId {
-    background: #fefff6;
-    width: 180px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/*
-	Bloque que contiene el tamaño y posicion de searchid
-*/
-#contenidoReservaContra #searchId {
-    background: #fefff6;
-    width: 400px;
-    height: 35px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/*
-	Tamaño y tipo de letra h4
-*/
-#contenidoReservaContra h4 {
-    font-family: 'Handlee', cursive;
-    font-size: 37px;
-    text-align: center;
-}
-
-#contenidoReservaContra h5 {
+#catalogoZC #precioZC p {
     font-family: 'Lato', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     text-align: center;
+    color: #404142
+}
+
+/*
+    Bloque que contiene las imagenes transitorias de la zona de camping
+*/
+#GaleriaZ {
+    width: 1000px;
+    height: 299px;
+    padding-top: 5px;
+    margin: 100px 0 0 -25px;
+}
+
+/*
+    Colores y tamaño del boton
+*/
+#botonZC {
+    background: #ffffff;
+    width: 300px;
+    height: 100px;
+    padding-top: 5px;
+    margin: 40px 0 0 400px;
+}
+
+/*
+	Estilo de los botones
+*/
+#catalogoZC button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    background: #5cb85c;
+    color: #f2f2f2;
+    padding: 8px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+}
+
+#catalogoZC button:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    transition: all 2s ease;
+}
+
+#catalogoZC button:hover:before {
+    width: 100%;
 }

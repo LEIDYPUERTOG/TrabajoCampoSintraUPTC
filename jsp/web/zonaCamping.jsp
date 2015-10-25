@@ -11,7 +11,7 @@
     <meta name="description" content="cabañas,reservas, moniquira,psicinas">
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <title> Inicio </title>
+    <title> zonaCamping </title>
 
     <!-- Estilos de la pagina -->
 
@@ -91,13 +91,6 @@
                 <!-- Icono y palabra -->
             </button>
         </article>
-        <!-- Boton Conozcanos -->
-        <article id="inicio3">
-            <button type="button" class="btn btn-link" style="margin-top:21px;" onclick="location.href='#texto'">
-                <!-- Tamaño -->
-                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Conozcanos <!-- Icono y palabra -->
-            </button>
-        </article>
         <!-- Boton Inicio -->
         <article id="inicio4">
             <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
@@ -127,97 +120,70 @@
         </ul>
     </section>
 
-    <!-- Galeria de imagenes -->
-    <section id="imagenes">
-        <!-- <h1><img src="Presentacion/imagenes/GFoto1.JPG" alt="GFoto1.JPG"></h1> <!-- Importar la imagen -->
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="7"></li>
-            </ol>
+    <!-- Catalogo del camping -->
+    <section id="catalogoZC">
+        <!-- Titulo principal -->
+        <h2>Catalogo zona de camping</h2>
+        <article id="precioZC">
+            <article id="valoresZC">
+                <h3>Valor del camping</h3>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="Presentacion/imagenes/GFoto1.JPG" alt="GFoto1.JPG">
-
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="Presentacion/imagenes/GFoto2.JPG" alt="GFoto2.JPG">
-
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="Presentacion/imagenes/GFoto3.JPG" alt="GFoto3.JPG">
-
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="Presentacion/imagenes/GFoto4.JPG" alt="GFoto4.JPG">
-
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="Presentacion/imagenes/GFoto5.JPG" alt="GFoto5.JPG">
-
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="Presentacion/imagenes/GFoto6.JPG" alt="GFoto6.JPG">
-
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="Presentacion/imagenes/GFoto7.JPG" alt="GFoto7.JPG">
-
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Descripcion del sindicato -->
-    <section id="texto">
-        <article id="info">
-            <h2>¿Quienes Somos?</h2>
-            <article id="desc">
-                <p> Somos una asociación de empleados de la Universidad Pedagógica y Tecnológica de Colombia,
-                    con el fin de brindar un espacio de tranquilidad de descanso y diversión, creamos
-                    un lugar para brindarles a sus usuarios y familias el servicio de hospedaje y recreación en el
-                    municipio de Moniquirá Boyacá
+                <p><strong>Valor por noche:</strong></br>
+                    <strong>Costo: </strong>$20.000
                 </p>
             </article>
         </article>
-        <article id="textoIm">
-            <img src="Presentacion/imagenes/usuarios.png" alt="usuarios.jpg"></h1> <!-- Importar la imagen -->
+        <!-- Galerria de imagenes de camping -->
+        <article id="GaleriaZ">
+            <div id="imgenesGZ" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#imgenesGZ" data-slide-to="0" class="active"></li>
+                    <li data-target="#imgenesGZ" data-slide-to="1"></li>
+                    <li data-target="#imgenesGZ" data-slide-to="2"></li>
+                    <li data-target="#imgenesGZ" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="Presentacion/imagenes/GFotoZC1.JPG" alt="GFotoZC1.JPG">
+
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="Presentacion/imagenes/GFotoZC2.JPG" alt="GFotoZC2.JPG">
+
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="Presentacion/imagenes/GFotoZC3.JPG" alt="GFotoZC3.JPG">
+
+                        <div class="carousel-caption">
+                        </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#imgenesGZ" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#imgenesGZ" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </article>
+        <article id="botonZC">
+            <button> <!-- Tamaño -->
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
+            </button>
         </article>
     </section>
+
     <!-- Divicion para el color de la informacion adicional de la pagina -->
     <section id="divi">
     </section>
@@ -251,6 +217,32 @@
         </p>
     </footer>
 
+</section>
+<!-- Ventana Emergente que debe aparecer si el usuario no se ha logueado y desea realizar una reserva
+
+<section id="ventanaEmergenteZC">
+
+    <div id='inline_content'>
+        <div id="login-content5">
+            <form>
+
+                <input id="usuarioVentana" type="text" name="usuario" placeholder="Usuario" required>
+                <input id="passwordVentana" type="password" name="contrasenia" placeholder="Contraseña" required>
+
+                <button type="button" id="submitEntrarVentana" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Ingresar
+                </button>
+                <button type="button" id="submitRegistrarVentana" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                        onClick="location.href='registrarse.jsp'"> <!-- Tamaño
+                    Registrarse
+                </button>
+
+            </form>
+
+        </div>
+    </div> -->
 </section>
 </body>
 </html>
