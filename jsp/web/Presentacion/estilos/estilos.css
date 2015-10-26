@@ -1620,12 +1620,10 @@ Estilos para la tabla y scroll
 
 #contenidoReservaA #search8 {
     background: #fefff6;
-    width: 300px;
+    width: 600px;
     height: 35px;
-    display: inline-block;
-    vertical-align: middle;
     position: absolute;
-    left: 360px;
+    left: 300px;
     top: 80px;
 }
 
