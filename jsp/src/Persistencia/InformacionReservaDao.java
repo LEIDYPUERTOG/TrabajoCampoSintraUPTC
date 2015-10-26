@@ -145,7 +145,6 @@ public class InformacionReservaDao {
                 ReservaDao reservaDao = new ReservaDao();
                 Reserva reserva = reservaDao.consultarReservaIdReserva(idReserva);
                 reserva.setIdReserva(resultSet.getInt(1));
-                System.out.println("ssssssssssssssssssss");
                 informacionReserva = new InformacionReserva(resultSet.getDate(3),
                         resultSet.getDate(4),resultSet.getDate(4),reserva);
 

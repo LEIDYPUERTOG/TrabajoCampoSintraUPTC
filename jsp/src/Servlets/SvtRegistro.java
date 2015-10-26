@@ -36,7 +36,7 @@ public class SvtRegistro extends HttpServlet {
         String clave2=request.getParameter("contrasenia2");
         String tipoUsuario = request.getParameter("inlineRadioOptions");
 
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
 
         PersonaDao personaDao = new PersonaDao();
 

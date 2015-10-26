@@ -19,7 +19,7 @@ import java.io.IOException;
 public class SvtCambiaContrasenia extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
 
         String contraseniaAntigua = request.getParameter("ContraseniaAntigua");
         String contraseniaNueva = request.getParameter("ContraseniaNueva");

@@ -60,7 +60,7 @@
 
 <body> <!-- Lo que tiene la pagina -->
 <!-- Js vinculados -->
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
@@ -199,7 +199,8 @@
 
 
         <article id="lista3">
-            <table class="table" id="tabla_uno" onclick=" document.getElementById('nombreVentana').value = tomarValor();">
+            <table class="table" id="tabla_uno" onclick="
+            document.getElementById('nombreVentana').value = tomarValor();">
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
@@ -298,7 +299,7 @@
             <form action="/SvtEditarEvento" method="post" name="formularioEdicion">
 
 
-                <input id="nombreVentana" type="text" name="nombre" placeholder="Nombre">
+                <input id="nombreVentana" type="text" name="nombre" placeholder="Nombre" readonly>
                 <input id="fechaInicioVentana" type="date" name="fechaInicio" placeholder="fecha Inicio" >
                 <input id="fechaFinVentana" type="date" name="FechaFin" placeholder="Fecha Fin">
                 <article id="lugar">

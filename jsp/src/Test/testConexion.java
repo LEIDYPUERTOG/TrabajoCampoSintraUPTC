@@ -14,7 +14,7 @@ public class testConexion {
 
     public static void main(String[] args) {
 
-        ConexionDB conexionDB = new ConexionDB("","");
+        ConexionDB conexionDB = new ConexionDB("root","");
         ReservaDao reservaDao = new ReservaDao();
         GregorianCalendar c = new GregorianCalendar();
         c.set(2015,9,24);
