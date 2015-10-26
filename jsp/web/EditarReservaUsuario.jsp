@@ -28,16 +28,34 @@
 
     <!-- Script necesario para hacer que la ventana de login aparezca-->
     <script src="jquery.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="Presentacion/jquery.colorbox.js"></script>
 
+    <!--Script para poder hacer que aparezca la ventana emergente-->
+    <script src="/Presentacion/estilos/funciones/funcion.js"></script>
+
+    <script type="text/javascript">
+
+        var tomarValor = function elementoTabla() {
+            if (!document.getElementsByTagName || !document.createTextNode) return;
+            var rows = document.getElementById('tabla_uno').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            for (i = 0; i < rows.length; i++) {
+                rows[i].onclick = function () {
+                    var aux = document.getElementById("tabla_uno").rows[this.rowIndex].cells[0].innerHTML;
+                    auxiliar = aux;
+                }
+            }
+            return auxiliar;
+        }
+
+    </script>
 
 </head>
+<body>
 
-<body> <!-- Lo que tiene la pagina -->
-<!-- Js vinculados -->
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
-
 <!-- Contenedor que tiene las secciones y aeticle de la pagina -->
 <section id="contenedorUsuario">
     <!-- Primera cabecera (inicio,ingresar,...)  -->
@@ -137,7 +155,7 @@
                         for (int i = 0; i < listaMisReservas.size(); i++) {
 
                             InformacionReserva informacionReserva = informacionReservaDao.
-                                    obtenerInfo(listaMisReservas.get(i).getIdReserva());
+                                    obtenerInfo(70);
                             System.out.println("eeeeeeeeeeeeeeeeeeeeeee "+informacionReserva);
                             System.out.println("saaaaaaaaaaa "+listaMisReservas.get(i).getIdReserva());
                 %>

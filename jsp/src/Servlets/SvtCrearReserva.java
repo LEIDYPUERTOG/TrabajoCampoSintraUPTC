@@ -98,6 +98,7 @@ public class SvtCrearReserva extends HttpServlet {
                 InformacionReserva informacionReserva = new InformacionReserva(dateInicio,
                         dateFin,dateFin,auxPersona,reserva);
                 agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
+
             }
         }
 
