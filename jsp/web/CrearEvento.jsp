@@ -235,7 +235,7 @@
 
             <article id="btnCrear">
                 <button type="submit" class="btn btn-success"> <!-- Tamaño -->
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Crear Evento <!-- Icono y palabra -->
+                    <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> Crear Evento <!-- Icono y palabra -->
 
             </article>
         </form>

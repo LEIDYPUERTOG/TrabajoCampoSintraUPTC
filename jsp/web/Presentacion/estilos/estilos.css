@@ -346,7 +346,7 @@ nav.acceder #login-content {
 /* Inicio de los estilos del contenedor de registro de una persona*/
 #contenedorRegistro {
     box-shadow: 5px 5px 30px #bcbcbc;
-    height: 1110px;
+    height: 800px;
     width: 1000px;
     background: #fefff6;
     margin-right: auto;
@@ -520,7 +520,7 @@ nav.acceder #login-content {
 */
 #contenedor2 {
     box-shadow: 5px 5px 30px #bcbcbc;
-    height: 1510px;
+    height: 1485px;
     width: 1000px;
     margin-right: auto;
     margin-left: auto;
@@ -1063,7 +1063,7 @@ nav.acceder #login-content {
     background: #fefff6;
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 65%;
     width: 500px;
     height: 400px;
     margin: -200px 0 0 -250px;
@@ -1117,7 +1117,7 @@ Estilos para la tabla y scroll
 */
 #contenedorReservaA {
     box-shadow: 5px 5px 30px #bcbcbc;
-    height: 1000px;
+    height: 1150px;
     width: 1000px;
     background: #fefff6;
     margin-right: auto;
