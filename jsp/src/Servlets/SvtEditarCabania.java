@@ -1,5 +1,6 @@
 package Servlets;
 
+import Logica.Cabania;
 import Persistencia.CabaniaDao;
 import Persistencia.ConexionDB;
 
@@ -20,29 +21,43 @@ public class SvtEditarCabania extends HttpServlet {
 
         double valor = 0;
         int cantidadPersonas = 0;
-        int idCabania = 0;
+        int idCabania = Integer.parseInt(request.getParameter("cabaniaId"));
 
         ConexionDB conexionDB = new ConexionDB("root","");
 
         CabaniaDao cabaniaDao = new CabaniaDao();
+        Cabania cabania =  cabaniaDao.obtenerInfoCabania(idCabania);;
 
         try {
             valor = Double.parseDouble(request.getParameter("valor"));
-            cantidadPersonas = Integer.parseInt(request.getParameter("cantidad"));
-            idCabania = Integer.parseInt(request.getParameter("cabaniaId"));
         }catch (Exception e){
 
+            if(valor == 0){
+                System.out.println("-----------------------------");
+                valor = cabania.getValor_servicio_dia();
+            }
+
         }
-
-        RequestDispatcher dispatcher = null;
-
-        if(valor!=0 || cantidadPersonas!=0){
-            boolean actualizar = cabaniaDao.actualizarCabania(idCabania,valor,cantidadPersonas);
-            request.setAttribute("actualizacion",actualizar);
-            if(actualizar){
-                dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
-                dispatcher.forward(request, response);
+        try{
+            cantidadPersonas = Integer.parseInt(request.getParameter("cantidad"));
+        }catch (Exception e){
+            if (cantidadPersonas == 0) {
+                cantidadPersonas = cabania.getCapacidadMaxima();
             }
         }
+
+
+            RequestDispatcher dispatcher = null;
+
+            if(valor!=0 || cantidadPersonas!=0){
+                boolean actualizar = cabaniaDao.actualizarCabania(idCabania,valor,cantidadPersonas);
+                request.setAttribute("actualizacion", actualizar);
+                if(actualizar){
+                    dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
+                    dispatcher.forward(request, response);
+                }
+            }
+            dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
+            dispatcher.forward(request, response);
+        }
     }
-}

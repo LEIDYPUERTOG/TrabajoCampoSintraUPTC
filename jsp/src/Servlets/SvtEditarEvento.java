@@ -39,33 +39,36 @@ public class SvtEditarEvento extends HttpServlet {
 
         EventoDao eventoDao = new EventoDao();
         LocacionDao locacionDao = new LocacionDao();
-        Evento evento = null;
+        Evento evento =  eventoDao.obtenerEventoNombre(nombre);;
 
 
         try {
             aux = request.getParameter("fechaInicio").toString().split("-");
 
             auxAnio = Integer.parseInt(aux[0]);
-            auxMes = Integer.parseInt(aux[1]);
+            auxMes = Integer.parseInt(aux[1])-1;
             auxDia = Integer.parseInt(aux[2]);
-
             calendar.set(auxAnio, auxMes, auxDia);
-
             dateInicio = new Date(calendar.getTimeInMillis());
 
+        }catch (Exception e){
+
+            dateInicio = evento.getFechaIncioEvento();
+            System.out.println("fecha "+dateInicio);
+
+        }
+
+        try{
             aux = request.getParameter("fechaFin").toString().split("-");
 
             auxAnio = Integer.parseInt(aux[0]);
-            auxMes = Integer.parseInt(aux[1]);
+            auxMes = Integer.parseInt(aux[1])-1;
             auxDia = Integer.parseInt(aux[2]);
             calendar = new GregorianCalendar();
             calendar.set(auxAnio,auxMes,auxDia);
             dateFin = new Date(calendar.getTimeInMillis());
-        }catch (Exception e){
 
-            evento = eventoDao.obtenerEventoNombre(nombre);
-            dateInicio = evento.getFechaIncioEvento();
-            System.out.println("fecha "+dateInicio);
+        }catch (Exception e){
             dateFin = evento.getFechaFinEvento();
         }
 
@@ -88,8 +91,8 @@ public class SvtEditarEvento extends HttpServlet {
 
         if(persona !=null){
 
-            boolean actualizar = eventoDao.actualizarEvento(nombre,locacion.getIdLocacion(),dateInicio,dateInicio);
-
+            boolean actualizar = eventoDao.actualizarEvento(nombre,locacion.getIdLocacion(),dateInicio,dateFin);
+            System.out.println("---------------------------- "+actualizar);
             if(actualizar ){
                 request.setAttribute("eventoCreado", "Evento creado satisfactoriamente");
                 dispatcher = request.getRequestDispatcher("ConsultarEvento.jsp");

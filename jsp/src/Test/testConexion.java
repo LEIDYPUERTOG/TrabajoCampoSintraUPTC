@@ -17,15 +17,18 @@ public class testConexion {
         ConexionDB conexionDB = new ConexionDB("root","");
         ReservaDao reservaDao = new ReservaDao();
         GregorianCalendar c = new GregorianCalendar();
-        c.set(2015,9,24);
+        c.set(2015, 9, 24);
         Date d = new Date(c.getTimeInMillis());
-        System.out.println(d+ " fecha");
-        ArrayList<Reserva> l = reservaDao.consultarFecha(d);
-        System.out.println(l.size()+ " tamanio");
-        for(int i = 0; i < l.size(); i++){
+        System.out.println(d + " fecha");
+        Camping camping = new Camping(1);
+        Persona p = new Persona(7777,"aaaaaaaa",TipoDocumento.Cedula,TipoUsuario.Afiliado,rol.Administrador);
+        Reserva reserva =  new Reserva(1, EstadoReserva.Pendiente,d,TipoServicio.CAMPING,p);
+        reservaDao.crearReservaCamping(reserva);
 
-        }
-
+        System.out.println("id "+reserva.getIdReserva());
+        InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
+        InformacionReserva informacionReserva = informacionReservaDao.obtenerInfo(44);
+        System.out.println("id 2 "+informacionReserva.getReserva().getIdReserva());
     }
 
 }

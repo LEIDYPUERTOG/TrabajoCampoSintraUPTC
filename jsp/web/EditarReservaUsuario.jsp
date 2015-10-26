@@ -138,6 +138,8 @@
 
                             InformacionReserva informacionReserva = informacionReservaDao.
                                     obtenerInfo(listaMisReservas.get(i).getIdReserva());
+                            System.out.println("eeeeeeeeeeeeeeeeeeeeeee "+informacionReserva);
+                            System.out.println("saaaaaaaaaaa "+listaMisReservas.get(i).getIdReserva());
                 %>
 
                 <tr>

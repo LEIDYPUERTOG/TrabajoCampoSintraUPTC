@@ -1363,7 +1363,7 @@ Estilos para la tabla y scroll
     width: 130px;
     height: 65px;
     display: inline-block;
-    vertical-align: middle;
+    top: 400px;
 }
 
 #contenido2 #descripcion {
@@ -1452,7 +1452,7 @@ Estilos para la tabla y scroll
     width: 400px;
     height: 35px;
     display: inline-block;
-    vertical-align: middle;
+
 }
 
 #contenido2 #search4 {

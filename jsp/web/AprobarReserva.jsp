@@ -58,7 +58,6 @@
 </head>
 <body>
 
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/Presentacion/estilos/js/responsive.js"></script>
 <script src="/Presentacion/estilos/js/bootstrap.min.js"></script>
 
@@ -92,7 +91,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li> <a href="/CambiarContraseniaUsuario.jsp">
+                    <li> <a href="/CambiarContrasenia.jsp">
                         <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Cambiar Contraseña</a>
                     </li>
                     <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
@@ -171,7 +170,6 @@
                 <ul class="nav nav-tabs">
                     <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
                     <li><a href="EditarReservaAdmin.jsp">Editar Mis Reservas</a></li>
-                    <li><a href="ConsultarReserva.jsp">Consultar Reserva</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>
@@ -182,7 +180,7 @@
     <section id="contenidoReservaA">
         <h4>Aprobar Reservas</h4>
 
-        <article id="filtros">
+        <%--<article id="filtros">
 
             <form action="/SvtReservasFiltros" method="post">
                 <article id="CedulaBusqueda">
@@ -202,13 +200,16 @@
                 </button>
               </span>
             </form>
-        </article>
+        </article>--%>
 
         <article id="lista">
-            <table class="table" id="tabla_uno" onclick=" document.getElementById('reservaId').value = tomarValor();">
+            <table class="table" id="tabla_uno"
+                   onclick="document.getElementById('reservaId2').value = tomarValor();
+                   document.getElementById('reservaId3').value = tomarValor();">
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
+                    <th>Número de<br> Reserva</th>
                     <th>Cedula</th>
                     <th>Tipo Servicio</th>
                     <th>Fecha de Solicitud</th>
@@ -236,6 +237,7 @@
                 %>
                 <tr>
 
+                    <td><%= listaMisReservas.get(i).getIdReserva()%> </td>
                     <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
                     <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
                     <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
@@ -244,17 +246,10 @@
                     <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
 
                     <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar">
-                        <% boolean aprobada = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
-                                EstadoReserva.Pendiente);
-                            session.setAttribute("aprobada",aprobada);
-                            System.out.println("aprobacion           "+aprobada);
-                        %>
+
                     </td>
                     <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar">
-                        <% boolean rechazada = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
-                                EstadoReserva.Pendiente);
-                            session.setAttribute("rechazada",rechazada);
-                        %>
+
                     </td>
                 </tr>
                 <%
@@ -277,6 +272,7 @@
 
                 <tr>
 
+                    <td><%= listaMisReservas.get(i).getIdReserva()%> </td>
                     <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
                     <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
                     <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
@@ -284,18 +280,13 @@
                     <td><%= listaMisReservas.get(i).getCantidadPersonas()%></td>
                     <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
 
-                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar">
-                        <% boolean aprobada = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
-                                EstadoReserva.Pendiente);
-                            session.setAttribute("aprobada",aprobada);
-                            System.out.println("aprobacion           "+aprobada);
-                        %>
+                    <td><img src="/Presentacion/imagenes/ok.png" id="imagAprobar" title="Aprobar" class='inline'
+                             href="#inline_content2" onclick="ventana3()">
+
                     </td>
-                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar">
-                        <% boolean rechazada = reservaDao.actualizarReservaEstado(listaMisReservas.get(i).getIdReserva(),
-                                EstadoReserva.Rechazada);
-                            session.setAttribute("rechazada",rechazada);
-                        %>
+                    <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar" class='inline'
+                             href="#inline_content3" onclick="ventana4()">
+
                     </td>
                 </tr>
                 <%
@@ -338,6 +329,51 @@
             Desarrollado por Edgar Meneses, Diana Gonzalez, Leidy Puerto
         </p>
     </footer>
+</section>
+<section id="ventanaEmergente">
+    <div id='inline_content2' >
+        <div id="login-contentCancelar">
+            <form action="/SvtAprobar" method="post" name="formularioEdicion">
+
+
+                <label id="IdReserva" >Desea aprobar la reserva número: </label>
+                <input id="reservaId2" type="numeric" name="reserva" readonly>
+
+                <button type="submit" id="submitAceptarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Aceptar </button>
+                <button type="button" id="submitCancelarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                        onclick='parent.$.colorbox.close(); return false;'>
+                    Cancelar </button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<section id="ventanaEmergente">
+    <div id='inline_content3' >
+        <div id="login-contentRechazar">
+            <form action="/SvtRechazar" method="post" name="formularioEdicion">
+
+
+                <label id="IdReserva" >Desea rechazar la reserva número: </label>
+                <input id="reservaId3" type="numeric" name="reserva" readonly>
+
+                <button type="submit" id="submitAceptarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Aceptar </button>
+                <button type="button" id="submitCancelarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                        onclick='parent.$.colorbox.close(); return false;'>
+                    Cancelar </button>
+
+            </form>
+
+        </div>
+    </div>
 </section>
 </body>
 </html>

@@ -319,7 +319,8 @@ public class ReservaDao {
 				PersonaDao personaDao = new PersonaDao();
 				Persona auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
 
-				reserva = new Reserva(resultSet.getInt(6), conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
+				reserva = new Reserva(resultSet.getInt(6),
+						conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
 						auxPersona);
 				reserva.setIdReserva(resultSet.getInt(1));
 
@@ -384,22 +385,28 @@ public class ReservaDao {
 	public boolean crearReservaCamping(Reserva reserva){
 		try {
 			conn = conexionDB.getConexion();
-			String queryInsertar = "INSERT INTO reserva VALUES(null,?,?,null,?,?,?,?,?,?)";
+			String queryInsertar = "INSERT INTO reserva VALUES(null,?,null,null,?,?,?,?,?,?)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
 
 			ppStm.setInt(1,reserva.getPersona().getCedula());
-			ppStm.setInt(2,reserva.getCamping().getId_servicio());
-			ppStm.setString(3, conversionEstadoAString(EstadoReserva.Pendiente)); // Porque al crear la reserva queda en estado pendiente
-			ppStm.setInt(4,reserva.getCantidadPersonas());
-			ppStm.setDouble(5,reserva.calcularValorReserva(reserva.getCantidadPersonas(), reserva.getCamping().getValor_servicio_dia()));
-			ppStm.setString(6,reserva.getReciboPago());
-			ppStm.setDate(7,reserva.getFechaSolicitud());
-			ppStm.setString(8,reserva.getTipoServicio().toString());
+			ppStm.setInt(2, reserva.getCamping().getId_servicio());
+			ppStm.setString(2, conversionEstadoAString(EstadoReserva.Pendiente)); // Porque al crear la reserva queda en estado pendiente
+			ppStm.setInt(3,reserva.getCantidadPersonas());
+			ppStm.setDouble(4,reserva.calcularValorReserva
+					(reserva.getCantidadPersonas(), 20000));
+			ppStm.setString(5,reserva.getReciboPago());
+			ppStm.setDate(6,reserva.getFechaSolicitud());
+			ppStm.setString(7,reserva.getTipoServicio().toString());
 
 
 			ppStm.executeUpdate();
 
+			ResultSet rs=ppStm.getGeneratedKeys(); //obtengo las ultimas llaves generadas
+			while(rs.next()){
+				int clave=rs.getInt(1);
+				reserva.setIdReserva(clave);
+			}
 			//////conn.close();
 
 		} catch (SQLException e) {

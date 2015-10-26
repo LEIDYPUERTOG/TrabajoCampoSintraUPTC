@@ -103,74 +103,7 @@
         <!-- Titulo principal -->
         <h2>Eventos</br></br> </h2>
         <!-- Evento N°1, con la imagen, descripcion y el boton -->
-        <article id="ev1"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/evento1.JPG" alt="evento1.JPG"><!-- Importar la imagen -->
-            <h5>Evento N°1</h5>
-            <h4>Nombre: </br>
-                Fecha Inicio: </br>
-                Fecha Fin: </br>
-                Lugar: </br>
-                Dirección: </br>
-            </h4>
-        </article>
-        <!-- Evento N°2, con la imagen, descripcion y el boton -->
-        <article id="ev2"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/evento2.JPG" alt="evento2.JPG"><!-- Importar la imagen -->
-            <h5>Evento N°2</h5>
-            <h4>Nombre: </br>
-                Fecha Inicio: </br>
-                Fecha Fin: </br>
-                Lugar: </br>
-                Dirección: </br>
-            </h4>
 
-        </article>
-        <!-- Evento N°3, con la imagen, descripcion y el boton -->
-        <article id="ev3"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/evento3.JPG" alt="eveto3.JPG"><!-- Importar la imagen -->
-            <h5>Evento N°3</h5>
-            <h4>Nombre: </br>
-                Fecha Inicio: </br>
-                Fecha Fin: </br>
-                Lugar: </br>
-                Dirección: </br>
-            </h4>
-
-        </article>
-        <!-- Evento N°4, con la imagen, descripcion y el boton -->
-        <article id="ev4"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/evento4.JPG" alt="evento4.JPG"><!-- Importar la imagen -->
-            <h5>Evento N°4</h5>
-            <h4>Nombre: </br>
-                Fecha Inicio: </br>
-                Fecha Fin: </br>
-                Lugar: </br>
-                Dirección: </br>
-            </h4>
-
-        </article>
-        <!-- Evento N°5, con la imagen, descripcion y el boton -->
-        <article id="ev5"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/evento5.JPG" alt="evento5.JPG"><!-- Importar la imagen -->
-            <h5>Evento N°5</h5>
-            <h4>Nombre: </br>
-                Fecha Inicio: </br>
-                Fecha Fin: </br>
-                Lugar: </br>
-                Dirección: </br>
-            </h4>
-
-        </article>
-        <!-- Evento N°6, con la imagen, descripcion y el boton -->
-        <article id="ev6"> <!-- Seccion Menu -->
-            <img src="/Presentacion/imagenes/evento6.jpg" alt="evento6.JPG"><!-- Importar la imagen -->
-            <h5>Evento N°6</h5>
-            <h4>Nombre: </br>
-                Fecha Inicio: </br>
-                Fecha Fin: </br>
-                Lugar: </br>
-                Dirección: </br>
-            </h4>
         <%
             ConexionDB conexionDB = new ConexionDB("root","");
             EventoDao eventoDao = new EventoDao();

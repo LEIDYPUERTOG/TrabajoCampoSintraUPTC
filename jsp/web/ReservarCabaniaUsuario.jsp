@@ -302,7 +302,7 @@
             <!-- Fin del article -->
 
             <article id="btnCrearReserva">
-                <button type="button" class="btn btn-success btn-lg">
+                <button type="submit" class="btn btn-success btn-lg">
                     <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Reserva
                 </button>
             </article>

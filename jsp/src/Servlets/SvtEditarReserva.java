@@ -33,8 +33,8 @@ public class SvtEditarReserva extends HttpServlet {
 
         ConexionDB conexionDB = new ConexionDB("root","");
 
-
-        int idReserva = Integer.parseInt(request.getParameter("reserva"));
+        String[] auxId = request.getParameter("reserva").split(" ");
+        int idReserva = Integer.parseInt(auxId[0]);
 
         ReservaDao reservaDao = new ReservaDao();
         InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
@@ -44,19 +44,20 @@ public class SvtEditarReserva extends HttpServlet {
 
         try {
             auxAnio = Integer.parseInt(aux[0]);
-            auxMes = Integer.parseInt(aux[1]);
+            auxMes = Integer.parseInt(aux[1])-1;
             auxDia = Integer.parseInt(aux[2]);
             calendar = new GregorianCalendar();
             calendar.set(auxAnio, auxMes, auxDia);
 
             dateInicio = new Date(calendar.getTimeInMillis());
+
         }catch (Exception e){
             dateInicio = informacionReserva.getFechaInicioReserva();
         }
         aux = request.getParameter("FechaFinNueva").toString().split("-");
         try {
             auxAnio = Integer.parseInt(aux[0]);
-            auxMes = Integer.parseInt(aux[1]);
+            auxMes = Integer.parseInt(aux[1])-1;
             auxDia = Integer.parseInt(aux[2]);
             calendar.set(auxAnio, auxMes, auxDia);
 

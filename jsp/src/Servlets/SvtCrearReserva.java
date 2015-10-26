@@ -52,18 +52,32 @@ public class SvtCrearReserva extends HttpServlet {
         GregorianCalendar c = new GregorianCalendar();
         Date fechaSolicitud = new Date(c.getTimeInMillis());
         System.out.println("solicitud-------------" + fechaSolicitud);
+        String tipoServicio = request.getParameter("inlineRadioOptions");
 
 
         Persona persona = (Persona) request.getSession().getAttribute("persona");
         PersonaDao personaDao = new PersonaDao();
         request.setAttribute("personaBusqueda", persona); //mandando el parametro para que sea accedido
 
-        Reserva reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,persona);
-        Cabania cabania = cabaniaDao.obtenerInfoCabania(idCabania);
-        reserva.setCabania(cabania);
-        boolean agregar = reservaDao.crearReservaCabania(reserva);
-
+        boolean agregar = false;
         boolean agregarInfo = false;
+        Reserva reserva = null;
+
+        if(tipoServicio.equalsIgnoreCase("Cabania")){
+            System.out.println("cabaniaaaaaaaaaaaaaaaaaa");
+            reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,persona);
+            Cabania cabania = cabaniaDao.obtenerInfoCabania(idCabania);
+            reserva.setCabania(cabania);
+             agregar = reservaDao.crearReservaCabania(reserva);
+        }
+        else{
+            reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CAMPING,persona);
+
+            Camping camping = new Camping(cantidad);
+            reserva.setCamping(camping);
+            agregar = reservaDao.crearReservaCamping(reserva);
+
+        }
 
 
         for(int i = 1; i < cantidad+1; i++){
@@ -75,6 +89,7 @@ public class SvtCrearReserva extends HttpServlet {
                 InformacionReserva informacionReserva = new InformacionReserva
                         (dateInicio, dateFin,dateFin,auxPersona,reserva);
                 agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
+                System.out.println("agregar Info "+agregarInfo);
             }
             else {
                 System.out.println("cedula en else   "+i+" --------- "+ cedula);

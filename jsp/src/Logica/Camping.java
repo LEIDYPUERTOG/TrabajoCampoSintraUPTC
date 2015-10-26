@@ -25,6 +25,11 @@ public class Camping extends  Servicio{
         this.setValor_servicio_dia(valorCamping);
     }
 
+    public Camping( int cantidadPersonas) {
+        this.cantidadPersonas = cantidadPersonas;
+        this.setValor_servicio_dia(20000);
+    }
+
     public int getCantidadPersonas() {
         return cantidadPersonas;
     }

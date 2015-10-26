@@ -80,7 +80,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li> <a href="/CambiarContraseniaUsuario.jsp">
+                    <li> <a href="/CambiarContrasenia.jsp">
                         <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Cambiar Contraseña</a>
                     </li>
                     <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
@@ -158,7 +158,6 @@
                 <ul class="nav nav-tabs">
                     <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
                     <li><a href="EditarReservaAdmin.jsp">Editar Mis Reservas</a></li>
-                    <li><a href="ConsultarReserva.jsp">Consultar Reserva</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
                 </ul>
@@ -208,6 +207,7 @@
                     <th>Cedula</th>
                     <th>Tipo de Servicio</th>
                     <th>Fecha y hora de Solicitud</th>
+                    <th>Cantidad días</th>
                     <th>Cantidad personas</th>
                     <th>Estado de reserva</th>
                 </tr>
@@ -215,8 +215,10 @@
                 <tbody>
                 <%
                     ArrayList<Reserva> listaMisReservas = (ArrayList)request.getAttribute("reservas");
+                    int cantidadDias =0;
                     if(listaMisReservas !=null){
-                    for(int i = 0; i < listaMisReservas.size(); i++) {
+
+                        for(int i = 0; i < listaMisReservas.size(); i++) {
                 %>
 
                 <tr>
@@ -224,14 +226,15 @@
                     <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
                     <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
                     <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
+                    <td><%= cantidadDias/86400000%></td>
                     <td><%= listaMisReservas.get(i).getCantidadPersonas()%></td>
                     <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
 
                 </tr>
                 <%
                     }
-                    }
-                    else{
+                }
+                else{
 
                 %>
 
@@ -246,7 +249,7 @@
 
                 </tr>
                 <%
-                        }
+                    }
 
                 %>
 

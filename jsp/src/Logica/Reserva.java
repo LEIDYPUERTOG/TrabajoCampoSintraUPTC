@@ -93,7 +93,6 @@ public class Reserva {
 		this.persona = persona;
 		this.valorReserva = calcularValorReserva(this.cantidadPersonas,90000);
 		this.tipoServicio = tipoServicio;
-
 	}
 
 	public Reserva(int cantidadPersonas, EstadoReserva estadoReserva, Date fechaSolicitud, TipoServicio tipoServicio) {

@@ -95,7 +95,7 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li> <a href="/CambiarContraseniaUsuario.jsp">
+                    <li> <a href="/CambiarContrasenia.jsp">
                         <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Cambiar Contraseña</a>
                     </li>
                     <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
@@ -183,7 +183,7 @@
     <section id="contenidoReservaA">
         <h4>Consulta de Eventos</h4>
 
-        <article id="filtros">
+        <%--<article id="filtros">
 
             <article id="nombreEvento">
                 <div class="input-group">
@@ -204,7 +204,7 @@
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </span>
-        </article>
+        </article>--%>
 
 
         <article id="lista3">

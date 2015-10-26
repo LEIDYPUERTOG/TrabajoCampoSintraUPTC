@@ -67,9 +67,6 @@ public class InformacionReservaDao {
             if (informacionReserva.getInvitado()!=null){
                 ppStm.setInt(2, informacionReserva.getInvitado().getCedula());
             }
-            else{
-                ppStm.setInt(2, 1234);
-            }
 
             ppStm.setDate(3, informacionReserva.getFechaInicioReserva());
             ppStm.setDate(4,informacionReserva.getFechaFinReserva());
@@ -142,6 +139,7 @@ public class InformacionReservaDao {
             ResultSet resultSet = ppStm.executeQuery();
 
             if(resultSet.next()){
+
                 ReservaDao reservaDao = new ReservaDao();
                 Reserva reserva = reservaDao.consultarReservaIdReserva(idReserva);
                 reserva.setIdReserva(resultSet.getInt(1));
