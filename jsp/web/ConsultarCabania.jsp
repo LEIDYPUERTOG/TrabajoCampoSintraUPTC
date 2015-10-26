@@ -12,9 +12,10 @@
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
     <!-- Tipo de letra de google -->
-    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet' type='text/css'>
 
     <!-- Estilos CSS vinculados -->
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
@@ -59,21 +60,23 @@
     <!-- Primera cabecera (inicio,ingresar,...)  -->
     <header>
         <!-- Boton usuario -->
+
         <article id="inicio1">
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+
                     <%
-                        Persona persona = (Persona)session.getAttribute("persona");
-                        session.setAttribute("persona",persona);
-                        if(persona!=null){
+                        Persona persona = (Persona) session.getAttribute("persona");
+                        session.setAttribute("persona", persona);
+                        if (persona != null) {
 
                     %>
                     <%= persona.getNombre() %>
                     <%
-                    }else{
-                        Persona persona1 = (Persona)request.getAttribute("persona");
-                        session.setAttribute("persona",persona1);
+                    } else {
+                        Persona persona1 = (Persona) request.getAttribute("persona");
+                        session.setAttribute("persona", persona1);
                     %>
                     <%= persona1.getNombre() %>
                     <%
@@ -82,8 +85,10 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="CambiarContrasenia.jsp">Cambiar contraseña</a></li>
-                    <li><a href="#">Cerrar Sesión</a></li>
+                    <li><a> <span class="glyphicon glyphicon-lock" aria-hidden="true" href="#"></span>Cambiar contraseña</a>
+                    </li>
+                    <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
+                        Sesión</a></li>
 
                 </ul>
             </div>
@@ -91,19 +96,17 @@
         </article>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos <!-- Icono y palabra -->
+            <button type="button" class="btn btn-link" style="margin-top:21px;" onclick="location.href='#informacion'">
+                <!-- Tamaño -->
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos
+                <!-- Icono y palabra -->
             </button>
         </article>
-        <!-- Boton Conozcanos -->
-        <article id="inicio3">
-            <button type="button" class="btn btn-default"  style="margin-top:21px;"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Conozcanos <!-- Icono y palabra -->
-            </button>
-        </article>
+
         <!-- Boton Inicio -->
         <article id="inicio4">
-            <button type="button" class="btn btn-default"  style="padding-right:55px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
+                    onclick="location.href='index.jsp'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
         </article>
@@ -114,6 +117,9 @@
         <img src="/Presentacion/imagenes/cabecera.jpg" alt="logos.png"> <!-- Importar la imagen -->
     </section>
 
+    <!-- Divicion para el color de la informacion adicional de la pagina -->
+    <section id="divi">
+    </section>
 
     <!-- Seccion de panel de administración -->
 
@@ -153,7 +159,7 @@
     <!-- Seccion de Pestañas-->
     <section id="pestanas2">
         <article>
-            <nav class="navbar navbar-inverse" role="navigation">
+            <nav class="navbar navbar-default navbar-static-top">
                 <ul class="nav nav-tabs">
                     <li><a href="CrearCabania.jsp">Crear Cabaña</a></li>
                     <li><a href="ConsultarCabania.jsp">Consultar Cabaña</a></li>
@@ -161,6 +167,7 @@
             </nav>
         </article>
     </section>
+
     <!-- Seccion de contenido (tabla, link y paginacion)-->
     <section id="contenidoReservaA">
         <h4>Consulta de Cabañas</h4>
@@ -201,25 +208,6 @@
                 </tbody>
             </table> <!-- Fin de la tabla -->
         </article> <!-- Fin del article -->
-        <!-- Paginacion -->
-        <article id="pag2">
-            <nav>
-                <ul class="pagination">
-                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-                    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                    </li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </article>
     </section>
 
     <!-- Divicion para el color de la informacion adicional de la pagina -->

@@ -468,57 +468,47 @@ nav.acceder #login-content {
 
 /*Inicio de los estilos de la página consultar/modificar y suspender una cabaña */
 
-#panelAdministracion {
-    background: #FDCA2E;
-    height: 500px;
-    width: 200px;
-    list-style: none;
-    opacity: 0.9;
-    display: inline-block;
-    vertical-align: middle;
+#panelAdministracion2 #lblTitulo label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #34495E;
+    text-align: center;
 }
+#panelAdministracion #imag1 {
 
-#panelAdministracion #lblTitulo {
+    height: 100px;
+    width: 100px;
     position: absolute;
-    top: 280px;
-    left: 190px;
-}
-
-#imag1 {
-
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    top: 320px;
+    top: 360px;
     left: 230px;
 }
 
-#imag2 {
+#panelAdministracion #imag2 {
 
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
     position: absolute;
-    top: 430px;
+    top: 500px;
+    left: 230px;
+}
+#panelAdministracion #imag3 {
+
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 620px;
     left: 230px;
 }
 
-#imag3 {
+#panelAdministracion #imag4 {
 
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
     position: absolute;
-    top: 540px;
+    top: 755px;
     left: 230px;
 }
 
-#imag4 {
-
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    top: 650px;
-    left: 230px;
-}
 
 /*
 *****************************Pagina Catalogo***************************************************
@@ -704,7 +694,107 @@ nav.acceder #login-content {
 #catalogo button:hover:before {
     width: 100%;
 }
+/*
+******************************Contenedor de funciones administrador **********************************************
+*/
 
+#panelAdministracion2 #lblTitulo label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #34495E;
+    text-align: center;
+}
+
+
+#panelAdministracion2 #imag1 {
+
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 360px;
+    left: 230px;
+}
+
+#panelAdministracion2 #imag2 {
+
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 500px;
+    left: 230px;
+}
+#panelAdministracion2 #imag3 {
+
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 620px;
+    left: 230px;
+}
+
+#panelAdministracion2 #imag4 {
+
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 755px;
+    left: 230px;
+}
+/*********************************Para Crear Reserva Cabañas *******************************************/
+#panelAdministracion3 {
+    background: #ECF0F1;
+    border: 3px solid #27AE60;
+    height: 808px;
+    width: 200px;
+    list-style: none;
+    opacity: 0.9;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#panelAdministracion3 #lblTitulo label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #34495E;
+    text-align: center;
+}
+
+
+#panelAdministracion3 #imag1 {
+
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 360px;
+    left: 230px;
+}
+
+#panelAdministracion3 #imag2 {
+
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 500px;
+    left: 230px;
+}
+#panelAdministracion3 #imag3 {
+
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 620px;
+    left: 230px;
+}
+
+#panelAdministracion3 #imag4 {
+
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 755px;
+    left: 230px;
+}
 /*
 *****************************Pagina Crear Cabaña ***************************************************
 */
@@ -726,7 +816,7 @@ nav.acceder #login-content {
 #contenido #identificador {
     background: #fefff6;
     width: 130px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -737,7 +827,7 @@ nav.acceder #login-content {
 #contenido #search1 {
     background: #fefff6;
     width: 400px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -748,7 +838,7 @@ nav.acceder #login-content {
 #contenido #capacidad {
     background: #fefff6;
     width: 130px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -759,7 +849,7 @@ nav.acceder #login-content {
 #contenido #search2 {
     background: #fefff6;
     width: 400px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -770,7 +860,7 @@ nav.acceder #login-content {
 #contenido #valor {
     background: #fefff6;
     width: 130px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -781,7 +871,7 @@ nav.acceder #login-content {
 #contenido #search3 {
     background: #fefff6;
     width: 400px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -792,7 +882,7 @@ nav.acceder #login-content {
 #contenido #ruta {
     background: #fefff6;
     width: 130px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -803,11 +893,10 @@ nav.acceder #login-content {
 #contenido #search4 {
     background: #fefff6;
     width: 460px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
-
 /*
 	Tama y color del boton
 	tambien sirve para centrar el boton en el article
@@ -817,17 +906,18 @@ nav.acceder #login-content {
     left: 50%;
     top: 50%;
     background: #fefff6;
-    height: 200px;
-    width: 200px;
-    margin: -0px 0 0 -100px;
+    height: 100px;
+    width: 100px;
+    margin: 130px 0 0 -100px;
 }
 
 /*
 	Tipo de letra, tamaño de h4
 */
 #contenido h4 {
-    font-family: 'Handlee', cursive;
-    font-size: 37px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    color: #34495E;
     text-align: center;
 }
 
@@ -836,7 +926,8 @@ nav.acceder #login-content {
 */
 #contenido h5 {
     font-family: 'Lato', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
+    color: #657273;
     text-align: center;
 }
 
@@ -1026,7 +1117,7 @@ Estilos para la tabla y scroll
 */
 #contenedorReservaA {
     box-shadow: 5px 5px 30px #bcbcbc;
-    height: 1160px;
+    height: 1000px;
     width: 1000px;
     background: #fefff6;
     margin-right: auto;
@@ -1064,7 +1155,8 @@ Estilos para la tabla y scroll
 */
 
 #panelAdministracion2 {
-    background: #FDCA2E;
+    background: #ECF0F1;
+    border: 3px solid #27AE60;
     height: 650px;
     width: 200px;
     list-style: none;
@@ -1097,8 +1189,9 @@ Estilos para la tabla y scroll
 	Tipo y tamaño de la letra h4
 */
 #contenidoReservaA h4 {
-    font-family: 'Handlee', cursive;
-    font-size: 37px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    color: #34495E;
     text-align: center;
 }
 
@@ -1219,9 +1312,9 @@ Estilos para la tabla y scroll
 
 #pestanas2 a {
 
-    color: #bfbfbf;
-    font-family: 'Handlee', cursive;
-    font-size: 15px;
+    font-family: 'Boogaloo', cursive;
+    font-size: 18px;
+    color: #34495E;
     text-align: center;
 }
 
@@ -1245,7 +1338,7 @@ Estilos para la tabla y scroll
 #contenido2 #FechaInicio {
     background: #fefff6;
     width: 130px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -1253,7 +1346,7 @@ Estilos para la tabla y scroll
 #contenido2 #FechaFin {
     background: #fefff6;
     width: 130px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -1261,7 +1354,7 @@ Estilos para la tabla y scroll
 #contenido2 #descripcion {
     background: #fefff6;
     width: 130px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
     position: absolute;
@@ -1272,7 +1365,7 @@ Estilos para la tabla y scroll
 #contenido2 #lugar {
     background: #fefff6;
     width: 130px;
-    height: 35px;
+    height: 65px;
     display: inline-block;
     vertical-align: middle;
     position: absolute;
@@ -1356,8 +1449,15 @@ Estilos para la tabla y scroll
 }
 
 #contenido2 h4 {
-    font-family: 'Handlee', cursive;
-    font-size: 37px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    color: #34495E;
+    text-align: center;
+}
+#contenido2 h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    color: #657273;
     text-align: center;
 }
 
@@ -1894,13 +1994,16 @@ nav.acceder #login-content2 {
     vertical-align: middle;
 }
 
-/*Estilos de la ventana Crear Usuario*/
+/*******************************Estilos de la ventana Crear Usuario******************************************/
 
 #et1 {
     width: 600px;
     position: absolute;
     left: 100px;
     top: 100px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #657273;
 }
 
 #et2 {
@@ -1908,6 +2011,9 @@ nav.acceder #login-content2 {
     position: absolute;
     left: 100px;
     top: 200px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #657273;
 }
 
 #et3 {
@@ -1915,6 +2021,9 @@ nav.acceder #login-content2 {
     position: absolute;
     left: 100px;
     top: 300px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #657273;
 }
 
 #btnCrearUsuario {
@@ -1930,7 +2039,7 @@ nav.acceder #login-content2 {
     left: 50%;
     top: 70%;
     width: 600px;
-    height: 400px;
+    height: 755px;
     margin: -60px 0 0 -200px;
 }
 
@@ -2023,14 +2132,16 @@ nav.acceder #login-content2 {
 	Tamaño y tipo de letra h4
 */
 #contenidoReservaR h4 {
-    font-family: 'Handlee', cursive;
-    font-size: 37px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    color: #34495E;
     text-align: center;
 }
 
 #contenidoReservaR h5 {
     font-family: 'Lato', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
+    color: #657273;
     text-align: center;
 }
 
@@ -2118,6 +2229,9 @@ nav.acceder #login-content2 {
     position: absolute;
     left: 100px;
     top: 300px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #657273;
 }
 
 #nombreEvento {

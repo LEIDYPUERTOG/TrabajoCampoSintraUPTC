@@ -10,9 +10,10 @@
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
     <!-- Tipo de letra de google -->
-    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet' type='text/css'>
 
     <!-- Estilos CSS vinculados -->
     <link href="/Presentacion/estilos/css/bootstrap.min.css" rel="stylesheet">
@@ -44,16 +45,16 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 
                     <%
-                        Persona persona = (Persona)session.getAttribute("persona");
-                        session.setAttribute("persona",persona);
-                        if(persona!=null){
+                        Persona persona = (Persona) session.getAttribute("persona");
+                        session.setAttribute("persona", persona);
+                        if (persona != null) {
 
                     %>
                     <%= persona.getNombre() %>
                     <%
-                    }else{
-                        Persona persona1 = (Persona)request.getAttribute("persona");
-                        session.setAttribute("persona",persona1);
+                    } else {
+                        Persona persona1 = (Persona) request.getAttribute("persona");
+                        session.setAttribute("persona", persona1);
                     %>
                     <%= persona1.getNombre() %>
                     <%
@@ -73,14 +74,16 @@
         </article>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-link"  style="margin-top:21px;" onclick="location.href='#informacion'"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos <!-- Icono y palabra -->
+            <button type="button" class="btn btn-link" style="margin-top:21px;" onclick="location.href='#informacion'">
+                <!-- Tamaño -->
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos
+                <!-- Icono y palabra -->
             </button>
         </article>
 
         <!-- Boton Inicio -->
         <article id="inicio4">
-            <button type="button" class="btn btn-link"  style="padding-right:55px;padding-left:10px;margin-top:21px;"
+            <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
                     onclick="location.href='index.jsp'"> <!-- Tamaño -->
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
             </button>
@@ -92,6 +95,10 @@
         <img src="/Presentacion/imagenes/cabecera.jpg" alt="logos.png"> <!-- Importar la imagen -->
     </section>
 
+    <!-- Divicion para el color de la informacion adicional de la pagina -->
+    <section id="divi">
+    </section>
+
 
     <!-- Seccion de panel de administración -->
 
@@ -101,7 +108,7 @@
         </article>
 
         <article id="cabania">
-            <a href="CrearCabania.jsp"><img src="/Presentacion/imagenes/cabania.png" id="imag1" title="Cabaña" ></a>
+            <a href="CrearCabania.jsp"><img src="/Presentacion/imagenes/cabania.png" id="imag1" title="Cabaña"></a>
         </article>
 
         <article id="eventos">
@@ -110,11 +117,12 @@
         </article>
 
         <article id="reserva">
-            <a href="CrearReservaCabania.jsp"><img src="/Presentacion/imagenes/reservas.png" id="imag3" title="Reservas"></a>
+            <a href="CrearReservaCabania.jsp"><img src="/Presentacion/imagenes/reservas.png" id="imag3"
+                                                   title="Reservas"></a>
         </article>
 
         <article id="usuario">
-            <a href="CrearUsuario.jsp"><img src="/Presentacion/imagenes/usuario.png" id="imag4" title="Usuario" ></a>
+            <a href="CrearUsuario.jsp"><img src="/Presentacion/imagenes/usuario.png" id="imag4" title="Usuario"></a>
         </article>
 
     </section>
@@ -133,7 +141,7 @@
     <!-- Seccion de Pestañas-->
     <section id="pestanas2">
         <article>
-            <nav class="navbar navbar-inverse" role="navigation">
+            <nav class="navbar navbar-default navbar-static-top">
                 <ul class="nav nav-tabs">
                     <li><a href="CrearCabania.jsp">Crear Cabaña</a></li>
                     <li><a href="ConsultarCabania.jsp">Consultar Cabaña</a></li>
@@ -160,7 +168,8 @@
                 <h5>Capacidad Maxima</h5>
             </article>
             <article id="search2">
-                <input type="number" class="form-control" placeholder="Ingrese el texto." name="capacidad" min="1" max="10">
+                <input type="number" class="form-control" placeholder="Ingrese el texto." name="capacidad" min="1"
+                       max="10">
             </article>
 
             <!-- Tercera caja de texto -->
@@ -181,16 +190,17 @@
       <span class="input-group-btn">
           <!-- Boton para la busqueda de la iamgen -->
         <button type="submit" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-search" aria-hidden="true" ></span>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </button>
       </span>
-                    </div><!-- /input-group -->
-                </div><!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-6 -->
                 </div><!-- /.row -->
             </article>
             <article id="btnAgregar">
-                <h1> <img src="/Presentacion/imagenes/cabania.png" alt="cabaña"></h1>
-                <button type="submit" class="btn btn-success" > <!-- Tamaño -->
+                <button type="submit" class="btn btn-success"> <!-- Tamaño -->
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> AGREGAR <!-- Icono y palabra -->
 
                 </button>
@@ -206,24 +216,31 @@
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->
             <h4>Menu</h4>
-            <h5> <button type="button" class="btn btn-link">Nosotros</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Junta Directiva</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Contáctenos</button> </h5>
+            <h5>
+                <button type="button" class="btn btn-link">Nosotros</button>
+            </h5>
+            <h5>
+                <button type="button" class="btn btn-link">Junta Directiva</button>
+            </h5>
+            <h5>
+                <button type="button" class="btn btn-link">Contáctenos</button>
+            </h5>
         </article>
         <article id="inf2"> <!-- Seccion Registrar -->
         </article>
         <article id="inf3"> <!-- Seccion Inf Contacto -->
             <h4>Información de contacto</h4>
             <h5> Avenida Central del Norte 39 - 115 </h5>
-            <h5>       Tunja - Boyaca </h5>
-            <h5>       Tel. 422174 Ext. 1500</h5>
+            <h5> Tunja - Boyaca </h5>
+            <h5> Tel. 422174 Ext. 1500</h5>
         </article>
     </section>
 
     <!-- El pie de pagina donde esta el copyright -->
     <footer>
         <p>
-            © Todos los derechos reservados. Tunja – Ciudad Universitaria – Carretera Central del Norte Tel. 422174 Ext. 1500 </br>
+            © Todos los derechos reservados. Tunja – Ciudad Universitaria – Carretera Central del Norte Tel. 422174 Ext.
+            1500 </br>
             Desarrollado por Edgar Meneses, Diana Gonzalez, Leidy Puerto
         </p>
     </footer>
