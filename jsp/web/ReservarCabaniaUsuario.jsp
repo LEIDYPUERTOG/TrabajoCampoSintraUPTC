@@ -309,7 +309,7 @@
     </section>
 
 
-    <!-- Informacion adicional del sindicato (Menu, Registrarse,...)  -->
+    <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
     <article id="infoUsuario">
         <!-- Division para el color de la informacion adicional de la pagina -->
         <section id="divi">
