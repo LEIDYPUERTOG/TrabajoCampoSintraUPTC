@@ -85,7 +85,8 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a> <span class="glyphicon glyphicon-lock" aria-hidden="true" href="#"></span>Cambiar contraseña</a>
+                    <li> <a href="/CambiarContraseniaUsuario.jsp">
+                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Cambiar Contraseña</a>
                     </li>
                     <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
                         Sesión</a></li>

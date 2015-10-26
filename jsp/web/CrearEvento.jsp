@@ -85,7 +85,8 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a> <span class="glyphicon glyphicon-lock" aria-hidden="true" href="#"></span>Cambiar contraseña</a>
+                    <li> <a href="/CambiarContraseniaUsuario.jsp">
+                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Cambiar Contraseña</a>
                     </li>
                     <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
                         Sesión</a></li>
@@ -151,8 +152,8 @@
         <article class="nave">
             <div>
                 <ol class="breadcrumb">
-                    <li><a href="#">Cabañas</a></li>
-                    <li class="active">Consultar Cabaña</li>
+                    <li><a href="#">Evento</a></li>
+                    <li class="active">Crear Evento</li>
                 </ol>
             </div>
         </article>
@@ -162,8 +163,8 @@
         <article>
             <nav class="navbar navbar-default navbar-static-top">
                 <ul class="nav nav-tabs">
-                    <li><a href="CrearCabania.jsp">Crear Cabaña</a></li>
-                    <li><a href="ConsultarCabania.jsp">Consultar Cabaña</a></li>
+                    <li><a href="CrearEvento.jsp">Crear Evento</a></li>
+                    <li><a href="ConsultarEvento.jsp">Consultar Evento</a></li>
                 </ul>
             </nav>
         </article>

@@ -352,6 +352,14 @@ nav.acceder #login-content {
     margin-right: auto;
     margin-left: auto;
 }
+#contenedorRegistroCC {
+    box-shadow: 5px 5px 30px #bcbcbc;
+    height: 1110px;
+    width: 1000px;
+    background: #fefff6;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 #registro {
     background: white;
@@ -1035,7 +1043,14 @@ nav.acceder #login-content {
     display: inline-block;
     vertical-align: middle;
 }
-
+#contenidoReservaC #lblPreg {
+    background: #fefff6;
+    width: 180px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
 /*
 	Tamaño y tipo de letra h4
 */
@@ -1063,7 +1078,7 @@ nav.acceder #login-content {
     background: #fefff6;
     position: absolute;
     left: 50%;
-    top: 65%;
+    top: 63%;
     width: 500px;
     height: 400px;
     margin: -200px 0 0 -250px;
@@ -1665,7 +1680,7 @@ Estilos para la tabla y scroll
 
 #btnCrearReserva {
     position: absolute;
-    top: 600px;
+    top: 635px;
     left: 250px;
 }
 
@@ -2384,7 +2399,7 @@ nav.acceder #login-content2 {
     background-color: white;
     height: 130px;
     width: 300px;
-    border-top: 10px solid #FDCA2E;
+    border-top: 10px solid #5cb85c;
     border-right: 3px solid #080808;
     border-left: 3px solid #080808;
     border-bottom: 3px solid #080808;
@@ -2411,8 +2426,31 @@ nav.acceder #login-content2 {
     background-color: white;
     height: 130px;
     width: 300px;
-    border-top: 10px solid #FDCA2E;
+    border-top: 10px solid #5cb85c;
     border-right: 3px solid #080808;
     border-left: 3px solid #080808;
     border-bottom: 3px solid #080808;
+}
+/*
+********************Cambiar contraseña Usuario***********
+*/
+#contenidoReservaCon h4{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    color: #34495E;
+    text-align: center;
+}
+#contenidoReservaCon label{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #657273;
+}
+#contenidoReservaCon {
+    background: #ffffff;
+    position: absolute;
+    left: 45%;
+    top: 60%;
+    width: 700px;
+    height: 700px;
+    margin: 60px 0 0 -300px;
 }
