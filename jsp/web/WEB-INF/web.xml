@@ -129,4 +129,22 @@
         <servlet-name>SvtCancelar</servlet-name>
         <url-pattern>/SvtCancelar</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtAprobar</servlet-name>
+        <servlet-class>Servlets.SvtAprobar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtAprobar</servlet-name>
+        <url-pattern>/SvtAprobar</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtRechazar</servlet-name>
+        <servlet-class>Servlets.SvtRechazar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtRechazar</servlet-name>
+        <url-pattern>/SvtRechazar</url-pattern>
+    </servlet-mapping>
 </web-app>
