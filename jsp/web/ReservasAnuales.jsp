@@ -159,7 +159,7 @@
                     <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
                     <li><a href="EditarReservaAdmin.jsp">Editar Mis Reservas</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
-                    <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
+                    <li class="active"><a>Listar reserva anualmente</a></li>
                 </ul>
             </nav>
         </article>

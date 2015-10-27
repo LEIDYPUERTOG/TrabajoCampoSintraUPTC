@@ -1270,32 +1270,40 @@ Estilos para la tabla y scroll
 */
 #contenidoReservaA #lista {
     background: #fefff6;
-    position: absolute;
-    left: -40px;
-    top: 100px;
-    width: 630px;
-    height: 310px;
-    margin: 20px 0 0 100px;
+    width: 720px;
+    height: 350px;
+    margin: 60px 0 0 50px;
+    min-height: 200px;
+    overflow-Y: scroll;
 }
-
 /*
 	Estilos para centrar la pagiana y el scroll
 */
-#lista tr {
-    width: 100%;
-    display: inline-table;
-}
-
 #lista table {
-    height: 300px;
-}
+    background: #f4fff3;
+    table-layout: fixed;
+    margin: 1rem auto;
+    width: 98%;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.4);
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0,.5);
+    border-top: 0 none;
 
+}
+#lista thead {
+    background: #e6f0d9;
+    text-align: center;
+}
+#lista thead tr {
+    padding-right: 17px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.6);
+    z-index: 2;
+}
 #lista tbody {
-    overflow-y: scroll;
-    height: 250px;
-    /*width: 45%;*/
-    width: 650px;
-    position: absolute;
+    height: calc(50vh - 1px);
+    min-height: calc(200px + 1px);
+    color: #000;
+
 }
 
 #panelAdministracionListado {
@@ -1441,8 +1449,9 @@ Estilos para la tabla y scroll
 
 #contenido2 #search1 {
     background: #fefff6;
+    border: #080808;
     width: 400px;
-    height: 100px;
+    height: 35px;
     display: inline-block;
     vertical-align: middle;
     position: absolute;
@@ -1452,8 +1461,9 @@ Estilos para la tabla y scroll
 
 #contenido2 #search2 {
     background: #fefff6;
+    border: #080808;
     width: 400px;
-    height: 100px;
+    height: 35px;
     display: inline-block;
     vertical-align: middle;
     position: absolute;
@@ -1646,40 +1656,38 @@ Estilos para la tabla y scroll
 
 #contenidoReservaA #lista3 {
     background: #fefff6;
-    left: 30%;
-    top: 60%;
-    width: 630px;
-    height: 290px;
-    margin: 20px 0 0 100px;
+    width: 720px;
+    height: 350px;
+    margin: 60px 0 0 50px;
+    min-height: 200px;
+    overflow-Y: scroll;
 }
-
-#lista3 tr {
-    width: 100%;
-    display: inline-table;
-}
-
 #lista3 table {
-    height: 300px;
-    position: absolute;
-    top: 150px;
-    left: 0px;
-}
+    background: #f4fff3;
+    table-layout: fixed;
+    margin: 1rem auto;
+    width: 98%;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.4);
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0,.5);
+    border-top: 0 none;
 
+}
+#lista3 thead {
+    background: #e6f0d9;
+    text-align: center;
+}
+#lista3 thead tr {
+    padding-right: 17px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.6);
+    z-index: 2;
+}
 #lista3 tbody {
-    overflow-y: scroll;
-    height: 230px;
-    /*width: 45%;*/
-    width: 800px;
-    position: absolute;
-    left: 0px;
+    height: calc(50vh - 1px);
+    min-height: calc(200px + 1px);
+    color: #000;
 
 }
-
-#lista3 #imagEditar, #imagSuspender {
-    height: 25px;
-    width: 25px;
-}
-
 #pag2 {
     background: #fefff6;
     position: absolute;
@@ -1695,7 +1703,7 @@ Estilos para la tabla y scroll
 
 #btnCrearReserva {
     position: absolute;
-    top: 635px;
+    top: 615px;
     left: 250px;
 }
 
@@ -2491,5 +2499,5 @@ nav.acceder #login-content2 {
     top: 60%;
     width: 700px;
     height: 300px;
-    margin: 60px 0 0 -200px;
+    margin: 60px 0 0 -175px;
 }

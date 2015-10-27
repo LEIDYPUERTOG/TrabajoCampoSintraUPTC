@@ -200,9 +200,10 @@
 
 
         <article id="lista3">
-            <table class="table" id="tabla_uno" onclick="
+            <table class = "table table-bordered"  onclick="
             document.getElementById('nombreVentana').value = tomarValor();">
                 <thead>
+
                 <!-- titulos de la tabla -->
                 <tr>
                     <th>Nombre</th>
@@ -233,6 +234,7 @@
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana()"></td>
                     <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+
                 </tr>
                 <%
                     }

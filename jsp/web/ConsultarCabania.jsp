@@ -102,6 +102,8 @@
                 <!-- Icono y palabra -->
             </button>
         </article>
+
+
     </header>
 
     <!-- Segunda cabecera con los logos del sindicato y la uptc -->
@@ -165,7 +167,7 @@
         <h4>Consulta de Cabañas</h4>
 
         <article id="lista">
-            <table class="table" id="tabla_uno" onclick=" document.getElementById('cabaniaId').value = tomarValor();">
+            <table class = "table table-bordered" id="tabla_uno" onclick=" document.getElementById('cabaniaId').value = tomarValor();">
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
@@ -199,6 +201,7 @@
 
                 </tbody>
             </table> <!-- Fin de la tabla -->
+
         </article> <!-- Fin del article -->
     </section>
 

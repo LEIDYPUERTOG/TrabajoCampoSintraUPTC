@@ -179,7 +179,7 @@
             <article id="FechaInicio">
                 <h5>Fecha Inicio</h5>
             </article>
-            <article id="search1">
+            <article id="search2">
                 <input type="date" class="form-control" required name="fechaInicio">
             </article>
 
@@ -187,7 +187,7 @@
             <article id="FechaFin">
                 <h5>Fecha Fin</h5>
             </article>
-            <article id="search2">
+            <article id="search3">
                 <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
             </article>
             <!-- Cuarta caja de texto -->
