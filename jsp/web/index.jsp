@@ -40,7 +40,7 @@
             });
         });
     </script>
-
+<%session.invalidate();%>
 </head>
 
 <body> <!-- Lo que tiene la pagina -->

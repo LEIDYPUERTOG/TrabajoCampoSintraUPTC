@@ -64,18 +64,19 @@
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
                 </button>
                 <div id="login-content">
-                    <form>
+                    <form action="/SvtLogin" method="post">
 
-                        <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
+
+                        <input id="usuario" type="number" name="usuario" placeholder="Usuario" required>
                         <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
 
-                        <button type="button" id="submit" class="btn btn-primary"
+                        <button type="submit" id="submit" class="btn btn-primary"
                                 style="padding-right:35px;padding-left:10px;margin-top:21px;">
                             Ingresar
                         </button>
                         <button type="button" id="submitRegistrar" class="btn btn-primary"
                                 style="padding-right:35px;padding-left:10px;margin-top:21px;"
-                                onClick="location.href='registrarse.jsp'"> <!-- Tamaño -->
+                                onClick="location.href='/registrarse.jsp'"> <!-- Tamaño -->
                             Registrarse
                         </button>
                     </form>

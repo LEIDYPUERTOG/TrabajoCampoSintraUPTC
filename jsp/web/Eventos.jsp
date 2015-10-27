@@ -55,7 +55,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li><a> <span class="glyphicon glyphicon-lock" aria-hidden="true" href="#"></span>Cambiar contraseña</a>
                     </li>
-                    <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
+                    <li><a href="index.jsp"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Cerrar
                         Sesión</a></li>
 
                 </ul>
