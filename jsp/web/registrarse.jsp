@@ -106,7 +106,7 @@
 
             <li>
                 <label id="lblDocumento">Documento:</label>
-                <input id="documento" type="text" name="documento" required>
+                <input id="documento" type="numeric" name="documento" required>
 
             </li>
 

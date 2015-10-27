@@ -19,7 +19,7 @@ import java.io.IOException;
 public class SvtCambiaContrasenia extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
 
         String contraseniaAntigua = request.getParameter("ContraseniaAntigua");
         String contraseniaNueva = request.getParameter("ContraseniaNueva");
@@ -33,8 +33,15 @@ public class SvtCambiaContrasenia extends HttpServlet {
             boolean actualizar = personaDao.actualizarPersona(idPersona.getCedula(), contraseniaNueva);
             request.setAttribute("actualizacion",actualizar);
             if(actualizar){
-                dispatcher = request.getRequestDispatcher("CrearCabania.jsp");
-                dispatcher.forward(request, response);
+                if(idPersona.getRol().toString().equals("Administrador")||
+                        idPersona.getRol().toString().equals("Funcionario")){
+                    dispatcher = request.getRequestDispatcher("CrearCabania.jsp");
+                    dispatcher.forward(request, response);
+                }
+                else{
+                    dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
+                    dispatcher.forward(request, response);
+                }
             }
             else {
                 dispatcher = request.getRequestDispatcher("CambiarContrasenia.jsp");

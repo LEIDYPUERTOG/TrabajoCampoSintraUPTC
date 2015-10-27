@@ -48,7 +48,7 @@ public class SvtCrearEvento extends HttpServlet {
         String [] lug = request.getParameter("lugarCb").split(" ");
         int lugar = Integer.parseInt(lug[1]);
 
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
 
         EventoDao eventoDao = new EventoDao();
         LocacionDao locacionDao = new LocacionDao();

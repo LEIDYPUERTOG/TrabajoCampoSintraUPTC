@@ -42,7 +42,7 @@ public class SvtCrearReserva extends HttpServlet {
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
 
 
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
 
 
         ReservaDao reservaDao = new ReservaDao();
@@ -64,7 +64,7 @@ public class SvtCrearReserva extends HttpServlet {
         Reserva reserva = null;
 
         if(tipoServicio.equalsIgnoreCase("Cabania")){
-            System.out.println("cabaniaaaaaaaaaaaaaaaaaa");
+
             reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,persona);
             Cabania cabania = cabaniaDao.obtenerInfoCabania(idCabania);
             reserva.setCabania(cabania);

@@ -26,7 +26,7 @@ public class SvtReservasFiltros extends HttpServlet {
 
 
         ArrayList<Reserva> listaMisReservas = null;
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
 
         ReservaDao reservaDao = new ReservaDao();
 

@@ -241,7 +241,6 @@
 
                     </td>
                     <td><img src="/Presentacion/imagenes/mal.png" id="imagRechazar" title="Rechazar">
-
                     </td>
                 </tr>
                 <%

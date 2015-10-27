@@ -20,7 +20,7 @@ public class SvtBuscarPersona extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
 
 
         int cedula = Integer.parseInt(request.getParameter("documento"));

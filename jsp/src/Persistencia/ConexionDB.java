@@ -44,7 +44,7 @@ public class ConexionDB {
         this.contrasenia = contrasenia;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = (Connection) DriverManager.getConnection(URL, "root","1234");
+            conexion = (Connection) DriverManager.getConnection(URL, "root","");
 
             if (conexion != null) {
                 hayConexion = true;

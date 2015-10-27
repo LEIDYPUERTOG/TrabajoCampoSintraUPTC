@@ -19,7 +19,7 @@ import java.io.IOException;
 public class SvtAprobar extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
         ReservaDao reservaDao = new ReservaDao();
 
         String[] aux = request.getParameter("reserva").split(" ");

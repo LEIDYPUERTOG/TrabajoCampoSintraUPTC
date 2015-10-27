@@ -23,7 +23,7 @@ public class SvtConsultarReservaAnio extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int anio = Integer.parseInt(request.getParameter("anioIn"));
         System.out.println("anio              "+anio);
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
 
         ReservaDao reservaDao = new ReservaDao();
 
@@ -37,19 +37,17 @@ public class SvtConsultarReservaAnio extends HttpServlet {
 
             for(int i = 0; i < listaMisReservas.size(); i++) {
 
-
                 InformacionReserva informacionReserva = informacionReservaDao.
                         obtenerInfo(listaMisReservas.get(i).getIdReserva());
 
                 long cantidadDias = informacionReserva.getFechaFinReserva().getTime() -
                         informacionReserva.getFechaInicioReserva().getTime();
-                request.setAttribute("dias", cantidadDias);
+                request.setAttribute("dias",cantidadDias);
 
-
+                dispatcher = request.getRequestDispatcher("ReservasAnuales.jsp");
+                dispatcher.forward(request, response);
             }
         }
-        dispatcher = request.getRequestDispatcher("ReservasAnuales.jsp");
-        dispatcher.forward(request, response);
     }
 
 }

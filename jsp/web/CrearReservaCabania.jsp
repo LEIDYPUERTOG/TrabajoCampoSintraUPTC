@@ -99,6 +99,14 @@
                 <!-- Icono y palabra -->
             </button>
         </article>
+
+        <!-- Boton Inicio -->
+        <article id="inicio4">
+            <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
+                    onclick="location.href='index.jsp'"> <!-- Tamaño -->
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
+            </button>
+        </article>
     </header>
 
     <!-- Segunda cabecera con los logos del sindicato y la uptc -->
@@ -151,7 +159,7 @@
         <article>
             <nav class="navbar navbar-default navbar-static-top">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a>Crear Mi Reserva</a></li>
+                    <li><a href="CrearReservaCabania.jsp">Crear Mi Reserva</a></li>
                     <li><a href="EditarReservaAdmin.jsp">Editar Mis Reservas</a></li>
                     <li><a href="AprobarReserva.jsp">Aprobar Reserva</a></li>
                     <li><a href="ReservasAnuales.jsp">Listar reserva anualmente</a></li>
@@ -197,6 +205,16 @@
                 <input type="number" class="form-control" placeholder="Ingrese el texto."
                        required name="cantidad" min="1" max="10">
             </article>
+
+            <label id="lblPreg">Tipo Servicio: </label>
+            <label id = "rbtn" class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="Cabania" value="Cabania"
+                       onclick="getRadioButtonSelectedValue(document.formulario.inlineRadioOptions)"> Cabaña
+            </label>
+            <label id = "rbtn2" class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="Camping" value="Camping"> Zona de Camping
+            </label>
+
             <!-- Cuadro de Acompañantes -->
             <article id="acompa">
                 <h4>Acompañantes</h4> <!-- Titulo Principal -->
@@ -216,7 +234,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula1">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula1">
                             </article>
                         </td>
                         <td>
@@ -229,7 +247,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula2">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula2">
                             </article>
                         </td>
                         <td>
@@ -242,7 +260,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula3">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula3">
                             </article>
                         </td>
                         <td>
@@ -255,7 +273,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula4">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula4">
                             </article>
                         </td>
                         <td>
@@ -268,7 +286,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula5">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula5">
                             </article>
                         </td>
                         <td>
@@ -281,7 +299,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula6">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula6">
                             </article>
                         </td>
                         <td>
@@ -294,7 +312,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula7">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula7">
                             </article>
                         </td>
                         <td>
@@ -307,7 +325,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula8">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula8">
                             </article>
                         </td>
                         <td>
@@ -320,7 +338,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula9">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula9">
                             </article>
                         </td>
                         <td>
@@ -333,7 +351,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="text" class="form-control" placeholder="Cedula" name="cedula10">
+                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula10">
                             </article>
                         </td>
                         <td>

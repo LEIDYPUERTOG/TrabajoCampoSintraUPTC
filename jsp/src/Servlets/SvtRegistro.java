@@ -36,7 +36,7 @@ public class SvtRegistro extends HttpServlet {
         String clave2=request.getParameter("contrasenia2");
         String tipoUsuario = request.getParameter("inlineRadioOptions");
 
-        ConexionDB conexionDB = new ConexionDB("root","1234");
+        ConexionDB conexionDB = new ConexionDB("root","");
 
         PersonaDao personaDao = new PersonaDao();
 
@@ -52,18 +52,21 @@ public class SvtRegistro extends HttpServlet {
 
         RequestDispatcher dispatcher = null;
         if(aux == null){
-            boolean agregar = personaDao.crearPersona(persona);
-            if(agregar && clave.equals(clave2)){
-                request.setAttribute("persona", persona); //mandando el parametro para que sea accedido
-                System.out.println("---------------------------------------------" + agregar);
-                request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
-                dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
-                dispatcher.forward(request, response);
-            }else{
-                request.setAttribute("personaCreada", "No se pudo completar la solicitud");
-                dispatcher = request.getRequestDispatcher("registrarse.jsp");
-                dispatcher.forward(request, response);
+            if(clave.equals(clave2)){
+                boolean agregar = personaDao.crearPersona(persona);
+                if(agregar){
+                    request.setAttribute("persona", persona); //mandando el parametro para que sea accedido
+                    System.out.println("---------------------------------------------" + agregar);
+                    request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
+                    dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
+                    dispatcher.forward(request, response);
+                }else{
+                    request.setAttribute("personaCreada", "No se pudo completar la solicitud");
+                    dispatcher = request.getRequestDispatcher("registrarse.jsp");
+                    dispatcher.forward(request, response);
+                }
             }
+
         }
         else{
             if(aux.getContrasenia() == null && clave.equals(clave2)){

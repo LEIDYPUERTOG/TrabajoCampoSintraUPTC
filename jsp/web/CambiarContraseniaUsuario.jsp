@@ -136,7 +136,7 @@
             </button>
             <button type="button" id="submitCancelarCambio" class="btn btn-primary"
                     style="padding-right:35px;padding-left:10px;margin-top:21px;"
-                    onclick="location.href('CrearCabania.jsp')">
+                    onclick="location.href('ReservarCabaniaUsuario.jsp')">
                 <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
                 Cancelar
             </button>
