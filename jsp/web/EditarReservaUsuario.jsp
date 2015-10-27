@@ -129,7 +129,9 @@
 
         <article id="lista">
 
-            <table class="table" id="tabla_uno" onclick=" document.getElementById('reservaId').value = tomarValor();">
+            <table class="table" id="tabla_uno"
+                   onclick=" document.getElementById('reservaId').value = tomarValor();
+                   document.getElementById('reservaId2').value = tomarValor();">
 
                 <thead>
                 <!-- titulos de la tabla  idReserva = tomarValor()-->
@@ -147,44 +149,40 @@
                 <%
                     ReservaDao reservaDao = new ReservaDao();
                     ArrayList<Reserva> listaMisReservas = reservaDao.consultarReservaAfiliado(persona.getCedula());
-                    if (listaMisReservas != null) {
-                        System.out.println("tamaño lista " + listaMisReservas.size());
+                    if(listaMisReservas !=null){
                         InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
-                        for (int i = 0; i < listaMisReservas.size(); i++) {
+                        for(int i = 0; i < listaMisReservas.size(); i++) {
 
                             InformacionReserva informacionReserva = informacionReservaDao.
-                                    obtenerInfo(70);
-                            System.out.println("eeeeeeeeeeeeeeeeeeeeeee "+informacionReserva);
-                            System.out.println("saaaaaaaaaaa "+listaMisReservas.get(i).getIdReserva());
+                                    obtenerInfo(listaMisReservas.get(i).getIdReserva());
                 %>
 
                 <tr>
 
-                    <td><%= listaMisReservas.get(i).getIdReserva()%>
-                    </td>
-                    <td><%= listaMisReservas.get(i).getFechaSolicitud()%>
-                    </td>
-                    <td><%= informacionReserva.getFechaInicioReserva()%>
-                    </td>
-                    <td><%= informacionReserva.getFechaFinReserva()%>
-                    </td>
-                    <td><%= listaMisReservas.get(i).getEstadoReserva()%>
-                    </td>
+                    <td><%= listaMisReservas.get(i).getIdReserva()%> </td>
+                    <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
+                    <td><%= informacionReserva.getFechaInicioReserva()%></td>
+                    <td><%= informacionReserva.getFechaFinReserva()%></td>
+                    <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
 
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana()">
+
                     </td>
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender">
+                    <td>
+                        <img src="/Presentacion/imagenes/suspender.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content2" onclick="ventana3()">
 
                     </td>
                 </tr>
                 <%
                         }
-                    } else {
-
                     }
+
                 %>
+
                 </tbody>
+
             </table>
             <!-- Fin de la tabla -->
         </article>
@@ -231,27 +229,47 @@
     </article>
 </section>
 <section id="ventanaEmergente">
-    <div id='inline_content'>
+    <div id='inline_content' >
         <div id="login-content4">
             <form action="/SvtEditarReserva" method="post" name="formularioEdicion">
 
                 <label id="IdReserva">Número de reserva</label>
-                <input id="reservaId" type="numeric" name="reserva">
+                <input id="reservaId" type="numeric" name="reserva" readonly>
 
                 <label id="lblFecha1">Fecha Inicio</label>
-                <input id="fecha1Ventana" type="date" name="fechaInicioNueva" placeholder="fecha Inicio">
+                <input id="fecha1Ventana" type="date" name="fechaInicioNueva" placeholder="fecha Inicio" >
                 <label id="lblFecha2">Fecha Fin</label>
                 <input id="fecha2Ventana" type="date" name="FechaFinNueva" placeholder="Fecha Fin">
 
                 <button type="submit" id="submitAceptarVentana" class="btn btn-primary"
                         style="padding-right:35px;padding-left:10px;margin-top:21px;">
-                    Aceptar
-                </button>
+                    Aceptar </button>
                 <button type="button" id="submitCancelarVentana" class="btn btn-primary"
                         style="padding-right:35px;padding-left:10px;margin-top:21px;"
                         onclick='parent.$.colorbox.close(); return false;'>
-                    Cancelar
-                </button>
+                    Cancelar </button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<section id="ventanaEmergente">
+    <div id='inline_content2' >
+        <div id="login-contentCancelar">
+            <form action="/SvtCancelar" method="post" name="formularioEdicion">
+
+                <label id="IdReserva">Desea cancelar la reserva número: </label>
+                <input id="reservaId2" type="numeric" name="reserva" readonly>
+
+                <button type="submit" id="submitAceptarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Aceptar </button>
+                <button type="button" id="submitCancelarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                        onclick='parent.$.colorbox.close(); return false;'>
+                    Cancelar </button>
 
             </form>
 

@@ -38,6 +38,7 @@ public class SvtEditarReserva extends HttpServlet {
 
         ReservaDao reservaDao = new ReservaDao();
         InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
+        Reserva reserva = reservaDao.consultarReservaIdReserva(idReserva);
         InformacionReserva informacionReserva = informacionReservaDao.obtenerInfo(idReserva);
 
         String[] aux = request.getParameter("fechaInicioNueva").toString().split("-");
@@ -76,11 +77,16 @@ public class SvtEditarReserva extends HttpServlet {
 
         request.setAttribute("agregado",editarInformacion);
         if (editarInformacion) {
-            System.out.println("---------------------------------------------" + editarInformacion);
+            if(reserva.getPersona().getRol().toString().equals("Administrador")
+                    ||reserva.getPersona().getRol().toString().equals("Funcionario")){
 
-            dispatcher = request.getRequestDispatcher("EditarReservaAdmin.jsp");
-            dispatcher.forward(request, response);
-
+                dispatcher = request.getRequestDispatcher("EditarReservaAdmin.jsp");
+                dispatcher.forward(request, response);
+            }
+            else{
+                dispatcher = request.getRequestDispatcher("EditarReservaUsuario.jsp");
+                dispatcher.forward(request, response);
+            }
         }else{
             PrintWriter out=response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");

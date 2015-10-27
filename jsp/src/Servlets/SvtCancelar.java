@@ -1,6 +1,7 @@
 package Servlets;
 
 import Logica.EstadoReserva;
+import Logica.Reserva;
 import Persistencia.ConexionDB;
 import Persistencia.ReservaDao;
 
@@ -24,12 +25,22 @@ public class SvtCancelar extends HttpServlet {
 
         String[] aux = request.getParameter("reserva").split(" ");
         int idReserva = Integer.parseInt(aux[0]);
+        Reserva reserva = reservaDao.consultarReservaIdReserva(idReserva);
         boolean actualizar = reservaDao.actualizarReservaEstado(idReserva, EstadoReserva.Cancelada);
         RequestDispatcher dispatcher = null;
 
         if(actualizar==true){
-            dispatcher = request.getRequestDispatcher("EditarReservaAdmin.jsp");
-            dispatcher.forward(request, response);
+
+            if(reserva.getPersona().getRol().toString().equals("Administrador")
+                    ||reserva.getPersona().getRol().toString().equals("Funcionario")){
+                dispatcher = request.getRequestDispatcher("EditarReservaAdmin.jsp");
+                dispatcher.forward(request, response);
+            }
+            else{
+                dispatcher = request.getRequestDispatcher("EditarReservaUsuario.jsp");
+                dispatcher.forward(request, response);
+            }
+
         }
         else {
             dispatcher = request.getRequestDispatcher("EditarReservaAdmin.jsp");
