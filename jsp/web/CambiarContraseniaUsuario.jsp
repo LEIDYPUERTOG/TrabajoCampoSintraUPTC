@@ -92,7 +92,7 @@
     </section>
 
 
-    <!-- Tercera cabecera con los servicios que prestan el sindicato -->
+    <!-- Tercera cabecera con los servicios que prestan el sindicato --->
     <section id="servicios">
         <ul class="nav nav-pills"> <!-- Para la navegacion -->
             <li role="presentation" style="padding-right:20px;padding-left:120px;margin-top:0px;">
