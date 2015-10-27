@@ -87,7 +87,7 @@
                     <li> <a href="/CambiarContraseniaUsuario.jsp">
                         <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Cambiar Contraseña</a>
                     </li>
-                    <li><a href="index.jsp"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Cerrar
+                    <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
                         Sesión</a></li>
 
                 </ul>
@@ -115,6 +115,11 @@
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <!-- Nombre y color de las palabras -->
                 <a href="ReservarCabaniaUsuario.jsp"><h3><font color=#34495E>Realizar Reserva</font></h3></a>
+            </li>
+            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
+                <!-- Nombre y color de las palabras -->
+                <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a>
+
             </li>
         </ul>
     </section>

@@ -3,6 +3,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Persistencia.ConexionDB" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="Logica.Persona" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Autor: Diana Gonzalez, Leidy Puerto, Edgar Meneses -->
 <!DOCTYPE html>
 <html lang="es"> <!-- Inicio pagina html5 -->
@@ -47,15 +49,31 @@
         <!-- Boton ingresar -->
         <article id="inicio1">
             <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                    Bienvenido
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <%
+                        Persona persona = (Persona) session.getAttribute("persona");
+                        session.setAttribute("persona", persona);
+                        if (persona != null) {
+
+                    %>
+                    <%= persona.getNombre() %>
+                    <%
+                    } else {
+                        Persona persona1 = (Persona) request.getAttribute("persona");
+                        session.setAttribute("persona", persona1);
+                    %>
+                    <%= persona1.getNombre() %>
+                    <%
+                        }
+                    %>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a> <span class="glyphicon glyphicon-lock" aria-hidden="true" href="#"></span>Cambiar contraseña</a>
+                    <li><a href="/CambiarContraseniaUsuario.jsp">
+                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Cambiar Contraseña</a>
                     </li>
-                    <li><a href="index.jsp"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Cerrar
+                    <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
                         Sesión</a></li>
 
                 </ul>
@@ -80,14 +98,12 @@
     <!-- Tercera cabecera con los servicios que prestan el sindicato -->
     <section id="servicios">
         <ul class="nav nav-pills"> <!-- Para la navegacion -->
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
+            <li role="presentation" style="padding-right:20px;padding-left:120px;margin-top:0px;">
                 <!-- Tamaño de los item -->
-                <a class="ghost" href="/Catalogo.jsp"><h3><font color=#34495E>Cabañas</font></h3></a></li>
+                <a class="ghost" href="/ReservarCabaniaUsuario.jsp"><h3><font color=#34495E>Realizar Reserva</font></h3></a></li>
             <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="/zonaCamping.jsp"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
+                <a class="ghost" href="/EditarReservaUsuario.jsp"><h3><font color=#34495E>Editar Reserva</font></h3></a></li>
         </ul>
     </section>
 
