@@ -31,7 +31,7 @@ public class SvtEditarReserva extends HttpServlet {
         Date dateFin = null;
         GregorianCalendar calendar= null;
 
-        ConexionDB conexionDB = new ConexionDB("root","");
+        ConexionDB conexionDB = new ConexionDB("root","1234");
 
         String[] auxId = request.getParameter("reserva").split(" ");
         int idReserva = Integer.parseInt(auxId[0]);

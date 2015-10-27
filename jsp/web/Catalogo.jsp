@@ -113,9 +113,6 @@
             <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <a class="ghost" href="/zonaCamping.jsp"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font>
-                </h3></a></li>
         </ul>
     </section>
 
@@ -138,57 +135,32 @@
         <article id="cab1"> <!-- Seccion Menu -->
             <img src="/Presentacion/imagenes/cabana1.JPG" alt="cabana1.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°1</h5>
-            <button> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a>
-                <!-- Icono y palabra -->
-            </button>
         </article>
 
         <!-- Cabaña N°2, con la imagen, descripcion y el boton -->
         <article id="cab2"> <!-- Seccion Menu -->
             <img src="/Presentacion/imagenes/cabana2.JPG" alt="cabana2.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°2</h5>
-            <button> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
-            </button>
         </article>
         <!-- Cabaña N°3, con la imagen, descripcion y el boton -->
         <article id="cab3"> <!-- Seccion Menu -->
             <img src="/Presentacion/imagenes/cabana3.JPG" alt="cabana3.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°3</h5>
-            <button> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
-            </button>
         </article>
         <!-- Cabaña N°4, con la imagen, descripcion y el boton -->
         <article id="cab4"> <!-- Seccion Menu -->
             <img src="/Presentacion/imagenes/cabana4.JPG" alt="cabana4.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°4</h5>
-            <button> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
-            </button>
         </article>
         <!-- Cabaña N°5, con la imagen, descripcion y el boton -->
         <article id="cab5"> <!-- Seccion Menu -->
             <img src="/Presentacion/imagenes/cabana5.JPG" alt="cabana5.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°5</h5>
-            <button> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
-            </button>
         </article>
         <!-- Cabaña N°6, con la imagen, descripcion y el boton -->
         <article id="cab6"> <!-- Seccion Menu -->
             <img src="/Presentacion/imagenes/cabana6.JPG" alt="cabana6.JPG"><!-- Importar la imagen -->
             <h5>Cabaña N°6</h5>
-            <button> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
-            </button>
         </article>
     </section>
 

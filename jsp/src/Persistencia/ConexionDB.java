@@ -19,6 +19,7 @@ public class ConexionDB {
      * Atributo que permite tener la conexión con la base de datos
      */
     private static Connection conexion;
+    private String usuario;
     /**
      * Atributo que tiene la contrasenia para la conexion con la
      * base de datos
@@ -36,14 +37,14 @@ public class ConexionDB {
      * Atributo que tiene el usuario para conectar con la base
      * de datos
      */
-    private String usuario="root";
+
 
     public ConexionDB(String usuario, String contrasenia){
         this.usuario = usuario;
         this.contrasenia = contrasenia;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = (Connection) DriverManager.getConnection(URL, "root","");
+            conexion = (Connection) DriverManager.getConnection(URL, "root","1234");
 
             if (conexion != null) {
                 hayConexion = true;

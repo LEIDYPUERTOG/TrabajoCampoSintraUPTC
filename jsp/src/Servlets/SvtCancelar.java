@@ -22,7 +22,7 @@ public class SvtCancelar extends HttpServlet {
         ConexionDB conexionDB = new ConexionDB("root","");
         ReservaDao reservaDao = new ReservaDao();
 
-        String[] aux = request.getParameter("reserva").split(" ");
+        String[] aux = request.getParameter("reserva").split("1234");
         int idReserva = Integer.parseInt(aux[0]);
         boolean actualizar = reservaDao.actualizarReservaEstado(idReserva, EstadoReserva.Cancelada);
         RequestDispatcher dispatcher = null;

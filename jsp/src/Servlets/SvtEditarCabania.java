@@ -23,7 +23,7 @@ public class SvtEditarCabania extends HttpServlet {
         int cantidadPersonas = 0;
         int idCabania = Integer.parseInt(request.getParameter("cabaniaId"));
 
-        ConexionDB conexionDB = new ConexionDB("root","");
+        ConexionDB conexionDB = new ConexionDB("root","1234");
 
         CabaniaDao cabaniaDao = new CabaniaDao();
         Cabania cabania =  cabaniaDao.obtenerInfoCabania(idCabania);;

@@ -31,7 +31,7 @@ public class SvtCrearUsuario extends HttpServlet {
         String tipoUsuario = request.getParameter("inlineRadioOptions");
 
 
-        ConexionDB conexionDB = new ConexionDB("root","");
+        ConexionDB conexionDB = new ConexionDB("root","1234");
 
         PersonaDao personaDao = new PersonaDao();
 

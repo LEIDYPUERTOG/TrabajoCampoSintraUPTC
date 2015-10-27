@@ -35,7 +35,7 @@ public class SvtEditarEvento extends HttpServlet {
         GregorianCalendar calendar = new GregorianCalendar();
         Date dateInicio =  null;
         Date dateFin = null;
-        ConexionDB conexionDB = new ConexionDB("root","");
+        ConexionDB conexionDB = new ConexionDB("root","1234");
 
         EventoDao eventoDao = new EventoDao();
         LocacionDao locacionDao = new LocacionDao();

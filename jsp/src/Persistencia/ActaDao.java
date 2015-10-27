@@ -14,7 +14,7 @@ public class ActaDao {
 
 
 	public ActaDao() {
-		conexion = new ConexionDB("root","");
+		conexion = new ConexionDB("root","1234");
 	}
 
 	/**

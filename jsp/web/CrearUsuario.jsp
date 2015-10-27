@@ -87,14 +87,6 @@
                 <!-- Icono y palabra -->
             </button>
         </article>
-
-        <!-- Boton Inicio -->
-        <article id="inicio4">
-            <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
-                    onclick="location.href='index.jsp'"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
-            </button>
-        </article>
     </header>
 
     <!-- Segunda cabecera con los logos del sindicato y la uptc -->
@@ -147,7 +139,7 @@
         <article>
             <nav class="navbar navbar-default navbar-static-top">
                 <ul class="nav nav-tabs">
-                    <li><a href="CrearUsuario.jsp">Crear Usuario</a></li>
+                    <li class="active"><a>Crear Usuario</a></li>
                     <li><a href="ConsultarUsuario.jsp">Consultar Usuario</a></li>
                 </ul>
             </nav>

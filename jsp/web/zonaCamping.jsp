@@ -115,8 +115,6 @@
             <!-- Nombre y color de las palabras -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <a class="ghost" href="/zonaCamping.jsp"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
-                <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
         </ul>
     </section>
 
@@ -175,13 +173,9 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+            </div>
         </article>
-        <article id="botonZC">
-            <button> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                <a class='inline' href="#inline_content" style="text-decoration:none" onclick="ventana()">Reserva</a><!-- Icono y palabra -->
-            </button>
-        </article>
+
     </section>
 
     <!-- Divicion para el color de la informacion adicional de la pagina -->

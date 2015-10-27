@@ -201,7 +201,7 @@ header #inicio1 {
     float: right;
     position: relative;
     top: 25%;
-    margin: 0px 5px;
+    margin: 0px 65px;
 
 }
 
@@ -602,7 +602,7 @@ nav.acceder #login-content {
 */
 #catalogo h5 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -1341,6 +1341,9 @@ Estilos para la tabla y scroll
     height: 35px;
     display: inline-block;
     vertical-align: middle;
+    position: absolute;
+    top: 75px;
+    left: 0px;
 }
 
 #catalogoEv h2 {
@@ -1353,17 +1356,23 @@ Estilos para la tabla y scroll
 #contenido2 #FechaInicio {
     background: #fefff6;
     width: 130px;
-    height: 65px;
+    height: 35px;
     display: inline-block;
     vertical-align: middle;
+    position: absolute;
+    top: 120px;
+    left: 0px;
 }
 
 #contenido2 #FechaFin {
     background: #fefff6;
     width: 130px;
-    height: 65px;
+    height: 35px;
     display: inline-block;
-    top: 400px;
+    vertical-align: middle;
+    position: absolute;
+    top: 170px;
+    left: 0px;
 }
 
 #contenido2 #descripcion {
@@ -1373,7 +1382,7 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
     position: absolute;
-    top: 170px;
+    top: 220px;
     left: 0px;
 }
 
@@ -1384,7 +1393,7 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
     position: absolute;
-    top: 210px;
+    top: 265px;
     left: 0px;
     border: none;
 }
@@ -1396,7 +1405,7 @@ Estilos para la tabla y scroll
     display: inline-block;
     vertical-align: middle;
     position: absolute;
-    top: 170px;
+    top: 220px;
     left: 135px;
 }
 
@@ -1407,16 +1416,15 @@ Estilos para la tabla y scroll
     height: 35px;
     display: inline-block;
     vertical-align: middle;
-
     position: absolute;
-    top: 210px;
+    top: 265px;
     left: 135px;
 }
 
 #contenido2 #btnCrear {
     position: absolute;
-    top: 270px;
     left: 250px;
+    top: 340px;
 }
 
 #contenido2 {
@@ -1434,25 +1442,34 @@ Estilos para la tabla y scroll
 #contenido2 #search1 {
     background: #fefff6;
     width: 400px;
-    height: 35px;
+    height: 100px;
     display: inline-block;
     vertical-align: middle;
+    position: absolute;
+    top: 75px;
+    left: 135px;
 }
 
 #contenido2 #search2 {
     background: #fefff6;
     width: 400px;
-    height: 35px;
+    height: 100px;
     display: inline-block;
     vertical-align: middle;
+    position: absolute;
+    top: 120px;
+    left: 135px;
 }
 
 #contenido2 #search3 {
     background: #fefff6;
     width: 400px;
-    height: 35px;
+    height: 100px;
     display: inline-block;
-
+    vertical-align: middle;
+    position: absolute;
+    top: 170px;
+    left: 135px;
 }
 
 #contenido2 #search4 {
@@ -1886,7 +1903,7 @@ nav.acceder #login-content2 {
     background-color: white;
     height: 270px;
     width: 300px;
-    border-top: 10px solid #FDCA2E;
+    border-top: 10px solid #27ae60;;
     border-right: 3px solid #080808;
     border-left: 3px solid #080808;
     border-bottom: 3px solid #080808;
@@ -1957,7 +1974,7 @@ nav.acceder #login-content2 {
     background-color: white;
     height: 180px;
     width: 350px;
-    border-top: 10px solid #FDCA2E;
+    border-top: 10px solid #27ae60;;
     border-right: 3px solid #080808;
     border-left: 3px solid #080808;
     border-bottom: 3px solid #080808;
@@ -2451,4 +2468,28 @@ nav.acceder #login-content2 {
     width: 700px;
     height: 700px;
     margin: 60px 0 0 -300px;
+}
+/*
+******************************Cambiar Contraseña Administrador **************************************
+*/
+
+#contenidoReservaAdmin h4{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    color: #34495E;
+    text-align: center;
+}
+#contenidoReservaAdmin label{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: #657273;
+}
+#contenidoReservaAdmin {
+    background: #ffffff;
+    position: absolute;
+    left: 45%;
+    top: 60%;
+    width: 700px;
+    height: 300px;
+    margin: 60px 0 0 -200px;
 }
