@@ -53,10 +53,10 @@ public class SvtRegistro extends HttpServlet {
         RequestDispatcher dispatcher = null;
         if(aux == null){
             if(clave.equals(clave2)){
+                persona.setTipoUsuario(TipoUsuario.NoAfiliado);
                 boolean agregar = personaDao.crearPersona(persona);
                 if(agregar){
                     request.setAttribute("persona", persona); //mandando el parametro para que sea accedido
-                    System.out.println("---------------------------------------------" + agregar);
                     request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
                     dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
                     dispatcher.forward(request, response);
@@ -78,8 +78,20 @@ public class SvtRegistro extends HttpServlet {
                     dispatcher.forward(request, response);
                 }
             }
-            PrintWriter out=response.getWriter();
-            out.println("El usuario ya existe");
+            else{
+                if(aux.getContrasenia() != null &&
+                        aux.getContrasenia().equals(clave)){
+                    request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
+                    request.setAttribute("persona", persona); //mandando el parametro para que sea accedido
+                    dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
+                    dispatcher.forward(request, response);
+                }
+                else{
+                    dispatcher = request.getRequestDispatcher("index.jsp");
+                    dispatcher.forward(request, response);
+                }
+            }
+
         }
 
     }
