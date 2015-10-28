@@ -8,6 +8,10 @@
     <meta name="keywords" content="sindraoficiales ">
     <!-- Descripcion -->
     <meta name="description" content="cabañas,reservas, moniquira,psicinas">
+    <!-- Referencia de imagenes de diseño
+    <a href="http://www.freepik.com/free-photos-vectors/background">Background vector designed by Freepik</a> -->
+    <!-- Icono de la ventana-->
+    <link rel="shortcut icon" type="image/x-icon" href="/Presentacion/imagenes/logo.png">
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title> Catalogo </title>
@@ -86,7 +90,8 @@
         </nav>
         <!-- Boton Contactenos -->
         <article id="inicio2">
-            <button type="button" class="btn btn-link" style="margin-top:21px;" onclick="location.href='#informacion'"> <!-- Tamaño -->
+            <button type="button" class="btn btn-link" style="margin-top:21px;" onclick="location.href='#informacion'">
+                <!-- Tamaño -->
                 <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Contáctenos
                 <!-- Icono y palabra -->
             </button>

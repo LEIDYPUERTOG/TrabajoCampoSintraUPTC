@@ -2501,3 +2501,23 @@ nav.acceder #login-content2 {
     height: 300px;
     margin: 60px 0 0 -175px;
 }
+/*
+******************************Ventana Bienvenido Usuario y Administrador **************************************
+*/
+
+#contenedorBU{
+    background: #ffffff;
+    height: 600px;
+    width: 802px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#contenedorA{
+    background: #505aff;
+    position: absolute;
+    left: 45%;
+    top: 60%;
+    width: 730px;
+    height: 548px;
+    margin: -30px 0 0 -200px;
+}

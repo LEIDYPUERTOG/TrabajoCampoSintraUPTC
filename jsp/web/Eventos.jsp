@@ -10,10 +10,10 @@
 <html lang="es"> <!-- Inicio pagina html5 -->
 <head> <!-- Lo que es importante para tener en la pagina -->
     <meta charset="UTF-8">
-    <!-- Palabras clave -->
-    <meta name="keywords" content="sindraoficiales ">
-    <!-- Descripcion -->
-    <meta name="description" content="cabañas,reservas, moniquira,psicinas">
+    <!-- Referencia de imagenes de diseño
+    <a href="http://www.freepik.com/free-photos-vectors/background">Background vector designed by Freepik</a> -->
+    <!-- Icono de la ventana-->
+    <link rel="shortcut icon" type="image/x-icon" href="/Presentacion/imagenes/logo.png">
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title> Eventos </title>

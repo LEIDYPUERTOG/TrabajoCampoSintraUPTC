@@ -7,6 +7,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Referencia de imagenes de diseño
+    <a href="http://www.freepik.com/free-photos-vectors/background">Background vector designed by Freepik</a> -->
+    <!-- Icono de la ventana-->
+    <link rel="shortcut icon" type="image/x-icon" href="/Presentacion/imagenes/logo.png">
     <title>Crear evento</title>
 
     <!-- Estilos de la pagina -->
