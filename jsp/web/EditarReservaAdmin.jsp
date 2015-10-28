@@ -5,6 +5,8 @@
 <%@ page import="Persistencia.InformacionReservaDao" %>
 <%@ page import="Persistencia.ReservaDao" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.GregorianCalendar" %>
+<%@ page import="java.sql.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -278,10 +280,14 @@
                 <label id="IdReserva">Número de reserva</label>
                 <input id="reservaId" type="numeric" name="reserva" readonly>
 
+                <%GregorianCalendar c = new GregorianCalendar();
+                    Date fechaSolicitud = new Date(c.getTimeInMillis());%>
                 <label id="lblFecha1">Fecha Inicio</label>
-                <input id="fecha1Ventana" type="date" name="fechaInicioNueva" placeholder="fecha Inicio" >
+                <input id="fecha1Ventana" type="date" name="fechaInicioNueva" placeholder="fecha Inicio"
+                       min="<%=fechaSolicitud%>">
                 <label id="lblFecha2">Fecha Fin</label>
-                <input id="fecha2Ventana" type="date" name="FechaFinNueva" placeholder="Fecha Fin">
+                <input id="fecha2Ventana" type="date" name="FechaFinNueva" placeholder="Fecha Fin"
+                       min="<%=fechaSolicitud%>"  max="2017-12-31">
 
                 <button type="submit" id="submitAceptarVentana" class="btn btn-primary"
                         style="padding-right:35px;padding-left:10px;margin-top:21px;">

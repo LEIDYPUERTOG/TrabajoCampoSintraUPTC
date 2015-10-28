@@ -191,7 +191,8 @@
         </form>
 
         <article id="informacionEncontrada">
-            <form>
+
+            <form action="/SvtActivarUsuario" method="post" name="formularioBusqueda">
 
                 <%
                     Persona personaSession = (Persona) request.getAttribute("persona");
@@ -200,15 +201,15 @@
                 <article id="et1">
                     <div class="form-group">
                         <label for="lblCedula">Cédula</label>
-                        <input type="text" class="form-control" id="cedula" disabled value=
-                            <%= personaSession.getCedula()%>>
+                        <input type="text" class="form-control" id="cedula" name="cedula" readonly value=
+                            <%= personaSession.getCedula()%> >
                     </div>
                 </article>
 
                 <article id="et2">
                     <div class="form-group">
                         <label for="lblNombre">Nombre y Apellidos</label>
-                        <input type="text" class="form-control" id="nombre" disabled value=
+                        <input type="text" class="form-control" id="nombre" name="nombre" readonly value=
                             <%=personaSession.getNombre()%>>
                     </div>
                 </article>
@@ -216,8 +217,16 @@
                 <article id="et3">
                     <div class="form-group">
                         <label for="TipoUsuario">Tipo de Usuario</label>
-                        <input type="text" class="form-control" id="Tipo Usuario" disabled value=
+                        <input type="text" class="form-control" id="Tipo Usuario" name="TipoUsuario" readonly value=
                             <%= personaSession.getTipoUsuario().toString()%>>
+                    </div>
+                </article>
+
+                <article id="et3">
+                    <div class="form-group">
+                        <label for="Estado">Estado Usuario</label>
+                        <input type="text" class="form-control" id="Estado" readonly name="estado"
+                               value=<%= personaSession.getEstadoPersona().toString()%>>
                     </div>
                 </article>
 
@@ -225,6 +234,11 @@
                     }
 
                 %>
+                <button type="submit" id="submitAceptarCambio" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                    Cambiar estado
+                </button>
 
             </form>
         </article>

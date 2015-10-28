@@ -41,6 +41,5 @@ public class SvtBuscarPersona extends HttpServlet {
             dispatcher.forward(request, response);
         }
     }
-
 }
 

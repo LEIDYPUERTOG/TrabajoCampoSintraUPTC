@@ -1,4 +1,6 @@
 <%@ page import="Logica.Persona" %>
+<%@ page import="java.util.GregorianCalendar" %>
+<%@ page import="java.sql.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Autor: Diana Gonzalez, Leidy Puerto, Edgar Meneses -->
 <!DOCTYPE html>
@@ -107,7 +109,7 @@
     </section>
     <!-- Contenido-->
     <section id="contenidoReservaC">
-        <h4>Reservar</h4><!-- Titulo principal -->
+        <h4>Reservar Cabaña</h4><!-- Titulo principal -->
 
         <form action="/SvtCrearReserva" method="post" name="formulario4">
             <!-- Primer caja de texto -->
@@ -115,7 +117,10 @@
                 <h5>Fecha inicio de la reserva </h5>
             </article>
             <article id="search1">
-                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaInicio">
+                <%GregorianCalendar c = new GregorianCalendar();
+                    Date fechaSolicitud = new Date(c.getTimeInMillis());%>
+                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaInicio"
+                       min="<%=fechaSolicitud%>">
             </article>
 
             <!-- Segunda caja de texto -->
@@ -123,15 +128,16 @@
                 <h5>Fecha fin de la Reserva</h5>
             </article>
             <article id="search2">
-                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
+                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin"
+                       min="<%=fechaSolicitud%>"  max="2017-12-31">
             </article>
 
-            <article id="cantidadP">
+            <article id="CabaniaId">
                 <h5>Numero Cabaña</h5>
             </article>
-            <article id="search3">
+            <article id="searchId">
                 <input type="number" class="form-control" placeholder="Ingrese el numero de la cabaña"
-                       required name="idCabania" min="1" max="6">
+                       name="idCabania" min="1" max="6">
             </article>
 
             <!-- Tercera caja de texto -->
@@ -139,8 +145,8 @@
                 <h5>Cantidad de personas</h5>
             </article>
             <article id="search3">
-                <input type="number" class="form-control" placeholder="Ingrese el texto." required name="cantidad"
-                       min="1" max="10">
+                <input type="number" class="form-control" placeholder="Ingrese el texto."
+                       required name="cantidad" min="1" max="10">
             </article>
 
             <label id="lblPreg">Tipo Servicio: </label>
@@ -171,7 +177,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula1">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula1">
                             </article>
                         </td>
                         <td>
@@ -184,7 +190,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula2">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula2">
                             </article>
                         </td>
                         <td>
@@ -197,7 +203,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula3">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula3">
                             </article>
                         </td>
                         <td>
@@ -210,7 +216,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula4">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula4">
                             </article>
                         </td>
                         <td>
@@ -223,7 +229,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula5">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula5">
                             </article>
                         </td>
                         <td>
@@ -236,7 +242,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula6">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula6">
                             </article>
                         </td>
                         <td>
@@ -249,7 +255,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula7">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula7">
                             </article>
                         </td>
                         <td>
@@ -262,7 +268,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula8">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula8">
                             </article>
                         </td>
                         <td>
@@ -275,7 +281,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula9">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula9">
                             </article>
                         </td>
                         <td>
@@ -288,7 +294,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula10">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula10">
                             </article>
                         </td>
                         <td>
@@ -311,7 +317,6 @@
         </form>
     </section>
 
-
     <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
     <article id="infoUsuario">
         <!-- Division para el color de la informacion adicional de la pagina -->
@@ -319,7 +324,6 @@
         </section>
         <section id="informacion">
             <article id="inf1"> <!-- Seccion Menu -->
-
             </article>
             <article id="inf2"> <!-- Seccion Registrar -->
             </article>

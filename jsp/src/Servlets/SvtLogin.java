@@ -35,17 +35,17 @@ public class SvtLogin extends HttpServlet {
 
                 if(persona.getRol().toString().equalsIgnoreCase("Administrador")){
                     System.out.println("rol "+persona.getRol());
-                    dispatcher = request.getRequestDispatcher("CrearCabania.jsp");
+                    dispatcher = request.getRequestDispatcher("BienvenidoAdministrador.jsp");
                     dispatcher.forward(request, response);
                 }
                 else{
                     if(persona.getRol().toString().equalsIgnoreCase("Funcionario")){
-                        dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
+                        dispatcher = request.getRequestDispatcher("BienvenidoAdministrador.jsp");
                         dispatcher.forward(request, response);
                     }
                     else{
                         System.out.println("rol "+persona.getRol());
-                        dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
+                        dispatcher = request.getRequestDispatcher("BienvenidoUsuario.jsp");
                         dispatcher.forward(request, response);
                     }
                 }

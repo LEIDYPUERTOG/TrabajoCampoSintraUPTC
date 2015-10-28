@@ -147,4 +147,14 @@
         <servlet-name>SvtRechazar</servlet-name>
         <url-pattern>/SvtRechazar</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtActivarUsuario</servlet-name>
+        <servlet-class>Servlets.SvtActivarUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtActivarUsuario</servlet-name>
+        <url-pattern>/SvtActivarUsuario</url-pattern>
+    </servlet-mapping>
+
 </web-app>

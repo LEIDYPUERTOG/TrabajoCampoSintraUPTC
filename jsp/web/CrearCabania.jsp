@@ -186,8 +186,8 @@
                         <input type="text" class="form-control" placeholder="Ingrese la ubicacion" name="ruta">
       <span class="input-group-btn">
           <!-- Boton para la busqueda de la iamgen -->
-        <button type="submit" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        <button type="submit" class="btn btn-default" aria-label="Left Align" disabled>
+            <span class="glyphicon glyphicon-search" aria-hidden="true" aria-disabled="true"></span>
         </button>
       </span>
                     </div>

@@ -244,7 +244,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula1">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula1">
                             </article>
                         </td>
                         <td>
@@ -257,7 +257,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula2">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula2">
                             </article>
                         </td>
                         <td>
@@ -270,7 +270,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula3">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula3">
                             </article>
                         </td>
                         <td>
@@ -283,7 +283,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula4">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula4">
                             </article>
                         </td>
                         <td>
@@ -296,7 +296,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula5">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula5">
                             </article>
                         </td>
                         <td>
@@ -309,7 +309,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula6">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula6">
                             </article>
                         </td>
                         <td>
@@ -322,7 +322,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula7">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula7">
                             </article>
                         </td>
                         <td>
@@ -335,7 +335,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula8">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula8">
                             </article>
                         </td>
                         <td>
@@ -348,7 +348,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula9">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula9">
                             </article>
                         </td>
                         <td>
@@ -361,7 +361,7 @@
                     <tr>
                         <td>
                             <article id="searchC">
-                                <input type="numeric" class="form-control" placeholder="Cedula" name="cedula10">
+                                <input type="number" class="form-control" placeholder="Cedula" name="cedula10">
                             </article>
                         </td>
                         <td>

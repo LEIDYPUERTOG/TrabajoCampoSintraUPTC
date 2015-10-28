@@ -2,6 +2,8 @@
 <%@ page import="Logica.Persona" %>
 <%@ page import="Persistencia.LocacionDao" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.GregorianCalendar" %>
+<%@ page import="java.sql.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -180,11 +182,14 @@
             </article>
 
             <!-- Segunda caja de texto -->
+            ticle id="search1">
+            <%GregorianCalendar c = new GregorianCalendar();
+                Date fechaSolicitud = new Date(c.getTimeInMillis());%>
             <article id="FechaInicio">
                 <h5>Fecha Inicio</h5>
             </article>
             <article id="search2">
-                <input type="date" class="form-control" required name="fechaInicio">
+                <input type="date" class="form-control" required name="fechaInicio" min="<%=fechaSolicitud%>">
             </article>
 
             <!-- Tercera caja de texto -->
@@ -192,7 +197,8 @@
                 <h5>Fecha Fin</h5>
             </article>
             <article id="search3">
-                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
+                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin"
+                       min="<%=fechaSolicitud%>"  max="2017-12-31">
             </article>
             <!-- Cuarta caja de texto -->
             <article id="descripcion">

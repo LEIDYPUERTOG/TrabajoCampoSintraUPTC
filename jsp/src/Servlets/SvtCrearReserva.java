@@ -58,7 +58,11 @@ public class SvtCrearReserva extends HttpServlet {
         GregorianCalendar c = new GregorianCalendar();
         Date fechaSolicitud = new Date(c.getTimeInMillis());
 
+
         String tipoServicio = request.getParameter("inlineRadioOptions");
+        if(tipoServicio == null){
+            tipoServicio = "Camping";
+        }
 
 
         Persona persona = (Persona) request.getSession().getAttribute("persona");
@@ -95,7 +99,8 @@ public class SvtCrearReserva extends HttpServlet {
                 agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
             }
             else {
-                auxPersona= new Persona(cedula,nombre,TipoDocumento.Cedula,TipoUsuario.NoAfiliado,rol.Usuario);
+                auxPersona= new Persona(cedula,nombre,TipoDocumento.Cedula,TipoUsuario.NoAfiliado,rol.Usuario,
+                        EstadoPersona.ACTIVO);
                 personaDao.crearPersona(auxPersona);
                 InformacionReserva informacionReserva = new InformacionReserva(dateInicio,
                         dateFin,dateFin,auxPersona,reserva);

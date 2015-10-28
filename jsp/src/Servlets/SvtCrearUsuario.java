@@ -1,9 +1,6 @@
 package Servlets;
 
-import Logica.Persona;
-import Logica.TipoDocumento;
-import Logica.TipoUsuario;
-import Logica.rol;
+import Logica.*;
 import Persistencia.ConexionDB;
 import Persistencia.PersonaDao;
 
@@ -37,7 +34,7 @@ public class SvtCrearUsuario extends HttpServlet {
 
         Persona aux = personaDao.consultarPersona(documento); //primero  busca si la persona no esta para agregarla
         Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado,
-                personaDao.conversionRol(tipoUsuario));
+                personaDao.conversionRol(tipoUsuario), EstadoPersona.ACTIVO);
 
         RequestDispatcher dispatcher = null;
         Persona persona1 = (Persona) request.getSession().getAttribute("persona");

@@ -1,9 +1,6 @@
 package Persistencia;
 
-import Logica.Persona;
-import Logica.TipoDocumento;
-import Logica.TipoUsuario;
-import Logica.rol;
+import Logica.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -57,6 +54,34 @@ public class PersonaDao {
 		return actualizacion;
 	}
 
+	public boolean actualizarEstadoPersona(int documento, EstadoPersona estadoPersona){
+		boolean actualizacion = false;
+		Persona persona = this.consultarPersona(documento);
+		if(persona != null){
+			try {
+				conn = conexionDB.getConexion();
+				String queryUpdate = "UPDATE persona SET  ESTADO_PERSONA = ? "
+						+ "WHERE documento_persona = ?";
+
+				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+
+				ppStm.setString(1, conversionEstadoAString(estadoPersona));
+				ppStm.setInt(2, documento);
+
+				ppStm.executeUpdate();
+
+				//conn.close();
+				actualizacion = true;
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				actualizacion = false;
+			}
+		}
+		return actualizacion;
+	}
+
 	/**
 	 * Metodo que permite obtener la informacion de una persona 
 	 * ingresando por parametro el documento de identidad
@@ -85,7 +110,8 @@ public class PersonaDao {
 				persona.setNombre(resultSet.getString(3));
 				persona.setTipoUsuario(tipoUsuario);
 				persona.setRol(conversionRol(resultSet.getString(5)));
-				persona.setContrasenia(resultSet.getString(6));
+				persona.setEstadoPersona(conversionEstado(resultSet.getString(6)));
+				persona.setContrasenia(resultSet.getString(7));
 
 			}else{
 				return persona;
@@ -116,10 +142,9 @@ public class PersonaDao {
 
 				listaPersonas.add(new Persona(resultSet.getInt(1), resultSet.getString(3),
 						conversionDocumento(resultSet.getString(2)),
-						conversionUsuario(resultSet.getString(4)), resultSet.getString(6),
-						conversionRol(resultSet.getString(6))));
+						conversionUsuario(resultSet.getString(4)), resultSet.getString(7),
+						conversionRol(resultSet.getString(5)),conversionEstado(resultSet.getString(6))));
 			}
-
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -143,8 +168,9 @@ public class PersonaDao {
 			String tipoUsuario = conversionEnumUsuarioAIniciales(persona.getTipoUsuario());
 
 			String rol = conversionDeEnumRolIniciales(persona.getRol());
+			String estado = conversionEstadoAString(persona.getEstadoPersona());
 
-			String queryInsertar = "INSERT INTO persona VALUES(?,?,?,?,?,?)";
+			String queryInsertar = "INSERT INTO persona VALUES(?,?,?,?,?,?,?)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
 			ppStm.setInt(1, persona.getCedula());
@@ -152,7 +178,8 @@ public class PersonaDao {
 			ppStm.setString(3, persona.getNombre());
 			ppStm.setString(4, tipoUsuario);
 			ppStm.setString(5, rol);
-			ppStm.setString(6, persona.getContrasenia());
+			ppStm.setString(6,estado);
+			ppStm.setString(7, persona.getContrasenia());
 
 			ppStm.executeUpdate();
 			//conn.close();
@@ -253,6 +280,28 @@ public class PersonaDao {
 			}
 		}
 		return tipoRol;
+	}
+
+	public EstadoPersona conversionEstado(String estado){
+		EstadoPersona estadoPersona = null;
+		if(estado.equalsIgnoreCase("A")){
+			estadoPersona= EstadoPersona.ACTIVO;
+		}
+		else {
+			estadoPersona = EstadoPersona.INACTIVO;
+		}
+		return estadoPersona;
+	}
+
+	public String conversionEstadoAString(EstadoPersona estadoPersona){
+		String estado = "";
+		if(estadoPersona.toString().equalsIgnoreCase("Activo")){
+			estado = "A";
+		}
+		else {
+			estado = "I";
+		}
+		return estado;
 	}
 
 	public ConexionDB getConexionDB() {

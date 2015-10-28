@@ -45,6 +45,7 @@ public class Persona {
 	 */
 	private String contrasenia;
 	private rol rol;
+	private EstadoPersona estadoPersona;
 
 
 	/**
@@ -56,7 +57,7 @@ public class Persona {
 	 * @param contrasenia
 	 */
 	public Persona(int cedula, String nombre, TipoDocumento tipoDocumento,
-				   TipoUsuario tipoUsuario, String contrasenia, rol rol) {
+				   TipoUsuario tipoUsuario, String contrasenia, rol rol, EstadoPersona estadoPersona) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
@@ -64,6 +65,7 @@ public class Persona {
 		this.tipoUsuario = tipoUsuario;
 		this.contrasenia = contrasenia;
 		this.rol = rol;
+		this.estadoPersona = estadoPersona;
 	}
 
 	/**
@@ -74,13 +76,14 @@ public class Persona {
 	 * @param tipoUsuario
 	 */
 	public Persona(int cedula, String nombre, TipoDocumento tipoDocumento,
-				   TipoUsuario tipoUsuario, rol rol) {
+				   TipoUsuario tipoUsuario, rol rol, EstadoPersona estadoPersona) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.tipoDocumento = tipoDocumento;
 		this.tipoUsuario = tipoUsuario;
 		this.rol = rol;
+		this.estadoPersona = estadoPersona;
 	}
 
 	public Persona(){
@@ -142,5 +145,13 @@ public class Persona {
 
 	public void setRol(Logica.rol rol) {
 		this.rol = rol;
+	}
+
+	public EstadoPersona getEstadoPersona() {
+		return estadoPersona;
+	}
+
+	public void setEstadoPersona(EstadoPersona estadoPersona) {
+		this.estadoPersona = estadoPersona;
 	}
 }
