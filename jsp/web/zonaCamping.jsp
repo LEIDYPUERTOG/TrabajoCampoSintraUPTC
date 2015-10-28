@@ -189,12 +189,6 @@
     <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->
-            <h4>Menu</h4>
-            <h5>
-                <button type="button" class="btn btn-link">Nosotros</button>
-                <button type="button" class="btn btn-link">Junta Directiva</button>
-                <button type="button" class="btn btn-link">Contáctenos</button>
-            </h5>
         </article>
         <article id="inf2"> <!-- Seccion Registrar -->
         </article>
