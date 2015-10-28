@@ -31,9 +31,7 @@ public class SvtEditarCabania extends HttpServlet {
         try {
             valor = Double.parseDouble(request.getParameter("valor"));
         }catch (Exception e){
-
             if(valor == 0){
-                System.out.println("-----------------------------");
                 valor = cabania.getValor_servicio_dia();
             }
 
@@ -56,8 +54,10 @@ public class SvtEditarCabania extends HttpServlet {
                     dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
                     dispatcher.forward(request, response);
                 }
+            }else {
+                dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
+                dispatcher.forward(request, response);
             }
-            dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
-            dispatcher.forward(request, response);
+
         }
     }

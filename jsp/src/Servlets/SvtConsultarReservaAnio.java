@@ -43,10 +43,12 @@ public class SvtConsultarReservaAnio extends HttpServlet {
                 long cantidadDias = informacionReserva.getFechaFinReserva().getTime() -
                         informacionReserva.getFechaInicioReserva().getTime();
                 request.setAttribute("dias",cantidadDias);
-
                 dispatcher = request.getRequestDispatcher("ReservasAnuales.jsp");
                 dispatcher.forward(request, response);
             }
+        }
+        else{
+            dispatcher = request.getRequestDispatcher("ReservasAnuales.jsp");
         }
     }
 

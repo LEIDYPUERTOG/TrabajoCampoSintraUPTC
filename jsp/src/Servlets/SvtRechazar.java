@@ -24,12 +24,12 @@ public class SvtRechazar extends HttpServlet {
 
         String[] aux = request.getParameter("reserva").split(" ");
         int idReserva = Integer.parseInt(aux[0]);
-        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+ idReserva);
+
         boolean actualizar = reservaDao.actualizarReservaEstado(idReserva, EstadoReserva.Rechazada);
         RequestDispatcher dispatcher = null;
 
         if(actualizar==true){
-            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
             dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
             dispatcher.forward(request, response);
         }
@@ -39,7 +39,4 @@ public class SvtRechazar extends HttpServlet {
         }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }

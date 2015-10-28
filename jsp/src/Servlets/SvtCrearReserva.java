@@ -51,7 +51,7 @@ public class SvtCrearReserva extends HttpServlet {
 
         GregorianCalendar c = new GregorianCalendar();
         Date fechaSolicitud = new Date(c.getTimeInMillis());
-        System.out.println("solicitud-------------" + fechaSolicitud);
+
         String tipoServicio = request.getParameter("inlineRadioOptions");
 
 
@@ -76,23 +76,19 @@ public class SvtCrearReserva extends HttpServlet {
             Camping camping = new Camping(cantidad);
             reserva.setCamping(camping);
             agregar = reservaDao.crearReservaCamping(reserva);
-
         }
-
 
         for(int i = 1; i < cantidad+1; i++){
             int cedula = Integer.parseInt(request.getParameter("cedula" + i));
-            System.out.println("cedula   "+i+" --------- "+ cedula);
+
             String nombre = request.getParameter("nombre" + i);
             Persona auxPersona = personaDao.consultarPersona(cedula);
             if(auxPersona!=null){
                 InformacionReserva informacionReserva = new InformacionReserva
                         (dateInicio, dateFin,dateFin,auxPersona,reserva);
                 agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
-                System.out.println("agregar Info "+agregarInfo);
             }
             else {
-                System.out.println("cedula en else   "+i+" --------- "+ cedula);
                 auxPersona= new Persona(cedula,nombre,TipoDocumento.Cedula,TipoUsuario.NoAfiliado,rol.Usuario);
                 personaDao.crearPersona(auxPersona);
                 InformacionReserva informacionReserva = new InformacionReserva(dateInicio,
@@ -104,9 +100,7 @@ public class SvtCrearReserva extends HttpServlet {
 
         RequestDispatcher dispatcher = null;
 
-
         if(agregar && agregarInfo){
-            System.out.println("---------------------------------------------" + agregar);
             if(persona.getRol().toString().equalsIgnoreCase("Administrador")||
                     persona.getRol().toString().equalsIgnoreCase("Funcionario")){
 

@@ -40,14 +40,10 @@ public class SvtRegistro extends HttpServlet {
 
         PersonaDao personaDao = new PersonaDao();
 
-        System.out.println("---------------------------------------------"+nombre);
-        System.out.println("---------------------------------------------"+documento);
-        System.out.println("---------------------------------------------"+clave);
         Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, personaDao.conversionUsuario(tipoUsuario),
                 clave,rol.Usuario);
 
 
-        System.out.println("---------------------------------------------" + persona.getRol());
         Persona aux = personaDao.consultarPersona(documento); //primero  busca si la persona no esta para agregarla
 
         RequestDispatcher dispatcher = null;
@@ -74,8 +70,16 @@ public class SvtRegistro extends HttpServlet {
                 if(actualizar){
                     request.setAttribute("personaCreada", "Usuario creado satisfactoriamente");
                     request.setAttribute("persona", persona); //mandando el parametro para que sea accedido
-                    dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
-                    dispatcher.forward(request, response);
+                    if(aux.getRol().toString().equalsIgnoreCase("Administrador")||
+                            aux.getRol().toString().equalsIgnoreCase("Funcionario")){
+
+                        dispatcher = request.getRequestDispatcher("CrearCabania.jsp");
+                        dispatcher.forward(request, response);
+                    }
+                    else{
+                        dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
+                        dispatcher.forward(request, response);
+                    }
                 }
             }
             else{
@@ -91,8 +95,6 @@ public class SvtRegistro extends HttpServlet {
                     dispatcher.forward(request, response);
                 }
             }
-
         }
-
     }
 }

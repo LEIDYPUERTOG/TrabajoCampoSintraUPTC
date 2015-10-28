@@ -40,16 +40,18 @@ public class SvtCancelar extends HttpServlet {
                 dispatcher = request.getRequestDispatcher("EditarReservaUsuario.jsp");
                 dispatcher.forward(request, response);
             }
-
         }
         else {
-            dispatcher = request.getRequestDispatcher("EditarReservaAdmin.jsp");
-            dispatcher.forward(request, response);
+            if(reserva.getPersona().getRol().toString().equals("Administrador")
+                    ||reserva.getPersona().getRol().toString().equals("Funcionario")){
+                dispatcher = request.getRequestDispatcher("EditarReservaAdmin.jsp");
+                dispatcher.forward(request, response);
+            }
+            else{
+                dispatcher = request.getRequestDispatcher("EditarReservaUsuario.jsp");
+                dispatcher.forward(request, response);
+            }
         }
-
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }

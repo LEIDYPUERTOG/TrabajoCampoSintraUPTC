@@ -59,6 +59,10 @@ public class SvtCrearCabania extends HttpServlet {
                 dispatcher.forward(request, response);
             }
         }
+        else{
+            dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
 

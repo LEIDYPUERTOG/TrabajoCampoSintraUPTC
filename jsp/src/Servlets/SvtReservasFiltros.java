@@ -62,8 +62,9 @@ public class SvtReservasFiltros extends HttpServlet {
                 }
             }
         }
-        dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
-        dispatcher.forward(request, response);
+        else {
+            dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
+            dispatcher.forward(request, response);
+        }
     }
-
 }

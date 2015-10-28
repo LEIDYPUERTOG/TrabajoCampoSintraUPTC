@@ -26,7 +26,6 @@ public class SvtEditarEvento extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-
         String nombre=request.getParameter("nombre");
         String[] aux =null;
         int auxAnio = 0;
@@ -41,7 +40,6 @@ public class SvtEditarEvento extends HttpServlet {
         LocacionDao locacionDao = new LocacionDao();
         Evento evento =  eventoDao.obtenerEventoNombre(nombre);;
 
-
         try {
             aux = request.getParameter("fechaInicio").toString().split("-");
 
@@ -54,7 +52,6 @@ public class SvtEditarEvento extends HttpServlet {
         }catch (Exception e){
 
             dateInicio = evento.getFechaIncioEvento();
-            System.out.println("fecha "+dateInicio);
 
         }
 
@@ -92,7 +89,6 @@ public class SvtEditarEvento extends HttpServlet {
         if(persona !=null){
 
             boolean actualizar = eventoDao.actualizarEvento(nombre,locacion.getIdLocacion(),dateInicio,dateFin);
-            System.out.println("---------------------------- "+actualizar);
             if(actualizar ){
                 request.setAttribute("eventoCreado", "Evento creado satisfactoriamente");
                 dispatcher = request.getRequestDispatcher("ConsultarEvento.jsp");

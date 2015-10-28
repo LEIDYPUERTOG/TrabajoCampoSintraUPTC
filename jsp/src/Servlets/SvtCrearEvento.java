@@ -54,10 +54,6 @@ public class SvtCrearEvento extends HttpServlet {
         LocacionDao locacionDao = new LocacionDao();
 
 
-
-        System.out.println("---------------------------------------------"+nombre);
-        System.out.println("Lugar2222222 - "+lugar);
-        System.out.println("---------------------------------------------"+descipcion);
         Evento evento = null;
         Locacion locacion = locacionDao.obtenertLocacionPorId(lugar+1);
 

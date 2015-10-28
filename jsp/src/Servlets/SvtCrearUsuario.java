@@ -35,9 +35,6 @@ public class SvtCrearUsuario extends HttpServlet {
 
         PersonaDao personaDao = new PersonaDao();
 
-        System.out.println("---------------------------------------------"+nombre);
-        System.out.println("---------------------------------------------"+documento);
-
         Persona aux = personaDao.consultarPersona(documento); //primero  busca si la persona no esta para agregarla
         Persona persona = new Persona(documento,nombre, TipoDocumento.Cedula, TipoUsuario.Afiliado,
                 personaDao.conversionRol(tipoUsuario));
@@ -58,6 +55,6 @@ public class SvtCrearUsuario extends HttpServlet {
             dispatcher.forward(request, response);
 
         }
-}
+    }
 
 }

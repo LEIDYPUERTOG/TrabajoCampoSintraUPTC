@@ -91,7 +91,13 @@ public class Reserva {
 		this.estadoReserva = estadoReserva;
 		this.fechaSolicitud = fechaSolicitud;
 		this.persona = persona;
-		this.valorReserva = calcularValorReserva(this.cantidadPersonas,90000);
+		if(persona.getTipoUsuario().toString().equalsIgnoreCase("Afiliado")){
+			this.valorReserva = calcularValorReserva(this.cantidadPersonas,90000);
+		}
+		else{
+			this.valorReserva = calcularValorReserva(this.cantidadPersonas,160000);
+		}
+
 		this.tipoServicio = tipoServicio;
 	}
 
