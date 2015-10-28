@@ -9,10 +9,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Referencia de imagenes de diseño
-    <a href="http://www.freepik.com/free-photos-vectors/background">Background vector designed by Freepik</a> -->
-    <!-- Icono de la ventana-->
-    <link rel="shortcut icon" type="image/x-icon" href="/Presentacion/imagenes/logo.png">
     <title>Consultar Evento</title>
 
     <!-- Estilos de la pagina -->
@@ -204,10 +200,9 @@
 
 
         <article id="lista3">
-            <table class = "table table-bordered"  onclick="
+            <table class="table" id="tabla_uno" onclick="
             document.getElementById('nombreVentana').value = tomarValor();">
                 <thead>
-
                 <!-- titulos de la tabla -->
                 <tr>
                     <th>Nombre</th>
@@ -238,7 +233,6 @@
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana()"></td>
                     <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
-
                 </tr>
                 <%
                     }
@@ -256,6 +250,10 @@
     <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->
+            <h4>Menu</h4>
+            <h5> <button type="button" class="btn btn-link">Nosotros</button> </h5>
+            <h5> <button type="button" class="btn btn-link">Junta Directiva</button> </h5>
+            <h5> <button type="button" class="btn btn-link">Contáctenos</button> </h5>
         </article>
         <article id="inf2"> <!-- Seccion Registrar -->
         </article>

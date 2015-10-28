@@ -25,7 +25,7 @@ public class SvtCrearReserva extends HttpServlet {
 
         String[] aux = request.getParameter("fechaInicio").toString().split("-");
         int auxAnio = Integer.parseInt(aux[0]);
-        int auxMes = Integer.parseInt(aux[1]);
+        int auxMes = Integer.parseInt(aux[1])-1;
         int auxDia = Integer.parseInt(aux[2]);
         GregorianCalendar calendar = new GregorianCalendar();
         calendar.set(auxAnio, auxMes, auxDia);
@@ -33,12 +33,18 @@ public class SvtCrearReserva extends HttpServlet {
 
         aux = request.getParameter("fechaFin").toString().split("-");
         auxAnio = Integer.parseInt(aux[0]);
-        auxMes = Integer.parseInt(aux[1]);
+        auxMes = Integer.parseInt(aux[1])-1;
         auxDia = Integer.parseInt(aux[2]);
         calendar = new GregorianCalendar();
         calendar.set(auxAnio,auxMes,auxDia);
         Date dateFin = new Date(calendar.getTimeInMillis());
-        int idCabania = Integer.parseInt(request.getParameter("idCabania"));
+        int idCabania = 1;
+        try {
+            idCabania = Integer.parseInt(request.getParameter("idCabania"));
+        }catch (Exception e){
+
+        }
+
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
 
 

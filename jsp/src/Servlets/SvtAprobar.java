@@ -24,12 +24,12 @@ public class SvtAprobar extends HttpServlet {
 
         String[] aux = request.getParameter("reserva").split(" ");
         int idReserva = Integer.parseInt(aux[0]);
-
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+ idReserva);
         boolean actualizar = reservaDao.actualizarReservaEstado(idReserva, EstadoReserva.Aprobada);
         RequestDispatcher dispatcher = null;
 
         if(actualizar==true){
-
+            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
             dispatcher.forward(request, response);
         }

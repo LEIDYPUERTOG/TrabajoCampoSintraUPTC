@@ -209,7 +209,7 @@
                     <div class="form-group">
                         <label for="lblNombre">Nombre y Apellidos</label>
                         <input type="text" class="form-control" id="nombre" disabled value=
-                            <%= personaSession.getNombre()%>>
+                            <%=personaSession.getNombre()%>>
                     </div>
                 </article>
 

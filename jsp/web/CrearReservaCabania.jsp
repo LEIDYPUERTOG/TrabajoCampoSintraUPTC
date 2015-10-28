@@ -1,4 +1,6 @@
 <%@ page import="Logica.Persona" %>
+<%@ page import="java.util.GregorianCalendar" %>
+<%@ page import="java.sql.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -182,7 +184,10 @@
                 <h5>Fecha inicio de la reserva </h5>
             </article>
             <article id="search1">
-                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaInicio">
+                <%GregorianCalendar c = new GregorianCalendar();
+                    Date fechaSolicitud = new Date(c.getTimeInMillis());%>
+                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaInicio"
+                        min="<%=fechaSolicitud%>">
             </article>
 
             <!-- Segunda caja de texto -->
@@ -190,7 +195,8 @@
                 <h5>Fecha fin de la Reserva</h5>
             </article>
             <article id="search2">
-                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin">
+                <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaFin"
+                       min="<%=fechaSolicitud%>"  max="2017-12-31">
             </article>
 
             <article id="CabaniaId">
@@ -198,7 +204,7 @@
             </article>
             <article id="searchId">
                 <input type="number" class="form-control" placeholder="Ingrese el numero de la cabaña"
-                       required name="idCabania" min="1" max="6">
+                       name="idCabania" min="1" max="6">
             </article>
 
             <!-- Tercera caja de texto -->

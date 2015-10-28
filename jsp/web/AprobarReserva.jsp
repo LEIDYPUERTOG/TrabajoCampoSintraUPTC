@@ -14,10 +14,6 @@
 <head>
 
     <meta charset="UTF-8">
-    <!-- Referencia de imagenes de diseño
-    <a href="http://www.freepik.com/free-photos-vectors/background">Background vector designed by Freepik</a> -->
-    <!-- Icono de la ventana-->
-    <link rel="shortcut icon" type="image/x-icon" href="/Presentacion/imagenes/logo.png">
     <title>Aprobar Reserva</title>
 
     <!-- Estilos de la pagina -->
@@ -98,7 +94,7 @@
                     <li> <a href="/CambiarContrasenia.jsp">
                         <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Cambiar Contraseña</a>
                     </li>
-                    <li><a href="index.jsp"> <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Cerrar
+                    <li><a> <span class="glyphicon glyphicon-log-out" aria-hidden="true" href="#"></span>Cerrar
                         Sesión</a></li>
 
                 </ul>
@@ -302,6 +298,10 @@
     <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->
+            <h4>Menu</h4>
+            <h5> <button type="button" class="btn btn-link">Nosotros</button> </h5>
+            <h5> <button type="button" class="btn btn-link">Junta Directiva</button> </h5>
+            <h5> <button type="button" class="btn btn-link">Contáctenos</button> </h5>
         </article>
         <article id="inf2"> <!-- Seccion Registrar -->
         </article>

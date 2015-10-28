@@ -88,16 +88,8 @@ public class SvtEditarReserva extends HttpServlet {
                 dispatcher.forward(request, response);
             }
         }else{
-            if(reserva.getPersona().getRol().toString().equals("Administrador")
-                    ||reserva.getPersona().getRol().toString().equals("Funcionario")){
-
-                dispatcher = request.getRequestDispatcher("EditarReservaAdmin.jsp");
-                dispatcher.forward(request, response);
-            }
-            else{
-                dispatcher = request.getRequestDispatcher("EditarReservaUsuario.jsp");
-                dispatcher.forward(request, response);
-            }
+            PrintWriter out=response.getWriter();
+            out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
         }
     }
 

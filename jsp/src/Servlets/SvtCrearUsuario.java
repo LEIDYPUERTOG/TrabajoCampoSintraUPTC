@@ -26,7 +26,7 @@ public class SvtCrearUsuario extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
 
-        String nombre=request.getParameter("nombres");
+        String nombre=request.getParameter("nombres").toUpperCase();
         int documento=Integer.parseInt(request.getParameter("documento"));
         String tipoUsuario = request.getParameter("inlineRadioOptions");
 
