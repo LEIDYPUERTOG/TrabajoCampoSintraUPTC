@@ -26,7 +26,7 @@ public class SvtEditarCabania extends HttpServlet {
         ConexionDB conexionDB = new ConexionDB("root","");
 
         CabaniaDao cabaniaDao = new CabaniaDao();
-        Cabania cabania =  cabaniaDao.obtenerInfoCabania(idCabania);;
+        Cabania cabania =  cabaniaDao.obtenerInfoCabania(idCabania);
 
         try {
             valor = Double.parseDouble(request.getParameter("valor"));

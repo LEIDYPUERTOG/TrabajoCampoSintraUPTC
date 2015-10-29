@@ -5,6 +5,7 @@ import Logica.Persona;
 import Logica.TipoDocumento;
 import Persistencia.CabaniaDao;
 import Persistencia.ConexionDB;
+import Persistencia.EstadoCabania;
 import Persistencia.PersonaDao;
 
 import javax.servlet.RequestDispatcher;
@@ -38,7 +39,7 @@ public class SvtCrearCabania extends HttpServlet {
         System.out.println("---------------------------------------------"+capacidad);
         System.out.println("---------------------------------------------"+valor);
         System.out.println("---------------------------------------------"+ruta);
-        Cabania cabania = new Cabania(capacidad,ruta,idCabania, valor);
+        Cabania cabania = new Cabania(capacidad,ruta,idCabania, valor, EstadoCabania.Activa);
 
         Cabania buscarCabania = cabaniaDao.obtenerInfoCabania(idCabania);
 
@@ -64,7 +65,6 @@ public class SvtCrearCabania extends HttpServlet {
             dispatcher.forward(request, response);
         }
     }
-
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

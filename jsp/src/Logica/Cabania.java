@@ -1,5 +1,7 @@
 package Logica;
 
+import Persistencia.EstadoCabania;
+
 /**
  * Clase que contiene informacion propia de las
  * cabanias
@@ -14,23 +16,27 @@ public class Cabania extends Servicio{
 	 * cabania
 	 */
 	private int capacidadMaxima;
+	private EstadoCabania estadoCabania;
 
 
 	public Cabania(){
 
 	}
 
-	public Cabania(int capacidadMaxima, String fotoCabania, int idCabania, double valorCabaniaNoche) {
+	public Cabania(int capacidadMaxima, String fotoCabania, int idCabania, double valorCabaniaNoche,
+				   EstadoCabania estadoCabania) {
 		this.capacidadMaxima = capacidadMaxima;
 		this.setFoto_zona(fotoCabania);
 		this.setId_servicio(idCabania);
 		this.setValor_servicio_dia(valorCabaniaNoche);
+		this.estadoCabania = estadoCabania;
 	}
 
-	public Cabania(int capacidadMaxima, int idCabania, double valorCabaniaNoche) {
+	public Cabania(int capacidadMaxima, int idCabania, double valorCabaniaNoche, EstadoCabania estadoCabania) {
 		this.capacidadMaxima = capacidadMaxima;
 		this.setId_servicio(idCabania);
 		this.setValor_servicio_dia(valorCabaniaNoche);
+		this.estadoCabania = estadoCabania;
 	}
 
 	public int getCapacidadMaxima() {
@@ -41,4 +47,11 @@ public class Cabania extends Servicio{
 		this.capacidadMaxima = capacidadMaxima;
 	}
 
+	public EstadoCabania getEstadoCabania() {
+		return estadoCabania;
+	}
+
+	public void setEstadoCabania(EstadoCabania estadoCabania) {
+		this.estadoCabania = estadoCabania;
+	}
 }

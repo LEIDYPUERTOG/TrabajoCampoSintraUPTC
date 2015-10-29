@@ -157,4 +157,12 @@
         <url-pattern>/SvtActivarUsuario</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SvtSuspenderCabania</servlet-name>
+        <servlet-class>Servlets.SvtSuspenderCabania</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtSuspenderCabania</servlet-name>
+        <url-pattern>/SvtSuspenderCabania</url-pattern>
+    </servlet-mapping>
 </web-app>

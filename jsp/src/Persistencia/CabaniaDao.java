@@ -31,31 +31,60 @@ public class CabaniaDao {
 
 		boolean actualizacion = false;
 		Cabania cabania = this.obtenerInfoCabania(idCabania);
-        if(cabania != null){
-            try {
-                conn = conexionDB.getConexion();
-                String queryUpdate = "UPDATE cabania SET  valor_servicio_dia = ?, capacidad_maxima = ?"
-                        + " WHERE id_servicio_cabania = ?";
+		if(cabania != null){
+			try {
+				conn = conexionDB.getConexion();
+				String queryUpdate = "UPDATE cabania SET  valor_servicio_dia = ?, capacidad_maxima = ?"
+						+ " WHERE id_servicio_cabania = ?";
 
-                PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
 
-                ppStm.setDouble(1,valor);
-                ppStm.setInt(2,capacidad);
-                ppStm.setInt(3, idCabania);
+				ppStm.setDouble(1,valor);
+				ppStm.setInt(2,capacidad);
+				ppStm.setInt(3, idCabania);
 
-                ppStm.executeUpdate();
+				ppStm.executeUpdate();
 
-                //conn.close();
-                actualizacion = true;
+				//conn.close();
+				actualizacion = true;
 
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                actualizacion = false;
-            }
-        }
-        return actualizacion;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				actualizacion = false;
+			}
+		}
+		return actualizacion;
 
+	}
+
+	public boolean actualizarEstadoCabania(int idCabania, EstadoCabania estadoCabania){
+
+		boolean actualizacion = false;
+		Cabania cabania = this.obtenerInfoCabania(idCabania);
+		if(cabania != null){
+			try {
+				conn = conexionDB.getConexion();
+				String queryUpdate = "UPDATE cabania SET  ESTADO_CABANIA = ?"
+						+ " WHERE id_servicio_cabania = ?";
+
+				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+
+				ppStm.setString(1, conversionEstadoString(estadoCabania));
+				ppStm.setInt(2, idCabania);
+
+				ppStm.executeUpdate();
+
+				//conn.close();
+				actualizacion = true;
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				actualizacion = false;
+			}
+		}
+		return actualizacion;
 	}
 
 	/**
@@ -68,13 +97,14 @@ public class CabaniaDao {
 		try {
 			conn = conexionDB.getConexion();
 
-			String queryInsertar = "INSERT INTO cabania VALUES(?,?,?,?)";
+			String queryInsertar = "INSERT INTO cabania VALUES(?,?,?,?,?)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
 			ppStm.setInt(1, cabania.getId_servicio());
 			ppStm.setInt(2, cabania.getCapacidadMaxima());
 			ppStm.setDouble(3, cabania.getValor_servicio_dia());
-			ppStm.setString(4, cabania.getFoto_zona());
+			ppStm.setString(4, conversionEstadoString(cabania.getEstadoCabania()));
+			ppStm.setString(5, cabania.getFoto_zona());
 
 			ppStm.executeUpdate();
 
@@ -125,15 +155,15 @@ public class CabaniaDao {
 		ArrayList<Cabania> listaCabanias = null;
 		try {
 			conn = ConexionDB.getConexion();
-			String querySearch = "SELECT * FROM cabania";
+			String querySearch = "SELECT * FROM cabania ORDER BY (estado_cabania) ASC";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 
 			ResultSet resultSet = ppStm.executeQuery();
 			listaCabanias = new ArrayList<>();
 			while(resultSet.next()){
-				listaCabanias.add(new Cabania(resultSet.getInt(2), resultSet.getString(4),
-						resultSet.getInt(1), resultSet.getDouble(3)));
+				listaCabanias.add(new Cabania(resultSet.getInt(2), resultSet.getString(5),
+						resultSet.getInt(1), resultSet.getDouble(3), conversionStringEstado(resultSet.getString(4))));
 			}
 
 			//conn.close();
@@ -165,12 +195,13 @@ public class CabaniaDao {
 				cabania = new Cabania();
 				cabania.setId_servicio(resultSet.getInt(1));
 				try{
-					cabania.setFoto_zona(resultSet.getString(4));
+					cabania.setFoto_zona(resultSet.getString(5));
 				}catch (SQLException e){
 					cabania.setFoto_zona("Sin foto");
 				}
 				cabania.setCapacidadMaxima(resultSet.getInt(2));
 				cabania.setValor_servicio_dia(resultSet.getDouble(3));
+				cabania.setEstadoCabania(conversionStringEstado(resultSet.getString(4)));
 			}else{
 				return cabania;
 			}
@@ -192,4 +223,25 @@ public class CabaniaDao {
 		this.conexionDB = conexionDB;
 	}
 
+	public String conversionEstadoString(EstadoCabania estadoCabania){
+		String estado="";
+		if(estadoCabania.toString().equalsIgnoreCase("Activa")){
+			estado = "A";
+		}
+		else{
+			estado = "S";
+		}
+		return estado;
+	}
+
+	public EstadoCabania conversionStringEstado(String estado){
+		EstadoCabania estadoCabania = null;
+		if(estado.equalsIgnoreCase("A")){
+			estadoCabania = EstadoCabania.Activa;
+		}
+		else{
+			estadoCabania = EstadoCabania.Suspendida;
+		}
+		return estadoCabania;
+	}
 }

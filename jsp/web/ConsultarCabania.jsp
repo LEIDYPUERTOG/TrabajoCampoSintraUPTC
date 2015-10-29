@@ -171,15 +171,18 @@
         <h4>Consulta de Cabañas</h4>
 
         <article id="lista">
-            <table class = "table table-bordered" id="tabla_uno" onclick=" document.getElementById('cabaniaId').value = tomarValor();">
+            <table class = "table table-bordered" id="tabla_uno"
+                   onclick=" document.getElementById('cabaniaId').value = tomarValor();
+                   document.getElementById('idCabania2').value = tomarValor();">
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
                     <th>Cabaña</th>
                     <th>Valor Noche</th>
                     <th>Capacidad</th>
+                    <th>Estado</th>
                     <th>Editar</th>
-                    <th>Suspender</th>
+                    <th>Suspender</br>Activar</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -193,10 +196,26 @@
                     <td><%= listaCabanias.get(i).getId_servicio()%></td>
                     <td><%= listaCabanias.get(i).getValor_servicio_dia()%></td>
                     <td><%= listaCabanias.get(i).getCapacidadMaxima()%></td>
-
+                    <td><%= listaCabanias.get(i).getEstadoCabania()%></td>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana()"></td>
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+
+                    <%if(listaCabanias.get(i).getEstadoCabania().toString().equalsIgnoreCase("Activa")){
+
+                    %>
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"
+                             class='inline'  href="#inline_content2" onclick="ventana3()"></td>
+                    <%
+
+                    }else{
+
+                    %>
+                    <td><img src="/Presentacion/imagenes/ok.png" id="imagSuspender" title="Activar"
+                             class='inline'  href="#inline_content2" onclick="ventana3()"></td>
+                    <%
+                        }
+                    %>
+
                 </tr>
 
                 <%
@@ -264,5 +283,25 @@
     </div>
 </section>
 
+<section id="ventanaEmergente">
+    <div id='inline_content2' >
+        <div id="login-contentCancelar">
+            <form action="/SvtSuspenderCabania" method="post" name="formularioEdicion">
+
+                <label id="lbCabania">Desea cambiar el estado a la cabaña número: </label>
+                <input id="idCabania2" type="numeric" name="idCabania2" readonly>
+
+                <button type="submit" id="submitAceptarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Aceptar </button>
+                <button type="button" id="submitCancelarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                        onclick='parent.$.colorbox.close(); return false;'>
+                    Cancelar </button>
+
+            </form>
+        </div>
+    </div>
+</section>
 </body>
 </html>
