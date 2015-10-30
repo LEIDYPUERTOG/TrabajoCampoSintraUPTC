@@ -1,9 +1,9 @@
 package Servlets;
 
-import Logica.Cabania;
-import Persistencia.CabaniaDao;
+import Logica.EstadoEvento;
+import Logica.Evento;
 import Persistencia.ConexionDB;
-import Persistencia.EstadoCabania;
+import Persistencia.EventoDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,29 +14,31 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by LEIDY on 28/10/2015.
+ * Created by LEIDY on 30/10/2015.
  */
-@WebServlet(name = "SvtSuspenderCabania")
-public class SvtSuspenderCabania extends HttpServlet {
+@WebServlet(name = "SvtCambiarEstadoEvento")
+public class SvtCambiarEstadoEvento extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ConexionDB conexionDB = new ConexionDB("root","");
-        CabaniaDao cabaniaDao = new CabaniaDao();
-        int idCabania = Integer.parseInt(request.getParameter("idCabania2"));
-        Cabania cabania =  cabaniaDao.obtenerInfoCabania(idCabania);
+        EventoDao eventoDao = new EventoDao();
+        String nombre = request.getParameter("eventoId");
+        Evento evento = eventoDao.obtenerEventoNombre(nombre);
+
 
         RequestDispatcher dispatcher = null;
-        if(cabania != null){
+        if(evento != null){
 
-            if(cabania.getEstadoCabania().toString().equalsIgnoreCase("Activa")){
-                cabaniaDao.actualizarEstadoCabania(idCabania,EstadoCabania.Suspendida);
-                System.out.println(cabania.getEstadoCabania().toString());
-                dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
+            if(evento.getEstadoEvento().toString().equalsIgnoreCase("Activo")){
+                eventoDao.actualizarEstadoEvento(nombre, EstadoEvento.Suspendido);
+
+                dispatcher = request.getRequestDispatcher("ConsultarEvento.jsp");
                 dispatcher.forward(request, response);
             }
             else{
-                cabaniaDao.actualizarEstadoCabania(idCabania,EstadoCabania.Activa);
-                dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
+                eventoDao.actualizarEstadoEvento(nombre, EstadoEvento.Activo);
+
+                dispatcher = request.getRequestDispatcher("ConsultarEvento.jsp");
                 dispatcher.forward(request, response);
             }
 
@@ -46,7 +48,6 @@ public class SvtSuspenderCabania extends HttpServlet {
             dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
             dispatcher.forward(request, response);
         }
-
 
     }
 

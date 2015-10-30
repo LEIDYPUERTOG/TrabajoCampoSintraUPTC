@@ -175,7 +175,7 @@
     <section id="contenidoReservaA">
         <h4>Consulta de Eventos</h4>
 
-        <%--<article id="filtros">
+        <article id="filtros">
 
             <article id="nombreEvento">
                 <div class="input-group">
@@ -196,12 +196,13 @@
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                 </button>
               </span>
-        </article>--%>
+        </article>
 
 
         <article id="lista3">
             <table class="table" id="tabla_uno" onclick="
-            document.getElementById('nombreVentana').value = tomarValor();">
+            document.getElementById('nombreVentana').value = tomarValor();
+            document.getElementById('eventoId').value = tomarValor();">
                 <thead>
                 <!-- titulos de la tabla -->
                 <tr>
@@ -210,8 +211,9 @@
                     <th>Fecha Fin</th>
                     <th>Lugar</th>
                     <th>Dirección</th>
+                    <th>Estado</th>
                     <th>Editar</th>
-                    <th>Suspender</th>
+                    <th>Suspender</br>Activar</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -229,10 +231,25 @@
                     <td><%= listaEventos.get(i).getFechaFinEvento()%></td>
                     <td><%= listaEventos.get(i).getLocacion().getNombreLocacion()%></td>
                     <td><%= listaEventos.get(i).getLocacion().getDireccionLocacion()%></td>
+                    <td><%= listaEventos.get(i).getEstadoEvento().toString()%></td>
 
+                    <%if(listaEventos.get(i).getEstadoEvento().toString().equals("Activo")){
+                    %>
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana()"></td>
-                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"></td>
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"
+                             class='inline'  href="#inline_content2" onclick="ventana3()"></td>
+                    <%
+                    }else{
+                    %>
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()"></td>
+                    <td><img src="/Presentacion/imagenes/ok.png" id="imagSuspender" title="Suspender"
+                             class='inline'  href="#inline_content2" onclick="ventana3()"></td>
+                    <%
+                        }
+                    %>
+
                 </tr>
                 <%
                     }
@@ -317,6 +334,25 @@
         </div>
     </div>
 </section>
+<section id="ventanaEmergente">
+    <div id='inline_content2' >
+        <div id="login-contentCancelar">
+            <form action="/SvtCambiarEstadoEvento" method="post" name="formularioEdicion">
 
+                <label id="lbEvento">Desea cambiar el estado de: </label>
+                <input id="eventoId" type="numeric" name="eventoId" readonly>
+
+                <button type="submit" id="submitAceptarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                    Aceptar </button>
+                <button type="button" id="submitCancelarCanc" class="btn btn-primary"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                        onclick='parent.$.colorbox.close(); return false;'>
+                    Cancelar </button>
+
+            </form>
+        </div>
+    </div>
+</section>
 </body>
 </html>

@@ -1,9 +1,6 @@
 package Servlets;
 
-import Logica.Cabania;
-import Logica.Evento;
-import Logica.Locacion;
-import Logica.Persona;
+import Logica.*;
 import Persistencia.*;
 
 import javax.servlet.RequestDispatcher;
@@ -68,7 +65,7 @@ public class SvtCrearEvento extends HttpServlet {
         RequestDispatcher dispatcher = null;
 
         if(persona !=null){
-            evento = new Evento(descipcion,dateFin,dateInicio,locacion,nombre,persona);
+            evento = new Evento(descipcion,dateFin,dateInicio,locacion,nombre,persona, EstadoEvento.Activo);
             boolean agregar = eventoDao.agregarEvento(evento);
 
             if(agregar ){

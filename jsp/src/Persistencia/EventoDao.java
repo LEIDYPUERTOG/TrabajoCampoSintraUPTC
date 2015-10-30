@@ -1,5 +1,6 @@
 package Persistencia;
 
+import Logica.EstadoEvento;
 import Logica.Evento;
 import Logica.Locacion;
 import Logica.Persona;
@@ -60,6 +61,37 @@ public class EventoDao {
 		return actualizacion;
 	}
 
+	public boolean actualizarEstadoEvento(String nombre, EstadoEvento estadoEvento){
+
+		boolean actualizacion = false;
+		Evento evento = this.obtenerEventoNombre(nombre);
+		if(evento != null){
+			try {
+				conn = conexionDB.getConexion();
+				String queryUpdate = "UPDATE evento SET  estado_evento = ?"
+						+ " WHERE nombre_evento = ?";
+
+				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+
+
+
+				ppStm.setString(1,conversionEstadoIniciales(estadoEvento));
+				ppStm.setString(2,nombre);
+
+				ppStm.executeUpdate();
+
+				//conn.close();
+				actualizacion = true;
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				actualizacion = false;
+			}
+		}
+		return actualizacion;
+	}
+
 	/**
 	 * Metodo que permite crear un nuevo evento sin la
 	 * descripcion y almacenarlo en la base de datos
@@ -72,7 +104,7 @@ public class EventoDao {
 			conn = conexionDB.getConexion();
 
 
-			String queryInsertar = "INSERT INTO evento VALUES(null,?,?,?,?,?,?)";
+			String queryInsertar = "INSERT INTO evento VALUES(null,?,?,?,?,?,?,?)";
 
 			PreparedStatement ppStm = conn.prepareStatement(queryInsertar);
 			ppStm.setInt(1, evento.getPersona().getCedula());
@@ -80,7 +112,8 @@ public class EventoDao {
 			ppStm.setString(3, evento.getNombreEvento());
 			ppStm.setDate(4, evento.getFechaIncioEvento());
 			ppStm.setDate(5, evento.getFechaFinEvento());
-			ppStm.setString(6, evento.getDescripcionEvento());
+			ppStm.setString(6, conversionEstadoIniciales(evento.getEstadoEvento()));
+			ppStm.setString(7, evento.getDescripcionEvento());
 
 			ppStm.executeUpdate();
 			//conn.close();
@@ -117,8 +150,9 @@ public class EventoDao {
 				Persona persona = personaDao.consultarPersona(resultSet.getInt(2));
 				LocacionDao locacionDao = new LocacionDao();
 				Locacion locacion = locacionDao.obtenertLocacionPorId(resultSet.getInt(3));
-				listaEventos.add(new Evento(resultSet.getString(7),resultSet.getDate(6),
-						resultSet.getDate(5),locacion,resultSet.getString(4),persona));
+				listaEventos.add(new Evento(resultSet.getString(8),resultSet.getDate(6),
+						resultSet.getDate(5),locacion,resultSet.getString(4),persona,
+						conversionStringAEstado(resultSet.getString(7))));
 
 			}
 			//conn.close();
@@ -155,8 +189,9 @@ public class EventoDao {
 				Persona persona = personaDao.consultarPersona(resultSet.getInt(2));
 				LocacionDao locacionDao = new LocacionDao();
 				Locacion locacion = locacionDao.obtenertLocacionPorId(resultSet.getInt(3));
-				listaEventos.add(new Evento(resultSet.getString(7),resultSet.getDate(6),
-						resultSet.getDate(5),locacion,resultSet.getString(4),persona));
+				listaEventos.add(new Evento(resultSet.getString(8),resultSet.getDate(6),
+						resultSet.getDate(5),locacion,resultSet.getString(4),persona,
+						conversionStringAEstado(resultSet.getString(7))));
 
 			}
 			//conn.close();
@@ -186,8 +221,9 @@ public class EventoDao {
 				Persona persona = personaDao.consultarPersona(resultSet.getInt(2));
 				LocacionDao locacionDao = new LocacionDao();
 				Locacion locacion = locacionDao.obtenertLocacionPorId(resultSet.getInt(3));
-				evento = new Evento(resultSet.getString(7),resultSet.getDate(6),
-						resultSet.getDate(5),locacion,resultSet.getString(4),persona);
+				evento = new Evento(resultSet.getString(8),resultSet.getDate(6),
+						resultSet.getDate(5),locacion,resultSet.getString(4),persona,
+						conversionStringAEstado(resultSet.getString(7)));
 
 			}
 			//conn.close();
@@ -220,8 +256,9 @@ public class EventoDao {
 				Persona persona = personaDao.consultarPersona(resultSet.getInt(2));
 				LocacionDao locacionDao = new LocacionDao();
 				Locacion locacion = locacionDao.obtenertLocacionPorId(resultSet.getInt(3));
-				listaEventos.add(new Evento(resultSet.getString(7),resultSet.getDate(6),
-						resultSet.getDate(5),locacion,resultSet.getString(4),persona));
+				listaEventos.add(new Evento(resultSet.getString(8),resultSet.getDate(6),
+						resultSet.getDate(5),locacion,resultSet.getString(4),persona,
+						conversionStringAEstado(resultSet.getString(7))));
 
 			}
 			//conn.close();
@@ -261,8 +298,9 @@ public class EventoDao {
 				PersonaDao personaDao = new PersonaDao();
 				Persona persona = personaDao.consultarPersona(resultSet.getInt(2));
 
-				listaEventos.add(new Evento(resultSet.getString(7),resultSet.getDate(6),
-						resultSet.getDate(5),locacion,resultSet.getString(4),persona));
+				listaEventos.add(new Evento(resultSet.getString(8),resultSet.getDate(6),
+						resultSet.getDate(5),locacion,resultSet.getString(4),persona,
+						conversionStringAEstado(resultSet.getString(7))));
 			}
 			//conn.close();
 
@@ -274,4 +312,25 @@ public class EventoDao {
 		return listaEventos;
 	}
 
+	public  String conversionEstadoIniciales(EstadoEvento estadoEvento){
+		String estado = "";
+		if(estadoEvento.toString().equalsIgnoreCase("Activo")){
+			estado = "A";
+		}
+		else{
+			estado = "S";
+		}
+		return  estado;
+	}
+
+	public EstadoEvento conversionStringAEstado(String estado){
+		EstadoEvento estadoEvento = null;
+		if(estado.equalsIgnoreCase("A")){
+			estadoEvento = EstadoEvento.Activo;
+		}
+		else{
+			estadoEvento = EstadoEvento.Suspendido;
+		}
+		return  estadoEvento;
+	}
 }

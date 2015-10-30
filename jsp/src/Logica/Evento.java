@@ -34,6 +34,7 @@ public class Evento {
 	 * Atributo que contiene la persona que crea un evento
 	 */
 	private Persona persona;
+	private EstadoEvento estadoEvento;
 	
 	/**
 	 * Atributo que permite acceder al id del evento
@@ -42,23 +43,25 @@ public class Evento {
 
 
 	public Evento(String descripcionEvento, Date fechaFinEvento, Date fechaIncioEvento,
-				  Locacion locacion, String nombreEvento, Logica.Persona persona) {
+				  Locacion locacion, String nombreEvento, Logica.Persona persona, EstadoEvento estadoEvento) {
 		this.descripcionEvento = descripcionEvento;
 		this.fechaFinEvento = fechaFinEvento;
 		this.fechaIncioEvento = fechaIncioEvento;
 		this.locacion = locacion;
 		this.nombreEvento = nombreEvento;
 		this.persona = persona;
+		this.estadoEvento = estadoEvento;
 	}
 
 	public Evento(int idEvento, Persona persona, String nombreEvento, Locacion locacion,
-				  Date fechaIncioEvento, Date fechaFinEvento) {
+				  Date fechaIncioEvento, Date fechaFinEvento, EstadoEvento estadoEvento) {
 		this.idEvento = idEvento;
 		this.persona = persona;
 		this.nombreEvento = nombreEvento;
 		this.locacion = locacion;
 		this.fechaIncioEvento = fechaIncioEvento;
 		this.fechaFinEvento = fechaFinEvento;
+		this.estadoEvento = estadoEvento;
 	}
 
 	public String getDescripcionEvento() {
@@ -108,5 +111,12 @@ public class Evento {
 	public void setPersona(Persona persona) {
 		persona = persona;
 	}
-	
+
+	public EstadoEvento getEstadoEvento() {
+		return estadoEvento;
+	}
+
+	public void setEstadoEvento(EstadoEvento estadoEvento) {
+		this.estadoEvento = estadoEvento;
+	}
 }

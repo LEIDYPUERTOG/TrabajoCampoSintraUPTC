@@ -165,4 +165,13 @@
         <servlet-name>SvtSuspenderCabania</servlet-name>
         <url-pattern>/SvtSuspenderCabania</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtCambiarEstadoEvento</servlet-name>
+        <servlet-class>Servlets.SvtCambiarEstadoEvento</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtCambiarEstadoEvento</servlet-name>
+        <url-pattern>/SvtCambiarEstadoEvento</url-pattern>
+    </servlet-mapping>
 </web-app>
