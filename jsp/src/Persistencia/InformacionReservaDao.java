@@ -3,6 +3,7 @@ package Persistencia;
 import Logica.InformacionReserva;
 import Logica.Persona;
 import Logica.Reserva;
+import Logica.TipoServicio;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -48,6 +49,7 @@ public class InformacionReservaDao {
         }
         return actualizacion;
     }
+
 
 
 

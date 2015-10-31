@@ -218,6 +218,72 @@ public class ReservaDao {
 		return listaReservas;
 	}
 
+
+	public boolean actualizarTipoServicio(int idReserva, TipoServicio tipoServicio){
+		boolean actualizacion = false;
+
+		Reserva reserva = this.consultarReservaIdReserva(idReserva);
+		if(reserva != null){
+			try {
+				conn = conexionDB.getConexion();
+				String queryUpdate = "UPDATE reserva SET  tipo_servicio = ?"
+						+ " WHERE id_reserva = ?";
+
+				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+
+				ppStm.setString(1,tipoServicio.toString().toUpperCase());
+				ppStm.setInt(2, idReserva);
+
+				ppStm.executeUpdate();
+
+				//conn.close();
+				actualizacion = true;
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				actualizacion = false;
+			}
+		}
+		return actualizacion;
+	}
+
+	public ArrayList<Reserva> consultarReservasPendientes(){
+		ArrayList<Reserva> listaReservas = null;
+		try {
+			conn = conexionDB.getConexion();
+			String querySearch = "SELECT * FROM reserva WHERE estado_reserva='P'";
+			PreparedStatement ppStm = conn.prepareStatement(querySearch);
+
+			ResultSet resultSet = ppStm.executeQuery();
+			listaReservas = new ArrayList<>();
+			while(resultSet.next()) {
+
+
+				//Permite realizar la consulta de la persona que realizo una reserva
+
+				PersonaDao personaDao = new PersonaDao();
+				Persona auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
+
+				Reserva reserva = new Reserva(resultSet.getInt(6),
+						conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
+						auxPersona);
+				reserva.setIdReserva(resultSet.getInt(1));
+				reserva.setTipoServicio(tipoServicio(resultSet.getString(10)));
+				listaReservas.add(reserva);
+
+			}
+			////conn.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return listaReservas;
+
+		}
+		return listaReservas;
+	}
+
 	/**
 	 * Metodo que permite consulta las reservas realizadas teniendo 
 	 * el id de la cabania

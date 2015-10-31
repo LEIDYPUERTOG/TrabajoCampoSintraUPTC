@@ -172,7 +172,7 @@
     <section id="contenidoReservaA">
         <h4>Aprobar Reservas</h4>
 
-        <%--<article id="filtros">
+        <article id="filtros">
 
             <form action="/SvtReservasFiltros" method="post">
                 <article id="CedulaBusqueda">
@@ -192,7 +192,7 @@
                 </button>
               </span>
             </form>
-        </article>--%>
+        </article>
 
         <article id="lista">
             <table class="table" id="tabla_uno"
@@ -204,8 +204,8 @@
                     <th>Número de<br> Reserva</th>
                     <th>Cedula</th>
                     <th>Tipo Servicio</th>
-                    <th>Fecha de Solicitud</th>
-                    <th>Cantidad días</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha de Fin</th>
                     <th>Cantidad <br> personas</th>
                     <th>Estado Reserva</th>
                     <th>Aprobar</th>
@@ -224,16 +224,14 @@
                             InformacionReserva informacionReserva = informacionReservaDao.
                                     obtenerInfo(listaMisReservas.get(i).getIdReserva());
 
-                            long cantidadDias = informacionReserva.getFechaFinReserva().getTime()-
-                                    informacionReserva.getFechaInicioReserva().getTime();
                 %>
                 <tr>
 
                     <td><%= listaMisReservas.get(i).getIdReserva()%> </td>
                     <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
                     <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
-                    <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
-                    <td><%= cantidadDias/86400000%></td>
+                    <td><%= informacionReserva.getFechaInicioReserva()%></td>
+                    <td><%= informacionReserva.getFechaFinReserva()%></td>
                     <td><%= listaMisReservas.get(i).getCantidadPersonas()%></td>
                     <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
 
@@ -256,9 +254,6 @@
                             InformacionReserva informacionReserva = informacionReservaDao.
                                     obtenerInfo(listaMisReservas.get(i).getIdReserva());
 
-                            long cantidadDias = informacionReserva.getFechaFinReserva().getTime()-
-                                    informacionReserva.getFechaInicioReserva().getTime();
-
                 %>
 
                 <tr>
@@ -266,8 +261,8 @@
                     <td><%= listaMisReservas.get(i).getIdReserva()%> </td>
                     <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
                     <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
-                    <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
-                    <td><%= cantidadDias/86400000%></td>
+                    <td><%= informacionReserva.getFechaInicioReserva()%></td>
+                    <td><%= informacionReserva.getFechaFinReserva()%></td>
                     <td><%= listaMisReservas.get(i).getCantidadPersonas()%></td>
                     <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
 

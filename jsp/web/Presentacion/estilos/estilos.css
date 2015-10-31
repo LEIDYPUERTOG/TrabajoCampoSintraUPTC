@@ -2553,3 +2553,21 @@ nav.acceder #login-content2 {
     text-align: justify;
     color: #7F8C8D;
 }
+
+
+#lblTSer {
+    position: absolute;
+    top: 110px;
+    left: 10px;
+}
+
+#Servicio {
+    font: 14px Arial;
+    width: 230px;
+    height: 25px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 110px;
+    left: 100px;
+}

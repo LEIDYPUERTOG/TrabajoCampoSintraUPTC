@@ -185,6 +185,7 @@
                 <!-- titulos de la tabla  idReserva = tomarValor()-->
                 <tr>
                     <th>Número de<br> Reserva</th>
+                    <th>Servicio</th>
                     <th>Fecha de<br> Solicitud</th>
                     <th>Fecha Inicio</th>
                     <th>Fecha Fin</th>
@@ -208,6 +209,7 @@
                 <tr>
 
                     <td><%= listaMisReservas.get(i).getIdReserva()%> </td>
+                    <td><%= listaMisReservas.get(i).getTipoServicio().toString().toUpperCase()%> </td>
                     <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
                     <td><%= informacionReserva.getFechaInicioReserva()%></td>
                     <td><%= informacionReserva.getFechaFinReserva()%></td>
@@ -288,6 +290,17 @@
                 <label id="lblFecha2">Fecha Fin</label>
                 <input id="fecha2Ventana" type="date" name="FechaFinNueva" placeholder="Fecha Fin"
                        min="<%=fechaSolicitud%>"  max="2017-12-31">
+
+                <label id="lblTSer">Tipo de Servicio</label>
+
+
+                <select name="Servicio" class="form-control" id="Servicio">
+                    <option value=""></option>
+                    <option value="Cabania">Cabaña</option>
+                    <option value="Camping">Camping</option>
+
+                </select>
+
 
                 <button type="submit" id="submitAceptarVentana" class="btn btn-primary"
                         style="padding-right:35px;padding-left:10px;margin-top:21px;">

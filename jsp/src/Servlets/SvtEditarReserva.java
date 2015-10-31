@@ -67,15 +67,26 @@ public class SvtEditarReserva extends HttpServlet {
             dateFin = informacionReserva.getFechaFinReserva();
         }
 
+        String tipoServicio = request.getParameter("Servicio");
+
+        System.out.println("servicio "+ tipoServicio);
+        if(!tipoServicio.equalsIgnoreCase("")){
+            if(tipoServicio.equalsIgnoreCase("CABANIA")){
+                reservaDao.actualizarTipoServicio(idReserva,TipoServicio.CABANIA);
+            }
+            else{
+                reservaDao.actualizarTipoServicio(idReserva,TipoServicio.CAMPING);
+            }
+        }
 
         Persona persona = (Persona) request.getSession().getAttribute("persona");
         request.setAttribute("personaBusqueda", persona); //mandando el parametro para que sea accedido
 
         RequestDispatcher dispatcher = null;
 
-        boolean editarInformacion = informacionReservaDao.actualizarInformacionReserva(idReserva,dateInicio,dateFin);
+        boolean editarInformacion = informacionReservaDao.actualizarInformacionReserva(idReserva, dateInicio, dateFin);
 
-        request.setAttribute("agregado",editarInformacion);
+        request.setAttribute("agregado", editarInformacion);
         if (editarInformacion) {
             if(reserva.getPersona().getRol().toString().equals("Administrador")
                     ||reserva.getPersona().getRol().toString().equals("Funcionario")){
@@ -88,7 +99,7 @@ public class SvtEditarReserva extends HttpServlet {
                 dispatcher.forward(request, response);
             }
         }else{
-            PrintWriter out=response.getWriter();
+            PrintWriter out= response.getWriter();
             out.println("Si estas viendo este mensaje es por que algo salio mal, no se pudo completar tu solicitud.");
         }
     }

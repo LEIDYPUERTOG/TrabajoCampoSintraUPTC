@@ -188,16 +188,7 @@
             document.getElementById('anio').value = anioFunc(this)" >
                     2013</button>
             </article>
-            <article id="link1">
-                <button id="2012" type="submit" class="btn btn-link" onclick="
-            document.getElementById('anio').value = anioFunc(this)" >
-                    2012</button>
-            </article>
-            <article id="link1">
-                <button id="2011" type="submit" class="btn btn-link" onclick="
-            document.getElementById('anio').value = anioFunc(this)" >
-                    2011</button>
-            </article>
+
 
 
             <input type="hidden" name="anioIn" id="anio">
@@ -210,27 +201,39 @@
                 <tr>
                     <th>Cedula</th>
                     <th>Tipo de Servicio</th>
-                    <th>Fecha y hora de Solicitud</th>
-                    <th>Cantidad días</th>
+                    <th>Fecha de Solicitud</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha de Fin</th>
                     <th>Cantidad personas</th>
                     <th>Estado de reserva</th>
                 </tr>
                 </thead>
                 <tbody>
                 <%
+                    ReservaDao reservaDao = new ReservaDao();
+                    InformacionReservaDao informacionReservaDao = new InformacionReservaDao();
                     ArrayList<Reserva> listaMisReservas = (ArrayList)request.getAttribute("reservas");
-                    int cantidadDias =0;
                     if(listaMisReservas !=null){
 
                         for(int i = 0; i < listaMisReservas.size(); i++) {
+                            InformacionReserva informacionReserva = informacionReservaDao.
+                                    obtenerInfo(listaMisReservas.get(i).getIdReserva());
+                            String tipoServicio ="";
+                            if(listaMisReservas.get(i).getTipoServicio().toString().equalsIgnoreCase("CABANIA")){
+                                tipoServicio = "CABAÑA";
+                            }
+                            else{
+                                tipoServicio = "CAMPING";
+                            }
                 %>
 
                 <tr>
 
                     <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
-                    <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
+                    <td><%= tipoServicio%></td>
                     <td><%= listaMisReservas.get(i).getFechaSolicitud()%></td>
-                    <td><%= cantidadDias/86400000%></td>
+                    <td><%= informacionReserva.getFechaInicioReserva()%></td>
+                    <td><%= informacionReserva.getFechaFinReserva()%></td>
                     <td><%= listaMisReservas.get(i).getCantidadPersonas()%></td>
                     <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
 
