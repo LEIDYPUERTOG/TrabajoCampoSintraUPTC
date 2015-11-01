@@ -233,6 +233,10 @@
                     <%
                         }%>
                 </select>
+
+                <img src="/Presentacion/imagenes/agregar.png" id="imag2"  class='inline'
+                     href="#inline_content2" onclick="ventana3()">
+
             </article>
 
             <article id="btnCrear">
@@ -272,33 +276,28 @@
 </section>
 <!--Sección que contiene la ventana que aparece cuando se da la opcion de editar-->
 <section id="ventanaEmergente">
-    <div id='inline_content'>
-        <div id="login-content2">
-            <form action="/SvtEditarCabania" method="post" name="formularioEdicion">
+    <div id='inline_content2' >
+        <div id="login-contentLugar">
+            <form action="/SvtCrearLocacion" method="post" name="formularioEdicion">
 
 
-                <label id="idCabania">Número Cabaña: </label>
-                <input id="cabaniaId" type="numeric" name="cabaniaId">
+                <label id="lbLugar">Nombre del lugar: </label>
+                <input id="nombreLugar" type="text" name="nombreLugar" class="form-control" required>
 
-                <input id="valorNocheVentana" type="text" name="valor" placeholder="Valor">
-                <input id="cantidadVentana" type="number" name="cantidad" placeholder="cantidad">
+                <label id="lbDireccion">Dirección del lugar: </label>
+                <input id="direccion" type="text" name="direccion" class="form-control" required>
 
-                <button type="submit" id="submitAceptarVentana" class="btn btn-primary"
+                <button type="submit" id="submitCrear" class="btn btn-primary"
                         style="padding-right:35px;padding-left:10px;margin-top:21px;">
-                    Aceptar
-
-                </button>
-                <button type="button" id="submitCancelarVentana" class="btn btn-primary"
+                    Aceptar </button>
+                <button type="button" id="submitCanc" class="btn btn-primary"
                         style="padding-right:35px;padding-left:10px;margin-top:21px;"
                         onclick='parent.$.colorbox.close(); return false;'>
-                    Cancelar
-                </button>
-
+                    Cancelar </button>
             </form>
 
         </div>
     </div>
 </section>
-
 </body>
 </html>

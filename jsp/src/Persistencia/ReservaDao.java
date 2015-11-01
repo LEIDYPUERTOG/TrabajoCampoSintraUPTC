@@ -139,6 +139,45 @@ public class ReservaDao {
 		return listaReservas;
 	}
 
+	public ArrayList<Reserva> consultarEstado(String inicial){
+		ArrayList<Reserva> listaReservas = null;
+		try {
+			conn = conexionDB.getConexion();
+			String querySearch = "SELECT * FROM reserva WHERE ESTADO_RESERVA=?";
+
+			PreparedStatement ppStm = conn.prepareStatement(querySearch);
+
+			ppStm.setString(1, inicial);
+
+			ResultSet resultSet = ppStm.executeQuery();
+
+			listaReservas = new ArrayList<>();
+			while(resultSet.next()) {
+
+				//Permite realizar la consulta de la persona que realizo una reserva
+
+				PersonaDao personaDao = new PersonaDao();
+				Persona auxPersona = personaDao.consultarPersona(resultSet.getInt(2));
+
+				Reserva reserva = new Reserva(resultSet.getInt(6),
+						conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
+						auxPersona);
+				reserva.setIdReserva(resultSet.getInt(1));
+				reserva.setTipoServicio(tipoServicio(resultSet.getString(10)));
+				listaReservas.add(reserva);
+
+			}
+			////conn.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return listaReservas;
+
+		}
+		return listaReservas;
+	}
+
 
 	public ArrayList<Reserva> consultarFecha(java.sql.Date fecha){
 		ArrayList<Reserva> listaReservas = null;

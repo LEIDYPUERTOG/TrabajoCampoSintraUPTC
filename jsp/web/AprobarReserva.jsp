@@ -180,6 +180,16 @@
                         <input type="text" class="form-control" placeholder="Ingrese la cedula" name="cedula">
                     </div><!-- /input-group -->
                 </article>
+
+                <article id="Estado">
+                    <select class="form-control" name="Estado">
+                        <option value=""></option>
+                        <option value="P">Pendiente</option>
+                        <option value="A">Aprobada</option>
+                        <option value="R">Rechazada</option>
+                        <option value="C">Cancelada</option>
+                    </select>
+                </article>
         
                 <article id="fechaSolicitud1">
                     <input type="date" class="form-control" placeholder="Ingrese el texto." name="fechaFin">
@@ -228,7 +238,7 @@
                 <tr>
 
                     <td><%= listaMisReservas.get(i).getIdReserva()%> </td>
-                    <td><%= listaMisReservas.get(i).getPersona().getCedula()%> </td>
+                    <td><%= informacionReserva.getReserva().getPersona().getCedula()%> </td>
                     <td><%= listaMisReservas.get(i).getTipoServicio().toString()%></td>
                     <td><%= informacionReserva.getFechaInicioReserva()%></td>
                     <td><%= informacionReserva.getFechaFinReserva()%></td>

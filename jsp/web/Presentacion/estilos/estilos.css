@@ -1429,6 +1429,13 @@ Estilos para la tabla y scroll
     left: 135px;
 }
 
+#contenido2 #imag2{
+    position: absolute;
+    height: 20px;
+    top: 5px;
+    left: 405px;
+}
+
 #contenido2 #btnCrear {
     position: absolute;
     left: 250px;
@@ -2218,6 +2225,7 @@ nav.acceder #login-content2 {
     height: 34px;
 }
 
+
 #btnBusqueda {
     position: absolute;
     top: 70px;
@@ -2570,4 +2578,42 @@ nav.acceder #login-content2 {
     position: absolute;
     top: 110px;
     left: 100px;
+}
+
+#login-contentLugar {
+    background-color: white;
+    height: 200px;
+    width: 300px;
+    border-top: 10px solid #5cb85c;
+    border-right: 3px solid #080808;
+    border-left: 3px solid #080808;
+    border-bottom: 3px solid #080808;
+}
+
+#submitCrear {
+    position: absolute;
+    top: 130px;
+    left: 40px;
+    height: 33px;
+    text-align: center;
+}
+
+#submitCanc{
+    position: absolute;
+    top: 130px;
+    left: 150px;
+    height: 33px;
+    text-align: center;
+}
+
+
+#nombreLugar, #direccion{
+
+    background: #fefff6;
+    border: #080808;
+    width: 280px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+
 }

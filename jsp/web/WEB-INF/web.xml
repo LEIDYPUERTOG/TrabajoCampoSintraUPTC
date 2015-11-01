@@ -174,4 +174,13 @@
         <servlet-name>SvtCambiarEstadoEvento</servlet-name>
         <url-pattern>/SvtCambiarEstadoEvento</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtCrearLocacion</servlet-name>
+        <servlet-class>Servlets.SvtCrearLocacion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtCrearLocacion</servlet-name>
+        <url-pattern>/SvtCrearLocacion</url-pattern>
+    </servlet-mapping>
 </web-app>

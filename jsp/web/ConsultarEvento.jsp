@@ -307,7 +307,6 @@
                             LocacionDao locacionDao = new LocacionDao();
                             ArrayList<Locacion> locacion = (ArrayList)locacionDao.obtenerListaLocaciones();
                             session.setAttribute("locaciones",locacion);
-                            System.out.println(locacion.size()+ "dfghjfghasa232");
                             if(locacion!=null){
 
                                 for(int i = 0; i < locacion.size(); i++){

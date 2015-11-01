@@ -29,6 +29,11 @@ public class Locacion {
 		this.direccionLocacion = direccionLocacion;
 	}
 
+	public Locacion(String nombreLocacion,  String direccionLocacion) {
+		this.nombreLocacion = nombreLocacion;
+		this.direccionLocacion = direccionLocacion;
+	}
+
 	public String getNombreLocacion() {
 		return nombreLocacion;
 	}

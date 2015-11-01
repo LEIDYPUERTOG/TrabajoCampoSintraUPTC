@@ -30,41 +30,51 @@ public class SvtReservasFiltros extends HttpServlet {
 
         ReservaDao reservaDao = new ReservaDao();
 
-        RequestDispatcher dispatcher = null;
+
 
         String ced = request.getParameter("cedula");
 
         if(ced != ""){
             int cedula = Integer.parseInt(ced);
-            System.out.println("anio              "+cedula);
             listaMisReservas = reservaDao.consultarReservaAfiliado(cedula);
-
             if(listaMisReservas !=null){
+                RequestDispatcher dispatcher = null;
                 request.setAttribute("reservas", listaMisReservas);
-            }
-            else{
-                String[] fec =  request.getParameter("fechaInicio").toString().split("-");
-                if(fec != null){
-                    int auxAnio = Integer.parseInt(fec[0]);
-                    int auxMes = Integer.parseInt(fec[1]);
-                    int auxDia = Integer.parseInt(fec[2]);
-                    GregorianCalendar calendar = new GregorianCalendar();
-                    calendar.set(auxAnio, auxMes, auxDia);
-                    Date dateInicio = new Date(calendar.getTimeInMillis());
 
-                    listaMisReservas = reservaDao.consultarFecha(dateInicio);
-                    request.setAttribute("reservas", listaMisReservas);
-                }
-                else{
-                    listaMisReservas = reservaDao.consultarReservas();
-                    request.setAttribute("reservas", listaMisReservas);
-
-                }
+                dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
+                dispatcher.forward(request, response);
             }
         }
         else {
-            dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
-            dispatcher.forward(request, response);
+            String[] fec = request.getParameter("fechaFin").toString().split("-");
+            System.out.println("aaaaaaaaaaaaaaaaaaa "+fec [0]);
+            if (!fec [0].equalsIgnoreCase("")) {
+                RequestDispatcher dispatcher = null;
+                int auxAnio = Integer.parseInt(fec[0]);
+                int auxMes = Integer.parseInt(fec[1]) - 1;
+                int auxDia = Integer.parseInt(fec[2]);
+                GregorianCalendar calendar = new GregorianCalendar();
+                calendar.set(auxAnio, auxMes, auxDia);
+                Date dateInicio = new Date(calendar.getTimeInMillis());
+
+                listaMisReservas = reservaDao.consultarFecha(dateInicio);
+                request.setAttribute("reservas", listaMisReservas);
+
+
+                dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
+                dispatcher.forward(request, response);
+            }
+            else{
+                String estado = request.getParameter("Estado");
+                RequestDispatcher dispatcher = null;
+                if(!estado.equalsIgnoreCase("")){
+                    listaMisReservas = reservaDao.consultarEstado(estado);
+                    request.setAttribute("reservas", listaMisReservas);
+                    dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
+                    dispatcher.forward(request, response);
+                }
+            }
         }
     }
 }
+
