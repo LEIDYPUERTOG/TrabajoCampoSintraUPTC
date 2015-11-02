@@ -1,9 +1,6 @@
 package Persistencia;
 
-import Logica.EstadoReserva;
-import Logica.Persona;
-import Logica.Reserva;
-import Logica.TipoServicio;
+import Logica.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -193,7 +190,7 @@ public class ReservaDao {
 
 			listaReservas = new ArrayList<>();
 			while(resultSet.next()) {
-				System.out.println("aaaaaaaaaaaaaaaa");
+
 				//Permite realizar la consulta de la persona que realizo una reserva
 
 				PersonaDao personaDao = new PersonaDao();
@@ -258,7 +255,36 @@ public class ReservaDao {
 	}
 
 
-	public boolean actualizarTipoServicio(int idReserva, TipoServicio tipoServicio){
+	public boolean actualizarTipoServicioCabania(int idReserva, TipoServicio tipoServicio,int idCabania){
+		boolean actualizacion = false;
+
+		Reserva reserva = this.consultarReservaIdReserva(idReserva);
+		if(reserva != null){
+			try {
+				conn = conexionDB.getConexion();
+				String queryUpdate = "UPDATE reserva SET id_servicio_cabania = ?, tipo_servicio = ?"
+						+ " WHERE id_reserva = ?";
+
+				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
+
+				ppStm.setInt(1, idCabania);
+				ppStm.setString(2, tipoServicio.toString().toUpperCase());
+				ppStm.setInt(3, idReserva);
+
+				ppStm.executeUpdate();
+				//conn.close();
+				actualizacion = true;
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				actualizacion = false;
+			}
+		}
+		return actualizacion;
+	}
+
+	public boolean actualizarTipoServicioCamping(int idReserva, TipoServicio tipoServicio){
 		boolean actualizacion = false;
 
 		Reserva reserva = this.consultarReservaIdReserva(idReserva);
@@ -270,11 +296,10 @@ public class ReservaDao {
 
 				PreparedStatement ppStm = conn.prepareStatement(queryUpdate);
 
-				ppStm.setString(1,tipoServicio.toString().toUpperCase());
+				ppStm.setString(1, tipoServicio.toString().toUpperCase());
 				ppStm.setInt(2, idReserva);
 
 				ppStm.executeUpdate();
-
 				//conn.close();
 				actualizacion = true;
 
@@ -333,7 +358,7 @@ public class ReservaDao {
 		ArrayList<Reserva> listaReservas = null;
 		try {
 			conn = conexionDB.getConexion();
-			String querySearch = "SELECT * FROM reserva WHERE id_cabania = ? ORDER BY (estado_reserva)";
+			String querySearch = "SELECT * FROM reserva WHERE id_servicio_cabania = ? ORDER BY (estado_reserva)";
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 			ppStm.setInt(1, idCabania);
 
@@ -428,7 +453,11 @@ public class ReservaDao {
 						conversionStringEstado(resultSet.getString(5)),resultSet.getDate(9),
 						auxPersona);
 				reserva.setIdReserva(resultSet.getInt(1));
-
+				if(resultSet.getString(10).equalsIgnoreCase("CABANIA")){
+					CabaniaDao cabaniaDao = new CabaniaDao();
+					Cabania cabania = cabaniaDao.obtenerInfoCabania(resultSet.getInt(4));
+					reserva.setCabania(cabania);
+				}
 			}
 			////conn.close();
 

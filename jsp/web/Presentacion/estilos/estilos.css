@@ -2570,14 +2570,13 @@ nav.acceder #login-content2 {
 }
 
 #Servicio {
-    font: 14px Arial;
-    width: 230px;
-    height: 25px;
+    width: 200px;
+    height: 28px;
     border: 1px solid #bcbcbc;
     border-radius: 5px 5px 5px 5px;
     position: absolute;
     top: 110px;
-    left: 100px;
+    left: 130px;
 }
 
 #login-contentLugar {
@@ -2616,4 +2615,46 @@ nav.acceder #login-content2 {
     display: inline-block;
     vertical-align: middle;
 
+}
+
+#login-content5 {
+    background-color: white;
+    height: 250px;
+    width: 350px;
+    border-top: 10px solid #27ae60;;
+    border-right: 3px solid #080808;
+    border-left: 3px solid #080808;
+    border-bottom: 3px solid #080808;
+}
+
+#lblIdCabania {
+    position: absolute;
+    top: 160px;
+    left: 10px;
+}
+
+#Selcabania {
+    width: 200px;
+    height: 28px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px 5px 5px 5px;
+    position: absolute;
+    top: 160px;
+    left: 130px;
+}
+
+#submitA {
+    position: absolute;
+    top: 180px;
+    left: 40px;
+    height: 33px;
+    text-align: center;
+}
+
+#submitC {
+    position: absolute;
+    top: 180px;
+    left: 150px;
+    height: 33px;
+    text-align: center;
 }

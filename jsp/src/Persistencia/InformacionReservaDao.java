@@ -51,8 +51,6 @@ public class InformacionReservaDao {
     }
 
 
-
-
     /**
      * Metodo que permite crear la informacion de una reserva
      * @param informacionReserva
@@ -160,6 +158,38 @@ public class InformacionReservaDao {
 
         }
         return informacionReserva;
+    }
+
+
+    public ArrayList<InformacionReserva> obtenerInfoPorFecha(Date fechaInicio, Date fechaFin){
+        ArrayList<InformacionReserva> lista= null;
+        try {
+            conn = conexionDB.getConexion();
+            String querySearch = "SELECT * FROM informacion_reserva" +
+                    " WHERE fecha_inicio_reserva >= ? " +
+                    "  AND fecha_fin_reserva <= ?";
+
+            PreparedStatement ppStm = conn.prepareStatement(querySearch);
+
+            ppStm.setDate(1,fechaInicio);
+            ppStm.setDate(2,fechaFin);
+
+            ResultSet resultSet = ppStm.executeQuery();
+
+            lista = new ArrayList<>();
+            while(resultSet.next()){
+                ReservaDao reservaDao = new ReservaDao();
+                Reserva reserva = reservaDao.consultarReservaIdReserva(resultSet.getInt(1));
+                lista.add(new InformacionReserva(resultSet.getDate(3),
+                        resultSet.getDate(4),resultSet.getDate(4),reserva));
+            }
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+
+        }
+        return lista;
     }
 
     public ConexionDB getConexionDB() {

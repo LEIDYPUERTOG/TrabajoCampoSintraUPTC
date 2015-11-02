@@ -1,12 +1,10 @@
-<%@ page import="Logica.EstadoReserva" %>
-<%@ page import="Logica.InformacionReserva" %>
-<%@ page import="Logica.Persona" %>
-<%@ page import="Logica.Reserva" %>
 <%@ page import="Persistencia.InformacionReservaDao" %>
 <%@ page import="Persistencia.ReservaDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.GregorianCalendar" %>
 <%@ page import="java.sql.Date" %>
+<%@ page import="Persistencia.CabaniaDao" %>
+<%@ page import="Logica.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -216,7 +214,7 @@
                     <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
 
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
-                             href="#inline_content" onclick="ventana()">
+                             href="#inline_content" onclick="ventana2()">
 
                     </td>
                     <td>
@@ -276,7 +274,7 @@
 <!--Sección que contiene la ventana que aparece cuando se da la opcion de editar-->
 <section id="ventanaEmergente">
     <div id='inline_content' >
-        <div id="login-content4">
+        <div id="login-content5">
             <form action="/SvtEditarReserva" method="post" name="formularioEdicion">
 
                 <label id="IdReserva">Número de reserva</label>
@@ -293,19 +291,37 @@
 
                 <label id="lblTSer">Tipo de Servicio</label>
 
-
                 <select name="Servicio" class="form-control" id="Servicio">
                     <option value=""></option>
                     <option value="Cabania">Cabaña</option>
                     <option value="Camping">Camping</option>
+                </select>
+
+
+                <label id="lblIdCabania">Número cabaña</label>
+
+                <select name="cabania" class="form-control" id="Selcabania">
+                    <%
+                        CabaniaDao cabaniaDao = new CabaniaDao();
+                        ArrayList<Cabania> cabanias = cabaniaDao.obtenerCabaniasActivas();
+                    %>
+                    <option value=""></option>
+                    <%
+                        for(int i = 0; i < cabanias.size(); i++){
+                    %>
+
+                    <option value="<%=cabanias.get(i).getId_servicio()%>"><%=cabanias.get(i).getId_servicio()%></option>
+                    <%
+                        }
+                    %>
 
                 </select>
 
 
-                <button type="submit" id="submitAceptarVentana" class="btn btn-primary"
+                <button type="submit" id="submitA" class="btn btn-primary"
                         style="padding-right:35px;padding-left:10px;margin-top:21px;">
                     Aceptar </button>
-                <button type="button" id="submitCancelarVentana" class="btn btn-primary"
+                <button type="button" id="submitC" class="btn btn-primary"
                         style="padding-right:35px;padding-left:10px;margin-top:21px;"
                         onclick='parent.$.colorbox.close(); return false;'>
                     Cancelar </button>

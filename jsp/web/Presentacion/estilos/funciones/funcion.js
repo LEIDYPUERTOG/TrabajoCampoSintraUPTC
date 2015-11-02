@@ -24,7 +24,7 @@ function ventana2(){
         onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
         onClosed:function(){ alert('onClosed: colorbox has completely closed'); },
     });
-    $(this).next('#login-content4').slideToggle();
+    $(this).next('#login-content5').slideToggle();
     $(this).ToggleClass('active');
 };
 

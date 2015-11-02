@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 /**
@@ -40,7 +41,8 @@ public class SvtCrearReserva extends HttpServlet {
         Date dateFin = new Date(calendar.getTimeInMillis());
         int idCabania = 1;
         try {
-            idCabania = Integer.parseInt(request.getParameter("idCabania"));
+            idCabania = Integer.parseInt(request.getParameter("cabania"));
+
         }catch (Exception e){
 
         }
@@ -73,12 +75,12 @@ public class SvtCrearReserva extends HttpServlet {
         boolean agregarInfo = false;
         Reserva reserva = null;
 
-        if(tipoServicio.equalsIgnoreCase("Cabania")){
 
+        if(tipoServicio.equalsIgnoreCase("Cabania")){
             reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,persona);
             Cabania cabania = cabaniaDao.obtenerInfoCabania(idCabania);
             reserva.setCabania(cabania);
-             agregar = reservaDao.crearReservaCabania(reserva);
+            agregar = reservaDao.crearReservaCabania(reserva);
         }
         else{
             reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CAMPING,persona);

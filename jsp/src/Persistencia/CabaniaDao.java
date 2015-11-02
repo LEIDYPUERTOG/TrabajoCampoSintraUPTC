@@ -176,6 +176,31 @@ public class CabaniaDao {
 		return listaCabanias;
 	}
 
+	public ArrayList<Cabania> obtenerCabaniasActivas(){
+		ArrayList<Cabania> listaCabanias = null;
+		try {
+			conn = ConexionDB.getConexion();
+			String querySearch = "SELECT * FROM cabania WHERE estado_cabania='A'";
+
+			PreparedStatement ppStm = conn.prepareStatement(querySearch);
+
+			ResultSet resultSet = ppStm.executeQuery();
+			listaCabanias = new ArrayList<>();
+			while(resultSet.next()){
+				listaCabanias.add(new Cabania(resultSet.getInt(2), resultSet.getString(5),
+						resultSet.getInt(1), resultSet.getDouble(3), conversionStringEstado(resultSet.getString(4))));
+			}
+
+			//conn.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
+		return listaCabanias;
+	}
+
 	/**
 	 * Metodo que permite obtener la informacion de una cabania
 	 *

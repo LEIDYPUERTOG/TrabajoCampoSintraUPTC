@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 /**
@@ -72,10 +73,12 @@ public class SvtEditarReserva extends HttpServlet {
         System.out.println("servicio "+ tipoServicio);
         if(!tipoServicio.equalsIgnoreCase("")){
             if(tipoServicio.equalsIgnoreCase("CABANIA")){
-                reservaDao.actualizarTipoServicio(idReserva,TipoServicio.CABANIA);
+                int idCabania = Integer.parseInt(request.getParameter("cabania"));
+
+                reservaDao.actualizarTipoServicioCabania(idReserva,TipoServicio.CABANIA,idCabania);
             }
             else{
-                reservaDao.actualizarTipoServicio(idReserva,TipoServicio.CAMPING);
+                reservaDao.actualizarTipoServicioCamping(idReserva, TipoServicio.CAMPING);
             }
         }
 

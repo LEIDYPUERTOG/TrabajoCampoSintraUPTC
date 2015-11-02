@@ -1,6 +1,9 @@
 <%@ page import="Logica.Persona" %>
 <%@ page import="java.util.GregorianCalendar" %>
 <%@ page import="java.sql.Date" %>
+<%@ page import="Persistencia.CabaniaDao" %>
+<%@ page import="Logica.Cabania" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -203,8 +206,22 @@
                 <h5>Numero Cabaña</h5>
             </article>
             <article id="searchId">
-                <input type="number" class="form-control" placeholder="Ingrese el numero de la cabaña"
-                       name="idCabania" min="1" max="6">
+                <select name="cabania" class="form-control" id="cabania">
+                    <%
+                        CabaniaDao cabaniaDao = new CabaniaDao();
+                        ArrayList<Cabania> cabanias = cabaniaDao.obtenerCabaniasActivas();
+                    %>
+                    <option value=""></option>
+                    <%
+                        for(int i = 0; i < cabanias.size(); i++){
+                    %>
+
+                    <option value="<%=cabanias.get(i).getId_servicio()%>"><%=cabanias.get(i).getId_servicio()%></option>
+                    <%
+                        }
+                    %>
+
+                </select>
             </article>
 
             <!-- Tercera caja de texto -->
