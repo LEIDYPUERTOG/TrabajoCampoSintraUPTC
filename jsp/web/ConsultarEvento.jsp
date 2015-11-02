@@ -176,26 +176,48 @@
         <h4>Consulta de Eventos</h4>
 
         <article id="filtros">
+            <form action="/SvtEventosFiltros" method="post">
+                <article id="nombreEvento">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Nombre Evento" name="nombre">
+                    </div><!-- /input-group -->
+                </article>
+                <article id="FechaInicio1">
+                    <input type="date" class="form-control" placeholder="Fecha" name="fecha">
+                </article>
 
-            <article id="nombreEvento">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nombre Evento">
-                </div><!-- /input-group -->
-            </article>
-            <article id="FechaInicio1">
-                <input type="date" class="form-control" placeholder="Fecha">
-            </article>
+                <article id="lugarEvento">
+                    <select name="lugarCb" class="form-control" >
+                        <%
+                            LocacionDao locacionDao = new LocacionDao();
+                            ArrayList<Locacion> locacion = (ArrayList) locacionDao.obtenerListaLocaciones();
+                            session.setAttribute("locaciones", locacion);
+                            if (locacion != null) {
+                        %>
+                        <option value=""></option>
+                        <%
 
-            <article id="lugarEvento">
-                <input type="lugar" class="form-control" placeholder="Lugar" required name="lugar">
-            </article>
+                            for (int i = 0; i < locacion.size(); i++) {
 
-            <span class="input-group-btn" id="btnBusqueda">
-                  <!-- Boton para la busqueda de la iamgen -->
-                <button type="submit" class="btn btn-default" aria-label="Left Align">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                </button>
-              </span>
+                        %>
+                        <option value=" <%= i %> ">
+                            <%= locacion.get(i).getNombreLocacion() %>
+                        </option>
+                        <%
+                            }
+                        %>
+                        <%
+                            }%>
+                    </select>
+                </article>
+
+                <span class="input-group-btn" id="btnBusqueda">
+                      <!-- Boton para la busqueda de la iamgen -->
+                    <button type="submit" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+            </form>
         </article>
 
 
@@ -220,9 +242,11 @@
 
                 <%
                     EventoDao eventoDao = new EventoDao();
-                    ArrayList<Evento> listaEventos = eventoDao.obtenerListaEventos();
+                    ArrayList<Evento> listaEventos = (ArrayList)request.getAttribute("eventos");
+                    if(listaEventos !=null){
 
-                    for(int i = 0; i < listaEventos.size(); i++){
+                        for(int i = 0; i < listaEventos.size(); i++){
+
                 %>
 
                 <tr>
@@ -252,6 +276,42 @@
 
                 </tr>
                 <%
+                    }
+                }else{
+                    listaEventos = eventoDao.obtenerListaEventos();
+                    if(listaEventos !=null) {
+                        for (int i = 0; i < listaEventos.size(); i++) {
+                %>
+
+                <tr>
+                    <td><%= listaEventos.get(i).getNombreEvento()%></td>
+                    <td><%= listaEventos.get(i).getFechaIncioEvento()%></td>
+                    <td><%= listaEventos.get(i).getFechaFinEvento()%></td>
+                    <td><%= listaEventos.get(i).getLocacion().getNombreLocacion()%></td>
+                    <td><%= listaEventos.get(i).getLocacion().getDireccionLocacion()%></td>
+                    <td><%= listaEventos.get(i).getEstadoEvento().toString()%></td>
+
+                    <%if(listaEventos.get(i).getEstadoEvento().toString().equals("Activo")){
+                    %>
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()"></td>
+                    <td><img src="/Presentacion/imagenes/suspender.png" id="imagSuspender" title="Suspender"
+                             class='inline'  href="#inline_content2" onclick="ventana3()"></td>
+                    <%
+                    }else{
+                    %>
+                    <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
+                             href="#inline_content" onclick="ventana()"></td>
+                    <td><img src="/Presentacion/imagenes/ok.png" id="imagSuspender" title="Suspender"
+                             class='inline'  href="#inline_content2" onclick="ventana3()"></td>
+                    <%
+                        }
+                    %>
+
+                </tr>
+                <%
+                            }
+                        }
                     }
                 %>
                 </tbody>
@@ -304,8 +364,8 @@
                 <article id="lugar">
                     <select name = "lugarCb" class="form-control">
                         <%
-                            LocacionDao locacionDao = new LocacionDao();
-                            ArrayList<Locacion> locacion = (ArrayList)locacionDao.obtenerListaLocaciones();
+                            locacionDao = new LocacionDao();
+                            locacion = (ArrayList)locacionDao.obtenerListaLocaciones();
                             session.setAttribute("locaciones",locacion);
                             if(locacion!=null){
 

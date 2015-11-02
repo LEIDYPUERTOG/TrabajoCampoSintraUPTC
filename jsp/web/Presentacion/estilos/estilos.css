@@ -2229,7 +2229,7 @@ nav.acceder #login-content2 {
 #btnBusqueda {
     position: absolute;
     top: 70px;
-    left: 670px;
+    left: 720px;
 }
 
 #Estado {
@@ -2283,7 +2283,7 @@ nav.acceder #login-content2 {
 #nombreEvento {
     position: absolute;
     top: 70px;
-    left: 65px;
+    left: 85px;
     width: 261px;
     height: 34px;
 }
@@ -2298,9 +2298,9 @@ nav.acceder #login-content2 {
 
 #lugarEvento {
     position: absolute;
-    left: 480px;
+    left: 460px;
     top: 70px;
-    width: 175.73px;
+    width: 255.73px;
     height: 34px;
 }
 

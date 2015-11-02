@@ -6,6 +6,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.GregorianCalendar" %>
 <%@ page import="java.sql.Date" %>
+<%@ page import="Persistencia.CabaniaDao" %>
+<%@ page import="Logica.Cabania" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Autor: Diana Gonzalez, Leidy Puerto, Edgar Meneses -->
 <!DOCTYPE html>

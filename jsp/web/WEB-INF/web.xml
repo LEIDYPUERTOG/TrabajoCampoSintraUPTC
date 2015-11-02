@@ -183,4 +183,13 @@
         <servlet-name>SvtCrearLocacion</servlet-name>
         <url-pattern>/SvtCrearLocacion</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SvtEventosFiltros</servlet-name>
+        <servlet-class>Servlets.SvtEventosFiltros</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvtEventosFiltros</servlet-name>
+        <url-pattern>/SvtEventosFiltros</url-pattern>
+    </servlet-mapping>
 </web-app>

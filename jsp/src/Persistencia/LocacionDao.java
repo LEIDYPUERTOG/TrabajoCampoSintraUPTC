@@ -100,7 +100,7 @@ public class LocacionDao {
 
 		try {
 			conn = conexionDB.getConexion();
-			String querySearch = "SELECT * FROM locaciones WHERE nombre_locacion=?";
+			String querySearch = "SELECT * FROM locacion WHERE nombre_locacion=?";
 
 			PreparedStatement ppStm = conn.prepareStatement(querySearch);
 			ppStm.setString(1,nombreLocacion);

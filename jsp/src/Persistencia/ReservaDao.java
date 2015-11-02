@@ -470,6 +470,41 @@ public class ReservaDao {
 		return reserva;
 	}
 
+	public boolean hayDisponibilidad(java.sql.Date fechaInicio, java.sql.Date fechaFin,int numeroCabania){
+		boolean disponibilidad = false;
+		try {
+			conn = conexionDB.getConexion();
+			String querySearch = "SELECT * FROM reserva r, informacion_reserva i " +
+					"WHERE r.id_reserva = i.id_reserva " +
+					"AND tipo_servicio='CABANIA'" +
+					" AND id_servicio_cabania=?" +
+					" AND date_format(fecha_inicio_reserva, '%D-%M-%Y')>= ?" +
+					"AND date_format(fecha_fin_reserva, '%D-%M-%Y') <= ?";
+
+			PreparedStatement ppStm = conn.prepareStatement(querySearch);
+			ppStm.setInt(1, numeroCabania);
+			ppStm.setDate(2, fechaInicio);
+			ppStm.setDate(3,fechaFin);
+
+			ResultSet resultSet = ppStm.executeQuery();
+
+			if (resultSet.next()) {
+
+				disponibilidad = false;
+			}
+			else{
+				disponibilidad = true;
+			}
+			////conn.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return disponibilidad=false;
+		}
+		return  disponibilidad;
+	}
+
 	/**
 	 * Metodo que permite realizar una reserva de una cabania
 	 *

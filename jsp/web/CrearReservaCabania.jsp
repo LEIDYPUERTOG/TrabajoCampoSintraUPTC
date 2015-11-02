@@ -190,7 +190,7 @@
                 <%GregorianCalendar c = new GregorianCalendar();
                     Date fechaSolicitud = new Date(c.getTimeInMillis());%>
                 <input type="date" class="form-control" placeholder="Ingrese el texto." required name="fechaInicio"
-                        min="<%=fechaSolicitud%>">
+                       min="<%=fechaSolicitud%>">
             </article>
 
             <!-- Segunda caja de texto -->
@@ -241,6 +241,11 @@
             <label id = "rbtn2" class="radio-inline">
                 <input type="radio" name="inlineRadioOptions" id="Camping" value="Camping"> Zona de Camping
             </label>
+
+            <%
+                System.out.println("En crear reserva cabania.jsp el valor de disponibilidad es "+
+                    request.getAttribute("disponibilidad"));
+            %>
 
             <!-- Cuadro de Acompañantes -->
             <article id="acompa">

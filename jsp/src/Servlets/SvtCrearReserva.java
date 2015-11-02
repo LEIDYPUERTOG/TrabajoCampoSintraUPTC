@@ -66,7 +66,6 @@ public class SvtCrearReserva extends HttpServlet {
             tipoServicio = "Camping";
         }
 
-
         Persona persona = (Persona) request.getSession().getAttribute("persona");
         PersonaDao personaDao = new PersonaDao();
         request.setAttribute("personaBusqueda", persona); //mandando el parametro para que sea accedido
@@ -80,7 +79,13 @@ public class SvtCrearReserva extends HttpServlet {
             reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CABANIA,persona);
             Cabania cabania = cabaniaDao.obtenerInfoCabania(idCabania);
             reserva.setCabania(cabania);
-            agregar = reservaDao.crearReservaCabania(reserva);
+            boolean dispoibilidad = reservaDao.hayDisponibilidad(dateInicio,dateFin,idCabania);
+
+            request.setAttribute("disponibilidad", dispoibilidad);
+
+            if(dispoibilidad == true){
+                agregar = reservaDao.crearReservaCabania(reserva);
+            }
         }
         else{
             reserva = new Reserva(cantidad, EstadoReserva.Pendiente,fechaSolicitud,TipoServicio.CAMPING,persona);
@@ -95,19 +100,21 @@ public class SvtCrearReserva extends HttpServlet {
 
             String nombre = request.getParameter("nombre" + i);
             Persona auxPersona = personaDao.consultarPersona(cedula);
-            if(auxPersona!=null){
+            if(auxPersona!=null && agregar == true){
                 InformacionReserva informacionReserva = new InformacionReserva
                         (dateInicio, dateFin,dateFin,auxPersona,reserva);
                 agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
             }
             else {
-                auxPersona= new Persona(cedula,nombre,TipoDocumento.Cedula,TipoUsuario.NoAfiliado,rol.Usuario,
-                        EstadoPersona.ACTIVO);
-                personaDao.crearPersona(auxPersona);
-                InformacionReserva informacionReserva = new InformacionReserva(dateInicio,
-                        dateFin,dateFin,auxPersona,reserva);
-                agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
+                if(auxPersona == null && agregar == true){
+                    auxPersona= new Persona(cedula,nombre,TipoDocumento.Cedula,TipoUsuario.NoAfiliado,rol.Usuario,
+                            EstadoPersona.ACTIVO);
+                    personaDao.crearPersona(auxPersona);
+                    InformacionReserva informacionReserva = new InformacionReserva(dateInicio,
+                            dateFin,dateFin,auxPersona,reserva);
+                    agregarInfo = informacionReservaDao.crearInformacionReserva(informacionReserva);
 
+                }
             }
         }
 

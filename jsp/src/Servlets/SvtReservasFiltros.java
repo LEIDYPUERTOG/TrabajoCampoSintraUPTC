@@ -24,7 +24,6 @@ import java.util.GregorianCalendar;
 public class SvtReservasFiltros extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
         ArrayList<Reserva> listaMisReservas = null;
         ConexionDB conexionDB = new ConexionDB("root","");
 
@@ -47,7 +46,7 @@ public class SvtReservasFiltros extends HttpServlet {
         }
         else {
             String[] fec = request.getParameter("fechaFin").toString().split("-");
-            System.out.println("aaaaaaaaaaaaaaaaaaa "+fec [0]);
+
             if (!fec [0].equalsIgnoreCase("")) {
                 RequestDispatcher dispatcher = null;
                 int auxAnio = Integer.parseInt(fec[0]);
