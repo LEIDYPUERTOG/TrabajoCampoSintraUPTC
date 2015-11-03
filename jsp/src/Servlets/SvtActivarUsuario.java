@@ -57,6 +57,7 @@ public class SvtActivarUsuario extends HttpServlet {
                 }
             }
         }
+        RequestDispatcher dispatcher = null;
         dispatcher = request.getRequestDispatcher("ConsultarUsuario.jsp");
         dispatcher.forward(request, response);
     }
