@@ -49,6 +49,7 @@ public class SvtConsultarReservaAnio extends HttpServlet {
         }
         else{
             dispatcher = request.getRequestDispatcher("ReservasAnuales.jsp");
+            dispatcher.forward(request, response);
         }
     }
 

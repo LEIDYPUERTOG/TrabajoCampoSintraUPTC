@@ -59,6 +59,11 @@ public class SvtRegistro extends HttpServlet {
                     dispatcher.forward(request, response);
                 }
             }
+            else {
+                request.setAttribute("personaCreada", "No se pudo completar la solicitud");
+                dispatcher = request.getRequestDispatcher("registrarse.jsp");
+                dispatcher.forward(request, response);
+            }
 
         }
         else{
@@ -77,6 +82,11 @@ public class SvtRegistro extends HttpServlet {
                         dispatcher = request.getRequestDispatcher("ReservarCabaniaUsuario.jsp");
                         dispatcher.forward(request, response);
                     }
+                }
+                else{
+                    request.setAttribute("personaCreada", "No se pudo completar la solicitud");
+                    dispatcher = request.getRequestDispatcher("registrarse.jsp");
+                    dispatcher.forward(request, response);
                 }
             }
             else{

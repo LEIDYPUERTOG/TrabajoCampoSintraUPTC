@@ -78,5 +78,9 @@ public class SvtCrearEvento extends HttpServlet {
                 dispatcher.forward(request, response);
             }
         }
+        else{
+            dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 }

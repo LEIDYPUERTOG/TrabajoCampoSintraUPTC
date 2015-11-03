@@ -33,12 +33,15 @@ public class SvtCrearLocacion extends HttpServlet {
                 dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
                 dispatcher.forward(request, response);
             }
+            else{
+                dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
+                dispatcher.forward(request, response);
+            }
+        }
+        else{
             dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
             dispatcher.forward(request, response);
         }
-        dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
-        dispatcher.forward(request, response);
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

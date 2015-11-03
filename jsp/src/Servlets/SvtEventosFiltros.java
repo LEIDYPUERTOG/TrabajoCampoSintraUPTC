@@ -41,6 +41,13 @@ public class SvtEventosFiltros extends HttpServlet {
                 dispatcher = request.getRequestDispatcher("ConsultarEvento.jsp");
                 dispatcher.forward(request, response);
             }
+            else{
+                RequestDispatcher dispatcher = null;
+                listaEventos = eventoDao.obtenerListaEventos();
+                request.setAttribute("eventos", listaEventos);
+                dispatcher = request.getRequestDispatcher("ConsultarEvento.jsp");
+                dispatcher.forward(request, response);
+            }
         }
         else {
             String[] fec = request.getParameter("fecha").toString().split("-");

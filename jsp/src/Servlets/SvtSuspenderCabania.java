@@ -39,15 +39,11 @@ public class SvtSuspenderCabania extends HttpServlet {
                 dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
                 dispatcher.forward(request, response);
             }
-
-
         }
         else {
             dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");
             dispatcher.forward(request, response);
         }
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

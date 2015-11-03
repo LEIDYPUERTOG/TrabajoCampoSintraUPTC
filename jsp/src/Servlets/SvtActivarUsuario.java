@@ -56,9 +56,9 @@ public class SvtActivarUsuario extends HttpServlet {
                     dispatcher.forward(request, response);
                 }
             }
-
         }
-
+        dispatcher = request.getRequestDispatcher("ConsultarUsuario.jsp");
+        dispatcher.forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

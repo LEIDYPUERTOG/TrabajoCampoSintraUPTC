@@ -43,6 +43,13 @@ public class SvtReservasFiltros extends HttpServlet {
                 dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
                 dispatcher.forward(request, response);
             }
+            else{
+                RequestDispatcher dispatcher = null;
+                listaMisReservas = reservaDao.consultarReservas();
+                request.setAttribute("reservas", listaMisReservas);
+                dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
+                dispatcher.forward(request, response);
+            }
         }
         else {
             String[] fec = request.getParameter("fechaFin").toString().split("-");
@@ -68,6 +75,13 @@ public class SvtReservasFiltros extends HttpServlet {
                 RequestDispatcher dispatcher = null;
                 if(!estado.equalsIgnoreCase("")){
                     listaMisReservas = reservaDao.consultarEstado(estado);
+                    request.setAttribute("reservas", listaMisReservas);
+                    dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
+                    dispatcher.forward(request, response);
+                }
+                else{
+
+                    listaMisReservas = reservaDao.consultarReservas();
                     request.setAttribute("reservas", listaMisReservas);
                     dispatcher = request.getRequestDispatcher("AprobarReserva.jsp");
                     dispatcher.forward(request, response);

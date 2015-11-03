@@ -41,8 +41,6 @@ public class SvtCambiarEstadoEvento extends HttpServlet {
                 dispatcher = request.getRequestDispatcher("ConsultarEvento.jsp");
                 dispatcher.forward(request, response);
             }
-
-
         }
         else {
             dispatcher = request.getRequestDispatcher("ConsultarCabania.jsp");

@@ -48,6 +48,7 @@ public class SvtCambiaContrasenia extends HttpServlet {
                 dispatcher.forward(request, response);
             }
         }
-
+        dispatcher = request.getRequestDispatcher("CambiarContrasenia.jsp");
+        dispatcher.forward(request, response);
     }
 }
