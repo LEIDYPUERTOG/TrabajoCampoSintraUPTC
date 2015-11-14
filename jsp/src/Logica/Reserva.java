@@ -83,7 +83,6 @@ public class Reserva {
 		this.fechaSolicitud = fechaSolicitud;
 		this.persona = persona;
 		this.valorReserva = calcularValorReserva(this.cantidadPersonas,90000);
-
 	}
 
 	public Reserva(int cantidadPersonas, EstadoReserva estadoReserva, Date fechaSolicitud,
