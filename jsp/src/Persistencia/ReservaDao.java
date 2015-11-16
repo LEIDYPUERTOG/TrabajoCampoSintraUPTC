@@ -73,11 +73,13 @@ public class ReservaDao {
 
 			ResultSet resultSet = ppStm.executeQuery();
 			listaReservaPorAfiliado = new ArrayList<>();
+			PersonaDao personaDao = new PersonaDao();
+			Persona persona = personaDao.consultarPersona(documento);
 			while(resultSet.next()) {
 
 				Reserva reserva = new Reserva(resultSet.getInt(6),
 						conversionStringEstado(resultSet.getString(5).toString()),
-						resultSet.getDate(9),tipoServicio(resultSet.getString(10)));
+						resultSet.getDate(9),tipoServicio(resultSet.getString(10)),persona);
 				reserva.setIdReserva(resultSet.getInt(1));
 				listaReservaPorAfiliado.add(reserva);
 			}

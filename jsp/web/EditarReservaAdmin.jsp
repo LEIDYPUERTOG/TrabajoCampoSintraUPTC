@@ -183,12 +183,13 @@
                 <thead>
                 <!-- titulos de la tabla  idReserva = tomarValor()-->
                 <tr>
-                    <th>Número de<br> Reserva</th>
+                    <th>Número<br>Reserva</th>
                     <th>Servicio</th>
-                    <th>Fecha de<br> Solicitud</th>
+                    <th>Fecha<br>Solicitud</th>
                     <th>Fecha Inicio</th>
                     <th>Fecha Fin</th>
-                    <th>Estado de <br> la reserva</th>
+                    <th>Estado<br>reserva</th>
+                    <th>Valor</th>
                     <th>Editar</th>
                     <th>Cancelar</th>
                 </tr>
@@ -213,6 +214,22 @@
                     <td><%= informacionReserva.getFechaInicioReserva()%></td>
                     <td><%= informacionReserva.getFechaFinReserva()%></td>
                     <td><%= listaMisReservas.get(i).getEstadoReserva()%></td>
+                    <%int valor = 0;
+
+                        if(listaMisReservas.get(i).getTipoServicio().toString().equalsIgnoreCase("CABANIA")){
+                            if(listaMisReservas.get(i).getPersona().getTipoUsuario().toString().equalsIgnoreCase("Afiliado")){
+                                valor = listaMisReservas.get(i).getCantidadPersonas() * 90000;
+                            }
+                            else {
+                                valor = listaMisReservas.get(i).getCantidadPersonas() * 160000;
+                            }
+
+                        }
+                        else{
+                            valor = listaMisReservas.get(i).getCantidadPersonas() * 20000;
+                        }
+                    %>
+                    <td><%= valor%></td>
 
                     <td><img src="/Presentacion/imagenes/editar.png" id="imagEditar" title="Editar" class='inline'
                              href="#inline_content" onclick="ventana2()">
