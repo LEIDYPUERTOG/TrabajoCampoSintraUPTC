@@ -30,7 +30,7 @@ public class SvtCrearLocacion extends HttpServlet {
             Locacion locacion = new Locacion(nombre,direccion);
             boolean agregar = locacionDao.agregarLocacion(locacion);
             if(agregar){
-                dispatcher = request.getRequestDispatcher("CrearEvento.jsp");
+                dispatcher = request.getRequestDispatcher("ConsultarEvento.jsp");
                 dispatcher.forward(request, response);
             }
             else{

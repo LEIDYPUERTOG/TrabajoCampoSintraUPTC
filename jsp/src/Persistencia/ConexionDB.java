@@ -32,6 +32,7 @@ public class ConexionDB {
     /**
      * Tiene la URL de conexion con la base de datos
      */
+
     private static String URL="jdbc:mysql://localhost/sintrauptc";
     /**
      * Atributo que tiene el usuario para conectar con la base
@@ -40,6 +41,26 @@ public class ConexionDB {
 
 
     public ConexionDB(String usuario, String contrasenia){
+        this.usuario = usuario;
+        this.contrasenia = contrasenia;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conexion = (Connection) DriverManager.getConnection(URL, "root","");
+
+            if (conexion != null) {
+                hayConexion = true;
+                System.out.println("Conexión a base de datos  OK\n");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } catch (ClassNotFoundException e) {
+            System.out.println(e);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public ConexionDB(){
         this.usuario = usuario;
         this.contrasenia = contrasenia;
         try {
