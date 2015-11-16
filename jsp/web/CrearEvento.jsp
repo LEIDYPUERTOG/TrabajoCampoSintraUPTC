@@ -182,7 +182,6 @@
             </article>
 
             <!-- Segunda caja de texto -->
-            ticle id="search1">
             <%GregorianCalendar c = new GregorianCalendar();
                 Date fechaSolicitud = new Date(c.getTimeInMillis());%>
             <article id="FechaInicio">

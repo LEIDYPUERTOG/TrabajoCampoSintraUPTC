@@ -74,11 +74,11 @@
                         <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
 
                         <button type="submit" id="submit" class="btn btn-primary"
-                                style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                                style="padding-right:35px;padding-left:10px;margin-top:35px;">
                             Ingresar
                         </button>
                         <button type="button" id="submitRegistrar" class="btn btn-primary"
-                                style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                                style="padding-right:35px;padding-left:5px;margin-top:35px;"
                                 onClick="location.href='/registrarse.jsp'"> <!-- Tamaño -->
                             Registrarse
                         </button>

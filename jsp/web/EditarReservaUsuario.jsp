@@ -122,7 +122,7 @@
         <ul class="nav nav-pills"> <!-- Para la navegacion -->
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <!-- Nombre y color de las palabras -->
-                <a href="ReservarCabaniaUsuario.jsp"><h3><font color=#34495E>Realizar Reserva</font></h3></a>
+                <a class="ghost" href="ReservarCabaniaUsuario.jsp"><h3><font color=#34495E>Realizar Reserva</font></h3></a>
             </li>
             <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <!-- Nombre y color de las palabras -->

@@ -52,8 +52,8 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
 */
 #servicios {
     color: #bfbfbf;
-    font-family: 'Nunito', sans-serif;
-    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -112,7 +112,7 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
 */
 #texto h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     color: #34495E;
     text-align: center;
 }
@@ -165,7 +165,7 @@ header, #logo, #servicios, #imagenes, #texto, #informacion {
 #informacion h5 {
     color: #fefff6;
     font-family: 'Lato', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     text-align: center;
 }
 
@@ -202,13 +202,21 @@ header #inicio1 {
     position: relative;
     top: 25%;
     margin: 0px 65px;
-
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
 }
 
 /*
 	El color, tamaño, posicion y margen del bloque inicio2 que se encuentra
 	dentro del bloque header (Primer encabezado)
 */
+
+header{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #34495E;
+}
+
 header #inicio2 {
     background: #fefff6;
     width: 120px;
@@ -352,6 +360,14 @@ nav.acceder #login-content {
     margin-right: auto;
     margin-left: auto;
 }
+/*
+    Cambia el estilo del primer baner
+*/
+#contenedorRegistro header{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #34495E;
+}
 #contenedorRegistroCC {
     box-shadow: 5px 5px 30px #bcbcbc;
     height: 1110px;
@@ -401,12 +417,16 @@ nav.acceder #login-content {
     position: absolute;
     top: 540px;
     left: 600px;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
 }
 
 #registro #rbtn2 {
     position: absolute;
     top: 540px;
     left: 670px;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
 }
 
 #registro #btnRegistro {
@@ -420,10 +440,11 @@ nav.acceder #login-content {
 */
 #lblInfo {
     font-family: 'Montserrat', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: #34495E;
     text-align: center;
 }
+
 /*
 	El tipo de letra, el tamaño de la letra
 */
@@ -551,7 +572,7 @@ nav.acceder #login-content {
 */
 #catalogo h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     color: #34495E;
     text-align: center;
 }
@@ -601,7 +622,7 @@ nav.acceder #login-content {
 	El tamaño de la letra del titulo principal
 */
 #catalogo h5 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 30px;
     text-align: center;
 }
@@ -924,7 +945,7 @@ nav.acceder #login-content {
 */
 #contenido h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 45px;
+    font-size: 50px;
     color: #34495E;
     text-align: center;
 }
@@ -1051,12 +1072,13 @@ nav.acceder #login-content {
     vertical-align: middle;
     text-align: center;
 }
+
 /*
 	Tamaño y tipo de letra h4
 */
 #contenidoReservaC h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     color: #34495E;
     text-align: center;
 }
@@ -1070,7 +1092,24 @@ nav.acceder #login-content {
     color: #34495E;
     text-align: center;
 }
-
+/*
+*/
+#contenidoReservaC #lista {
+    background: #fefff6;
+    width: 950px;
+    height: 350px;
+    margin: 30px 0 0 -100px;
+    min-height: 250px;
+    overflow-Y: scroll;
+}
+/*
+    Tipo de letra de las tablas
+*/
+#contenidoReservaC tr{
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    text-align: center;
+}
 /*
 	Bloque que contiene los otros componentes
 */
@@ -1138,7 +1177,14 @@ Estilos para la tabla y scroll
     margin-right: auto;
     margin-left: auto;
 }
-
+/*
+    Tipo de letra de las tablas
+*/
+#contenedorReservaA tr{
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
 /*
 	Contiene la navegacion la pocicion y tamaño
 */
@@ -1150,6 +1196,8 @@ Estilos para la tabla y scroll
     width: 800px;
     height: 50px;
     margin: -60px 0 0 -300px;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
 }
 
 /*
@@ -1205,7 +1253,7 @@ Estilos para la tabla y scroll
 */
 #contenidoReservaA h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 45px;
+    font-size: 50px;
     color: #34495E;
     text-align: center;
 }
@@ -1270,9 +1318,9 @@ Estilos para la tabla y scroll
 */
 #contenidoReservaA #lista {
     background: #fefff6;
-    width: 720px;
+    width: 800px;
     height: 350px;
-    margin: 60px 0 0 50px;
+    margin: 60px 0 0 0px;
     min-height: 200px;
     overflow-Y: scroll;
 }
@@ -1298,12 +1346,15 @@ Estilos para la tabla y scroll
     padding-right: 17px;
     box-shadow: 0 4px 6px rgba(0,0,0,.6);
     z-index: 2;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
 }
 #lista tbody {
     height: calc(50vh - 1px);
     min-height: calc(200px + 1px);
     color: #000;
-
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
 }
 
 #panelAdministracionListado {
@@ -1356,7 +1407,7 @@ Estilos para la tabla y scroll
 
 #catalogoEv h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     color: #34495E;
     text-align: center;
 }
@@ -1499,7 +1550,7 @@ Estilos para la tabla y scroll
 
 #contenido2 h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 45px;
+    font-size: 50px;
     color: #34495E;
     text-align: center;
 }
@@ -1650,6 +1701,8 @@ Estilos para la tabla y scroll
     position: absolute;
     left: 160px;
     top: 80px;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
 }
 
 #contenidoReservaA #search8 {
@@ -1663,9 +1716,9 @@ Estilos para la tabla y scroll
 
 #contenidoReservaA #lista3 {
     background: #fefff6;
-    width: 720px;
+    width: 800px;
     height: 350px;
-    margin: 60px 0 0 50px;
+    margin: 60px 0 0 0px;
     min-height: 200px;
     overflow-Y: scroll;
 }
@@ -1678,7 +1731,6 @@ Estilos para la tabla y scroll
     border-collapse: collapse;
     border: 1px solid rgba(0,0,0,.5);
     border-top: 0 none;
-
 }
 #lista3 thead {
     background: #e6f0d9;
@@ -1688,12 +1740,15 @@ Estilos para la tabla y scroll
     padding-right: 17px;
     box-shadow: 0 4px 6px rgba(0,0,0,.6);
     z-index: 2;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
 }
 #lista3 tbody {
     height: calc(50vh - 1px);
     min-height: calc(200px + 1px);
     color: #000;
-
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
 }
 #pag2 {
     background: #fefff6;
@@ -1773,7 +1828,16 @@ nav.acceder #login-content2 {
     margin-right: auto;
     margin-left: auto;
 }
-
+#contenedorUsuario #rbtn {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    color: #404142
+}
+#contenedorUsuario #rbtn2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    color: #404142
+}
 #contenedorUsuario #contenidoReservaC {
     position: absolute;
     top: 420px;
@@ -2094,7 +2158,7 @@ nav.acceder #login-content2 {
 #contenidoReservaR #fechaI {
     background: #fefff6;
     width: 180px;
-    height: 35px;
+    height: 40px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -2116,7 +2180,7 @@ nav.acceder #login-content2 {
 #contenidoReservaR #fechaF {
     background: #fefff6;
     width: 180px;
-    height: 35px;
+    height: 40px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -2138,7 +2202,7 @@ nav.acceder #login-content2 {
 #contenidoReservaR #cantidadP {
     background: #fefff6;
     width: 180px;
-    height: 35px;
+    height: 40px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -2157,7 +2221,7 @@ nav.acceder #login-content2 {
 #contenidoReservaR #CabaniaId {
     background: #fefff6;
     width: 180px;
-    height: 35px;
+    height: 40px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -2178,33 +2242,64 @@ nav.acceder #login-content2 {
 */
 #contenidoReservaR h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 45px;
+    font-size: 25px;
     color: #34495E;
     text-align: center;
 }
 
+/*
+	Tamaño y tipo de letra h5 (todo el texto)
+*/
 #contenidoReservaR h5 {
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    color: #657273;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #34495E;
     text-align: center;
 }
+#contenidoReservaR #lblPreg {
+    background: #fefff6;
+    width: 180px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+#contenidoReservaR #rbtn {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    color: #404142
+    width: 180px;
+    height: 50px;
+}
+#contenidoReservaR #rbtn2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    color: #404142
+    width: 180px;
+    height: 50px;
+}
+
 
 #informacionEncontrada {
     position: relative;
     top: 5%;
 }
 
+
 /*
     Estilo de los botones de servicios
 */
 .ghost {
 
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+
     border: none;
     background: #fefff6;
     color: #2ECC71;
     padding: 10px;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 5px;
     position: relative;
     box-sizing: border-box;
@@ -2263,6 +2358,8 @@ nav.acceder #login-content2 {
     position: absolute;
     top: 300px;
     left: 200px;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
 }
 
 #reg {
@@ -2325,7 +2422,7 @@ nav.acceder #login-content2 {
 */
 #catalogoZC h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     color: #34495E;
     text-align: center;
 }
@@ -2467,13 +2564,13 @@ nav.acceder #login-content2 {
 */
 #contenidoReservaCon h4{
     font-family: 'Montserrat', sans-serif;
-    font-size: 45px;
+    font-size: 50px;
     color: #34495E;
     text-align: center;
 }
 #contenidoReservaCon label{
     font-family: 'Lato', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     color: #657273;
 }
 #contenidoReservaCon {
@@ -2491,7 +2588,7 @@ nav.acceder #login-content2 {
 
 #contenidoReservaAdmin h4{
     font-family: 'Montserrat', sans-serif;
-    font-size: 45px;
+    font-size: 50px;
     color: #34495E;
     text-align: center;
 }

@@ -54,19 +54,26 @@
         <nav class="acceder">
             <article id="inicio1">
 
-                <button type="button" id="login" class="btn btn-link"  style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar <!-- Icono y palabra -->
+                <button type="button" id="login" class="btn btn-link"
+                        style="padding-right:35px;padding-left:10px;margin-top:21px;"> <!-- Tamaño -->
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Ingresar<!-- Icono y palabra -->
                 </button>
                 <div id="login-content">
-                    <form>
+                    <form action="/SvtLogin" method="post">
 
-                        <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
+
+                        <input id="usuario" type="number" name="usuario" placeholder="Usuario" required>
                         <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
 
-                        <button type="button" id="submit" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;">
-                            Ingresar </button>
-                        <button type="button" id="submitRegistrar" class="btn btn-primary"  style="padding-right:35px;padding-left:10px;margin-top:21px;" disabled> <!-- Tamaño -->
-                            Registrarse </button>
+                        <button type="submit" id="submit" class="btn btn-primary"
+                                style="padding-right:35px;padding-left:10px;margin-top:35px;">
+                            Ingresar
+                        </button>
+                        <button type="button" id="submitRegistrar" class="btn btn-primary"
+                                style="padding-right:35px;padding-left:5px;margin-top:35px;"
+                                disabled> <!-- Tamaño -->
+                            Registrarse
+                        </button>
                     </form>
 
                 </div>
@@ -126,8 +133,8 @@
 
             </li>
 
-
-            <label id="lblPreg">Es usted: </label>
+            <li>
+            <label id="lblPreg">Es usted: </label></li>
             <label id = "rbtn" class="radio-inline">
                 <input type="radio" name="inlineRadioOptions" id="Afiliado" value="Af"
                        onclick="getRadioButtonSelectedValue(document.formulario.inlineRadioOptions)"> Afiliado

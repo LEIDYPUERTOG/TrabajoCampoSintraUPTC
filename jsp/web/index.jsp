@@ -17,7 +17,13 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <title> Inicio </title>
 
-    <!-- Estilos de la pagina -->
+    <meta property="og:image" content="http://ianlunn.github.io/Hover/hover.jpg" />
+    <meta property="og:site_name" content="Hover.css"/>
+    <meta property="og:title" content="Hover.css - A collection of CSS3 powered hover effects" />
+
+    <link href="css/demo-page.css" rel="stylesheet" media="all">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 
     <link rel="stylesheet" href="Presentacion/estilos/estilos.css">
     <!-- Tipo de letra de google -->
@@ -72,11 +78,11 @@
                         <input id="password" type="password" name="contrasenia" placeholder="Contraseña" required>
 
                         <button type="submit" id="submit" class="btn btn-primary"
-                                style="padding-right:35px;padding-left:10px;margin-top:21px;">
+                                style="padding-right:35px;padding-left:10px;margin-top:35px;">
                             Ingresar
                         </button>
                         <button type="button" id="submitRegistrar" class="btn btn-primary"
-                                style="padding-right:35px;padding-left:10px;margin-top:21px;"
+                                style="padding-right:35px;padding-left:5px;margin-top:35px;"
                                 onClick="location.href='/registrarse.jsp'"> <!-- Tamaño -->
                             Registrarse
                         </button>
@@ -118,11 +124,11 @@
     <!-- Tercera cabecera con los servicios que prestan el sindicato -->
     <section id="servicios">
         <ul class="nav nav-pills"> <!-- Para la navegacion -->
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
+           <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
                 <!-- Tamaño de los item -->
                 <a class="ghost" href="/Catalogo.jsp"><h3><font color=#34495E>Cabañas</font></h3></a></li>
             <!-- Nombre y color de las palabras -->
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
+            <li role="presentation" style="padding-right: 40px;padding-left:120px;margin-top:0px;">
                 <a class="ghost" href="/zonaCamping.jsp"><h3><font color=#34495E>Zonas de Camping</font></h3></a></li>
         </ul>
     </section>

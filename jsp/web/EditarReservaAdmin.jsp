@@ -11,6 +11,7 @@
 <head>
 
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/Presentacion/imagenes/logo.png">
     <title>Editar Reserva</title>
 
     <!-- Estilos de la pagina -->

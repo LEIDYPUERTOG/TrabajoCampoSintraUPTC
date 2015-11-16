@@ -108,14 +108,6 @@
                 <!-- Icono y palabra -->
             </button>
         </article>
-
-        <!-- Boton Inicio -->
-        <article id="inicio4">
-            <button type="button" class="btn btn-link" style="padding-right:55px;padding-left:10px;margin-top:21px;"
-                    onclick="location.href='index.jsp'"> <!-- Tamaño -->
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio <!-- Icono y palabra -->
-            </button>
-        </article>
     </header>
 
     <!-- Segunda cabecera con los logos del sindicato y la uptc -->
@@ -179,7 +171,7 @@
 
     <!-- Seccion de contenido-->
     <section id="contenidoReservaR">
-        <h4>Reservar Cabaña</h4><!-- Titulo principal -->
+        <h4>Realizar Reservar</h4><!-- Titulo principal -->
 
         <form action="/SvtCrearReserva" method="post" name="formulario4">
             <!-- Primer caja de texto -->
@@ -233,7 +225,7 @@
                        required name="cantidad" min="1" max="10">
             </article>
 
-            <label id="lblPreg">Tipo Servicio: </label>
+            <label id="lblPreg"><h5>Tipo Servicio: </h5></label>
             <label id = "rbtn" class="radio-inline">
                 <input type="radio" name="inlineRadioOptions" id="Cabania" value="Cabania"
                        onclick="getRadioButtonSelectedValue(document.formulario.inlineRadioOptions)"> Cabaña

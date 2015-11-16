@@ -166,7 +166,7 @@
                        required name="cantidad" min="1" max="10">
             </article>
 
-            <label id="lblPreg">Tipo Servicio: </label>
+            <label id="lblPreg"> <h5>Tipo Servicio: </h5> </label>
             <label id = "rbtn" class="radio-inline">
                 <input type="radio" name="inlineRadioOptions" id="Cabania" value="Cabania"
                        onclick="getRadioButtonSelectedValue(document.formulario.inlineRadioOptions)"> Cabaña

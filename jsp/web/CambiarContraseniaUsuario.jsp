@@ -95,13 +95,13 @@
     <!-- Tercera cabecera con los servicios que prestan el sindicato --->
     <section id="servicios">
         <ul class="nav nav-pills"> <!-- Para la navegacion -->
-            <li role="presentation" style="padding-right:20px;padding-left:120px;margin-top:0px;">
+            <li role="presentation" style="padding-right:10px;padding-left:100px;margin-top:0px;">
                 <!-- Tamaño de los item -->
                 <a class="ghost" href="/ReservarCabaniaUsuario.jsp"><h3><font color=#34495E>Realizar Reserva</font></h3></a></li>
             <!-- Nombre y color de las palabras -->
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
+            <li role="presentation" style="padding-right:10px;padding-left:100px;margin-top:0px;">
                 <a class="ghost" href="/EditarReservaUsuario.jsp"><h3><font color=#34495E>Editar Reserva</font></h3></a></li>
-            <li role="presentation" style="padding-right:40px;padding-left:120px;margin-top:0px;">
+            <li role="presentation" style="padding-right:10px;padding-left:100px;margin-top:0px;">
                 <a class="ghost" href="/Eventos.jsp"><h3><font color=#34495E>Eventos</font></h3></a></li>
 
         </ul>

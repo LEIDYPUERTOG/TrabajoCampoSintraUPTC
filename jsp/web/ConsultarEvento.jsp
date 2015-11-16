@@ -9,6 +9,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/Presentacion/imagenes/logo.png">
     <title>Consultar Evento</title>
 
     <!-- Estilos de la pagina -->
