@@ -174,7 +174,7 @@
         <h4>Realizar Reservar</h4><!-- Titulo principal -->
 
         <form action="/SvtCrearReserva" method="post" name="formulario4">
-            <!-- Primer caja de texto  -->
+            <!-- Primer caja de texto -->
             <article id="fechaI">
                 <h5>Fecha inicio de la reserva </h5>
             </article>
