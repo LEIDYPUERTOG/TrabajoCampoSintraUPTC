@@ -1182,7 +1182,7 @@ Estilos para la tabla y scroll
 */
 #contenedorReservaA tr{
     font-family: 'Lato', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
 }
 /*
@@ -1320,9 +1320,74 @@ Estilos para la tabla y scroll
     background: #fefff6;
     width: 800px;
     height: 350px;
-    margin: 60px 0 0 0px;
-    min-height: 200px;
+    margin: 80px 0 0 0px;
+    min-height: 50px;
     overflow-Y: scroll;
+}
+/*
+	Contiene los botones  de modificar el precio
+*/
+#contenedorReservaA #botonescosto{
+    background: #fefff6;
+    position: absolute;
+    top: 700px;
+    width: 760px;
+    height: 60px;
+    margin: -620px 0 0 10px;
+}
+/*
+	Botones para el afiliado
+*/
+#botonescosto #precio{
+     background: #fefff6;
+     position: absolute;
+     top: 700px;
+     width: 120px;
+     height: 60px;
+     margin: -700px 0 0 10px;
+ }
+#botonescosto #search1{
+    background: #fefff6;
+    position: absolute;
+    top: 700px;
+    width: 82px;
+    height: 60px;
+    margin: -700px 0 0 140px;
+}
+#botonescosto #boton1{
+    background: #fefff6;
+    position: absolute;
+    top: 700px;
+    width: 103px;
+    height: 60px;
+    margin: -700px 0 0 240px;
+}
+/*
+	Botones para el no afiliado
+*/
+#botonescosto #precio2{
+    background: #ffffff;
+    position: absolute;
+    top: 700px;
+    width: 140px;
+    height: 60px;
+    margin: -700px 0 0 410px;
+}
+#botonescosto #search2{
+    background: #ffffff;
+    position: absolute;
+    top: 700px;
+    width: 82px;
+    height: 60px;
+    margin: -700px 0 0 560px;
+}
+#botonescosto #boton2{
+    background: #ffffff ;
+    position: absolute;
+    top: 700px;
+    width: 105px;
+    height: 60px;
+    margin: -700px 0 0 650px;
 }
 /*
 	Estilos para centrar la pagiana y el scroll

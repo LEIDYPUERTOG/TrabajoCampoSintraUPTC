@@ -169,7 +169,36 @@
     <!-- Seccion de contenido (tabla, link y paginacion)-->
     <section id="contenidoReservaA">
         <h4>Consulta de Cabañas</h4>
+        <article id="botonescosto">
+            <!-- Primera caja de texto -->
+            <article id="precio">
+                <h5>Valor para Afiliado</h5>
+            </article>
 
+            <article id="search1">
+                <input type="text" class="form-control" placeholder="$160000" name="valor">
+            </article>
+
+            <article id="boton1">
+                <button type="submit" class="btn btn-success"> <!-- Tamaño -->
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Modificar <!-- Icono y palabra -->
+                </button>
+            </article>
+            <!-- Segunda caja de texto -->
+            <article id="precio2">
+                <h5>Valor para No Afiliado</h5>
+            </article>
+
+            <article id="search2">
+                <input type="text" class="form-control" placeholder="$90000" name="valor">
+            </article>
+
+            <article id="boton2">
+                <button type="submit" class="btn btn-success"> <!-- Tamaño -->
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Modificar <!-- Icono y palabra -->
+                </button>
+            </article>
+        </article>
         <article id="lista">
             <table class = "table table-bordered" id="tabla_uno"
                    onclick=" document.getElementById('cabaniaId').value = tomarValor();

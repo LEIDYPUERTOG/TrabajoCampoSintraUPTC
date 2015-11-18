@@ -20,7 +20,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 6.0.37" level="application_server_libraries" />
-    <orderEntry type="library" name="javax.servlet-api-3.0.1" level="application" />
     <orderEntry type="library" name="mysql-connector-java-5.0.8-bin" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.47" level="application_server_libraries" />
   </component>
 </module>
