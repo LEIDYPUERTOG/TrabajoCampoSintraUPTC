@@ -187,7 +187,7 @@
             <input type="hidden" name="anioIn" id="anio">
         </form>
 
-        <article id="lista">
+        <article id="listaRA">
             <table class="table">
                 <thead>
                 <!-- titulos de la tabla -->

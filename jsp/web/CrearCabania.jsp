@@ -176,8 +176,8 @@
             <article id="search3">
                 <input type="text" class="form-control" placeholder="90000" name="valor" disabled>
             </article>
-            <!-- Cuarta caja de texto -->
-            <article id="ruta">
+                        <!-- Cuarta caja de texto -->
+            <!-- <article id="ruta">
                 <h5>Ruta de la foto</h5>
             </article>
             <article id="search4">
@@ -185,11 +185,11 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Ingrese la ubicacion" name="ruta">
       <span class="input-group-btn">
-          <!-- Boton para la busqueda de la iamgen -->
+          <!-- Boton para la busqueda de la iamgen
         <button type="submit" class="btn btn-default" aria-label="Left Align" disabled>
             <span class="glyphicon glyphicon-search" aria-hidden="true" aria-disabled="true"></span>
         </button>
-      </span>
+      </span> -->
                     </div>
                     <!-- /input-group -->
                 </div>

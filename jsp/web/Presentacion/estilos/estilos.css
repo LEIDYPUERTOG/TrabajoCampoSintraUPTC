@@ -363,7 +363,7 @@ nav.acceder #login-content {
 /*
     Cambia el estilo del primer baner
 */
-#contenedorRegistro header{
+#contenedorRegistro header #inicio1{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     color: #34495E;
@@ -1150,10 +1150,13 @@ Estilos para la tabla y scroll
 #acompa tr {
     width: 100%;
     display: inline-table;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
 }
 
 #acompa table {
     height: 300px;
+
 }
 
 #acompa tbody {
@@ -1180,11 +1183,7 @@ Estilos para la tabla y scroll
 /*
     Tipo de letra de las tablas
 */
-#contenedorReservaA tr{
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    text-align: center;
-}
+
 /*
 	Contiene la navegacion la pocicion y tamaño
 */
@@ -1237,7 +1236,13 @@ Estilos para la tabla y scroll
     height: 500px;
     margin: -300px 0 0 200px;
 }
-
+#contenidoReservaA #EstadoS{
+    position: absolute;
+    left: 320px;
+    top: 70px;
+    width: 123px;
+    height: 34px
+}
 /*
 	Tipo y tamaño de la letra del tag a
 */
@@ -1257,7 +1262,12 @@ Estilos para la tabla y scroll
     color: #34495E;
     text-align: center;
 }
-
+#contenidoReservaA #lblBusqueda h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    color: #34495E;
+    text-align: center;
+}
 /*
 	Tamaño y posicion del bloque link1
 */
@@ -1320,9 +1330,30 @@ Estilos para la tabla y scroll
     background: #fefff6;
     width: 800px;
     height: 350px;
+    margin: 68px 0 0 0px;
+    min-height: 50px;
+    overflow-Y: scroll;
+}
+#contenidoReservaA #listaCC {
+    background: #fefff6;
+    width: 800px;
+    height: 350px;
     margin: 80px 0 0 0px;
     min-height: 50px;
     overflow-Y: scroll;
+}
+#contenidoReservaA #listaRA {
+    background: #fefff6;
+    width: 800px;
+    height: 350px;
+    margin: 40px 0 0 0px;
+    min-height: 50px;
+    overflow-Y: scroll;
+}
+#lista tr{
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    text-align: center;
 }
 /*
 	Contiene los botones  de modificar el precio
@@ -1392,6 +1423,72 @@ Estilos para la tabla y scroll
 /*
 	Estilos para centrar la pagiana y el scroll
 */
+#listaCC table {
+    background: #f4fff3;
+    table-layout: fixed;
+    margin: 1rem auto;
+    width: 98%;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.4);
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0,.5);
+    border-top: 0 none;
+
+}
+#listaCC thead {
+    background: #e6f0d9;
+    text-align: center;
+}
+#listaCC thead tr {
+    padding-right: 17px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.6);
+    z-index: 2;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+}
+#listaCC tbody {
+    height: calc(50vh - 1px);
+    min-height: calc(200px + 1px);
+    color: #000;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+}
+/**
+**/
+/*
+	Estilos para centrar la pagiana y el scroll
+*/
+#listaRA table {
+    background: #f4fff3;
+    table-layout: fixed;
+    margin: 1rem auto;
+    width: 98%;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.4);
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0,.5);
+    border-top: 0 none;
+
+}
+#listaRA thead {
+    background: #e6f0d9;
+    text-align: center;
+}
+#listaRA thead tr {
+    padding-right: 17px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.6);
+    z-index: 2;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+}
+#listaRA tbody {
+    height: calc(50vh - 1px);
+    min-height: calc(200px + 1px);
+    color: #000;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+}
+/*
+	Estilos para centrar la pagiana y el scroll
+*/
 #lista table {
     background: #f4fff3;
     table-layout: fixed;
@@ -1411,17 +1508,13 @@ Estilos para la tabla y scroll
     padding-right: 17px;
     box-shadow: 0 4px 6px rgba(0,0,0,.6);
     z-index: 2;
-    font-family: 'Lato', sans-serif;
-    font-size: 17px;
 }
 #lista tbody {
     height: calc(50vh - 1px);
     min-height: calc(200px + 1px);
     color: #000;
-    font-family: 'Lato', sans-serif;
-    font-size: 17px;
-}
 
+}
 #panelAdministracionListado {
     background: #FDCA2E;
     height: 00px;
@@ -1433,7 +1526,7 @@ Estilos para la tabla y scroll
 }
 
 /*Estilos de la ventana consultar editar y suspender cabaña*/
-#lista #imagEditar, #imagSuspender {
+#lista #listaCC #listaRA #imagEditar, #imagSuspender {
     height: 25px;
     width: 25px;
 
@@ -1759,12 +1852,12 @@ Estilos para la tabla y scroll
 
 #contenidoReservaA #lblBusqueda {
     background: #fefff6;
-    width: 130px;
+    width: 150px;
     height: 35px;
     display: inline-block;
     vertical-align: middle;
     position: absolute;
-    left: 160px;
+    left: 150px;
     top: 80px;
     font-family: 'Lato', sans-serif;
     font-size: 17px;
@@ -1800,20 +1893,19 @@ Estilos para la tabla y scroll
 #lista3 thead {
     background: #e6f0d9;
     text-align: center;
-}
-#lista3 thead tr {
     padding-right: 17px;
     box-shadow: 0 4px 6px rgba(0,0,0,.6);
     z-index: 2;
     font-family: 'Lato', sans-serif;
-    font-size: 14px;
+    font-size: 17px;
 }
+
 #lista3 tbody {
     height: calc(50vh - 1px);
     min-height: calc(200px + 1px);
     color: #000;
     font-family: 'Lato', sans-serif;
-    font-size: 11px;
+    font-size: 12px;
 }
 #pag2 {
     background: #fefff6;
@@ -2200,6 +2292,7 @@ nav.acceder #login-content2 {
     color: #657273;
 }
 
+
 #btnCrearUsuario {
 
     position: absolute;
@@ -2349,8 +2442,9 @@ nav.acceder #login-content2 {
     position: relative;
     top: 5%;
 }
-
-
+#informacionEncontrada button{
+    margin: -60px 0 0 200px;
+}
 /*
     Estilo de los botones de servicios
 */
@@ -2380,7 +2474,7 @@ nav.acceder #login-content2 {
 #CedulaBusqueda {
     position: absolute;
     top: 70px;
-    left: 95px;
+    left: 85px;
     width: 261px;
     height: 34px;
 }
@@ -2392,14 +2486,25 @@ nav.acceder #login-content2 {
     left: 720px;
 }
 
-#Estado {
+#et4 #Estado {
+     position: absolute;
+     left: 320px;
+     top: 70px;
+     width: 123px;
+     height: 34px;
+     margin: 300px 0 0 250px;
+ }
+#et4 label {
     position: absolute;
-    left: 320px;
-    top: 70px;
-    width: 123px;
-    height: 34px;
+    left: 80px;
+    top: 80px;
+    width: 100px;
+    height: 50px;
+    margin: 300px 0 0 360px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: #657273;
 }
-
 #fechaSolicitud1 {
     position: absolute;
     left: 470px;

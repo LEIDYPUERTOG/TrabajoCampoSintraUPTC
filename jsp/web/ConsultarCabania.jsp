@@ -199,7 +199,7 @@
                 </button>
             </article>
         </article>
-        <article id="lista">
+        <article id="listaCC">
             <table class = "table table-bordered" id="tabla_uno"
                    onclick=" document.getElementById('cabaniaId').value = tomarValor();
                    document.getElementById('idCabania2').value = tomarValor();">

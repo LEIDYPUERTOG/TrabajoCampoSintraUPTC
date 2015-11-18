@@ -16,6 +16,8 @@
     <meta charset="UTF-8">
     <title>Aprobar Reserva</title>
 
+    <!-- Icono de la ventana-->
+    <link rel="shortcut icon" type="image/x-icon" href="/Presentacion/imagenes/logo.png"
     <!-- Estilos de la pagina -->
     <link rel="stylesheet" href="/Presentacion/estilos/estilos.css">
     <!-- Tipo de letra de google -->
@@ -181,7 +183,7 @@
                     </div><!-- /input-group -->
                 </article>
 
-                <article id="Estado">
+                <article id="EstadoS">
                     <select class="form-control" name="Estado">
                         <option value=""></option>
                         <option value="P">Pendiente</option>
@@ -303,10 +305,7 @@
     <!-- Informacion adicional del sindicato (Menu, Registrarse,...) -->
     <section id="informacion">
         <article id="inf1"> <!-- Seccion Menu -->
-            <h4>Menu</h4>
-            <h5> <button type="button" class="btn btn-link">Nosotros</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Junta Directiva</button> </h5>
-            <h5> <button type="button" class="btn btn-link">Contáctenos</button> </h5>
+
         </article>
         <article id="inf2"> <!-- Seccion Registrar -->
         </article>
